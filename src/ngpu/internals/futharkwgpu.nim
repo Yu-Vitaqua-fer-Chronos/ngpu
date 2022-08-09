@@ -6622,24 +6622,24 @@ else:
   static:
     hint("Declaration of " & "WGPUPipelineLayoutDescriptor" &
         " already exists, not redeclaring")
-when not declared(Buffergetconstmappedrange):
-  proc Buffergetconstmappedrange*(buffer: Buffer_436208339; offset: csize_t;
+when not declared(buffergetconstmappedrange):
+  proc buffergetconstmappedrange*(buffer: Buffer_436208339; offset: csize_t;
                                   size: csize_t): pointer {.cdecl,
       importc: "wgpuBufferGetConstMappedRange".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferGetConstMappedRange" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderpushdebuggroup):
-  proc Renderpassencoderpushdebuggroup*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderpushdebuggroup):
+  proc renderpassencoderpushdebuggroup*(renderpassencoder: Renderpassencoder_436208585;
                                         grouplabel: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPassEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Queuewritebuffer):
-  proc Queuewritebuffer*(queue: Queue_436208067; buffer: Buffer_436208339;
+when not declared(queuewritebuffer):
+  proc queuewritebuffer*(queue: Queue_436208067; buffer: Buffer_436208339;
                          bufferoffset: uint64; data: pointer;
                              size: csize_t): void {.
       cdecl, importc: "wgpuQueueWriteBuffer".}
@@ -6647,63 +6647,63 @@ else:
   static:
     hint("Declaration of " & "wgpuQueueWriteBuffer" &
         " already exists, not redeclaring")
-when not declared(Pipelinelayoutsetlabel):
-  proc Pipelinelayoutsetlabel*(pipelinelayout: Pipelinelayout_436208415;
+when not declared(pipelinelayoutsetlabel):
+  proc pipelinelayoutsetlabel*(pipelinelayout: Pipelinelayout_436208415;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuPipelineLayoutSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuPipelineLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(Renderpipelinegetbindgrouplayout):
-  proc Renderpipelinegetbindgrouplayout*(renderpipeline: Renderpipeline_436208391;
+when not declared(renderpipelinegetbindgrouplayout):
+  proc renderpipelinegetbindgrouplayout*(renderpipeline: Renderpipeline_436208391;
       groupindex: uint32): Bindgrouplayout_436208743 {.cdecl,
       importc: "wgpuRenderPipelineGetBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Adaptergetlimits):
-  proc Adaptergetlimits*(adapter: Adapter_436208057;
+when not declared(adaptergetlimits):
+  proc adaptergetlimits*(adapter: Adapter_436208057;
       limits: ptr Supportedlimits_436208135): bool {.
       cdecl, importc: "wgpuAdapterGetLimits".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterGetLimits" &
         " already exists, not redeclaring")
-when not declared(Devicegetlimits):
-  proc Devicegetlimits*(device: Device_436207979;
+when not declared(devicegetlimits):
+  proc devicegetlimits*(device: Device_436207979;
       limits: ptr Supportedlimits_436208135): bool {.
       cdecl, importc: "wgpuDeviceGetLimits".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceGetLimits" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderend):
-  proc Computepassencoderend*(computepassencoder: Computepassencoder_436208535): void {.
+when not declared(computepassencoderend):
+  proc computepassencoderend*(computepassencoder: Computepassencoder_436208535): void {.
       cdecl, importc: "wgpuComputePassEncoderEnd".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(Deviceenumeratefeatures):
-  proc Deviceenumeratefeatures*(device: Device_436207979;
+when not declared(deviceenumeratefeatures):
+  proc deviceenumeratefeatures*(device: Device_436207979;
                                 features: ptr Featurename_436208785): csize_t {.
       cdecl, importc: "wgpuDeviceEnumerateFeatures".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(Devicecreaterenderpipeline):
-  proc Devicecreaterenderpipeline*(device: Device_436207979;
+when not declared(devicecreaterenderpipeline):
+  proc devicecreaterenderpipeline*(device: Device_436207979;
                                    descriptor: ptr Renderpipelinedescriptor_436208475): Renderpipeline_436208391 {.
       cdecl, importc: "wgpuDeviceCreateRenderPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderPipeline" &
         " already exists, not redeclaring")
-when not declared(Queueonsubmittedworkdone):
-  proc Queueonsubmittedworkdone*(queue: Queue_436208067;
+when not declared(queueonsubmittedworkdone):
+  proc queueonsubmittedworkdone*(queue: Queue_436208067;
                                  callback: Queueworkdonecallback_436208491;
                                  userdata: pointer): void {.cdecl,
       importc: "wgpuQueueOnSubmittedWorkDone".}
@@ -6711,8 +6711,8 @@ else:
   static:
     hint("Declaration of " & "wgpuQueueOnSubmittedWorkDone" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderdrawindexed):
-  proc Renderpassencoderdrawindexed*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderdrawindexed):
+  proc renderpassencoderdrawindexed*(renderpassencoder: Renderpassencoder_436208585;
                                      indexcount: uint32; instancecount: uint32;
                                      firstindex: uint32; basevertex: int32;
                                      firstinstance: uint32): void {.cdecl,
@@ -6721,16 +6721,16 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderfinish):
-  proc Renderbundleencoderfinish*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencoderfinish):
+  proc renderbundleencoderfinish*(renderbundleencoder: Renderbundleencoder_436208351;
                                   descriptor: ptr Renderbundledescriptor_436208169): Renderbundle_436208783 {.
       cdecl, importc: "wgpuRenderBundleEncoderFinish".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodermultidrawindexedindirectcount):
-  proc Renderpassencodermultidrawindexedindirectcount*(
+when not declared(renderpassencodermultidrawindexedindirectcount):
+  proc renderpassencodermultidrawindexedindirectcount*(
       encoder: Renderpassencoder_436208585; buffer: Buffer_436208339;
       offset: uint64; countbuffer: Buffer_436208339; countbufferoffset: uint64;
       maxcount: uint32): void {.cdecl, importc: "wgpuRenderPassEncoderMultiDrawIndexedIndirectCount".}
@@ -6739,30 +6739,30 @@ else:
     hint("Declaration of " &
         "wgpuRenderPassEncoderMultiDrawIndexedIndirectCount" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodermultidrawindexedindirect):
-  proc Renderpassencodermultidrawindexedindirect*(encoder: Renderpassencoder_436208585;
+when not declared(renderpassencodermultidrawindexedindirect):
+  proc renderpassencodermultidrawindexedindirect*(encoder: Renderpassencoder_436208585;
       buffer: Buffer_436208339; offset: uint64; count: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndexedIndirect".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(Getversion):
-  proc Getversion*(): uint32 {.cdecl, importc: "wgpuGetVersion".}
+when not declared(getversion):
+  proc getversion*(): uint32 {.cdecl, importc: "wgpuGetVersion".}
 else:
   static:
     hint("Declaration of " & "wgpuGetVersion" &
         " already exists, not redeclaring")
-when not declared(Devicecreatesampler):
-  proc Devicecreatesampler*(device: Device_436207979;
+when not declared(devicecreatesampler):
+  proc devicecreatesampler*(device: Device_436207979;
                             descriptor: ptr Samplerdescriptor_436208293): Sampler_436208537 {.
       cdecl, importc: "wgpuDeviceCreateSampler".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateSampler" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderdrawindirect):
-  proc Renderpassencoderdrawindirect*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderdrawindirect):
+  proc renderpassencoderdrawindirect*(renderpassencoder: Renderpassencoder_436208585;
                                       indirectbuffer: Buffer_436208339;
                                       indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderPassEncoderDrawIndirect".}
@@ -6770,24 +6770,24 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(Computepipelinegetbindgrouplayout):
-  proc Computepipelinegetbindgrouplayout*(computepipeline: Computepipeline_436208357;
+when not declared(computepipelinegetbindgrouplayout):
+  proc computepipelinegetbindgrouplayout*(computepipeline: Computepipeline_436208357;
       groupindex: uint32): Bindgrouplayout_436208743 {.cdecl,
       importc: "wgpuComputePipelineGetBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Devicepoperrorscope):
-  proc Devicepoperrorscope*(device: Device_436207979; callback: Errorcallback_436208291;
+when not declared(devicepoperrorscope):
+  proc devicepoperrorscope*(device: Device_436207979; callback: Errorcallback_436208291;
                             userdata: pointer): bool {.cdecl,
       importc: "wgpuDevicePopErrorScope".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePopErrorScope" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencodersetbindgroup):
-  proc Renderbundleencodersetbindgroup*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencodersetbindgroup):
+  proc renderbundleencodersetbindgroup*(renderbundleencoder: Renderbundleencoder_436208351;
                                         groupindex: uint32;
                                             group: Bindgroup_436208377;
                                         dynamicoffsetcount: uint32;
@@ -6797,23 +6797,23 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Devicecreateshadermodule):
-  proc Devicecreateshadermodule*(device: Device_436207979;
+when not declared(devicecreateshadermodule):
+  proc devicecreateshadermodule*(device: Device_436207979;
                                  descriptor: ptr Shadermoduledescriptor_436208119): Shadermodule_436208735 {.
       cdecl, importc: "wgpuDeviceCreateShaderModule".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateShaderModule" &
         " already exists, not redeclaring")
-when not declared(Setloglevel):
-  proc Setloglevel*(level: Loglevel_436208033): void {.cdecl,
+when not declared(setloglevel):
+  proc setloglevel*(level: Loglevel_436208033): void {.cdecl,
       importc: "wgpuSetLogLevel".}
 else:
   static:
     hint("Declaration of " & "wgpuSetLogLevel" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetstencilreference):
-  proc Renderpassencodersetstencilreference*(
+when not declared(renderpassencodersetstencilreference):
+  proc renderpassencodersetstencilreference*(
       renderpassencoder: Renderpassencoder_436208585;
           reference: uint32): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetStencilReference".}
@@ -6821,40 +6821,40 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetStencilReference" &
         " already exists, not redeclaring")
-when not declared(Devicecreateswapchain):
-  proc Devicecreateswapchain*(device: Device_436207979; surface: Surface_436208205;
+when not declared(devicecreateswapchain):
+  proc devicecreateswapchain*(device: Device_436207979; surface: Surface_436208205;
                               descriptor: ptr Swapchaindescriptor_436208649): Swapchain_436208593 {.
       cdecl, importc: "wgpuDeviceCreateSwapChain".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateSwapChain" &
         " already exists, not redeclaring")
-when not declared(Getprocaddress):
-  proc Getprocaddress*(device: Device_436207979;
+when not declared(getprocaddress):
+  proc getprocaddress*(device: Device_436207979;
       procname: ptr cuchar): Proc_436208435 {.
       cdecl, importc: "wgpuGetProcAddress".}
 else:
   static:
     hint("Declaration of " & "wgpuGetProcAddress" &
         " already exists, not redeclaring")
-when not declared(Surfacegetpreferredformat):
-  proc Surfacegetpreferredformat*(surface: Surface_436208205;
+when not declared(surfacegetpreferredformat):
+  proc surfacegetpreferredformat*(surface: Surface_436208205;
       adapter: Adapter_436208057): Textureformat_436208002 {.
       cdecl, importc: "wgpuSurfaceGetPreferredFormat".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetPreferredFormat" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencodersetlabel):
-  proc Renderbundleencodersetlabel*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencodersetlabel):
+  proc renderbundleencodersetlabel*(renderbundleencoder: Renderbundleencoder_436208351;
                                     label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderBundleEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Adapterrequestdevice):
-  proc Adapterrequestdevice*(adapter: Adapter_436208057;
+when not declared(adapterrequestdevice):
+  proc adapterrequestdevice*(adapter: Adapter_436208057;
                              descriptor: ptr Devicedescriptor_436208669;
                              callback: Requestdevicecallback_436208273;
                              userdata: pointer): void {.cdecl,
@@ -6863,8 +6863,8 @@ else:
   static:
     hint("Declaration of " & "wgpuAdapterRequestDevice" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetscissorrect):
-  proc Renderpassencodersetscissorrect*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetscissorrect):
+  proc renderpassencodersetscissorrect*(renderpassencoder: Renderpassencoder_436208585;
                                         x: uint32; y: uint32; width: uint32;
                                         height: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetScissorRect".}
@@ -6872,15 +6872,15 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetScissorRect" &
         " already exists, not redeclaring")
-when not declared(Commandencoderdrop):
-  proc Commandencoderdrop*(commandencoder: Commandencoder_436208259): void {.
+when not declared(commandencoderdrop):
+  proc commandencoderdrop*(commandencoder: Commandencoder_436208259): void {.
       cdecl, importc: "wgpuCommandEncoderDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderDrop" &
         " already exists, not redeclaring")
-when not declared(Commandencoderclearbuffer):
-  proc Commandencoderclearbuffer*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderclearbuffer):
+  proc commandencoderclearbuffer*(commandencoder: Commandencoder_436208259;
                                   buffer: Buffer_436208339; offset: uint64;
                                   size: uint64): void {.cdecl,
       importc: "wgpuCommandEncoderClearBuffer".}
@@ -6888,24 +6888,24 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderClearBuffer" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderinsertdebugmarker):
-  proc Renderpassencoderinsertdebugmarker*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderinsertdebugmarker):
+  proc renderpassencoderinsertdebugmarker*(renderpassencoder: Renderpassencoder_436208585;
       markerlabel: ptr cuchar): void {.cdecl,
           importc: "wgpuRenderPassEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Commandencoderbeginrenderpass):
-  proc Commandencoderbeginrenderpass*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderbeginrenderpass):
+  proc commandencoderbeginrenderpass*(commandencoder: Commandencoder_436208259;
                                       descriptor: ptr Renderpassdescriptor_436208249): Renderpassencoder_436208585 {.
       cdecl, importc: "wgpuCommandEncoderBeginRenderPass".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderBeginRenderPass" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderdraw):
-  proc Renderpassencoderdraw*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderdraw):
+  proc renderpassencoderdraw*(renderpassencoder: Renderpassencoder_436208585;
                               vertexcount: uint32; instancecount: uint32;
                               firstvertex: uint32;
                                   firstinstance: uint32): void {.
@@ -6914,23 +6914,23 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDraw" &
         " already exists, not redeclaring")
-when not declared(Shadermodulesetlabel):
-  proc Shadermodulesetlabel*(shadermodule: Shadermodule_436208735;
+when not declared(shadermodulesetlabel):
+  proc shadermodulesetlabel*(shadermodule: Shadermodule_436208735;
                              label: ptr cuchar): void {.cdecl,
       importc: "wgpuShaderModuleSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuShaderModuleSetLabel" &
         " already exists, not redeclaring")
-when not declared(Generatereport):
-  proc Generatereport*(report: ptr Globalreport_436208483): void {.cdecl,
+when not declared(generatereport):
+  proc generatereport*(report: ptr Globalreport_436208483): void {.cdecl,
       importc: "wgpuGenerateReport".}
 else:
   static:
     hint("Declaration of " & "wgpuGenerateReport" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderbeginpipelinestatisticsquery):
-  proc Renderpassencoderbeginpipelinestatisticsquery*(
+when not declared(renderpassencoderbeginpipelinestatisticsquery):
+  proc renderpassencoderbeginpipelinestatisticsquery*(
       renderpassencoder: Renderpassencoder_436208585;
           queryset: Queryset_436208505;
       queryindex: uint32): void {.cdecl,
@@ -6939,23 +6939,23 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Surfacegetsupportedformats):
-  proc Surfacegetsupportedformats*(surface: Surface_436208205; adapter: Adapter_436208057;
+when not declared(surfacegetsupportedformats):
+  proc surfacegetsupportedformats*(surface: Surface_436208205; adapter: Adapter_436208057;
                                    count: ptr csize_t): ptr Textureformat_436208002 {.
       cdecl, importc: "wgpuSurfaceGetSupportedFormats".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetSupportedFormats" &
         " already exists, not redeclaring")
-when not declared(Samplersetlabel):
-  proc Samplersetlabel*(sampler: Sampler_436208537; label: ptr cuchar): void {.
+when not declared(samplersetlabel):
+  proc samplersetlabel*(sampler: Sampler_436208537; label: ptr cuchar): void {.
       cdecl, importc: "wgpuSamplerSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuSamplerSetLabel" &
         " already exists, not redeclaring")
-when not declared(Instancerequestadapter):
-  proc Instancerequestadapter*(instance: Instance_436208049;
+when not declared(instancerequestadapter):
+  proc instancerequestadapter*(instance: Instance_436208049;
                                options: ptr Requestadapteroptions_436208445;
                                callback: Requestadaptercallback_436208375;
                                userdata: pointer): void {.cdecl,
@@ -6964,15 +6964,15 @@ else:
   static:
     hint("Declaration of " & "wgpuInstanceRequestAdapter" &
         " already exists, not redeclaring")
-when not declared(Bufferunmap):
-  proc Bufferunmap*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferunmap):
+  proc bufferunmap*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferUnmap".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferUnmap" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderdrawindirect):
-  proc Renderbundleencoderdrawindirect*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencoderdrawindirect):
+  proc renderbundleencoderdrawindirect*(renderbundleencoder: Renderbundleencoder_436208351;
                                         indirectbuffer: Buffer_436208339;
                                         indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderDrawIndirect".}
@@ -6980,38 +6980,38 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(Bindgroupsetlabel):
-  proc Bindgroupsetlabel*(bindgroup: Bindgroup_436208377;
+when not declared(bindgroupsetlabel):
+  proc bindgroupsetlabel*(bindgroup: Bindgroup_436208377;
       label: ptr cuchar): void {.
       cdecl, importc: "wgpuBindGroupSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupSetLabel" &
         " already exists, not redeclaring")
-when not declared(Bufferdestroy):
-  proc Bufferdestroy*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferdestroy):
+  proc bufferdestroy*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferDestroy" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderendocclusionquery):
-  proc Renderpassencoderendocclusionquery*(
+when not declared(renderpassencoderendocclusionquery):
+  proc renderpassencoderendocclusionquery*(
     renderpassencoder: Renderpassencoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderEndOcclusionQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEndOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(Devicedestroy):
-  proc Devicedestroy*(device: Device_436207979): void {.cdecl,
+when not declared(devicedestroy):
+  proc devicedestroy*(device: Device_436207979): void {.cdecl,
       importc: "wgpuDeviceDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceDestroy" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderexecutebundles):
-  proc Renderpassencoderexecutebundles*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencoderexecutebundles):
+  proc renderpassencoderexecutebundles*(renderpassencoder: Renderpassencoder_436208585;
                                         bundlescount: uint32;
                                         bundles: ptr Renderbundle_436208783): void {.
       cdecl, importc: "wgpuRenderPassEncoderExecuteBundles".}
@@ -7019,8 +7019,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderExecuteBundles" &
         " already exists, not redeclaring")
-when not declared(Commandencodercopybuffertobuffer):
-  proc Commandencodercopybuffertobuffer*(commandencoder: Commandencoder_436208259;
+when not declared(commandencodercopybuffertobuffer):
+  proc commandencodercopybuffertobuffer*(commandencoder: Commandencoder_436208259;
       source: Buffer_436208339; sourceoffset: uint64;
           destination: Buffer_436208339;
       destinationoffset: uint64; size: uint64): void {.cdecl,
@@ -7029,8 +7029,8 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyBufferToBuffer" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderdispatchworkgroupsindirect):
-  proc Computepassencoderdispatchworkgroupsindirect*(
+when not declared(computepassencoderdispatchworkgroupsindirect):
+  proc computepassencoderdispatchworkgroupsindirect*(
       computepassencoder: Computepassencoder_436208535;
           indirectbuffer: Buffer_436208339;
       indirectoffset: uint64): void {.cdecl,
@@ -7039,15 +7039,15 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderDispatchWorkgroupsIndirect" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderpopdebuggroup):
-  proc Renderpassencoderpopdebuggroup*(renderpassencoder: Renderpassencoder_436208585): void {.
+when not declared(renderpassencoderpopdebuggroup):
+  proc renderpassencoderpopdebuggroup*(renderpassencoder: Renderpassencoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Commandencodercopytexturetotexture):
-  proc Commandencodercopytexturetotexture*(commandencoder: Commandencoder_436208259;
+when not declared(commandencodercopytexturetotexture):
+  proc commandencodercopytexturetotexture*(commandencoder: Commandencoder_436208259;
       source: ptr Imagecopytexture_436208507;
           destination: ptr Imagecopytexture_436208507;
       copysize: ptr Extent3d_436208239): void {.cdecl,
@@ -7056,8 +7056,8 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyTextureToTexture" &
         " already exists, not redeclaring")
-when not declared(Commandencoderresolvequeryset):
-  proc Commandencoderresolvequeryset*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderresolvequeryset):
+  proc commandencoderresolvequeryset*(commandencoder: Commandencoder_436208259;
                                       queryset: Queryset_436208505;
                                       firstquery: uint32; querycount: uint32;
                                       destination: Buffer_436208339;
@@ -7067,16 +7067,16 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderResolveQuerySet" &
         " already exists, not redeclaring")
-when not declared(Devicepusherrorscope):
-  proc Devicepusherrorscope*(device: Device_436207979;
+when not declared(devicepusherrorscope):
+  proc devicepusherrorscope*(device: Device_436207979;
       filter: Errorfilter_436208149): void {.
       cdecl, importc: "wgpuDevicePushErrorScope".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePushErrorScope" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderdrawindexed):
-  proc Renderbundleencoderdrawindexed*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencoderdrawindexed):
+  proc renderbundleencoderdrawindexed*(renderbundleencoder: Renderbundleencoder_436208351;
                                        indexcount: uint32;
                                        instancecount: uint32;
                                        firstindex: uint32; basevertex: int32;
@@ -7086,16 +7086,16 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(Devicecreatebindgrouplayout):
-  proc Devicecreatebindgrouplayout*(device: Device_436207979;
+when not declared(devicecreatebindgrouplayout):
+  proc devicecreatebindgrouplayout*(device: Device_436207979;
                                     descriptor: ptr Bindgrouplayoutdescriptor_436208327): Bindgrouplayout_436208743 {.
       cdecl, importc: "wgpuDeviceCreateBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodermultidrawindirectcount):
-  proc Renderpassencodermultidrawindirectcount*(encoder: Renderpassencoder_436208585;
+when not declared(renderpassencodermultidrawindirectcount):
+  proc renderpassencodermultidrawindirectcount*(encoder: Renderpassencoder_436208585;
       buffer: Buffer_436208339; offset: uint64; countbuffer: Buffer_436208339;
       countbufferoffset: uint64; maxcount: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndirectCount".}
@@ -7103,39 +7103,39 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndirectCount" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderpushdebuggroup):
-  proc Computepassencoderpushdebuggroup*(computepassencoder: Computepassencoder_436208535;
+when not declared(computepassencoderpushdebuggroup):
+  proc computepassencoderpushdebuggroup*(computepassencoder: Computepassencoder_436208535;
       grouplabel: ptr cuchar): void {.cdecl,
           importc: "wgpuComputePassEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Devicecreatebindgroup):
-  proc Devicecreatebindgroup*(device: Device_436207979;
+when not declared(devicecreatebindgroup):
+  proc devicecreatebindgroup*(device: Device_436207979;
                               descriptor: ptr Bindgroupdescriptor_436208805): Bindgroup_436208377 {.
       cdecl, importc: "wgpuDeviceCreateBindGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBindGroup" &
         " already exists, not redeclaring")
-when not declared(Queuesubmitforindex):
-  proc Queuesubmitforindex*(queue: Queue_436208067; commandcount: uint32;
+when not declared(queuesubmitforindex):
+  proc queuesubmitforindex*(queue: Queue_436208067; commandcount: uint32;
                             commands: ptr Commandbuffer_436208629): Submissionindex_436208115 {.
       cdecl, importc: "wgpuQueueSubmitForIndex".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSubmitForIndex" &
         " already exists, not redeclaring")
-when not declared(Adapterdrop):
-  proc Adapterdrop*(adapter: Adapter_436208057): void {.cdecl,
+when not declared(adapterdrop):
+  proc adapterdrop*(adapter: Adapter_436208057): void {.cdecl,
       importc: "wgpuAdapterDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterDrop" &
         " already exists, not redeclaring")
-when not declared(Buffermapasync):
-  proc Buffermapasync*(buffer: Buffer_436208339; mode: Mapmodeflags_436208215;
+when not declared(buffermapasync):
+  proc buffermapasync*(buffer: Buffer_436208339; mode: Mapmodeflags_436208215;
                        offset: csize_t; size: csize_t;
                        callback: Buffermapcallback_436208251;
                            userdata: pointer): void {.
@@ -7144,15 +7144,15 @@ else:
   static:
     hint("Declaration of " & "wgpuBufferMapAsync" &
         " already exists, not redeclaring")
-when not declared(Devicesetlabel):
-  proc Devicesetlabel*(device: Device_436207979; label: ptr cuchar): void {.
+when not declared(devicesetlabel):
+  proc devicesetlabel*(device: Device_436207979; label: ptr cuchar): void {.
       cdecl, importc: "wgpuDeviceSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceSetLabel" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetindexbuffer):
-  proc Renderpassencodersetindexbuffer*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetindexbuffer):
+  proc renderpassencodersetindexbuffer*(renderpassencoder: Renderpassencoder_436208585;
                                         buffer: Buffer_436208339;
                                         format: Indexformat_436208301;
                                         offset: uint64; size: uint64): void {.
@@ -7161,16 +7161,16 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(Devicehasfeature):
-  proc Devicehasfeature*(device: Device_436207979;
+when not declared(devicehasfeature):
+  proc devicehasfeature*(device: Device_436207979;
       feature: Featurename_436208785): bool {.
       cdecl, importc: "wgpuDeviceHasFeature".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceHasFeature" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetviewport):
-  proc Renderpassencodersetviewport*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetviewport):
+  proc renderpassencodersetviewport*(renderpassencoder: Renderpassencoder_436208585;
                                      x: cfloat; y: cfloat; width: cfloat;
                                      height: cfloat; mindepth: cfloat;
                                      maxdepth: cfloat): void {.cdecl,
@@ -7179,30 +7179,30 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetViewport" &
         " already exists, not redeclaring")
-when not declared(Texturesetlabel):
-  proc Texturesetlabel*(texture: Texture_436208006; label: ptr cuchar): void {.
+when not declared(texturesetlabel):
+  proc texturesetlabel*(texture: Texture_436208006; label: ptr cuchar): void {.
       cdecl, importc: "wgpuTextureSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureSetLabel" &
         " already exists, not redeclaring")
-when not declared(Devicecreatequeryset):
-  proc Devicecreatequeryset*(device: Device_436207979;
+when not declared(devicecreatequeryset):
+  proc devicecreatequeryset*(device: Device_436207979;
                              descriptor: ptr Querysetdescriptor_436208341): Queryset_436208505 {.
       cdecl, importc: "wgpuDeviceCreateQuerySet".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateQuerySet" &
         " already exists, not redeclaring")
-when not declared(Swapchaingetcurrenttextureview):
-  proc Swapchaingetcurrenttextureview*(swapchain: Swapchain_436208593): Textureview_436208441 {.
+when not declared(swapchaingetcurrenttextureview):
+  proc swapchaingetcurrenttextureview*(swapchain: Swapchain_436208593): Textureview_436208441 {.
       cdecl, importc: "wgpuSwapChainGetCurrentTextureView".}
 else:
   static:
     hint("Declaration of " & "wgpuSwapChainGetCurrentTextureView" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetpushconstants):
-  proc Renderpassencodersetpushconstants*(encoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetpushconstants):
+  proc renderpassencodersetpushconstants*(encoder: Renderpassencoder_436208585;
       stages: Shaderstageflags_436208397; offset: uint32; sizebytes: uint32;
       data: pointer): void {.cdecl,
                              importc: "wgpuRenderPassEncoderSetPushConstants".}
@@ -7210,45 +7210,45 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetPushConstants" &
         " already exists, not redeclaring")
-when not declared(Renderbundledrop):
-  proc Renderbundledrop*(renderbundle: Renderbundle_436208783): void {.cdecl,
+when not declared(renderbundledrop):
+  proc renderbundledrop*(renderbundle: Renderbundle_436208783): void {.cdecl,
       importc: "wgpuRenderBundleDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleDrop" &
         " already exists, not redeclaring")
-when not declared(Commandbufferdrop):
-  proc Commandbufferdrop*(commandbuffer: Commandbuffer_436208629): void {.cdecl,
+when not declared(commandbufferdrop):
+  proc commandbufferdrop*(commandbuffer: Commandbuffer_436208629): void {.cdecl,
       importc: "wgpuCommandBufferDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandBufferDrop" &
         " already exists, not redeclaring")
-when not declared(Bindgrouplayoutdrop):
-  proc Bindgrouplayoutdrop*(bindgrouplayout: Bindgrouplayout_436208743): void {.
+when not declared(bindgrouplayoutdrop):
+  proc bindgrouplayoutdrop*(bindgrouplayout: Bindgrouplayout_436208743): void {.
       cdecl, importc: "wgpuBindGroupLayoutDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupLayoutDrop" &
         " already exists, not redeclaring")
-when not declared(Devicecreatecommandencoder):
-  proc Devicecreatecommandencoder*(device: Device_436207979;
+when not declared(devicecreatecommandencoder):
+  proc devicecreatecommandencoder*(device: Device_436207979;
                                    descriptor: ptr Commandencoderdescriptor_436208667): Commandencoder_436208259 {.
       cdecl, importc: "wgpuDeviceCreateCommandEncoder".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateCommandEncoder" &
         " already exists, not redeclaring")
-when not declared(Queuesubmit):
-  proc Queuesubmit*(queue: Queue_436208067; commandcount: uint32;
+when not declared(queuesubmit):
+  proc queuesubmit*(queue: Queue_436208067; commandcount: uint32;
                     commands: ptr Commandbuffer_436208629): void {.cdecl,
       importc: "wgpuQueueSubmit".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSubmit" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderinsertdebugmarker):
-  proc Renderbundleencoderinsertdebugmarker*(
+when not declared(renderbundleencoderinsertdebugmarker):
+  proc renderbundleencoderinsertdebugmarker*(
       renderbundleencoder: Renderbundleencoder_436208351;
       markerlabel: ptr cuchar): void {.cdecl,
           importc: "wgpuRenderBundleEncoderInsertDebugMarker".}
@@ -7256,31 +7256,31 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Texturecreateview):
-  proc Texturecreateview*(texture: Texture_436208006;
+when not declared(texturecreateview):
+  proc texturecreateview*(texture: Texture_436208006;
                           descriptor: ptr Textureviewdescriptor_436208287): Textureview_436208441 {.
       cdecl, importc: "wgpuTextureCreateView".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureCreateView" &
         " already exists, not redeclaring")
-when not declared(Buffersetlabel):
-  proc Buffersetlabel*(buffer: Buffer_436208339; label: ptr cuchar): void {.
+when not declared(buffersetlabel):
+  proc buffersetlabel*(buffer: Buffer_436208339; label: ptr cuchar): void {.
       cdecl, importc: "wgpuBufferSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(Adapterenumeratefeatures):
-  proc Adapterenumeratefeatures*(adapter: Adapter_436208057;
+when not declared(adapterenumeratefeatures):
+  proc adapterenumeratefeatures*(adapter: Adapter_436208057;
                                  features: ptr Featurename_436208785): csize_t {.
       cdecl, importc: "wgpuAdapterEnumerateFeatures".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderdraw):
-  proc Renderbundleencoderdraw*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencoderdraw):
+  proc renderbundleencoderdraw*(renderbundleencoder: Renderbundleencoder_436208351;
                                 vertexcount: uint32; instancecount: uint32;
                                 firstvertex: uint32;
                                     firstinstance: uint32): void {.
@@ -7302,8 +7302,8 @@ when not declared(Sizemax):
 else:
   static:
     hint("Declaration of " & "SIZE_MAX" & " already exists, not redeclaring")
-when not declared(Computepassencoderdispatchworkgroups):
-  proc Computepassencoderdispatchworkgroups*(
+when not declared(computepassencoderdispatchworkgroups):
+  proc computepassencoderdispatchworkgroups*(
       computepassencoder: Computepassencoder_436208535; workgroupcountx: uint32;
       workgroupcounty: uint32; workgroupcountz: uint32): void {.cdecl,
       importc: "wgpuComputePassEncoderDispatchWorkgroups".}
@@ -7311,30 +7311,30 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderDispatchWorkgroups" &
         " already exists, not redeclaring")
-when not declared(Free):
-  proc Free*(ptrarg: pointer; size: csize_t; align: csize_t): void {.cdecl,
+when not declared(free):
+  proc free*(ptrarg: pointer; size: csize_t; align: csize_t): void {.cdecl,
       importc: "wgpuFree".}
 else:
   static:
     hint("Declaration of " & "wgpuFree" & " already exists, not redeclaring")
-when not declared(Renderbundleencodersetpipeline):
-  proc Renderbundleencodersetpipeline*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderbundleencodersetpipeline):
+  proc renderbundleencodersetpipeline*(renderbundleencoder: Renderbundleencoder_436208351;
                                        pipeline: Renderpipeline_436208391): void {.
       cdecl, importc: "wgpuRenderBundleEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetblendconstant):
-  proc Renderpassencodersetblendconstant*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetblendconstant):
+  proc renderpassencodersetblendconstant*(renderpassencoder: Renderpassencoder_436208585;
       color: ptr Color_436208085): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetBlendConstant".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetBlendConstant" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetvertexbuffer):
-  proc Renderpassencodersetvertexbuffer*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetvertexbuffer):
+  proc renderpassencodersetvertexbuffer*(renderpassencoder: Renderpassencoder_436208585;
       slot: uint32; buffer: Buffer_436208339; offset: uint64;
           size: uint64): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetVertexBuffer".}
@@ -7342,16 +7342,16 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(Textureviewsetlabel):
-  proc Textureviewsetlabel*(textureview: Textureview_436208441;
+when not declared(textureviewsetlabel):
+  proc textureviewsetlabel*(textureview: Textureview_436208441;
                             label: ptr cuchar): void {.cdecl,
       importc: "wgpuTextureViewSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureViewSetLabel" &
         " already exists, not redeclaring")
-when not declared(Devicesetdevicelostcallback):
-  proc Devicesetdevicelostcallback*(device: Device_436207979;
+when not declared(devicesetdevicelostcallback):
+  proc devicesetdevicelostcallback*(device: Device_436207979;
                                     callback: Devicelostcallback_436208623;
                                     userdata: pointer): void {.cdecl,
       importc: "wgpuDeviceSetDeviceLostCallback".}
@@ -7359,8 +7359,8 @@ else:
   static:
     hint("Declaration of " & "wgpuDeviceSetDeviceLostCallback" &
         " already exists, not redeclaring")
-when not declared(Computepassencodersetbindgroup):
-  proc Computepassencodersetbindgroup*(computepassencoder: Computepassencoder_436208535;
+when not declared(computepassencodersetbindgroup):
+  proc computepassencodersetbindgroup*(computepassencoder: Computepassencoder_436208535;
                                        groupindex: uint32;
                                            group: Bindgroup_436208377;
                                        dynamicoffsetcount: uint32;
@@ -7370,15 +7370,15 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderend):
-  proc Renderpassencoderend*(renderpassencoder: Renderpassencoder_436208585): void {.
+when not declared(renderpassencoderend):
+  proc renderpassencoderend*(renderpassencoder: Renderpassencoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderEnd".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(Shadermodulegetcompilationinfo):
-  proc Shadermodulegetcompilationinfo*(shadermodule: Shadermodule_436208735;
+when not declared(shadermodulegetcompilationinfo):
+  proc shadermodulegetcompilationinfo*(shadermodule: Shadermodule_436208735;
                                        callback: Compilationinfocallback_436208437;
                                        userdata: pointer): void {.cdecl,
       importc: "wgpuShaderModuleGetCompilationInfo".}
@@ -7386,83 +7386,83 @@ else:
   static:
     hint("Declaration of " & "wgpuShaderModuleGetCompilationInfo" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodermultidrawindirect):
-  proc Renderpassencodermultidrawindirect*(encoder: Renderpassencoder_436208585;
+when not declared(renderpassencodermultidrawindirect):
+  proc renderpassencodermultidrawindirect*(encoder: Renderpassencoder_436208585;
       buffer: Buffer_436208339; offset: uint64; count: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndirect".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(Surfacedrop):
-  proc Surfacedrop*(surface: Surface_436208205): void {.cdecl,
+when not declared(surfacedrop):
+  proc surfacedrop*(surface: Surface_436208205): void {.cdecl,
       importc: "wgpuSurfaceDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceDrop" &
         " already exists, not redeclaring")
-when not declared(Devicecreaterenderbundleencoder):
-  proc Devicecreaterenderbundleencoder*(device: Device_436207979;
+when not declared(devicecreaterenderbundleencoder):
+  proc devicecreaterenderbundleencoder*(device: Device_436207979;
       descriptor: ptr Renderbundleencoderdescriptor_436208113): Renderbundleencoder_436208351 {.
       cdecl, importc: "wgpuDeviceCreateRenderBundleEncoder".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderBundleEncoder" &
         " already exists, not redeclaring")
-when not declared(Buffergetmappedrange):
-  proc Buffergetmappedrange*(buffer: Buffer_436208339; offset: csize_t;
+when not declared(buffergetmappedrange):
+  proc buffergetmappedrange*(buffer: Buffer_436208339; offset: csize_t;
                              size: csize_t): pointer {.cdecl,
       importc: "wgpuBufferGetMappedRange".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferGetMappedRange" &
         " already exists, not redeclaring")
-when not declared(Querysetdrop):
-  proc Querysetdrop*(queryset: Queryset_436208505): void {.cdecl,
+when not declared(querysetdrop):
+  proc querysetdrop*(queryset: Queryset_436208505): void {.cdecl,
       importc: "wgpuQuerySetDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetDrop" &
         " already exists, not redeclaring")
-when not declared(Commandencoderfinish):
-  proc Commandencoderfinish*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderfinish):
+  proc commandencoderfinish*(commandencoder: Commandencoder_436208259;
                              descriptor: ptr Commandbufferdescriptor_436208349): Commandbuffer_436208629 {.
       cdecl, importc: "wgpuCommandEncoderFinish".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(Bufferdrop):
-  proc Bufferdrop*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferdrop):
+  proc bufferdrop*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferDrop" &
         " already exists, not redeclaring")
-when not declared(Bindgroupdrop):
-  proc Bindgroupdrop*(bindgroup: Bindgroup_436208377): void {.cdecl,
+when not declared(bindgroupdrop):
+  proc bindgroupdrop*(bindgroup: Bindgroup_436208377): void {.cdecl,
       importc: "wgpuBindGroupDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupDrop" &
         " already exists, not redeclaring")
-when not declared(Setlogcallback):
-  proc Setlogcallback*(callback: Logcallback_436208241): void {.cdecl,
+when not declared(setlogcallback):
+  proc setlogcallback*(callback: Logcallback_436208241): void {.cdecl,
       importc: "wgpuSetLogCallback".}
 else:
   static:
     hint("Declaration of " & "wgpuSetLogCallback" &
         " already exists, not redeclaring")
-when not declared(Adapterhasfeature):
-  proc Adapterhasfeature*(adapter: Adapter_436208057;
+when not declared(adapterhasfeature):
+  proc adapterhasfeature*(adapter: Adapter_436208057;
       feature: Featurename_436208785): bool {.
       cdecl, importc: "wgpuAdapterHasFeature".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterHasFeature" &
         " already exists, not redeclaring")
-when not declared(Commandencodercopytexturetobuffer):
-  proc Commandencodercopytexturetobuffer*(commandencoder: Commandencoder_436208259;
+when not declared(commandencodercopytexturetobuffer):
+  proc commandencodercopytexturetobuffer*(commandencoder: Commandencoder_436208259;
       source: ptr Imagecopytexture_436208507;
           destination: ptr Imagecopybuffer_436208757;
       copysize: ptr Extent3d_436208239): void {.cdecl,
@@ -7471,61 +7471,61 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyTextureToBuffer" &
         " already exists, not redeclaring")
-when not declared(Adaptergetproperties):
-  proc Adaptergetproperties*(adapter: Adapter_436208057;
+when not declared(adaptergetproperties):
+  proc adaptergetproperties*(adapter: Adapter_436208057;
                              properties: ptr Adapterproperties_436208201): void {.
       cdecl, importc: "wgpuAdapterGetProperties".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterGetProperties" &
         " already exists, not redeclaring")
-when not declared(Devicecreatetexture):
-  proc Devicecreatetexture*(device: Device_436207979;
+when not declared(devicecreatetexture):
+  proc devicecreatetexture*(device: Device_436207979;
                             descriptor: ptr Texturedescriptor_436208707): Texture_436208006 {.
       cdecl, importc: "wgpuDeviceCreateTexture".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateTexture" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetpipeline):
-  proc Renderpassencodersetpipeline*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetpipeline):
+  proc renderpassencodersetpipeline*(renderpassencoder: Renderpassencoder_436208585;
                                      pipeline: Renderpipeline_436208391): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Renderpipelinedrop):
-  proc Renderpipelinedrop*(renderpipeline: Renderpipeline_436208391): void {.
+when not declared(renderpipelinedrop):
+  proc renderpipelinedrop*(renderpipeline: Renderpipeline_436208391): void {.
       cdecl, importc: "wgpuRenderPipelineDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineDrop" &
         " already exists, not redeclaring")
-when not declared(Samplerdrop):
-  proc Samplerdrop*(sampler: Sampler_436208537): void {.cdecl,
+when not declared(samplerdrop):
+  proc samplerdrop*(sampler: Sampler_436208537): void {.cdecl,
       importc: "wgpuSamplerDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuSamplerDrop" &
         " already exists, not redeclaring")
-when not declared(Devicecreatecomputepipeline):
-  proc Devicecreatecomputepipeline*(device: Device_436207979;
+when not declared(devicecreatecomputepipeline):
+  proc devicecreatecomputepipeline*(device: Device_436207979;
                                     descriptor: ptr Computepipelinedescriptor_436208363): Computepipeline_436208357 {.
       cdecl, importc: "wgpuDeviceCreateComputePipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateComputePipeline" &
         " already exists, not redeclaring")
-when not declared(Createinstance):
-  proc Createinstance*(descriptor: ptr Instancedescriptor_436208745): Instance_436208049 {.
+when not declared(createinstance):
+  proc createinstance*(descriptor: ptr Instancedescriptor_436208745): Instance_436208049 {.
       cdecl, importc: "wgpuCreateInstance".}
 else:
   static:
     hint("Declaration of " & "wgpuCreateInstance" &
         " already exists, not redeclaring")
-when not declared(Queuewritetexture):
-  proc Queuewritetexture*(queue: Queue_436208067;
+when not declared(queuewritetexture):
+  proc queuewritetexture*(queue: Queue_436208067;
                           destination: ptr Imagecopytexture_436208507;
                           data: pointer; datasize: csize_t;
                           datalayout: ptr Texturedatalayout_436208401;
@@ -7535,8 +7535,8 @@ else:
   static:
     hint("Declaration of " & "wgpuQueueWriteTexture" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderdrawindexedindirect):
-  proc Renderpassencoderdrawindexedindirect*(
+when not declared(renderpassencoderdrawindexedindirect):
+  proc renderpassencoderdrawindexedindirect*(
       renderpassencoder: Renderpassencoder_436208585;
           indirectbuffer: Buffer_436208339;
       indirectoffset: uint64): void {.cdecl,
@@ -7545,24 +7545,24 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(Computepassencodersetlabel):
-  proc Computepassencodersetlabel*(computepassencoder: Computepassencoder_436208535;
+when not declared(computepassencodersetlabel):
+  proc computepassencodersetlabel*(computepassencoder: Computepassencoder_436208535;
                                    label: ptr cuchar): void {.cdecl,
       importc: "wgpuComputePassEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Computepassencodersetpipeline):
-  proc Computepassencodersetpipeline*(computepassencoder: Computepassencoder_436208535;
+when not declared(computepassencodersetpipeline):
+  proc computepassencodersetpipeline*(computepassencoder: Computepassencoder_436208535;
                                       pipeline: Computepipeline_436208357): void {.
       cdecl, importc: "wgpuComputePassEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Devicecreatecomputepipelineasync):
-  proc Devicecreatecomputepipelineasync*(device: Device_436207979;
+when not declared(devicecreatecomputepipelineasync):
+  proc devicecreatecomputepipelineasync*(device: Device_436207979;
       descriptor: ptr Computepipelinedescriptor_436208363;
       callback: Createcomputepipelineasynccallback_436208075;
           userdata: pointer): void {.
@@ -7571,78 +7571,78 @@ else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateComputePipelineAsync" &
         " already exists, not redeclaring")
-when not declared(Devicepoll):
-  proc Devicepoll*(device: Device_436207979; wait: bool;
+when not declared(devicepoll):
+  proc devicepoll*(device: Device_436207979; wait: bool;
                    wrappedsubmissionindex: ptr Wrappedsubmissionindex_436208727): bool {.
       cdecl, importc: "wgpuDevicePoll".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePoll" &
         " already exists, not redeclaring")
-when not declared(Devicecreatebuffer):
-  proc Devicecreatebuffer*(device: Device_436207979;
+when not declared(devicecreatebuffer):
+  proc devicecreatebuffer*(device: Device_436207979;
                            descriptor: ptr Bufferdescriptor_436208637): Buffer_436208339 {.
       cdecl, importc: "wgpuDeviceCreateBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBuffer" &
         " already exists, not redeclaring")
-when not declared(Computepipelinesetlabel):
-  proc Computepipelinesetlabel*(computepipeline: Computepipeline_436208357;
+when not declared(computepipelinesetlabel):
+  proc computepipelinesetlabel*(computepipeline: Computepipeline_436208357;
                                 label: ptr cuchar): void {.cdecl,
       importc: "wgpuComputePipelineSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderpopdebuggroup):
-  proc Renderbundleencoderpopdebuggroup*(
+when not declared(renderbundleencoderpopdebuggroup):
+  proc renderbundleencoderpopdebuggroup*(
       renderbundleencoder: Renderbundleencoder_436208351): void {.cdecl,
       importc: "wgpuRenderBundleEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Textureviewdrop):
-  proc Textureviewdrop*(textureview: Textureview_436208441): void {.cdecl,
+when not declared(textureviewdrop):
+  proc textureviewdrop*(textureview: Textureview_436208441): void {.cdecl,
       importc: "wgpuTextureViewDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureViewDrop" &
         " already exists, not redeclaring")
-when not declared(Devicegetqueue):
-  proc Devicegetqueue*(device: Device_436207979): Queue_436208067 {.cdecl,
+when not declared(devicegetqueue):
+  proc devicegetqueue*(device: Device_436207979): Queue_436208067 {.cdecl,
       importc: "wgpuDeviceGetQueue".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceGetQueue" &
         " already exists, not redeclaring")
-when not declared(Commandencoderinsertdebugmarker):
-  proc Commandencoderinsertdebugmarker*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderinsertdebugmarker):
+  proc commandencoderinsertdebugmarker*(commandencoder: Commandencoder_436208259;
                                         markerlabel: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderendpipelinestatisticsquery):
-  proc Computepassencoderendpipelinestatisticsquery*(
+when not declared(computepassencoderendpipelinestatisticsquery):
+  proc computepassencoderendpipelinestatisticsquery*(
       computepassencoder: Computepassencoder_436208535): void {.cdecl,
       importc: "wgpuComputePassEncoderEndPipelineStatisticsQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderendpipelinestatisticsquery):
-  proc Renderpassencoderendpipelinestatisticsquery*(
+when not declared(renderpassencoderendpipelinestatisticsquery):
+  proc renderpassencoderendpipelinestatisticsquery*(
       renderpassencoder: Renderpassencoder_436208585): void {.cdecl,
       importc: "wgpuRenderPassEncoderEndPipelineStatisticsQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderdrawindexedindirect):
-  proc Renderbundleencoderdrawindexedindirect*(
+when not declared(renderbundleencoderdrawindexedindirect):
+  proc renderbundleencoderdrawindexedindirect*(
       renderbundleencoder: Renderbundleencoder_436208351;
       indirectbuffer: Buffer_436208339; indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderDrawIndexedIndirect".}
@@ -7650,8 +7650,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(Surfacegetsupportedpresentmodes):
-  proc Surfacegetsupportedpresentmodes*(surface: Surface_436208205;
+when not declared(surfacegetsupportedpresentmodes):
+  proc surfacegetsupportedpresentmodes*(surface: Surface_436208205;
                                         adapter: Adapter_436208057;
                                         count: ptr csize_t): ptr Presentmode_436208541 {.
       cdecl, importc: "wgpuSurfaceGetSupportedPresentModes".}
@@ -7659,22 +7659,22 @@ else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetSupportedPresentModes" &
         " already exists, not redeclaring")
-when not declared(Querysetdestroy):
-  proc Querysetdestroy*(queryset: Queryset_436208505): void {.cdecl,
+when not declared(querysetdestroy):
+  proc querysetdestroy*(queryset: Queryset_436208505): void {.cdecl,
       importc: "wgpuQuerySetDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetDestroy" &
         " already exists, not redeclaring")
-when not declared(Texturedrop):
-  proc Texturedrop*(texture: Texture_436208006): void {.cdecl,
+when not declared(texturedrop):
+  proc texturedrop*(texture: Texture_436208006): void {.cdecl,
       importc: "wgpuTextureDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureDrop" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoderbeginocclusionquery):
-  proc Renderpassencoderbeginocclusionquery*(
+when not declared(renderpassencoderbeginocclusionquery):
+  proc renderpassencoderbeginocclusionquery*(
       renderpassencoder: Renderpassencoder_436208585;
           queryindex: uint32): void {.
       cdecl, importc: "wgpuRenderPassEncoderBeginOcclusionQuery".}
@@ -7682,8 +7682,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderBeginOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(Commandencoderwritetimestamp):
-  proc Commandencoderwritetimestamp*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderwritetimestamp):
+  proc commandencoderwritetimestamp*(commandencoder: Commandencoder_436208259;
                                      queryset: Queryset_436208505;
                                      queryindex: uint32): void {.cdecl,
       importc: "wgpuCommandEncoderWriteTimestamp".}
@@ -7691,40 +7691,40 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderWriteTimestamp" &
         " already exists, not redeclaring")
-when not declared(Renderpipelinesetlabel):
-  proc Renderpipelinesetlabel*(renderpipeline: Renderpipeline_436208391;
+when not declared(renderpipelinesetlabel):
+  proc renderpipelinesetlabel*(renderpipeline: Renderpipeline_436208391;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPipelineSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(Bindgrouplayoutsetlabel):
-  proc Bindgrouplayoutsetlabel*(bindgrouplayout: Bindgrouplayout_436208743;
+when not declared(bindgrouplayoutsetlabel):
+  proc bindgrouplayoutsetlabel*(bindgrouplayout: Bindgrouplayout_436208743;
                                 label: ptr cuchar): void {.cdecl,
       importc: "wgpuBindGroupLayoutSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetlabel):
-  proc Renderpassencodersetlabel*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetlabel):
+  proc renderpassencodersetlabel*(renderpassencoder: Renderpassencoder_436208585;
                                   label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderpopdebuggroup):
-  proc Computepassencoderpopdebuggroup*(
+when not declared(computepassencoderpopdebuggroup):
+  proc computepassencoderpopdebuggroup*(
     computepassencoder: Computepassencoder_436208535): void {.
       cdecl, importc: "wgpuComputePassEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderpushdebuggroup):
-  proc Renderbundleencoderpushdebuggroup*(
+when not declared(renderbundleencoderpushdebuggroup):
+  proc renderbundleencoderpushdebuggroup*(
       renderbundleencoder: Renderbundleencoder_436208351;
           grouplabel: ptr cuchar): void {.
       cdecl, importc: "wgpuRenderBundleEncoderPushDebugGroup".}
@@ -7732,68 +7732,68 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Texturedestroy):
-  proc Texturedestroy*(texture: Texture_436208006): void {.cdecl,
+when not declared(texturedestroy):
+  proc texturedestroy*(texture: Texture_436208006): void {.cdecl,
       importc: "wgpuTextureDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureDestroy" &
         " already exists, not redeclaring")
-when not declared(Shadermoduledrop):
-  proc Shadermoduledrop*(shadermodule: Shadermodule_436208735): void {.cdecl,
+when not declared(shadermoduledrop):
+  proc shadermoduledrop*(shadermodule: Shadermodule_436208735): void {.cdecl,
       importc: "wgpuShaderModuleDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuShaderModuleDrop" &
         " already exists, not redeclaring")
-when not declared(Devicecreatepipelinelayout):
-  proc Devicecreatepipelinelayout*(device: Device_436207979;
+when not declared(devicecreatepipelinelayout):
+  proc devicecreatepipelinelayout*(device: Device_436207979;
                                    descriptor: ptr Pipelinelayoutdescriptor_436208817): Pipelinelayout_436208415 {.
       cdecl, importc: "wgpuDeviceCreatePipelineLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreatePipelineLayout" &
         " already exists, not redeclaring")
-when not declared(Commandbuffersetlabel):
-  proc Commandbuffersetlabel*(commandbuffer: Commandbuffer_436208629;
+when not declared(commandbuffersetlabel):
+  proc commandbuffersetlabel*(commandbuffer: Commandbuffer_436208629;
                               label: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandBufferSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(Pipelinelayoutdrop):
-  proc Pipelinelayoutdrop*(pipelinelayout: Pipelinelayout_436208415): void {.
+when not declared(pipelinelayoutdrop):
+  proc pipelinelayoutdrop*(pipelinelayout: Pipelinelayout_436208415): void {.
       cdecl, importc: "wgpuPipelineLayoutDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuPipelineLayoutDrop" &
         " already exists, not redeclaring")
-when not declared(Swapchainpresent):
-  proc Swapchainpresent*(swapchain: Swapchain_436208593): void {.cdecl,
+when not declared(swapchainpresent):
+  proc swapchainpresent*(swapchain: Swapchain_436208593): void {.cdecl,
       importc: "wgpuSwapChainPresent".}
 else:
   static:
     hint("Declaration of " & "wgpuSwapChainPresent" &
         " already exists, not redeclaring")
-when not declared(Commandencodersetlabel):
-  proc Commandencodersetlabel*(commandencoder: Commandencoder_436208259;
+when not declared(commandencodersetlabel):
+  proc commandencodersetlabel*(commandencoder: Commandencoder_436208259;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Querysetsetlabel):
-  proc Querysetsetlabel*(queryset: Queryset_436208505;
+when not declared(querysetsetlabel):
+  proc querysetsetlabel*(queryset: Queryset_436208505;
       label: ptr cuchar): void {.
       cdecl, importc: "wgpuQuerySetSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetSetLabel" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencodersetvertexbuffer):
-  proc Renderbundleencodersetvertexbuffer*(
+when not declared(renderbundleencodersetvertexbuffer):
+  proc renderbundleencodersetvertexbuffer*(
       renderbundleencoder: Renderbundleencoder_436208351; slot: uint32;
       buffer: Buffer_436208339; offset: uint64; size: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderSetVertexBuffer".}
@@ -7801,8 +7801,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(Renderpassencodersetbindgroup):
-  proc Renderpassencodersetbindgroup*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderpassencodersetbindgroup):
+  proc renderpassencodersetbindgroup*(renderpassencoder: Renderpassencoder_436208585;
                                       groupindex: uint32;
                                           group: Bindgroup_436208377;
                                       dynamicoffsetcount: uint32;
@@ -7812,8 +7812,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderinsertdebugmarker):
-  proc Computepassencoderinsertdebugmarker*(
+when not declared(computepassencoderinsertdebugmarker):
+  proc computepassencoderinsertdebugmarker*(
       computepassencoder: Computepassencoder_436208535;
           markerlabel: ptr cuchar): void {.
       cdecl, importc: "wgpuComputePassEncoderInsertDebugMarker".}
@@ -7821,8 +7821,8 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Computepassencoderbeginpipelinestatisticsquery):
-  proc Computepassencoderbeginpipelinestatisticsquery*(
+when not declared(computepassencoderbeginpipelinestatisticsquery):
+  proc computepassencoderbeginpipelinestatisticsquery*(
       computepassencoder: Computepassencoder_436208535;
           queryset: Queryset_436208505;
       queryindex: uint32): void {.cdecl,
@@ -7832,30 +7832,30 @@ else:
     hint("Declaration of " &
         "wgpuComputePassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Commandencoderpopdebuggroup):
-  proc Commandencoderpopdebuggroup*(commandencoder: Commandencoder_436208259): void {.
+when not declared(commandencoderpopdebuggroup):
+  proc commandencoderpopdebuggroup*(commandencoder: Commandencoder_436208259): void {.
       cdecl, importc: "wgpuCommandEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Computepipelinedrop):
-  proc Computepipelinedrop*(computepipeline: Computepipeline_436208357): void {.
+when not declared(computepipelinedrop):
+  proc computepipelinedrop*(computepipeline: Computepipeline_436208357): void {.
       cdecl, importc: "wgpuComputePipelineDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineDrop" &
         " already exists, not redeclaring")
-when not declared(Commandencoderpushdebuggroup):
-  proc Commandencoderpushdebuggroup*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderpushdebuggroup):
+  proc commandencoderpushdebuggroup*(commandencoder: Commandencoder_436208259;
                                      grouplabel: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Devicecreaterenderpipelineasync):
-  proc Devicecreaterenderpipelineasync*(device: Device_436207979;
+when not declared(devicecreaterenderpipelineasync):
+  proc devicecreaterenderpipelineasync*(device: Device_436207979;
       descriptor: ptr Renderpipelinedescriptor_436208475;
 
 callback: Createrenderpipelineasynccallback_436208143;
@@ -7865,16 +7865,16 @@ else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderPipelineAsync" &
         " already exists, not redeclaring")
-when not declared(Instancecreatesurface):
-  proc Instancecreatesurface*(instance: Instance_436208049;
+when not declared(instancecreatesurface):
+  proc instancecreatesurface*(instance: Instance_436208049;
                               descriptor: ptr Surfacedescriptor_436208041): Surface_436208205 {.
       cdecl, importc: "wgpuInstanceCreateSurface".}
 else:
   static:
     hint("Declaration of " & "wgpuInstanceCreateSurface" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencodersetindexbuffer):
-  proc Renderbundleencodersetindexbuffer*(
+when not declared(renderbundleencodersetindexbuffer):
+  proc renderbundleencodersetindexbuffer*(
       renderbundleencoder: Renderbundleencoder_436208351;
           buffer: Buffer_436208339;
       format: Indexformat_436208301; offset: uint64; size: uint64): void {.
@@ -7883,8 +7883,8 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(Commandencodercopybuffertotexture):
-  proc Commandencodercopybuffertotexture*(commandencoder: Commandencoder_436208259;
+when not declared(commandencodercopybuffertotexture):
+  proc commandencodercopybuffertotexture*(commandencoder: Commandencoder_436208259;
       source: ptr Imagecopybuffer_436208757;
           destination: ptr Imagecopytexture_436208507;
       copysize: ptr Extent3d_436208239): void {.cdecl,
@@ -7893,37 +7893,37 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyBufferToTexture" &
         " already exists, not redeclaring")
-when not declared(Devicesetuncapturederrorcallback):
-  proc Devicesetuncapturederrorcallback*(device: Device_436207979;
+when not declared(devicesetuncapturederrorcallback):
+  proc devicesetuncapturederrorcallback*(device: Device_436207979;
       callback: Errorcallback_436208291; userdata: pointer): void {.cdecl,
       importc: "wgpuDeviceSetUncapturedErrorCallback".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceSetUncapturedErrorCallback" &
         " already exists, not redeclaring")
-when not declared(Instanceprocessevents):
-  proc Instanceprocessevents*(instance: Instance_436208049): void {.cdecl,
+when not declared(instanceprocessevents):
+  proc instanceprocessevents*(instance: Instance_436208049): void {.cdecl,
       importc: "wgpuInstanceProcessEvents".}
 else:
   static:
     hint("Declaration of " & "wgpuInstanceProcessEvents" &
         " already exists, not redeclaring")
-when not declared(Queuesetlabel):
-  proc Queuesetlabel*(queue: Queue_436208067; label: ptr cuchar): void {.cdecl,
+when not declared(queuesetlabel):
+  proc queuesetlabel*(queue: Queue_436208067; label: ptr cuchar): void {.cdecl,
       importc: "wgpuQueueSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSetLabel" &
         " already exists, not redeclaring")
-when not declared(Devicedrop):
-  proc Devicedrop*(device: Device_436207979): void {.cdecl,
+when not declared(devicedrop):
+  proc devicedrop*(device: Device_436207979): void {.cdecl,
       importc: "wgpuDeviceDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceDrop" &
         " already exists, not redeclaring")
-when not declared(Commandencoderbegincomputepass):
-  proc Commandencoderbegincomputepass*(commandencoder: Commandencoder_436208259;
+when not declared(commandencoderbegincomputepass):
+  proc commandencoderbegincomputepass*(commandencoder: Commandencoder_436208259;
                                        descriptor: ptr Computepassdescriptor_436208433): Computepassencoder_436208535 {.
       cdecl, importc: "wgpuCommandEncoderBeginComputePass".}
 else:
