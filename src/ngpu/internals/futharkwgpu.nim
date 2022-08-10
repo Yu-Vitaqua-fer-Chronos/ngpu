@@ -1,653 +1,653 @@
 
 from macros import hint
 
-when not declared(Enumtexturesampletype):
+when not declared(EnumTextureSampleType):
   type
-    Enumtexturesampletype* {.size: sizeof(cuint).} = enum
-      Wgputexturesampletypeundefined = 0, Wgputexturesampletypefloat = 1,
-      Wgputexturesampletypeunfilterablefloat = 2,
-      Wgputexturesampletypedepth = 3, Wgputexturesampletypesint = 4,
-      Wgputexturesampletypeuint = 5, Wgputexturesampletypeforce32 = 2147483647
+    EnumTextureSampleType* {.size: sizeof(cuint).} = enum
+      TextureSampleTypeUndefined = 0, TextureSampleTypeFloat = 1,
+      TextureSampleTypeUnfilterableFloat = 2,
+      TextureSampleTypeDepth = 3, TextureSampleTypeSint = 4,
+      TextureSampleTypeUint = 5, TextureSampleTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureSampleType" &
         " already exists, not redeclaring")
-when not declared(Enummapmode):
+when not declared(EnumMapMode):
   type
-    Enummapmode* {.size: sizeof(cuint).} = enum
-      Wgpumapmodenone = 0, Wgpumapmoderead = 1, Wgpumapmodewrite = 2,
-      Wgpumapmodeforce32 = 2147483647
+    EnumMapMode* {.size: sizeof(cuint).} = enum
+      MapModeNone = 0, MapModeRead = 1, MapModeWrite = 2,
+      MapModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUMapMode" &
         " already exists, not redeclaring")
-when not declared(Enumblendoperation):
+when not declared(EnumBlendOperation):
   type
-    Enumblendoperation* {.size: sizeof(cuint).} = enum
-      Wgpublendoperationadd = 0, Wgpublendoperationsubtract = 1,
-      Wgpublendoperationreversesubtract = 2, Wgpublendoperationmin = 3,
-      Wgpublendoperationmax = 4, Wgpublendoperationforce32 = 2147483647
+    EnumBlendOperation* {.size: sizeof(cuint).} = enum
+      BlendOperationAdd = 0, BlendOperationSubtract = 1,
+      BlendOperationReverseSubtract = 2, BlendOperationMin = 3,
+      BlendOperationMax = 4, BlendOperationForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBlendOperation" &
         " already exists, not redeclaring")
-when not declared(Enumfeaturename):
+when not declared(EnumFeatureName):
   type
-    Enumfeaturename* {.size: sizeof(cuint).} = enum
-      Wgpufeaturenameundefined = 0, Wgpufeaturenamedepthclipcontrol = 1,
-      Wgpufeaturenamedepth24unormstencil8 = 2,
-      Wgpufeaturenamedepth32floatstencil8 = 3,
-      Wgpufeaturenametimestampquery = 4,
-      Wgpufeaturenamepipelinestatisticsquery = 5,
-      Wgpufeaturenametexturecompressionbc = 6,
-      Wgpufeaturenametexturecompressionetc2 = 7,
-      Wgpufeaturenametexturecompressionastc = 8,
-      Wgpufeaturenameindirectfirstinstance = 9,
-      Wgpufeaturenameforce32 = 2147483647
+    EnumFeatureName* {.size: sizeof(cuint).} = enum
+      FeatureNameUndefined = 0, FeatureNameDepthClipControl = 1,
+      FeatureNameDepth24UnormStencil8 = 2,
+      FeatureNameDepth32FloatStencil8 = 3,
+      FeatureNameTimestampQuery = 4,
+      FeatureNamePipelineStatisticsQuery = 5,
+      FeatureNameTextureCompressionBc = 6,
+      FeatureNameTextureCompressionEtc2 = 7,
+      FeatureNameTextureCompressionAstc = 8,
+      FeatureNameIndirectFirstInstance = 9,
+      FeatureNameForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUFeatureName" &
         " already exists, not redeclaring")
-when not declared(Enumvertexformat):
+when not declared(EnumVertexFormat):
   type
-    Enumvertexformat* {.size: sizeof(cuint).} = enum
-      Wgpuvertexformatundefined = 0, Wgpuvertexformatuint8x2 = 1,
-      Wgpuvertexformatuint8x4 = 2, Wgpuvertexformatsint8x2 = 3,
-      Wgpuvertexformatsint8x4 = 4, Wgpuvertexformatunorm8x2 = 5,
-      Wgpuvertexformatunorm8x4 = 6, Wgpuvertexformatsnorm8x2 = 7,
-      Wgpuvertexformatsnorm8x4 = 8, Wgpuvertexformatuint16x2 = 9,
-      Wgpuvertexformatuint16x4 = 10, Wgpuvertexformatsint16x2 = 11,
-      Wgpuvertexformatsint16x4 = 12, Wgpuvertexformatunorm16x2 = 13,
-      Wgpuvertexformatunorm16x4 = 14, Wgpuvertexformatsnorm16x2 = 15,
-      Wgpuvertexformatsnorm16x4 = 16, Wgpuvertexformatfloat16x2 = 17,
-      Wgpuvertexformatfloat16x4 = 18, Wgpuvertexformatfloat32 = 19,
-      Wgpuvertexformatfloat32x2 = 20, Wgpuvertexformatfloat32x3 = 21,
-      Wgpuvertexformatfloat32x4 = 22, Wgpuvertexformatuint32 = 23,
-      Wgpuvertexformatuint32x2 = 24, Wgpuvertexformatuint32x3 = 25,
-      Wgpuvertexformatuint32x4 = 26, Wgpuvertexformatsint32 = 27,
-      Wgpuvertexformatsint32x2 = 28, Wgpuvertexformatsint32x3 = 29,
-      Wgpuvertexformatsint32x4 = 30, Wgpuvertexformatforce32 = 2147483647
+    EnumVertexFormat* {.size: sizeof(cuint).} = enum
+      VertexFormatUndefined = 0, VertexFormatUint8X2 = 1,
+      VertexFormatUint8X4 = 2, VertexFormatSint8X2 = 3,
+      VertexFormatSint8X4 = 4, VertexFormatUnorm8X2 = 5,
+      VertexFormatUnorm8X4 = 6, VertexFormatSnorm8X2 = 7,
+      VertexFormatSnorm8X4 = 8, VertexFormatUint16X2 = 9,
+      VertexFormatUint16X4 = 10, VertexFormatSint16X2 = 11,
+      VertexFormatSint16X4 = 12, VertexFormatUnorm16X2 = 13,
+      VertexFormatUnorm16X4 = 14, VertexFormatSnorm16X2 = 15,
+      VertexFormatSnorm16X4 = 16, VertexFormatFloat16X2 = 17,
+      VertexFormatFloat16X4 = 18, VertexFormatFloat32 = 19,
+      VertexFormatFloat32x2 = 20, VertexFormatFloat32x3 = 21,
+      VertexFormatFloat32x4 = 22, VertexFormatUint32 = 23,
+      VertexFormatUint32x2 = 24, VertexFormatUint32x3 = 25,
+      VertexFormatUint32x4 = 26, VertexFormatSint32 = 27,
+      VertexFormatSint32x2 = 28, VertexFormatSint32x3 = 29,
+      VertexFormatSint32x4 = 30, VertexFormatForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUVertexFormat" &
         " already exists, not redeclaring")
-when not declared(Enumbufferbindingtype):
+when not declared(EnumBufferBindingType):
   type
-    Enumbufferbindingtype* {.size: sizeof(cuint).} = enum
-      Wgpubufferbindingtypeundefined = 0, Wgpubufferbindingtypeuniform = 1,
-      Wgpubufferbindingtypestorage = 2,
-      Wgpubufferbindingtypereadonlystorage = 3,
-      Wgpubufferbindingtypeforce32 = 2147483647
+    EnumBufferBindingType* {.size: sizeof(cuint).} = enum
+      BufferBindingTypeUndefined = 0, BufferBindingTypeUniform = 1,
+      BufferBindingTypeStorage = 2,
+      BufferBindingTypeReadOnlyStorage = 3,
+      BufferBindingTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBufferBindingType" &
         " already exists, not redeclaring")
-when not declared(Enumcolorwritemask):
+when not declared(EnumColorWriteMask):
   type
-    Enumcolorwritemask* {.size: sizeof(cuint).} = enum
-      Wgpucolorwritemasknone = 0, Wgpucolorwritemaskred = 1,
-      Wgpucolorwritemaskgreen = 2, Wgpucolorwritemaskblue = 4,
-      Wgpucolorwritemaskalpha = 8, Wgpucolorwritemaskall = 15,
-      Wgpucolorwritemaskforce32 = 2147483647
+    EnumColorWriteMask* {.size: sizeof(cuint).} = enum
+      ColorWriteMaskNone = 0, ColorWriteMaskRed = 1,
+      ColorWriteMaskGreen = 2, ColorWriteMaskBlue = 4,
+      ColorWriteMaskAlpha = 8, ColorWriteMaskAll = 15,
+      ColorWriteMaskForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUColorWriteMask" &
         " already exists, not redeclaring")
-when not declared(Enumcreatepipelineasyncstatus):
+when not declared(EnumCreatePipelineAsyncStatus):
   type
-    Enumcreatepipelineasyncstatus* {.size: sizeof(cuint).} = enum
-      Wgpucreatepipelineasyncstatussuccess = 0,
-      Wgpucreatepipelineasyncstatuserror = 1,
-      Wgpucreatepipelineasyncstatusdevicelost = 2,
-      Wgpucreatepipelineasyncstatusdevicedestroyed = 3,
-      Wgpucreatepipelineasyncstatusunknown = 4,
-      Wgpucreatepipelineasyncstatusforce32 = 2147483647
+    EnumCreatePipelineAsyncStatus* {.size: sizeof(cuint).} = enum
+      CreatePipelineAsyncStatusSuccess = 0,
+      CreatePipelineAsyncStatusError = 1,
+      CreatePipelineAsyncStatusDeviceLost = 2,
+      CreatePipelineAsyncStatusDeviceDestroyed = 3,
+      CreatePipelineAsyncStatusUnknown = 4,
+      CreatePipelineAsyncStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUCreatePipelineAsyncStatus" &
         " already exists, not redeclaring")
-when not declared(Enumwgpustype):
+when not declared(EnumWgpusType):
   type
-    Enumwgpustype* {.size: sizeof(cuint).} = enum
-      Wgpustypeinvalid = 0, Wgpustypesurfacedescriptorfrommetallayer = 1,
-      Wgpustypesurfacedescriptorfromwindowshwnd = 2,
-      Wgpustypesurfacedescriptorfromxlibwindow = 3,
-      Wgpustypesurfacedescriptorfromcanvashtmlselector = 4,
-      Wgpustypeshadermodulespirvdescriptor = 5,
-      Wgpustypeshadermodulewgsldescriptor = 6,
-      Wgpustypeprimitivedepthclipcontrol = 7,
-      Wgpustypesurfacedescriptorfromwaylandsurface = 8,
-      Wgpustypesurfacedescriptorfromandroidnativewindow = 9,
-      Wgpustypesurfacedescriptorfromxcbwindow = 10,
-      Wgpustypeforce32 = 2147483647
+    EnumWgpusType* {.size: sizeof(cuint).} = enum
+      WgpusTypeinvalid = 0, WgpusTypesurfacedescriptorfrommetallayer = 1,
+      WgpusTypesurfacedescriptorfromwindowshwnd = 2,
+      WgpusTypesurfacedescriptorfromxlibwindow = 3,
+      WgpusTypesurfacedescriptorfromcanvashtmlselector = 4,
+      WgpusTypeshadermodulespirvdescriptor = 5,
+      WgpusTypeshadermodulewgsldescriptor = 6,
+      WgpusTypeprimitivedepthclipcontrol = 7,
+      WgpusTypesurfacedescriptorfromwaylandsurface = 8,
+      WgpusTypesurfacedescriptorfromandroidnativewindow = 9,
+      WgpusTypesurfacedescriptorfromxcbwindow = 10,
+      WgpusTypeforce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUSType" &
         " already exists, not redeclaring")
-when not declared(Enumloglevel):
+when not declared(EnumLogLevel):
   type
-    Enumloglevel* {.size: sizeof(cuint).} = enum
-      Wgpulogleveloff = 0, Wgpuloglevelerror = 1, Wgpuloglevelwarn = 2,
-      Wgpuloglevelinfo = 3, Wgpulogleveldebug = 4, Wgpulogleveltrace = 5,
-      Wgpuloglevelforce32 = 2147483647
+    EnumLogLevel* {.size: sizeof(cuint).} = enum
+      LogLevelOff = 0, LogLevelError = 1, LogLevelWarn = 2,
+      LogLevelInfo = 3, LogLevelDebug = 4, LogLevelTrace = 5,
+      LogLevelForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPULogLevel" &
         " already exists, not redeclaring")
-when not declared(Enumadaptertype):
+when not declared(EnumAdapterType):
   type
-    Enumadaptertype* {.size: sizeof(cuint).} = enum
-      Wgpuadaptertypediscretegpu = 0, Wgpuadaptertypeintegratedgpu = 1,
-      Wgpuadaptertypecpu = 2, Wgpuadaptertypeunknown = 3,
-      Wgpuadaptertypeforce32 = 2147483647
+    EnumAdapterType* {.size: sizeof(cuint).} = enum
+      AdapterTypeDiscreteGpu = 0, AdapterTypeIntegratedGpu = 1,
+      AdapterTypeCpu = 2, AdapterTypeUnknown = 3,
+      AdapterTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUAdapterType" &
         " already exists, not redeclaring")
-when not declared(Enumcomparefunction):
+when not declared(EnumCompareFunction):
   type
-    Enumcomparefunction* {.size: sizeof(cuint).} = enum
-      Wgpucomparefunctionundefined = 0, Wgpucomparefunctionnever = 1,
-      Wgpucomparefunctionless = 2, Wgpucomparefunctionlessequal = 3,
-      Wgpucomparefunctiongreater = 4, Wgpucomparefunctiongreaterequal = 5,
-      Wgpucomparefunctionequal = 6, Wgpucomparefunctionnotequal = 7,
-      Wgpucomparefunctionalways = 8, Wgpucomparefunctionforce32 = 2147483647
+    EnumCompareFunction* {.size: sizeof(cuint).} = enum
+      CompareFunctionUndefined = 0, CompareFunctionNever = 1,
+      CompareFunctionLess = 2, CompareFunctionLessequal = 3,
+      CompareFunctionGreater = 4, CompareFunctionGreaterequal = 5,
+      CompareFunctionEqual = 6, CompareFunctionNotEqual = 7,
+      CompareFunctionAlways = 8, CompareFunctionForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUCompareFunction" &
         " already exists, not redeclaring")
-when not declared(Enumrequestadapterstatus):
+when not declared(EnumRequestAdapterStatus):
   type
-    Enumrequestadapterstatus* {.size: sizeof(cuint).} = enum
-      Wgpurequestadapterstatussuccess = 0,
-      Wgpurequestadapterstatusunavailable = 1,
-      Wgpurequestadapterstatuserror = 2, Wgpurequestadapterstatusunknown = 3,
-      Wgpurequestadapterstatusforce32 = 2147483647
+    EnumRequestAdapterStatus* {.size: sizeof(cuint).} = enum
+      RequestAdapterStatusSuccess = 0,
+      RequestAdapterStatusUnavailable = 1,
+      RequestAdapterStatusError = 2, RequestAdapterStatusUnknown = 3,
+      RequestAdapterStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPURequestAdapterStatus" &
         " already exists, not redeclaring")
-when not declared(Enumdevicelostreason):
+when not declared(EnumDeviceLostReason):
   type
-    Enumdevicelostreason* {.size: sizeof(cuint).} = enum
-      Wgpudevicelostreasonundefined = 0, Wgpudevicelostreasondestroyed = 1,
-      Wgpudevicelostreasonforce32 = 2147483647
+    EnumDeviceLostReason* {.size: sizeof(cuint).} = enum
+      DeviceLostReasonUndefined = 0, DeviceLostReasonDestroyed = 1,
+      DeviceLostReasonForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUDeviceLostReason" &
         " already exists, not redeclaring")
-when not declared(Enumtextureaspect):
+when not declared(EnumTextureAspect):
   type
-    Enumtextureaspect* {.size: sizeof(cuint).} = enum
-      Wgputextureaspectall = 0, Wgputextureaspectstencilonly = 1,
-      Wgputextureaspectdepthonly = 2, Wgputextureaspectforce32 = 2147483647
+    EnumTextureAspect* {.size: sizeof(cuint).} = enum
+      TextureAspectAll = 0, TextureAspectStencilOnly = 1,
+      TextureAspectDepthOnly = 2, TextureAspectForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureAspect" &
         " already exists, not redeclaring")
-when not declared(Enumfrontface):
+when not declared(EnumFrontFace):
   type
-    Enumfrontface* {.size: sizeof(cuint).} = enum
-      Wgpufrontfaceccw = 0, Wgpufrontfacecw = 1,
-      Wgpufrontfaceforce32 = 2147483647
+    EnumFrontFace* {.size: sizeof(cuint).} = enum
+      FrontFaceCcw = 0, FrontFaceCw = 1,
+      FrontFaceForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUFrontFace" &
         " already exists, not redeclaring")
-when not declared(Enumaddressmode):
+when not declared(EnumAddressMode):
   type
-    Enumaddressmode* {.size: sizeof(cuint).} = enum
-      Wgpuaddressmoderepeat = 0, Wgpuaddressmodemirrorrepeat = 1,
-      Wgpuaddressmodeclamptoedge = 2, Wgpuaddressmodeforce32 = 2147483647
+    EnumAddressMode* {.size: sizeof(cuint).} = enum
+      AddressModeRepeat = 0, AddressModeMirrorRepeat = 1,
+      AddressModeClampToEdge = 2, AddressModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUAddressMode" &
         " already exists, not redeclaring")
-when not declared(Enumtextureformat):
+when not declared(EnumTextureFormat):
   type
-    Enumtextureformat* {.size: sizeof(cuint).} = enum
-      Wgputextureformatundefined = 0, Wgputextureformatr8unorm = 1,
-      Wgputextureformatr8snorm = 2, Wgputextureformatr8uint = 3,
-      Wgputextureformatr8sint = 4, Wgputextureformatr16uint = 5,
-      Wgputextureformatr16sint = 6, Wgputextureformatr16float = 7,
-      Wgputextureformatrg8unorm = 8, Wgputextureformatrg8snorm = 9,
-      Wgputextureformatrg8uint = 10, Wgputextureformatrg8sint = 11,
-      Wgputextureformatr32float = 12, Wgputextureformatr32uint = 13,
-      Wgputextureformatr32sint = 14, Wgputextureformatrg16uint = 15,
-      Wgputextureformatrg16sint = 16, Wgputextureformatrg16float = 17,
-      Wgputextureformatrgba8unorm = 18, Wgputextureformatrgba8unormsrgb = 19,
-      Wgputextureformatrgba8snorm = 20, Wgputextureformatrgba8uint = 21,
-      Wgputextureformatrgba8sint = 22, Wgputextureformatbgra8unorm = 23,
-      Wgputextureformatbgra8unormsrgb = 24, Wgputextureformatrgb10a2unorm = 25,
-      Wgputextureformatrg11b10ufloat = 26, Wgputextureformatrgb9e5ufloat = 27,
-      Wgputextureformatrg32float = 28, Wgputextureformatrg32uint = 29,
-      Wgputextureformatrg32sint = 30, Wgputextureformatrgba16uint = 31,
-      Wgputextureformatrgba16sint = 32, Wgputextureformatrgba16float = 33,
-      Wgputextureformatrgba32float = 34, Wgputextureformatrgba32uint = 35,
-      Wgputextureformatrgba32sint = 36, Wgputextureformatstencil8 = 37,
-      Wgputextureformatdepth16unorm = 38, Wgputextureformatdepth24plus = 39,
-      Wgputextureformatdepth24plusstencil8 = 40,
-      Wgputextureformatdepth24unormstencil8 = 41,
-      Wgputextureformatdepth32float = 42,
-      Wgputextureformatdepth32floatstencil8 = 43,
-      Wgputextureformatbc1rgbaunorm = 44,
-      Wgputextureformatbc1rgbaunormsrgb = 45,
-      Wgputextureformatbc2rgbaunorm = 46,
-      Wgputextureformatbc2rgbaunormsrgb = 47,
-      Wgputextureformatbc3rgbaunorm = 48,
-      Wgputextureformatbc3rgbaunormsrgb = 49, Wgputextureformatbc4runorm = 50,
-      Wgputextureformatbc4rsnorm = 51, Wgputextureformatbc5rgunorm = 52,
-      Wgputextureformatbc5rgsnorm = 53, Wgputextureformatbc6hrgbufloat = 54,
-      Wgputextureformatbc6hrgbfloat = 55, Wgputextureformatbc7rgbaunorm = 56,
-      Wgputextureformatbc7rgbaunormsrgb = 57,
-      Wgputextureformatetc2rgb8unorm = 58,
-      Wgputextureformatetc2rgb8unormsrgb = 59,
-      Wgputextureformatetc2rgb8a1unorm = 60,
-      Wgputextureformatetc2rgb8a1unormsrgb = 61,
-      Wgputextureformatetc2rgba8unorm = 62,
-      Wgputextureformatetc2rgba8unormsrgb = 63,
-      Wgputextureformateacr11unorm = 64, Wgputextureformateacr11snorm = 65,
-      Wgputextureformateacrg11unorm = 66, Wgputextureformateacrg11snorm = 67,
-      Wgputextureformatastc4x4unorm = 68,
-      Wgputextureformatastc4x4unormsrgb = 69,
-      Wgputextureformatastc5x4unorm = 70,
-      Wgputextureformatastc5x4unormsrgb = 71,
-      Wgputextureformatastc5x5unorm = 72,
-      Wgputextureformatastc5x5unormsrgb = 73,
-      Wgputextureformatastc6x5unorm = 74,
-      Wgputextureformatastc6x5unormsrgb = 75,
-      Wgputextureformatastc6x6unorm = 76,
-      Wgputextureformatastc6x6unormsrgb = 77,
-      Wgputextureformatastc8x5unorm = 78,
-      Wgputextureformatastc8x5unormsrgb = 79,
-      Wgputextureformatastc8x6unorm = 80,
-      Wgputextureformatastc8x6unormsrgb = 81,
-      Wgputextureformatastc8x8unorm = 82,
-      Wgputextureformatastc8x8unormsrgb = 83,
-      Wgputextureformatastc10x5unorm = 84,
-      Wgputextureformatastc10x5unormsrgb = 85,
-      Wgputextureformatastc10x6unorm = 86,
-      Wgputextureformatastc10x6unormsrgb = 87,
-      Wgputextureformatastc10x8unorm = 88,
-      Wgputextureformatastc10x8unormsrgb = 89,
-      Wgputextureformatastc10x10unorm = 90,
-      Wgputextureformatastc10x10unormsrgb = 91,
-      Wgputextureformatastc12x10unorm = 92,
-      Wgputextureformatastc12x10unormsrgb = 93,
-      Wgputextureformatastc12x12unorm = 94,
-      Wgputextureformatastc12x12unormsrgb = 95,
-      Wgputextureformatforce32 = 2147483647
+    EnumTextureFormat* {.size: sizeof(cuint).} = enum
+      TextureFormatUndefined = 0, TextureFormatR8Unorm = 1,
+      TextureFormatR8Snorm = 2, TextureFormatR8Uint = 3,
+      TextureFormatR8Sint = 4, TextureFormatR16Uint = 5,
+      TextureFormatR16Sint = 6, TextureFormatR16Float = 7,
+      TextureFormatRg8Unorm = 8, TextureFormatRg8Snorm = 9,
+      TextureFormatRg8Uint = 10, TextureFormatRg8Sint = 11,
+      TextureFormatR32Float = 12, TextureFormatR32Uint = 13,
+      TextureFormatR32Sint = 14, TextureFormatRg16Uint = 15,
+      TextureFormatRg16Sint = 16, TextureFormatRg16Float = 17,
+      TextureFormatRgba8Unorm = 18, TextureFormatRgba8Unormsrgb = 19,
+      TextureFormatRgba8Snorm = 20, TextureFormatRgba8Uint = 21,
+      TextureFormatRgba8Sint = 22, TextureFormatBgra8Unorm = 23,
+      TextureFormatBgra8Unormsrgb = 24, TextureFormatRgb10A2Unorm = 25,
+      TextureFormatRg11B10Ufloat = 26, TextureFormatRgb9E5Ufloat = 27,
+      TextureFormatRg32Float = 28, TextureFormatRg32Uint = 29,
+      TextureFormatRg32Sint = 30, TextureFormatRgba16Uint = 31,
+      TextureFormatRgba16Sint = 32, TextureFormatRgba16Float = 33,
+      TextureFormatRgba32Float = 34, TextureFormatRgba32Uint = 35,
+      TextureFormatRgba32Sint = 36, TextureFormatStencil8 = 37,
+      TextureFormatDepth16Unorm = 38, TextureFormatDepth24Plus = 39,
+      TextureFormatDepth24Plusstencil8 = 40,
+      TextureFormatDepth24UnormStencil8 = 41,
+      TextureFormatDepth32Float = 42,
+      TextureFormatDepth32Floatstencil8 = 43,
+      TextureFormatBc1RgbaUnorm = 44,
+      TextureFormatBc1RgbaUnormsrgb = 45,
+      TextureFormatBc2RgbaUnorm = 46,
+      TextureFormatBc2RgbaUnormsrgb = 47,
+      TextureFormatBc3RgbaUnorm = 48,
+      TextureFormatBc3RgbaUnormsrgb = 49, TextureFormatBc4RUnorm = 50,
+      TextureFormatBc4RSnorm = 51, TextureFormatBc5RgUnorm = 52,
+      TextureFormatBc5RgSnorm = 53, TextureFormatBc6HrgbUfloat = 54,
+      TextureFormatBc6HrgbFloat = 55, TextureFormatBc7RgbaUnorm = 56,
+      TextureFormatBc7RgbaUnormsrgb = 57,
+      TextureFormatEtc2Rgb8Unorm = 58,
+      TextureFormatEtc2Rgb8Unormsrgb = 59,
+      TextureFormatEtc2Rgb8A1Unorm = 60,
+      TextureFormatEtc2Rgb8A1Unormsrgb = 61,
+      TextureFormatEtc2Rgba8Unorm = 62,
+      TextureFormatEtc2Rgba8Unormsrgb = 63,
+      TextureFormatEacr11Unorm = 64, TextureFormatEacr11Snorm = 65,
+      TextureFormatEacrg11Unorm = 66, TextureFormatEacrg11Snorm = 67,
+      TextureFormatAstc4X4Unorm = 68,
+      TextureFormatAstc4X4Unormsrgb = 69,
+      TextureFormatAstc5X4Unorm = 70,
+      TextureFormatAstc5X4Unormsrgb = 71,
+      TextureFormatAstc5X5Unorm = 72,
+      TextureFormatAstc5X5Unormsrgb = 73,
+      TextureFormatAstc6X5Unorm = 74,
+      TextureFormatAstc6X5Unormsrgb = 75,
+      TextureFormatAstc6X6Unorm = 76,
+      TextureFormatAstc6X6Unormsrgb = 77,
+      TextureFormatAstc8X5Unorm = 78,
+      TextureFormatAstc8X5Unormsrgb = 79,
+      TextureFormatAstc8X6Unorm = 80,
+      TextureFormatAstc8X6Unormsrgb = 81,
+      TextureFormatAstc8X8Unorm = 82,
+      TextureFormatAstc8X8Unormsrgb = 83,
+      TextureFormatAstc10X5Unorm = 84,
+      TextureFormatAstc10X5Unormsrgb = 85,
+      TextureFormatAstc10X6Unorm = 86,
+      TextureFormatAstc10X6Unormsrgb = 87,
+      TextureFormatAstc10X8Unorm = 88,
+      TextureFormatAstc10X8Unormsrgb = 89,
+      TextureFormatAstc10X10Unorm = 90,
+      TextureFormatAstc10X10Unormsrgb = 91,
+      TextureFormatAstc12X10Unorm = 92,
+      TextureFormatAstc12X10Unormsrgb = 93,
+      TextureFormatAstc12X12Unorm = 94,
+      TextureFormatAstc12X12Unormsrgb = 95,
+      TextureFormatForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureFormat" &
         " already exists, not redeclaring")
-when not declared(Enumcullmode):
+when not declared(EnumCullMode):
   type
-    Enumcullmode* {.size: sizeof(cuint).} = enum
-      Wgpucullmodenone = 0, Wgpucullmodefront = 1, Wgpucullmodeback = 2,
-      Wgpucullmodeforce32 = 2147483647
+    EnumCullMode* {.size: sizeof(cuint).} = enum
+      CullModeNone = 0, CullModeFront = 1, CullModeBack = 2,
+      CullModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUCullMode" &
         " already exists, not redeclaring")
-when not declared(Enumstoreop):
+when not declared(EnumStoreOp):
   type
-    Enumstoreop* {.size: sizeof(cuint).} = enum
-      Wgpustoreopundefined = 0, Wgpustoreopstore = 1, Wgpustoreopdiscard = 2,
-      Wgpustoreopforce32 = 2147483647
+    EnumStoreOp* {.size: sizeof(cuint).} = enum
+      StoreOpUndefined = 0, StoreOpStore = 1, StoreOpDiscard = 2,
+      StoreOpForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUStoreOp" &
         " already exists, not redeclaring")
-when not declared(Enumtextureviewdimension):
+when not declared(EnumTextureViewDimension):
   type
-    Enumtextureviewdimension* {.size: sizeof(cuint).} = enum
-      Wgputextureviewdimensionundefined = 0, Wgputextureviewdimension1d = 1,
-      Wgputextureviewdimension2d = 2, Wgputextureviewdimension2darray = 3,
-      Wgputextureviewdimensioncube = 4, Wgputextureviewdimensioncubearray = 5,
-      Wgputextureviewdimension3d = 6,
-      Wgputextureviewdimensionforce32 = 2147483647
+    EnumTextureViewDimension* {.size: sizeof(cuint).} = enum
+      TextureViewDimensionUndefined = 0, TextureViewDimension1D = 1,
+      TextureViewDimension2D = 2, TextureViewDimension2Darray = 3,
+      TextureViewDimensionCube = 4, TextureViewDimensionCubearray = 5,
+      TextureViewDimension3D = 6,
+      TextureViewDimensionForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureViewDimension" &
         " already exists, not redeclaring")
-when not declared(Enumprimitivetopology):
+when not declared(EnumPrimitiveTopology):
   type
-    Enumprimitivetopology* {.size: sizeof(cuint).} = enum
-      Wgpuprimitivetopologypointlist = 0, Wgpuprimitivetopologylinelist = 1,
-      Wgpuprimitivetopologylinestrip = 2, Wgpuprimitivetopologytrianglelist = 3,
-      Wgpuprimitivetopologytrianglestrip = 4,
-      Wgpuprimitivetopologyforce32 = 2147483647
+    EnumPrimitiveTopology* {.size: sizeof(cuint).} = enum
+      PrimitiveTopologyPointList = 0, PrimitiveTopologyLineList = 1,
+      PrimitiveTopologyLineStrip = 2, PrimitiveTopologyTriangleList = 3,
+      PrimitiveTopologyTriangleStrip = 4,
+      PrimitiveTopologyForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUPrimitiveTopology" &
         " already exists, not redeclaring")
-when not declared(Enumcompilationmessagetype):
+when not declared(EnumCompilationMessageType):
   type
-    Enumcompilationmessagetype* {.size: sizeof(cuint).} = enum
-      Wgpucompilationmessagetypeerror = 0,
-      Wgpucompilationmessagetypewarning = 1, Wgpucompilationmessagetypeinfo = 2,
-      Wgpucompilationmessagetypeforce32 = 2147483647
+    EnumCompilationMessageType* {.size: sizeof(cuint).} = enum
+      CompilationMessageTypeError = 0,
+      CompilationMessageTypeWarning = 1, CompilationMessageTypeInfo = 2,
+      CompilationMessageTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUCompilationMessageType" &
         " already exists, not redeclaring")
-when not declared(Enumblendfactor):
+when not declared(EnumBlendFactor):
   type
-    Enumblendfactor* {.size: sizeof(cuint).} = enum
-      Wgpublendfactorzero = 0, Wgpublendfactorone = 1, Wgpublendfactorsrc = 2,
-      Wgpublendfactoroneminussrc = 3, Wgpublendfactorsrcalpha = 4,
-      Wgpublendfactoroneminussrcalpha = 5, Wgpublendfactordst = 6,
-      Wgpublendfactoroneminusdst = 7, Wgpublendfactordstalpha = 8,
-      Wgpublendfactoroneminusdstalpha = 9,
-      Wgpublendfactorsrcalphasaturated = 10, Wgpublendfactorconstant = 11,
-      Wgpublendfactoroneminusconstant = 12, Wgpublendfactorforce32 = 2147483647
+    EnumBlendFactor* {.size: sizeof(cuint).} = enum
+      BlendFactorZero = 0, BlendFactorOne = 1, BlendFactorSrc = 2,
+      BlendFactorOneminussrc = 3, BlendFactorSrcalpha = 4,
+      BlendFactorOneminussrcalpha = 5, BlendFactorDst = 6,
+      BlendFactorOneminusdst = 7, BlendFactorDstalpha = 8,
+      BlendFactorOneminusdstalpha = 9,
+      BlendFactorSrcalphasaturated = 10, BlendFactorConstant = 11,
+      BlendFactorOneminusconstant = 12, BlendFactorForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBlendFactor" &
         " already exists, not redeclaring")
-when not declared(Enumpredefinedcolorspace):
+when not declared(EnumPredefinedColorSpace):
   type
-    Enumpredefinedcolorspace* {.size: sizeof(cuint).} = enum
-      Wgpupredefinedcolorspaceundefined = 0, Wgpupredefinedcolorspacesrgb = 1,
-      Wgpupredefinedcolorspaceforce32 = 2147483647
+    EnumPredefinedColorSpace* {.size: sizeof(cuint).} = enum
+      PredefinedColorSpaceUndefined = 0, PredefinedColorSpaceSrgb = 1,
+      PredefinedColorSpaceForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUPredefinedColorSpace" &
         " already exists, not redeclaring")
-when not declared(Enumnativestype):
+when not declared(EnumNativeSType):
   type
-    Enumnativestype* {.size: sizeof(cuint).} = enum
-      Wgpustypedeviceextras = 1610612737, Wgpustypeadapterextras = 1610612738,
-      Wgpustyperequiredlimitsextras = 1610612739,
-      Wgpustypepipelinelayoutextras = 1610612740,
-      Wgpustypeshadermoduleglsldescriptor = 1610612741,
-      Wgpunativestypeforce32 = 2147483647
+    EnumNativeSType* {.size: sizeof(cuint).} = enum
+      WgpusTypedeviceextras = 1610612737, WgpusTypeadapterextras = 1610612738,
+      WgpusTyperequiredlimitsextras = 1610612739,
+      WgpusTypepipelinelayoutextras = 1610612740,
+      WgpusTypeshadermoduleglsldescriptor = 1610612741,
+      NativeSTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUNativeSType" &
         " already exists, not redeclaring")
 const
-  Wgpustypesupportedlimitsextras* = Wgpustyperequiredlimitsextras
-when not declared(Enumbufferusage):
+  WgpusTypesupportedlimitsextras* = WgpusTyperequiredlimitsextras
+when not declared(EnumBufferUsage):
   type
-    Enumbufferusage* {.size: sizeof(cuint).} = enum
-      Wgpubufferusagenone = 0, Wgpubufferusagemapread = 1,
-      Wgpubufferusagemapwrite = 2, Wgpubufferusagecopysrc = 4,
-      Wgpubufferusagecopydst = 8, Wgpubufferusageindex = 16,
-      Wgpubufferusagevertex = 32, Wgpubufferusageuniform = 64,
-      Wgpubufferusagestorage = 128, Wgpubufferusageindirect = 256,
-      Wgpubufferusagequeryresolve = 512, Wgpubufferusageforce32 = 2147483647
+    EnumBufferUsage* {.size: sizeof(cuint).} = enum
+      BufferUsageNone = 0, BufferUsageMapRead = 1,
+      BufferUsageMapWrite = 2, BufferUsageCopySrc = 4,
+      BufferUsageCopyDst = 8, BufferUsageIndex = 16,
+      BufferUsageVertex = 32, BufferUsageUniform = 64,
+      BufferUsageStorage = 128, BufferUsageIndirect = 256,
+      BufferUsageQueryResolve = 512, BufferUsageForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBufferUsage" &
         " already exists, not redeclaring")
-when not declared(Enumtexturedimension):
+when not declared(EnumTextureDimension):
   type
-    Enumtexturedimension* {.size: sizeof(cuint).} = enum
-      Wgputexturedimension1d = 0, Wgputexturedimension2d = 1,
-      Wgputexturedimension3d = 2, Wgputexturedimensionforce32 = 2147483647
+    EnumTextureDimension* {.size: sizeof(cuint).} = enum
+      TextureDimension1D = 0, TextureDimension2D = 1,
+      TextureDimension3D = 2, TextureDimensionForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureDimension" &
         " already exists, not redeclaring")
-when not declared(Enumnativefeature):
+when not declared(EnumNativeFeature):
   type
-    Enumnativefeature* {.size: sizeof(cuint).} = enum
-      Wgpunativefeaturepushconstants = 1610612737,
-      Wgpunativefeaturetextureadapterspecificformatfeatures = 1610612738,
-      Wgpunativefeaturemultidrawindirect = 1610612739,
-      Wgpunativefeaturemultidrawindirectcount = 1610612740,
-      Wgpunativefeaturevertexwritablestorage = 1610612741
+    EnumNativeFeature* {.size: sizeof(cuint).} = enum
+      NativeFeaturePushConstants = 1610612737,
+      NativeFeatureTextureAdapterSpecificFormatFeatures = 1610612738,
+      NativeFeatureMultiDrawIndirect = 1610612739,
+      NativeFeatureMultiDrawIndirectcount = 1610612740,
+      NativeFeatureVertexWritableStorage = 1610612741
 else:
   static:
     hint("Declaration of " & "enum_WGPUNativeFeature" &
         " already exists, not redeclaring")
-when not declared(Enumpipelinestatisticname):
+when not declared(EnumPipelineStatisticName):
   type
-    Enumpipelinestatisticname* {.size: sizeof(cuint).} = enum
-      Wgpupipelinestatisticnamevertexshaderinvocations = 0,
-      Wgpupipelinestatisticnameclipperinvocations = 1,
-      Wgpupipelinestatisticnameclipperprimitivesout = 2,
-      Wgpupipelinestatisticnamefragmentshaderinvocations = 3,
-      Wgpupipelinestatisticnamecomputeshaderinvocations = 4,
-      Wgpupipelinestatisticnameforce32 = 2147483647
+    EnumPipelineStatisticName* {.size: sizeof(cuint).} = enum
+      PipelineStatisticNameVertexShaderInvocations = 0,
+      PipelineStatisticNameClipperInvocations = 1,
+      PipelineStatisticNameClipperPrimitivesOut = 2,
+      PipelineStatisticNameFragmentShaderInvocations = 3,
+      PipelineStatisticNameComputeShaderInvocations = 4,
+      PipelineStatisticNameForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUPipelineStatisticName" &
         " already exists, not redeclaring")
-when not declared(Enumstenciloperation):
+when not declared(EnumStencilOperation):
   type
-    Enumstenciloperation* {.size: sizeof(cuint).} = enum
-      Wgpustenciloperationkeep = 0, Wgpustenciloperationzero = 1,
-      Wgpustenciloperationreplace = 2, Wgpustenciloperationinvert = 3,
-      Wgpustenciloperationincrementclamp = 4,
-      Wgpustenciloperationdecrementclamp = 5,
-      Wgpustenciloperationincrementwrap = 6,
-      Wgpustenciloperationdecrementwrap = 7,
-      Wgpustenciloperationforce32 = 2147483647
+    EnumStencilOperation* {.size: sizeof(cuint).} = enum
+      StencilOperationKeep = 0, StencilOperationZero = 1,
+      StencilOperationReplace = 2, StencilOperationInvert = 3,
+      StencilOperationIncrementClamp = 4,
+      StencilOperationDecrementClamp = 5,
+      StencilOperationIncrementWrap = 6,
+      StencilOperationDecrementWrap = 7,
+      StencilOperationForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUStencilOperation" &
         " already exists, not redeclaring")
-when not declared(Enumloadop):
+when not declared(EnumLoadOp):
   type
-    Enumloadop* {.size: sizeof(cuint).} = enum
-      Wgpuloadopundefined = 0, Wgpuloadopclear = 1, Wgpuloadopload = 2,
-      Wgpuloadopforce32 = 2147483647
+    EnumLoadOp* {.size: sizeof(cuint).} = enum
+      LoadOpUndefined = 0, LoadOpClear = 1, LoadOpLoad = 2,
+      LoadOpForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPULoadOp" &
         " already exists, not redeclaring")
-when not declared(Enumtexturecomponenttype):
+when not declared(EnumTextureComponentType):
   type
-    Enumtexturecomponenttype* {.size: sizeof(cuint).} = enum
-      Wgputexturecomponenttypefloat = 0, Wgputexturecomponenttypesint = 1,
-      Wgputexturecomponenttypeuint = 2,
-      Wgputexturecomponenttypedepthcomparison = 3,
-      Wgputexturecomponenttypeforce32 = 2147483647
+    EnumTextureComponentType* {.size: sizeof(cuint).} = enum
+      TextureComponentTypeFloat = 0, TextureComponentTypeSint = 1,
+      TextureComponentTypeUint = 2,
+      TextureComponentTypeDepthComparison = 3,
+      TextureComponentTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureComponentType" &
         " already exists, not redeclaring")
-when not declared(Enumerrorfilter):
+when not declared(EnumErrorFilter):
   type
-    Enumerrorfilter* {.size: sizeof(cuint).} = enum
-      Wgpuerrorfiltervalidation = 0, Wgpuerrorfilteroutofmemory = 1,
-      Wgpuerrorfilterforce32 = 2147483647
+    EnumErrorFilter* {.size: sizeof(cuint).} = enum
+      ErrorFilterValidation = 0, ErrorFilterOutOfMemory = 1,
+      ErrorFilterForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUErrorFilter" &
         " already exists, not redeclaring")
-when not declared(Enumfiltermode):
+when not declared(EnumFilterMode):
   type
-    Enumfiltermode* {.size: sizeof(cuint).} = enum
-      Wgpufiltermodenearest = 0, Wgpufiltermodelinear = 1,
-      Wgpufiltermodeforce32 = 2147483647
+    EnumFilterMode* {.size: sizeof(cuint).} = enum
+      FilterModeNearest = 0, FilterModeLinear = 1,
+      FilterModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUFilterMode" &
         " already exists, not redeclaring")
-when not declared(Enumcompilationinforequeststatus):
+when not declared(EnumCompilationInfoRequestStatus):
   type
-    Enumcompilationinforequeststatus* {.size: sizeof(cuint).} = enum
-      Wgpucompilationinforequeststatussuccess = 0,
-      Wgpucompilationinforequeststatuserror = 1,
-      Wgpucompilationinforequeststatusdevicelost = 2,
-      Wgpucompilationinforequeststatusunknown = 3,
-      Wgpucompilationinforequeststatusforce32 = 2147483647
+    EnumCompilationInfoRequestStatus* {.size: sizeof(cuint).} = enum
+      CompilationInfoRequestStatusSuccess = 0,
+      CompilationInfoRequestStatusError = 1,
+      CompilationInfoRequestStatusDeviceLost = 2,
+      CompilationInfoRequestStatusUnknown = 3,
+      CompilationInfoRequestStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUCompilationInfoRequestStatus" &
         " already exists, not redeclaring")
-when not declared(Enumsamplerbindingtype):
+when not declared(EnumSamplerBindingType):
   type
-    Enumsamplerbindingtype* {.size: sizeof(cuint).} = enum
-      Wgpusamplerbindingtypeundefined = 0, Wgpusamplerbindingtypefiltering = 1,
-      Wgpusamplerbindingtypenonfiltering = 2,
-      Wgpusamplerbindingtypecomparison = 3,
-      Wgpusamplerbindingtypeforce32 = 2147483647
+    EnumSamplerBindingType* {.size: sizeof(cuint).} = enum
+      SamplerBindingTypeUndefined = 0, SamplerBindingTypeFiltering = 1,
+      SamplerBindingTypeNonFiltering = 2,
+      SamplerBindingTypeComparison = 3,
+      SamplerBindingTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUSamplerBindingType" &
         " already exists, not redeclaring")
-when not declared(Enumstoragetextureaccess):
+when not declared(EnumStorageTextureAccess):
   type
-    Enumstoragetextureaccess* {.size: sizeof(cuint).} = enum
-      Wgpustoragetextureaccessundefined = 0,
-      Wgpustoragetextureaccesswriteonly = 1,
-      Wgpustoragetextureaccessforce32 = 2147483647
+    EnumStorageTextureAccess* {.size: sizeof(cuint).} = enum
+      StorageTextureAccessUndefined = 0,
+      StorageTextureAccessWriteOnly = 1,
+      StorageTextureAccessForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUStorageTextureAccess" &
         " already exists, not redeclaring")
-when not declared(Enumqueueworkdonestatus):
+when not declared(EnumQueueWorkDoneStatus):
   type
-    Enumqueueworkdonestatus* {.size: sizeof(cuint).} = enum
-      Wgpuqueueworkdonestatussuccess = 0, Wgpuqueueworkdonestatuserror = 1,
-      Wgpuqueueworkdonestatusunknown = 2, Wgpuqueueworkdonestatusdevicelost = 3,
-      Wgpuqueueworkdonestatusforce32 = 2147483647
+    EnumQueueWorkDoneStatus* {.size: sizeof(cuint).} = enum
+      QueueWorkDoneStatusSuccess = 0, QueueWorkDoneStatusError = 1,
+      QueueWorkDoneStatusUnknown = 2, QueueWorkDoneStatusDeviceLost = 3,
+      QueueWorkDoneStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUQueueWorkDoneStatus" &
         " already exists, not redeclaring")
-when not declared(Enumquerytype):
+when not declared(EnumQueryType):
   type
-    Enumquerytype* {.size: sizeof(cuint).} = enum
-      Wgpuquerytypeocclusion = 0, Wgpuquerytypepipelinestatistics = 1,
-      Wgpuquerytypetimestamp = 2, Wgpuquerytypeforce32 = 2147483647
+    EnumQueryType* {.size: sizeof(cuint).} = enum
+      QueryTypeOcclusion = 0, QueryTypePipelineStatistics = 1,
+      QueryTypeTimestamp = 2, QueryTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUQueryType" &
         " already exists, not redeclaring")
-when not declared(Enumtextureusage):
+when not declared(EnumTextureUsage):
   type
-    Enumtextureusage* {.size: sizeof(cuint).} = enum
-      Wgputextureusagenone = 0, Wgputextureusagecopysrc = 1,
-      Wgputextureusagecopydst = 2, Wgputextureusagetexturebinding = 4,
-      Wgputextureusagestoragebinding = 8, Wgputextureusagerenderattachment = 16,
-      Wgputextureusageforce32 = 2147483647
+    EnumTextureUsage* {.size: sizeof(cuint).} = enum
+      TextureUsageNone = 0, TextureUsageCopySrc = 1,
+      TextureUsageCopyDst = 2, TextureUsageTextureBinding = 4,
+      TextureUsageStorageBinding = 8, TextureUsageRenderAttachment = 16,
+      TextureUsageForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUTextureUsage" &
         " already exists, not redeclaring")
-when not declared(Enumcomputepasstimestamplocation):
+when not declared(EnumComputePassTimestampLocation):
   type
-    Enumcomputepasstimestamplocation* {.size: sizeof(cuint).} = enum
-      Wgpucomputepasstimestamplocationbeginning = 0,
-      Wgpucomputepasstimestamplocationend = 1,
-      Wgpucomputepasstimestamplocationforce32 = 2147483647
+    EnumComputePassTimestampLocation* {.size: sizeof(cuint).} = enum
+      ComputePassTimestampLocationBeginning = 0,
+      ComputePassTimestampLocationEnd = 1,
+      ComputePassTimestampLocationForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUComputePassTimestampLocation" &
         " already exists, not redeclaring")
-when not declared(Enummipmapfiltermode):
+when not declared(EnumMipmapFilterMode):
   type
-    Enummipmapfiltermode* {.size: sizeof(cuint).} = enum
-      Wgpumipmapfiltermodenearest = 0, Wgpumipmapfiltermodelinear = 1,
-      Wgpumipmapfiltermodeforce32 = 2147483647
+    EnumMipmapFilterMode* {.size: sizeof(cuint).} = enum
+      MipmapFilterModeNearest = 0, MipmapFilterModeLinear = 1,
+      MipmapFilterModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUMipmapFilterMode" &
         " already exists, not redeclaring")
-when not declared(Enumrenderpasstimestamplocation):
+when not declared(EnumRenderPassTimestampLocation):
   type
-    Enumrenderpasstimestamplocation* {.size: sizeof(cuint).} = enum
-      Wgpurenderpasstimestamplocationbeginning = 0,
-      Wgpurenderpasstimestamplocationend = 1,
-      Wgpurenderpasstimestamplocationforce32 = 2147483647
+    EnumRenderPassTimestampLocation* {.size: sizeof(cuint).} = enum
+      RenderPassTimestampLocationBeginning = 0,
+      RenderPassTimestampLocationEnd = 1,
+      RenderPassTimestampLocationForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPURenderPassTimestampLocation" &
         " already exists, not redeclaring")
-when not declared(Enumindexformat):
+when not declared(EnumIndexFormat):
   type
-    Enumindexformat* {.size: sizeof(cuint).} = enum
-      Wgpuindexformatundefined = 0, Wgpuindexformatuint16 = 1,
-      Wgpuindexformatuint32 = 2, Wgpuindexformatforce32 = 2147483647
+    EnumIndexFormat* {.size: sizeof(cuint).} = enum
+      IndexFormatUndefined = 0, IndexFormatUint16 = 1,
+      IndexFormatUint32 = 2, IndexFormatForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUIndexFormat" &
         " already exists, not redeclaring")
-when not declared(Enumrequestdevicestatus):
+when not declared(EnumRequestDeviceStatus):
   type
-    Enumrequestdevicestatus* {.size: sizeof(cuint).} = enum
-      Wgpurequestdevicestatussuccess = 0, Wgpurequestdevicestatuserror = 1,
-      Wgpurequestdevicestatusunknown = 2,
-      Wgpurequestdevicestatusforce32 = 2147483647
+    EnumRequestDeviceStatus* {.size: sizeof(cuint).} = enum
+      RequestDeviceStatusSuccess = 0, RequestDeviceStatusError = 1,
+      RequestDeviceStatusUnknown = 2,
+      RequestDeviceStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPURequestDeviceStatus" &
         " already exists, not redeclaring")
-when not declared(Enumvertexstepmode):
+when not declared(EnumVertexStepMode):
   type
-    Enumvertexstepmode* {.size: sizeof(cuint).} = enum
-      Wgpuvertexstepmodevertex = 0, Wgpuvertexstepmodeinstance = 1,
-      Wgpuvertexstepmodeforce32 = 2147483647
+    EnumVertexStepMode* {.size: sizeof(cuint).} = enum
+      VertexStepModeVertex = 0, VertexStepModeInstance = 1,
+      VertexStepModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUVertexStepMode" &
         " already exists, not redeclaring")
-when not declared(Enumerrortype):
+when not declared(EnumErrorType):
   type
-    Enumerrortype* {.size: sizeof(cuint).} = enum
-      Wgpuerrortypenoerror = 0, Wgpuerrortypevalidation = 1,
-      Wgpuerrortypeoutofmemory = 2, Wgpuerrortypeunknown = 3,
-      Wgpuerrortypedevicelost = 4, Wgpuerrortypeforce32 = 2147483647
+    EnumErrorType* {.size: sizeof(cuint).} = enum
+      ErrorTypeNoError = 0, ErrorTypeValidation = 1,
+      ErrorTypeOutOfMemory = 2, ErrorTypeUnknown = 3,
+      ErrorTypeDeviceLost = 4, ErrorTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUErrorType" &
         " already exists, not redeclaring")
-when not declared(Enumpowerpreference):
+when not declared(EnumPowerPreference):
   type
-    Enumpowerpreference* {.size: sizeof(cuint).} = enum
-      Wgpupowerpreferenceundefined = 0, Wgpupowerpreferencelowpower = 1,
-      Wgpupowerpreferencehighperformance = 2,
-      Wgpupowerpreferenceforce32 = 2147483647
+    EnumPowerPreference* {.size: sizeof(cuint).} = enum
+      PowerPreferenceUndefined = 0, PowerPreferenceLowPower = 1,
+      PowerPreferenceHighPerformance = 2,
+      PowerPreferenceForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUPowerPreference" &
         " already exists, not redeclaring")
-when not declared(Enumshaderstage):
+when not declared(EnumShaderStage):
   type
-    Enumshaderstage* {.size: sizeof(cuint).} = enum
-      Wgpushaderstagenone = 0, Wgpushaderstagevertex = 1,
-      Wgpushaderstagefragment = 2, Wgpushaderstagecompute = 4,
-      Wgpushaderstageforce32 = 2147483647
+    EnumShaderStage* {.size: sizeof(cuint).} = enum
+      ShaderStageNone = 0, ShaderStageVertex = 1,
+      ShaderStageFragment = 2, ShaderStageCompute = 4,
+      ShaderStageForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUShaderStage" &
         " already exists, not redeclaring")
-when not declared(Enumbuffermapasyncstatus):
+when not declared(EnumBufferMapAsyncStatus):
   type
-    Enumbuffermapasyncstatus* {.size: sizeof(cuint).} = enum
-      Wgpubuffermapasyncstatussuccess = 0, Wgpubuffermapasyncstatuserror = 1,
-      Wgpubuffermapasyncstatusunknown = 2,
-      Wgpubuffermapasyncstatusdevicelost = 3,
-      Wgpubuffermapasyncstatusdestroyedbeforecallback = 4,
-      Wgpubuffermapasyncstatusunmappedbeforecallback = 5,
-      Wgpubuffermapasyncstatusforce32 = 2147483647
+    EnumBufferMapAsyncStatus* {.size: sizeof(cuint).} = enum
+      BufferMapAsyncStatusSuccess = 0, BufferMapAsyncStatusError = 1,
+      BufferMapAsyncStatusUnknown = 2,
+      BufferMapAsyncStatusDeviceLost = 3,
+      BufferMapAsyncStatusDestroyedBeforeCallback = 4,
+      BufferMapAsyncStatusUnmappedBeforeCallback = 5,
+      BufferMapAsyncStatusForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBufferMapAsyncStatus" &
         " already exists, not redeclaring")
-when not declared(Enumpresentmode):
+when not declared(EnumPresentMode):
   type
-    Enumpresentmode* {.size: sizeof(cuint).} = enum
-      Wgpupresentmodeimmediate = 0, Wgpupresentmodemailbox = 1,
-      Wgpupresentmodefifo = 2, Wgpupresentmodeforce32 = 2147483647
+    EnumPresentMode* {.size: sizeof(cuint).} = enum
+      PresentModeImmediate = 0, PresentModeMailbox = 1,
+      PresentModeFifo = 2, PresentModeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUPresentMode" &
         " already exists, not redeclaring")
-when not declared(Enumbackendtype):
+when not declared(EnumBackendType):
   type
-    Enumbackendtype* {.size: sizeof(cuint).} = enum
-      Wgpubackendtypenull = 0, Wgpubackendtypewebgpu = 1,
-      Wgpubackendtyped3d11 = 2, Wgpubackendtyped3d12 = 3,
-      Wgpubackendtypemetal = 4, Wgpubackendtypevulkan = 5,
-      Wgpubackendtypeopengl = 6, Wgpubackendtypeopengles = 7,
-      Wgpubackendtypeforce32 = 2147483647
+    EnumBackendType* {.size: sizeof(cuint).} = enum
+      BackendTypeNull = 0, BackendTypeWebGpu = 1,
+      BackendTypeD3D11 = 2, BackendTypeD3D12 = 3,
+      BackendTypeMetal = 4, BackendTypeVulkan = 5,
+      BackendTypeOpenGl = 6, BackendTypeOpenGles = 7,
+      BackendTypeForce32 = 2147483647
 else:
   static:
     hint("Declaration of " & "enum_WGPUBackendType" &
@@ -820,992 +820,992 @@ else:
     hint("Declaration of " & "struct_WGPURenderBundleImpl" &
         " already exists, not redeclaring")
 type
-  Procdevicecreatecomputepipelineasync_436207931 * = proc (a0: Device_436207979;
-      a1: ptr Computepipelinedescriptor_436208363;
-      a2: Createcomputepipelineasynccallback_436208075; a3: pointer): void {.
+  ProcDeviceCreateComputePipelineasync_436207931 * = proc (a0: Device_436207979;
+      a1: ptr ComputePipelinedescriptor_436208363;
+      a2: CreateComputePipelineAsyncCallback_436208075; a3: pointer): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1264:16
-  Procdevicecreatebuffer_436207934* = proc (a0: Device_436207979;
-      a1: ptr Bufferdescriptor_436208637): Buffer_436208339 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1261:22
-  Structinstancedescriptor_436207936* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:734:16
+  ProcDeviceCreateBuffer_436207934* = proc (a0: Device_436207979;
+      a1: ptr BufferDescriptor_436208637): Buffer_436208339 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1261:22
+  StructInstanceDescriptor_436207936* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:734:16
 
-  Structsurfacedescriptorfromxlibwindow_436207938 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:944:16
+  StructSurfaceDescriptorfromxlibwindow_436207938 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:944:16
     display*: pointer
     window*: uint32
 
-  Vertexstepmode_436207942* = Enumvertexstepmode_436208709 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:581:3
-  Procdevicecreateswapchain_436207944* = proc (a0: Device_436207979;
-      a1: Surface_436208205; a2: ptr Swapchaindescriptor_436208649): Swapchain_436208593 {.
+  VertexStepMode_436207942* = EnumVertexStepMode_436208709 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:581:3
+  ProcDeviceCreateSwapChain_436207944* = proc (a0: Device_436207979;
+      a1: Surface_436208205; a2: ptr SwapChaindescriptor_436208649): SwapChain_436208593 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1272:25
-  Requiredlimits_436207946* = Structrequiredlimits_436208429 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1075:3
-  Structglobalreport_436207948* = object
-    surfaces*: Storagereport_436208275 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:126:16
-    backendtype*: Backendtype_436208651
-    vulkan*: Hubreport_436208671
-    metal*: Hubreport_436208671
-    dx12*: Hubreport_436208671
-    dx11*: Hubreport_436208671
-    gl*: Hubreport_436208671
+  RequiredLimits_436207946* = StructRequiredLimits_436208429 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1075:3
+  StructGlobalReport_436207948* = object
+    surfaces*: StorageReport_436208275 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:126:16
+    backendtype*: BackendType_436208651
+    vulkan*: HubReport_436208671
+    metal*: HubReport_436208671
+    dx12*: HubReport_436208671
+    dx11*: HubReport_436208671
+    gl*: HubReport_436208671
 
-  Structrenderpasstimestampwrite_436207950 * = object
-    queryset*: Queryset_436208505 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:842:16
+  StructRenderPassTimestampWrite_436207950 * = object
+    queryset*: QuerySet_436208505 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:842:16
     queryindex*: uint32
-    location*: Renderpasstimestamplocation_436208519
+    location*: RenderPassTimestampLocation_436208519
 
-  Procdevicecreatequeryset_436207954* = proc (a0: Device_436207979;
-      a1: ptr Querysetdescriptor_436208341): Queryset_436208505 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1266:24
-  Pushconstantrange_436207958* = Structpushconstantrange_436208313 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:73:3
-  Shadermoduleglsldescriptor_436207960 *
-    = Structshadermoduleglsldescriptor_436208225 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:99:3
-  Procdevicecreatetexture_436207962* = proc (a0: Device_436207979;
-      a1: ptr Texturedescriptor_436208707): Texture_436208006 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1273:23
-  Procrenderpassencoderdrawindexedindirect_436207964 * = proc (
-      a0: Renderpassencoder_436208585; a1: Buffer_436208339;
+  ProcDeviceCreateQuerySet_436207954* = proc (a0: Device_436207979;
+      a1: ptr QuerySetdescriptor_436208341): QuerySet_436208505 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1266:24
+  PushConstantRange_436207958* = StructPushConstantRange_436208313 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:73:3
+  ShaderModuleglsldescriptor_436207960 *
+    = StructShaderModuleGlslDescriptor_436208225 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:99:3
+  ProcDeviceCreateTexture_436207962* = proc (a0: Device_436207979;
+      a1: ptr TextureDescriptor_436208707): Texture_436208006 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1273:23
+  ProcRenderPassEncoderDrawindexedindirect_436207964 * = proc (
+      a0: RenderPassEncoder_436208585; a1: Buffer_436208339;
           a2: uint64): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1324:16
-  Mapmode_436207966* = Enummapmode_436207953 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:615:3
-  Storagetextureaccess_436207968* = Enumstoragetextureaccess_436208569 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:390:3
-  Structsamplerdescriptor_436207970* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:860:16
+  MapMode_436207966* = EnumMapMode_436207953 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:615:3
+  StorageTextureAccess_436207968* = EnumStorageTextureAccess_436208569 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:390:3
+  StructSamplerDescriptor_436207970* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:860:16
     label*: ptr cuchar
-    addressmodeu*: Addressmode_436208693
-    addressmodev*: Addressmode_436208693
-    addressmodew*: Addressmode_436208693
-    magfilter*: Filtermode_436208299
-    minfilter*: Filtermode_436208299
-    mipmapfilter*: Mipmapfiltermode_436208243
+    addressmodeu*: AddressMode_436208693
+    addressmodev*: AddressMode_436208693
+    addressmodew*: AddressMode_436208693
+    magfilter*: FilterMode_436208299
+    minfilter*: FilterMode_436208299
+    mipmapfilter*: MipmapFilterMode_436208243
     lodminclamp*: cfloat
     lodmaxclamp*: cfloat
-    compare*: Comparefunction_436208587
+    compare*: CompareFunction_436208587
     maxanisotropy*: uint16
 
-  Procrenderbundleencoderpushdebuggroup_436207972 * = proc (
-      a0: Renderbundleencoder_436208351;
+  ProcRenderBundleEncoderPushDebugGroup_436207972 * = proc (
+      a0: RenderBundleencoder_436208351;
           a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1312:16
-  Vertexbufferlayout_436207974* = Structvertexbufferlayout_436208405 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1107:3
-  Predefinedcolorspace_436207976* = Enumpredefinedcolorspace_436208359 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:297:3
+  VertexBufferLayout_436207974* = StructVertexBufferLayout_436208405 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1107:3
+  PredefinedColorSpace_436207976* = EnumPredefinedColorSpace_436208359 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:297:3
   Device_436207978* = ptr structwgpudeviceimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:73:32
-  Structsurfacedescriptor_436207980* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:906:16
+  StructSurfaceDescriptor_436207980* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:906:16
     label*: ptr cuchar
 
-  Structblendstate_436207982* = object
-    color*: Blendcomponent_436208323 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1010:16
-    alpha*: Blendcomponent_436208323
+  StructBlendState_436207982* = object
+    color*: BlendComponent_436208323 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1010:16
+    alpha*: BlendComponent_436208323
 
-  Procrenderpipelinegetbindgrouplayout_436207984 * = proc (
-      a0: Renderpipeline_436208391;
+  ProcRenderPipelineGetBindGroupLayout_436207984 * = proc (
+      a0: RenderPipeline_436208391;
 
-a1: uint32): Bindgrouplayout_436208743 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1344:31
-  Procrenderpassencoderbeginpipelinestatisticsquery_436207986 * = proc (
-      a0: Renderpassencoder_436208585; a1: Queryset_436208505;
+a1: uint32): BindGrouplayout_436208743 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1344:31
+  ProcRenderPassEncoderBeginPipelineStatisticsQuery_436207986 * = proc (
+      a0: RenderPassEncoder_436208585; a1: QuerySet_436208505;
           a2: uint32): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1321:16
-  Bufferbindinglayout_436207988* = Structbufferbindinglayout_436208177 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:679:3
-  Proccommandbuffersetlabel_436207993* = proc (a0: Commandbuffer_436208629;
+  BufferBindingLayout_436207988* = StructBufferBindingLayout_436208177 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:679:3
+  ProcCommandBufferSetLabel_436207993* = proc (a0: CommandBuffer_436208629;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1223:16
-  Structpipelinelayoutdescriptor_436207995 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:780:16
+  StructPipelineLayoutDescriptor_436207995 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:780:16
     label*: ptr cuchar
     bindgrouplayoutcount*: uint32
-    bindgrouplayouts*: ptr Bindgrouplayout_436208743
+    bindgrouplayouts*: ptr BindGrouplayout_436208743
 
-  Proccomputepassencoderendpipelinestatisticsquery_436207997 * = proc (
-      a0: Computepassencoder_436208535): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1246:16
-  Procrenderpassencodersetblendconstant_436207999 * = proc (
-      a0: Renderpassencoder_436208585; a1: ptr Color_436208085): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1334:16
-  Textureformat_436208001* = Enumtextureformat_436208231 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:519:3
+  ProcComputePassEncoderEndpipelinestatisticsquery_436207997 * = proc (
+      a0: ComputePassEncoder_436208535): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1246:16
+  ProcRenderPassEncoderSetBlendConstant_436207999 * = proc (
+      a0: RenderPassEncoder_436208585; a1: ptr Color_436208085): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1334:16
+  TextureFormat_436208001* = EnumTextureFormat_436208231 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:519:3
   Flags_436208003* = uint32 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:63:18
   Texture_436208005* = ptr structwgputextureimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:86:33
-  Texturesampletype_436208007* = Enumtexturesampletype_436207941 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:529:3
-  Structbindgrouplayoutdescriptor_436208011 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1109:16
+  TextureSampleType_436208007* = EnumTextureSampleType_436207941 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:529:3
+  StructBindGroupLayoutDescriptor_436208011 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1109:16
     label*: ptr cuchar
     entrycount*: uint32
-    entries*: ptr Bindgrouplayoutentry_436208793
+    entries*: ptr BindGrouplayoutentry_436208793
 
-  Procdevicedestroy_436208013* = proc (a0: Device_436207979): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1274:16
-  Procrenderbundleencoderfinish_436208015 * = proc (
-      a0: Renderbundleencoder_436208351;
+  ProcDeviceDestroy_436208013* = proc (a0: Device_436207979): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1274:16
+  ProcRenderBundleEncoderFinish_436208015 * = proc (
+      a0: RenderBundleencoder_436208351;
 
-a1: ptr Renderbundledescriptor_436208169): Renderbundle_436208783 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1309:28
-  Procrenderbundleencodersetvertexbuffer_436208024 * = proc (
-      a0: Renderbundleencoder_436208351; a1: uint32; a2: Buffer_436208339;
+a1: ptr RenderBundledescriptor_436208169): RenderBundle_436208783 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1309:28
+  ProcRenderBundleEncoderSetVertexBuffer_436208024 * = proc (
+      a0: RenderBundleencoder_436208351; a1: uint32; a2: Buffer_436208339;
       a3: uint64; a4: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1317:16
-  Structstoragetexturebindinglayout_436208026 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:899:16
-    access*: Storagetextureaccess_436207969
-    format*: Textureformat_436208002
-    viewdimension*: Textureviewdimension_436208555
+  StructStorageTextureBindingLayout_436208026 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:899:16
+    access*: StorageTextureAccess_436207969
+    format*: TextureFormat_436208002
+    viewdimension*: TextureViewdimension_436208555
 
-  Vertexformat_436208028* = Enumvertexformat_436208010 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:575:3
-  Procrenderpassencoderend_436208030* = proc (
-      a0: Renderpassencoder_436208585): void {.
+  VertexFormat_436208028* = EnumVertexFormat_436208010 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:575:3
+  ProcRenderPassEncoderEnd_436208030* = proc (
+      a0: RenderPassEncoder_436208585): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1326:16
-  Loglevel_436208032* = Enumloglevel_436208103 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:45:3
-  Surfacedescriptorfrommetallayer_436208036 *
-    = Structsurfacedescriptorfrommetallayer_436208589 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:924:3
-  Surfacedescriptor_436208040* = Structsurfacedescriptor_436207981 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:909:3
-  Procrenderpassencodersetviewport_436208042 * = proc (
-      a0: Renderpassencoder_436208585;a1: cfloat; a2: cfloat; a3: cfloat;
+  LogLevel_436208032* = EnumLogLevel_436208103 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:45:3
+  SurfaceDescriptorfrommetallayer_436208036 *
+    = StructSurfaceDescriptorfrommetallayer_436208589 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:924:3
+  SurfaceDescriptor_436208040* = StructSurfaceDescriptor_436207981 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:909:3
+  ProcRenderPassEncoderSetViewport_436208042 * = proc (
+      a0: RenderPassEncoder_436208585;a1: cfloat; a2: cfloat; a3: cfloat;
           a4: cfloat; a5: cfloat; a6: cfloat): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1341:16
-  Procqueueonsubmittedworkdone_436208044 * = proc (a0: Queue_436208067;
-      a1: Queueworkdonecallback_436208491;
+  ProcQueueOnSubmittedWorkDone_436208044 * = proc (a0: Queue_436208067;
+      a1: QueueWorkDoneCallback_436208491;
           a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1298:16
-  Structpipelinelayoutextras_436208046 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:75:16
+  StructPipelineLayoutExtras_436208046 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:75:16
     pushconstantrangecount*: uint32
-    pushconstantranges*: ptr Pushconstantrange_436207959
+    pushconstantranges*: ptr PushConstantRange_436207959
 
   Instance_436208048* = ptr structwgpuinstanceimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:74:34
-  Computepasstimestampwrite_436208050* = Structcomputepasstimestampwrite_436208485 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:720:3
-  Structrenderbundledescriptor_436208052 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:814:16
+  ComputePassTimestampWrite_436208050* = StructComputePassTimestampWrite_436208485 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:720:3
+  StructRenderBundleDescriptor_436208052 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:814:16
     label*: ptr cuchar
 
   Adapter_436208056* = ptr structwgpuadapterimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:65:33
-  Compilationmessage_436208058* = Structcompilationmessage_436208277 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:714:3
-  Proccomputepassencoderend_436208060* = proc (
-      a0: Computepassencoder_436208535): void {.
+  CompilationMessage_436208058* = StructCompilationMessage_436208277 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:714:3
+  ProcComputePassEncoderEnd_436208060* = proc (
+      a0: ComputePassEncoder_436208535): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1245:16
-  Structdevicedescriptor_436208062* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1130:16
+  StructDeviceDescriptor_436208062* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1130:16
     label*: ptr cuchar
     requiredfeaturescount*: uint32
-    requiredfeatures*: ptr Featurename_436208785
-    requiredlimits*: ptr Requiredlimits_436207947
-    defaultqueue*: Queuedescriptor_436208203
+    requiredfeatures*: ptr FeatureName_436208785
+    requiredlimits*: ptr RequiredLimits_436207947
+    defaultqueue*: QueueDescriptor_436208203
 
-  Procdevicecreatebindgrouplayout_436208064 * = proc (a0: Device_436207979;
-      a1: ptr Bindgrouplayoutdescriptor_436208327): Bindgrouplayout_436208743 {.
+  ProcDeviceCreateBindGrouplayout_436208064 * = proc (a0: Device_436207979;
+      a1: ptr BindGrouplayoutdescriptor_436208327): BindGrouplayout_436208743 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1260:31
   Queue_436208066* = ptr structwgpuqueueimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:77:31
-  Structvertexattribute_436208068* = object
-    format*: Vertexformat_436208029 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:986:16
+  StructVertexAttribute_436208068* = object
+    format*: VertexFormat_436208029 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:986:16
     offset*: uint64
     shaderlocation*: uint32
 
-  Structchainedstruct_436208072* = object
-    next*: ptr Structchainedstruct_436208073 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:638:16
-    stype*: Wgpustype_436208079
+  StructChainedStruct_436208072* = object
+    next*: ptr StructChainedStruct_436208073 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:638:16
+    stype*: WgpusType_436208079
 
-  Createcomputepipelineasynccallback_436208074 * = proc (
-      a0: Createpipelineasyncstatus_436208591; a1: Computepipeline_436208357;
+  CreateComputePipelineAsyncCallback_436208074 * = proc (
+      a0: CreatePipelineAsyncStatus_436208591; a1: ComputePipeline_436208357;
       a2: ptr cuchar; a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1187:16
-  Procbuffergetmappedrange_436208076* = proc (a0: Buffer_436208339; a1: csize_t;
+  ProcBufferGetMappedRange_436208076* = proc (a0: Buffer_436208339; a1: csize_t;
       a2: csize_t): pointer {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1217:18
-  Wgpustype_436208078* = Enumwgpustype_436208071 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:364:3
-  Structsamplerbindinglayout_436208080 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:855:16
-    typefield*: Samplerbindingtype_436208501
+  WgpusType_436208078* = EnumWgpusType_436208071 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:364:3
+  StructSamplerBindingLayout_436208080 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:855:16
+    typefield*: SamplerBindingType_436208501
 
-  Chainedstructout_436208082* = Structchainedstructout_436208777 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:646:3
-  Color_436208084* = Structcolor_436208719 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:694:3
-  Structstencilfacestate_436208086* = object
-    compare*: Comparefunction_436208587 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:892:16
-    failop*: Stenciloperation_436208297
-    depthfailop*: Stenciloperation_436208297
-    passop*: Stenciloperation_436208297
+  ChainedStructout_436208082* = StructChainedStructout_436208777 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:646:3
+  Color_436208084* = StructColor_436208719 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:694:3
+  StructStencilFaceState_436208086* = object
+    compare*: CompareFunction_436208587 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:892:16
+    failop*: StencilOperation_436208297
+    depthfailop*: StencilOperation_436208297
+    passop*: StencilOperation_436208297
 
-  Structtexturebindinglayout_436208088 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:960:16
-    sampletype*: Texturesampletype_436208008
-    viewdimension*: Textureviewdimension_436208555
+  StructTextureBindingLayout_436208088 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:960:16
+    sampletype*: TextureSampleType_436208008
+    viewdimension*: TextureViewdimension_436208555
     multisampled*: bool
 
-  Proccomputepassencodersetlabel_436208090 * = proc (
-      a0: Computepassencoder_436208535;
+  ProcComputePassEncoderSetLabel_436208090 * = proc (
+      a0: ComputePassEncoder_436208535;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1251:16
-  Procdevicecreatepipelinelayout_436208092 * = proc (a0: Device_436207979;
-      a1: ptr Pipelinelayoutdescriptor_436208817): Pipelinelayout_436208415 {.
+  ProcDeviceCreatePipelineLayout_436208092 * = proc (a0: Device_436207979;
+      a1: ptr PipelineLayoutdescriptor_436208817): PipelineLayout_436208415 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1265:30
-  Procdevicesetuncapturederrorcallback_436208094 * = proc (a0: Device_436207979;
-      a1: Errorcallback_436208291; a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1283:16
-  Vertexattribute_436208096* = Structvertexattribute_436208069 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:990:3
-  Procrenderbundleencodersetpipeline_436208098 * = proc (
-      a0: Renderbundleencoder_436208351;
+  ProcDeviceSetUncapturedErrorCallback_436208094 * = proc (a0: Device_436207979;
+      a1: ErrorCallback_436208291; a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1283:16
+  VertexAttribute_436208096* = StructVertexAttribute_436208069 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:990:3
+  ProcRenderBundleEncoderSetPipeline_436208098 * = proc (
+      a0: RenderBundleencoder_436208351;
 
-a1: Renderpipeline_436208391): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1316:16
-  Procrenderpassencodersetindexbuffer_436208100 * = proc (
-      a0: Renderpassencoder_436208585;
+a1: RenderPipeline_436208391): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1316:16
+  ProcRenderPassEncoderSetIndexBuffer_436208100 * = proc (
+      a0: RenderPassEncoder_436208585;
 
-a1: Buffer_436208339; a2: Indexformat_436208301; a3: uint64;
+a1: Buffer_436208339; a2: IndexFormat_436208301; a3: uint64;
           a4: uint64): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1335:16
-  Proccomputepipelinegetbindgrouplayout_436208104 * = proc (
-      a0: Computepipeline_436208357;
+  ProcComputePipelineGetBindGroupLayout_436208104 * = proc (
+      a0: ComputePipeline_436208357;
 
-a1: uint32): Bindgrouplayout_436208743 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1255:31
-  Structtexturedescriptor_436208106* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1089:16
+a1: uint32): BindGrouplayout_436208743 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1255:31
+  StructTextureDescriptor_436208106* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1089:16
     label*: ptr cuchar
-    usage*: Textureusageflags_436208189
-    dimension*: Texturedimension_436208811
-    size*: Extent3d_436208239
-    format*: Textureformat_436208002
+    usage*: TextureUsageflags_436208189
+    dimension*: TextureDimension_436208811
+    size*: Extent3D_436208239
+    format*: TextureFormat_436208002
     miplevelcount*: uint32
     samplecount*: uint32
     viewformatcount*: uint32
-    viewformats*: ptr Textureformat_436208002
+    viewformats*: ptr TextureFormat_436208002
 
-  Structimagecopybuffer_436208108* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1042:16
-    layout*: Texturedatalayout_436208401
+  StructImageCopyBuffer_436208108* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1042:16
+    layout*: TextureDataLayout_436208401
     buffer*: Buffer_436208339
 
-  Frontface_436208110* = Enumfrontface_436208191 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:255:3
-  Renderbundleencoderdescriptor_436208112 *
-    = Structrenderbundleencoderdescriptor_436208689 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:828:3
-  Submissionindex_436208114* = uint64 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:81:18
-  Procrenderbundleencodersetindexbuffer_436208116 * = proc (
-      a0: Renderbundleencoder_436208351; a1: Buffer_436208339;
-          a2: Indexformat_436208301;
+  FrontFace_436208110* = EnumFrontFace_436208191 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:255:3
+  RenderBundleencoderdescriptor_436208112 *
+    = StructRenderBundleEncoderDescriptor_436208689 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:828:3
+  SubmissionIndex_436208114* = uint64 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:81:18
+  ProcRenderBundleEncoderSetIndexBuffer_436208116 * = proc (
+      a0: RenderBundleencoder_436208351; a1: Buffer_436208339;
+          a2: IndexFormat_436208301;
       a3: uint64; a4: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1314:16
-  Shadermoduledescriptor_436208118* = Structshadermoduledescriptor_436208815 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1082:3
-  Proccreateinstance_436208120* = proc (
-      a0: ptr Instancedescriptor_436208745): Instance_436208049 {.
+  ShaderModuledescriptor_436208118* = StructShaderModuleDescriptor_436208815 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1082:3
+  ProcCreateInstance_436208120* = proc (
+      a0: ptr InstanceDescriptor_436208745): Instance_436208049 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1198:24
-  Structqueuedescriptor_436208122* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:809:16
+  StructQueueDescriptor_436208122* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:809:16
     label*: ptr cuchar
 
-  Procrenderpassencodersetvertexbuffer_436208124 * = proc (
-      a0: Renderpassencoder_436208585;
+  ProcRenderPassEncoderSetVertexBuffer_436208124 * = proc (
+      a0: RenderPassEncoder_436208585;
 
 a1: uint32; a2: Buffer_436208339; a3: uint64;
           a4: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1340:16
-  Procbuffermapasync_436208128* = proc (a0: Buffer_436208339; a1: Mapmodeflags_436208215;
+  ProcBufferMapAsync_436208128* = proc (a0: Buffer_436208339; a1: MapModeflags_436208215;
                                         a2: csize_t; a3: csize_t;
-                                        a4: Buffermapcallback_436208251;
+                                        a4: BufferMapCallback_436208251;
                                         a5: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1218:16
-  Devicelostreason_436208130* = Enumdevicelostreason_436208175 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:214:3
-  Procrenderpassencodersetstencilreference_436208132 * = proc (
-      a0: Renderpassencoder_436208585; a1: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1339:16
-  Supportedlimits_436208134* = Structsupportedlimits_436208595 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1087:3
-  Compilationmessagetype_436208136* = Enumcompilationmessagetype_436208337 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:186:3
-  Structtexturedatalayout_436208138* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:967:16
+  DeviceLostReason_436208130* = EnumDeviceLostReason_436208175 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:214:3
+  ProcRenderPassEncoderSetStencilReference_436208132 * = proc (
+      a0: RenderPassEncoder_436208585; a1: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1339:16
+  SupportedLimits_436208134* = StructSupportedLimits_436208595 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1087:3
+  CompilationMessageType_436208136* = EnumCompilationMessageType_436208337 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:186:3
+  StructTextureDataLayout_436208138* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:967:16
     offset*: uint64
     bytesperrow*: uint32
     rowsperimage*: uint32
 
-  Structbufferdescriptor_436208140* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:681:16
+  StructBufferDescriptor_436208140* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:681:16
     label*: ptr cuchar
-    usage*: Bufferusageflags_436208673
+    usage*: BufferUsageflags_436208673
     size*: uint64
     mappedatcreation*: bool
 
-  Createrenderpipelineasynccallback_436208142 * = proc (
-      a0: Createpipelineasyncstatus_436208591; a1: Renderpipeline_436208391;
+  CreateRenderPipelineAsyncCallback_436208142 * = proc (
+      a0: CreatePipelineAsyncStatus_436208591; a1: RenderPipeline_436208391;
       a2: ptr cuchar; a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1188:16
-  Procshadermodulegetcompilationinfo_436208144 * = proc (
-      a0: Shadermodule_436208735;a1: Compilationinfocallback_436208437;
+  ProcShaderModuleGetCompilationInfo_436208144 * = proc (
+      a0: ShaderModule_436208735;a1: CompilationInfocallback_436208437;
           a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1351:16
-  Renderpasstimestampwrite_436208146* = Structrenderpasstimestampwrite_436207951 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:846:3
-  Errorfilter_436208148* = Enumerrorfilter_436208493 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:220:3
-  Pipelinestatisticname_436208150* = Enumpipelinestatisticname_436208473 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:284:3
-  Structextent3d_436208152* = object
+  RenderPassTimestampWrite_436208146* = StructRenderPassTimestampWrite_436207951 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:846:3
+  ErrorFilter_436208148* = EnumErrorFilter_436208493 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:220:3
+  PipelineStatisticName_436208150* = EnumPipelineStatisticName_436208473 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:284:3
+  StructExtent3D_436208152* = object
     width*: uint32 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:728:16
     height*: uint32
     depthorarraylayers*: uint32
 
-  Procdevicecreateshadermodule_436208156 * = proc (a0: Device_436207979;
-      a1: ptr Shadermoduledescriptor_436208119): Shadermodule_436208735 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1271:28
-  Structsupportedlimitsextras_436208158 * = object
-    chain*: Chainedstructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:63:16
+  ProcDeviceCreateShaderModule_436208156 * = proc (a0: Device_436207979;
+      a1: ptr ShaderModuledescriptor_436208119): ShaderModule_436208735 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1271:28
+  StructSupportedLimitsextras_436208158 * = object
+    chain*: ChainedStructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:63:16
     maxpushconstantsize*: uint32
     maxbuffersize*: uint64
 
-  Proccommandencoderwritetimestamp_436208160 * = proc (
-      a0: Commandencoder_436208259;
+  ProcCommandEncoderWriteTimestamp_436208160 * = proc (
+      a0: CommandEncoder_436208259;
 
-a1: Queryset_436208505; a2: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1239:16
-  Procbindgrouplayoutsetlabel_436208162 * = proc (a0: Bindgrouplayout_436208743;
+a1: QuerySet_436208505; a2: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1239:16
+  ProcBindGroupLayoutSetLabel_436208162 * = proc (a0: BindGrouplayout_436208743;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1212:16
-  Procrenderbundleencoderdraw_436208164 * = proc (
-      a0: Renderbundleencoder_436208351;a1: uint32; a2: uint32; a3: uint32;
+  ProcRenderBundleEncoderDraw_436208164 * = proc (
+      a0: RenderBundleencoder_436208351;a1: uint32; a2: uint32; a3: uint32;
           a4: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1305:16
-  Procadaptergetlimits_436208166* = proc (a0: Adapter_436208057;
-      a1: ptr Supportedlimits_436208135): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1203:16
-  Renderbundledescriptor_436208168* = Structrenderbundledescriptor_436208053 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:817:3
-  Procrenderpipelinesetlabel_436208172 * = proc (a0: Renderpipeline_436208391;
+  ProcAdapterGetLimits_436208166* = proc (a0: Adapter_436208057;
+      a1: ptr SupportedLimits_436208135): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1203:16
+  RenderBundledescriptor_436208168* = StructRenderBundleDescriptor_436208053 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:817:3
+  ProcRenderPipelineSetLabel_436208172 * = proc (a0: RenderPipeline_436208391;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1345:16
-  Structbufferbindinglayout_436208176* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:674:16
-    typefield*: Bufferbindingtype_436208807
+  StructBufferBindingLayout_436208176* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:674:16
+    typefield*: BufferBindingType_436208807
     hasdynamicoffset*: bool
     minbindingsize*: uint64
 
-  Nativefeature_436208178* = Enumnativefeature_436208461 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:35:3
-  Procrenderbundleencodersetlabel_436208180 * = proc (
-      a0: Renderbundleencoder_436208351;
+  NativeFeature_436208178* = EnumNativeFeature_436208461 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:35:3
+  ProcRenderBundleEncoderSetLabel_436208180 * = proc (
+      a0: RenderBundleencoder_436208351;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1315:16
-  Structcomputepassdescriptor_436208182 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1021:16
+  StructComputePassDescriptor_436208182 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1021:16
     label*: ptr cuchar
     timestampwritecount*: uint32
-    timestampwrites*: ptr Computepasstimestampwrite_436208051
+    timestampwrites*: ptr ComputePassTimestampWrite_436208051
 
-  Texturebindinglayout_436208186* = Structtexturebindinglayout_436208089 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:965:3
-  Textureusageflags_436208188* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:636:19
-  Computepasstimestamplocation_436208192 *
-    = Enumcomputepasstimestamplocation_436208635 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:192:3
-  Surfacedescriptorfromxlibwindow_436208194 *
-    = Structsurfacedescriptorfromxlibwindow_436207939 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:948:3
-  Buffermapasyncstatus_436208196* = Enumbuffermapasyncstatus_436208781 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:158:3
-  Structrenderpassdescriptor_436208198 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1139:16
+  TextureBindingLayout_436208186* = StructTextureBindingLayout_436208089 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:965:3
+  TextureUsageflags_436208188* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:636:19
+  ComputePassTimestampLocation_436208192 *
+    = EnumComputePassTimestampLocation_436208635 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:192:3
+  SurfaceDescriptorfromxlibwindow_436208194 *
+    = StructSurfaceDescriptorfromxlibwindow_436207939 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:948:3
+  BufferMapAsyncStatus_436208196* = EnumBufferMapAsyncStatus_436208781 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:158:3
+  StructRenderPassDescriptor_436208198 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1139:16
     label*: ptr cuchar
     colorattachmentcount*: uint32
-    colorattachments*: ptr Renderpasscolorattachment_436208325
-    depthstencilattachment*: ptr Renderpassdepthstencilattachment_436208687
-    occlusionqueryset*: Queryset_436208505
+    colorattachments*: ptr RenderPassColorAttachment_436208325
+    depthstencilattachment*: ptr RenderPassDepthStencilAttachment_436208687
+    occlusionqueryset*: QuerySet_436208505
     timestampwritecount*: uint32
-    timestampwrites*: ptr Renderpasstimestampwrite_436208147
+    timestampwrites*: ptr RenderPassTimestampWrite_436208147
 
-  Adapterproperties_436208200* = Structadapterproperties_436208665 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:656:3
-  Queuedescriptor_436208202* = Structqueuedescriptor_436208123 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:812:3
+  AdapterProperties_436208200* = StructAdapterProperties_436208665 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:656:3
+  QueueDescriptor_436208202* = StructQueueDescriptor_436208123 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:812:3
   Surface_436208204* = ptr structwgpusurfaceimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:84:33
-  Procdevicecreaterenderpipelineasync_436208206 * = proc (a0: Device_436207979;
-      a1: ptr Renderpipelinedescriptor_436208475;
-      a2: Createrenderpipelineasynccallback_436208143; a3: pointer): void {.
+  ProcDeviceCreateRenderPipelineasync_436208206 * = proc (a0: Device_436207979;
+      a1: ptr RenderPipelinedescriptor_436208475;
+      a2: CreateRenderPipelineAsyncCallback_436208143; a3: pointer): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1269:16
-  Structsurfacedescriptorfromcanvashtmlselector_436208208 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:916:16
+  StructSurfaceDescriptorfromcanvashtmlselector_436208208 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:916:16
     selector*: ptr cuchar
 
-  Structdepthstencilstate_436208210* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1028:16
-    format*: Textureformat_436208002
+  StructDepthStencilState_436208210* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1028:16
+    format*: TextureFormat_436208002
     depthwriteenabled*: bool
-    depthcompare*: Comparefunction_436208587
-    stencilfront*: Stencilfacestate_436208255
-    stencilback*: Stencilfacestate_436208255
+    depthcompare*: CompareFunction_436208587
+    stencilfront*: StencilFaceState_436208255
+    stencilback*: StencilFaceState_436208255
     stencilreadmask*: uint32
     stencilwritemask*: uint32
     depthbias*: int32
     depthbiasslopescale*: cfloat
     depthbiasclamp*: cfloat
 
-  Procadapterenumeratefeatures_436208212 * = proc (a0: Adapter_436208057;
-      a1: ptr Featurename_436208785): csize_t {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1202:18
-  Mapmodeflags_436208214* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:616:19
-  Structshadermodulespirvdescriptor_436208216 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:881:16
+  ProcAdapterEnumerateFeatures_436208212 * = proc (a0: Adapter_436208057;
+      a1: ptr FeatureName_436208785): csize_t {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1202:18
+  MapModeflags_436208214* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:616:19
+  StructShaderModuleSpirvDescriptor_436208216 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:881:16
     codesize*: uint32
     code*: ptr uint32
 
-  Procrenderpassencoderpushdebuggroup_436208218 * = proc (
-      a0: Renderpassencoder_436208585;
+  ProcRenderPassEncoderPushDebugGroup_436208218 * = proc (
+      a0: RenderPassEncoder_436208585;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1332:16
-  Colorwritemaskflags_436208222* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:608:19
-  Structshadermoduleglsldescriptor_436208224 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:93:16
-    stage*: Shaderstage_436208683
+  ColorWriteMaskflags_436208222* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:608:19
+  StructShaderModuleGlslDescriptor_436208224 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:93:16
+    stage*: ShaderStage_436208683
     code*: ptr cuchar
     definecount*: uint32
-    defines*: ptr Shaderdefine_436208729
+    defines*: ptr ShaderDefine_436208729
 
-  Nativestype_436208226* = Enumnativestype_436208369 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:27:3
-  Structbindgroupentry_436208228* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:658:16
+  NativeSType_436208226* = EnumNativeSType_436208369 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:27:3
+  StructBindGroupEntry_436208228* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:658:16
     binding*: uint32
     buffer*: Buffer_436208339
     offset*: uint64
     size*: uint64
     sampler*: Sampler_436208537
-    textureview*: Textureview_436208441
+    textureview*: TextureView_436208441
 
-  Procdevicecreatecomputepipeline_436208232 * = proc (a0: Device_436207979;
-      a1: ptr Computepipelinedescriptor_436208363): Computepipeline_436208357 {.
+  ProcDeviceCreateComputePipeline_436208232 * = proc (a0: Device_436207979;
+      a1: ptr ComputePipelinedescriptor_436208363): ComputePipeline_436208357 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1263:31
-  Fragmentstate_436208234* = Structfragmentstate_436208617 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1168:3
-  Adaptertype_436208236* = Enumadaptertype_436208127 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:95:3
-  Extent3d_436208238* = Structextent3d_436208153 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:732:3
-  Logcallback_436208240* = proc (a0: Loglevel_436208033;
+  FragmentState_436208234* = StructFragmentState_436208617 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1168:3
+  AdapterType_436208236* = EnumAdapterType_436208127 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:95:3
+  Extent3D_436208238* = StructExtent3D_436208153 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:732:3
+  LogCallback_436208240* = proc (a0: LogLevel_436208033;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:136:16
-  Mipmapfiltermode_436208242* = Enummipmapfiltermode_436208639 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:275:3
-  Structdeviceextras_436208244* = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:52:16
+  MipmapFilterMode_436208242* = EnumMipmapFilterMode_436208639 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:275:3
+  StructDeviceExtras_436208244* = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:52:16
     tracepath*: ptr cuchar
 
-  Structconstantentry_436208246* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:722:16
+  StructConstantEntry_436208246* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:722:16
     key*: ptr cuchar
     value*: cdouble
 
-  Renderpassdescriptor_436208248* = Structrenderpassdescriptor_436208199 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1148:3
-  Buffermapcallback_436208250* = proc (a0: Buffermapasyncstatus_436208197;
+  RenderPassDescriptor_436208248* = StructRenderPassDescriptor_436208199 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1148:3
+  BufferMapCallback_436208250* = proc (a0: BufferMapAsyncStatus_436208197;
                                        a1: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1185:16
-  Stencilfacestate_436208254* = Structstencilfacestate_436208087 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:897:3
-  Procshadermodulesetlabel_436208256* = proc (a0: Shadermodule_436208735;
+  StencilFaceState_436208254* = StructStencilFaceState_436208087 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:897:3
+  ProcShaderModuleSetLabel_436208256* = proc (a0: ShaderModule_436208735;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1352:16
-  Commandencoder_436208258* = ptr structwgpucommandencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:70:40
-  Procbufferdestroy_436208260* = proc (a0: Buffer_436208339): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1215:16
-  Procdevicecreatebindgroup_436208262* = proc (a0: Device_436207979;
-      a1: ptr Bindgroupdescriptor_436208805): Bindgroup_436208377 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1259:25
-  Procqueuewritetexture_436208264* = proc (a0: Queue_436208067;
-      a1: ptr Imagecopytexture_436208507; a2: pointer; a3: csize_t;
-      a4: ptr Texturedatalayout_436208401; a5: ptr Extent3d_436208239): void {.
+  CommandEncoder_436208258* = ptr structwgpucommandencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:70:40
+  ProcBufferDestroy_436208260* = proc (a0: Buffer_436208339): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1215:16
+  ProcDeviceCreateBindGroup_436208262* = proc (a0: Device_436207979;
+      a1: ptr BindGroupdescriptor_436208805): BindGroup_436208377 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1259:25
+  ProcQueueWriteTexture_436208264* = proc (a0: Queue_436208067;
+      a1: ptr ImageCopyTexture_436208507; a2: pointer; a3: csize_t;
+      a4: ptr TextureDataLayout_436208401; a5: ptr Extent3D_436208239): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1302:16
-  Queueworkdonestatus_436208266* = Enumqueueworkdonestatus_436208583 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:328:3
-  Procrenderpassencodersetbindgroup_436208268 * = proc (
-      a0: Renderpassencoder_436208585;a1: uint32; a2: Bindgroup_436208377;
+  QueueWorkDoneStatus_436208266* = EnumQueueWorkDoneStatus_436208583 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:328:3
+  ProcRenderPassEncoderSetBindGroup_436208268 * = proc (
+      a0: RenderPassEncoder_436208585;a1: uint32; a2: BindGroup_436208377;
           a3: uint32; a4: ptr uint32): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1333:16
-  Structsurfacedescriptorfromandroidnativewindow_436208270 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:911:16
+  StructSurfaceDescriptorfromandroidnativewindow_436208270 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:911:16
     window*: pointer
 
-  Requestdevicecallback_436208272* = proc (a0: Requestdevicestatus_436208449;
+  RequestDeviceCallback_436208272* = proc (a0: RequestDeviceStatus_436208449;
       a1: Device_436207979; a2: ptr cuchar;
           a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1194:16
-  Storagereport_436208274* = Structstoragereport_436208597 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:106:3
-  Structcompilationmessage_436208276* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:706:16
+  StorageReport_436208274* = StructStorageReport_436208597 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:106:3
+  StructCompilationMessage_436208276* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:706:16
     message*: ptr cuchar
-    typefield*: Compilationmessagetype_436208137
+    typefield*: CompilationMessageType_436208137
     linenum*: uint64
     linepos*: uint64
     offset*: uint64
     length*: uint64
 
-  Shadermodulespirvdescriptor_436208278 *
-    = Structshadermodulespirvdescriptor_436208217 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:885:3
-  Limits_436208280* = Structlimits_436208713 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:765:3
-  Powerpreference_436208284* = Enumpowerpreference_436208773 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:291:3
-  Textureviewdescriptor_436208286* = Structtextureviewdescriptor_436208517 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:984:3
-  Procdevicesetdevicelostcallback_436208288 * = proc (a0: Device_436207979;
-      a1: Devicelostcallback_436208623; a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1281:16
-  Errorcallback_436208290* = proc (a0: Errortype_436208563; a1: ptr cuchar;
+  ShaderModulespirvdescriptor_436208278 *
+    = StructShaderModuleSpirvDescriptor_436208217 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:885:3
+  Limits_436208280* = StructLimits_436208713 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:765:3
+  PowerPreference_436208284* = EnumPowerPreference_436208773 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:291:3
+  TextureViewdescriptor_436208286* = StructTextureViewDescriptor_436208517 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:984:3
+  ProcDeviceSetDeviceLostCallback_436208288 * = proc (a0: Device_436207979;
+      a1: DeviceLostCallback_436208623; a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1281:16
+  ErrorCallback_436208290* = proc (a0: ErrorType_436208563; a1: ptr cuchar;
                                    a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1190:16
-  Samplerdescriptor_436208292* = Structsamplerdescriptor_436207971 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:873:3
-  Structimagecopytexture_436208294* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1048:16
+  SamplerDescriptor_436208292* = StructSamplerDescriptor_436207971 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:873:3
+  StructImageCopyTexture_436208294* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1048:16
     texture*: Texture_436208006
     miplevel*: uint32
-    origin*: Origin3d_436208373
-    aspect*: Textureaspect_436208765
+    origin*: Origin3D_436208373
+    aspect*: TextureAspect_436208765
 
-  Stenciloperation_436208296* = Enumstenciloperation_436208477 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:384:3
-  Filtermode_436208298* = Enumfiltermode_436208515 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:249:3
-  Indexformat_436208300* = Enumindexformat_436208681 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:262:3
-  Proccomputepassencodersetbindgroup_436208302 * = proc (
-      a0: Computepassencoder_436208535;a1: uint32; a2: Bindgroup_436208377;
+  StencilOperation_436208296* = EnumStencilOperation_436208477 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:384:3
+  FilterMode_436208298* = EnumFilterMode_436208515 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:249:3
+  IndexFormat_436208300* = EnumIndexFormat_436208681 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:262:3
+  ProcComputePassEncoderSetBindGroup_436208302 * = proc (
+      a0: ComputePassEncoder_436208535;a1: uint32; a2: BindGroup_436208377;
           a3: uint32; a4: ptr uint32): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1250:16
-  Proccommandencodercopybuffertotexture_436208304 * = proc (
-      a0: Commandencoder_436208259;a1: ptr Imagecopybuffer_436208757;
-          a2: ptr Imagecopytexture_436208507;
-      a3: ptr Extent3d_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1230:16
-  Proctexturesetlabel_436208306* = proc (a0: Texture_436208006;
+  ProcCommandEncoderCopyBufferToTexture_436208304 * = proc (
+      a0: CommandEncoder_436208259;a1: ptr ImageCopyBuffer_436208757;
+          a2: ptr ImageCopyTexture_436208507;
+      a3: ptr Extent3D_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1230:16
+  ProcTextureSetLabel_436208306* = proc (a0: Texture_436208006;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1364:16
-  Proccommandencoderinsertdebugmarker_436208308 * = proc (
-      a0: Commandencoder_436208259;
+  ProcCommandEncoderInsertDebugMarker_436208308 * = proc (
+      a0: CommandEncoder_436208259;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1234:16
-  Chainedstruct_436208310* = Structchainedstruct_436208073 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:641:3
-  Structpushconstantrange_436208312* = object
-    stages*: Shaderstageflags_436208397 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:69:16
+  ChainedStruct_436208310* = StructChainedStruct_436208073 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:641:3
+  StructPushConstantRange_436208312* = object
+    stages*: ShaderStageflags_436208397 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:69:16
     start*: uint32
     endfield*: uint32
 
-  Structcommandencoderdescriptor_436208314 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:701:16
+  StructCommandEncoderDescriptor_436208314 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:701:16
     label*: ptr cuchar
 
-  Storeop_436208316* = Enumstoreop_436208283 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:397:3
-  Proccommandencoderpushdebuggroup_436208318 * = proc (
-      a0: Commandencoder_436208259;
+  StoreOp_436208316* = EnumStoreOp_436208283 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:397:3
+  ProcCommandEncoderPushDebugGroup_436208318 * = proc (
+      a0: CommandEncoder_436208259;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1236:16
-  Blendcomponent_436208322* = Structblendcomponent_436208353 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:672:3
-  Renderpasscolorattachment_436208324* = Structrenderpasscolorattachment_436208471 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1070:3
-  Bindgrouplayoutdescriptor_436208326* = Structbindgrouplayoutdescriptor_436208012 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1114:3
-  Proccomputepassencoderpopdebuggroup_436208330 * = proc (
-      a0: Computepassencoder_436208535): void {.
+  BlendComponent_436208322* = StructBlendComponent_436208353 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:672:3
+  RenderPassColorAttachment_436208324* = StructRenderPassColorAttachment_436208471 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1070:3
+  BindGrouplayoutdescriptor_436208326* = StructBindGroupLayoutDescriptor_436208012 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1114:3
+  ProcComputePassEncoderPopDebugGroup_436208330 * = proc (
+      a0: ComputePassEncoder_436208535): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1248:16
-  Procrenderpassencoderdrawindexed_436208332 * = proc (
-      a0: Renderpassencoder_436208585;a1: uint32; a2: uint32; a3: uint32;
+  ProcRenderPassEncoderDrawindexed_436208332 * = proc (
+      a0: RenderPassEncoder_436208585;a1: uint32; a2: uint32; a3: uint32;
           a4: int32;
           a5: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1323:16
-  Structshaderdefine_436208334* = object
+  StructShaderDefine_436208334* = object
     name*: ptr cuchar ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:88:16
     value*: ptr cuchar
 
   Buffer_436208338* = ptr structwgpubufferimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:68:32
-  Querysetdescriptor_436208340* = Structquerysetdescriptor_436208413 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:807:3
-  Procrenderpassencodersetlabel_436208342 * = proc (
-      a0: Renderpassencoder_436208585;
+  QuerySetdescriptor_436208340* = StructQuerySetDescriptor_436208413 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:807:3
+  ProcRenderPassEncoderSetLabel_436208342 * = proc (
+      a0: RenderPassEncoder_436208585;
 
 a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1336:16
-  Texturecomponenttype_436208346* = Enumtexturecomponenttype_436208489 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:412:3
-  Commandbufferdescriptor_436208348* = Structcommandbufferdescriptor_436208557 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:699:3
-  Renderbundleencoder_436208350* = ptr structwgpurenderbundleencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:79:45
-  Structblendcomponent_436208352* = object
-    operation*: Blendoperation_436208539 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:668:16
-    srcfactor*: Blendfactor_436208663
-    dstfactor*: Blendfactor_436208663
+  TextureComponentType_436208346* = EnumTextureComponentType_436208489 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:412:3
+  CommandBufferDescriptor_436208348* = StructCommandBufferDescriptor_436208557 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:699:3
+  RenderBundleencoder_436208350* = ptr structwgpurenderbundleencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:79:45
+  StructBlendComponent_436208352* = object
+    operation*: BlendOperation_436208539 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:668:16
+    srcfactor*: BlendFactor_436208663
+    dstfactor*: BlendFactor_436208663
 
-  Structrenderpipelinedescriptor_436208354 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1170:16
+  StructRenderPipelineDescriptor_436208354 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1170:16
     label*: ptr cuchar
-    layout*: Pipelinelayout_436208415
-    vertex*: Vertexstate_436208799
-    primitive*: Primitivestate_436208685
-    depthstencil*: ptr Depthstencilstate_436208747
-    multisample*: Multisamplestate_436208609
-    fragment*: ptr Fragmentstate_436208235
+    layout*: PipelineLayout_436208415
+    vertex*: VertexState_436208799
+    primitive*: PrimitiveState_436208685
+    depthstencil*: ptr DepthStencilState_436208747
+    multisample*: MultisampleState_436208609
+    fragment*: ptr FragmentState_436208235
 
-  Computepipeline_436208356* = ptr structwgpucomputepipelineimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:72:41
-  Procdevicepoperrorscope_436208360* = proc (a0: Device_436207979;
-      a1: Errorcallback_436208291; a2: pointer): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1279:16
-  Computepipelinedescriptor_436208362* = Structcomputepipelinedescriptor_436208421 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1128:3
-  Procrenderbundleencoderdrawindirect_436208364 * = proc (
-      a0: Renderbundleencoder_436208351; a1: Buffer_436208339;
+  ComputePipeline_436208356* = ptr structwgpucomputepipelineimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:72:41
+  ProcDevicePopErrorScope_436208360* = proc (a0: Device_436207979;
+      a1: ErrorCallback_436208291; a2: pointer): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1279:16
+  ComputePipelinedescriptor_436208362* = StructComputePipelineDescriptor_436208421 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1128:3
+  ProcRenderBundleEncoderDrawindirect_436208364 * = proc (
+      a0: RenderBundleencoder_436208351; a1: Buffer_436208339;
           a2: uint64): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1308:16
-  Structsurfacedescriptorfromxcbwindow_436208366 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:938:16
+  StructSurfaceDescriptorfromxcbwindow_436208366 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:938:16
     connection*: pointer
     window*: uint32
 
-  Proccomputepassencoderbeginpipelinestatisticsquery_436208370 * = proc (
-      a0: Computepassencoder_436208535; a1: Queryset_436208505;
+  ProcComputePassEncoderBeginPipelineStatisticsQuery_436208370 * = proc (
+      a0: ComputePassEncoder_436208535; a1: QuerySet_436208505;
           a2: uint32): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1242:16
-  Origin3d_436208372* = Structorigin3d_436208509 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:778:3
-  Requestadaptercallback_436208374* = proc (a0: Requestadapterstatus_436208447;
+  Origin3D_436208372* = StructOrigin3D_436208509 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:778:3
+  RequestAdapterCallback_436208374* = proc (a0: RequestAdapterStatus_436208447;
       a1: Adapter_436208057; a2: ptr cuchar;
           a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1193:16
-  Bindgroup_436208376* = ptr structwgpubindgroupimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:66:35
-  Procdevicehasfeature_436208378* = proc (a0: Device_436207979;
-      a1: Featurename_436208785): bool {.
+  BindGroup_436208376* = ptr structwgpubindgroupimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:66:35
+  ProcDeviceHasFeature_436208378* = proc (a0: Device_436207979;
+      a1: FeatureName_436208785): bool {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1278:16
-  Procdevicegetqueue_436208380* = proc (
+  ProcDeviceGetQueue_436208380* = proc (
       a0: Device_436207979): Queue_436208067 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1277:21
-  Procbuffersetlabel_436208382* = proc (a0: Buffer_436208339;
+  ProcBufferSetLabel_436208382* = proc (a0: Buffer_436208339;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1219:16
-  Procquerysetsetlabel_436208384* = proc (a0: Queryset_436208505;
+  ProcQuerySetSetLabel_436208384* = proc (a0: QuerySet_436208505;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1295:16
-  Structswapchaindescriptor_436208386* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:950:16
+  StructSwapChainDescriptor_436208386* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:950:16
     label*: ptr cuchar
-    usage*: Textureusageflags_436208189
-    format*: Textureformat_436208002
+    usage*: TextureUsageflags_436208189
+    format*: TextureFormat_436208002
     width*: uint32
     height*: uint32
-    presentmode*: Presentmode_436208541
+    presentmode*: PresentMode_436208541
 
-  Procrenderpassencoderdrawindirect_436208388 * = proc (
-      a0: Renderpassencoder_436208585;
+  ProcRenderPassEncoderDrawindirect_436208388 * = proc (
+      a0: RenderPassEncoder_436208585;
 
 a1: Buffer_436208339; a2: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1325:16
-  Renderpipeline_436208390* = ptr structwgpurenderpipelineimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:81:40
-  Proccomputepassencoderdispatchworkgroupsindirect_436208392 * = proc (
-      a0: Computepassencoder_436208535; a1: Buffer_436208339;
+  RenderPipeline_436208390* = ptr structwgpurenderpipelineimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:81:40
+  ProcComputePassEncoderDispatchWorkgroupsindirect_436208392 * = proc (
+      a0: ComputePassEncoder_436208535; a1: Buffer_436208339;
           a2: uint64): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1244:16
-  Proccommandencoderbegincomputepass_436208394 * = proc (
-      a0: Commandencoder_436208259;
+  ProcCommandEncoderBeginComputePass_436208394 * = proc (
+      a0: CommandEncoder_436208259;
 
-a1: ptr Computepassdescriptor_436208433): Computepassencoder_436208535 {.
+a1: ptr ComputePassDescriptor_436208433): ComputePassEncoder_436208535 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1226:34
-  Shaderstageflags_436208396* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:625:19
-  Adapterextras_436208398* = Structadapterextras_436208661 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:50:3
-  Texturedatalayout_436208400* = Structtexturedatalayout_436208139 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:972:3
-  Proctexturecreateview_436208402* = proc (a0: Texture_436208006;
-      a1: ptr Textureviewdescriptor_436208287): Textureview_436208441 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1362:27
-  Structvertexbufferlayout_436208404* = object
+  ShaderStageflags_436208396* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:625:19
+  AdapterExtras_436208398* = StructAdapterExtras_436208661 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:50:3
+  TextureDataLayout_436208400* = StructTextureDataLayout_436208139 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:972:3
+  ProcTextureCreateView_436208402* = proc (a0: Texture_436208006;
+      a1: ptr TextureViewdescriptor_436208287): TextureView_436208441 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1362:27
+  StructVertexBufferLayout_436208404* = object
     arraystride*: uint64 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1102:16
-    stepmode*: Vertexstepmode_436207943
+    stepmode*: VertexStepMode_436207943
     attributecount*: uint32
-    attributes*: ptr Vertexattribute_436208097
+    attributes*: ptr VertexAttribute_436208097
 
-  Procrenderpassencoderinsertdebugmarker_436208406 * = proc (
-      a0: Renderpassencoder_436208585; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1330:16
-  Procswapchainpresent_436208408* = proc (
-      a0: Swapchain_436208593): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1359:16
-  Procpipelinelayoutsetlabel_436208410 * = proc (a0: Pipelinelayout_436208415;
+  ProcRenderPassEncoderInsertDebugMarker_436208406 * = proc (
+      a0: RenderPassEncoder_436208585; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1330:16
+  ProcSwapChainPresent_436208408* = proc (
+      a0: SwapChain_436208593): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1359:16
+  ProcPipelineLayoutSetLabel_436208410 * = proc (a0: PipelineLayout_436208415;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1291:16
-  Structquerysetdescriptor_436208412* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:800:16
+  StructQuerySetDescriptor_436208412* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:800:16
     label*: ptr cuchar
-    typefield*: Querytype_436208497
+    typefield*: QueryType_436208497
     count*: uint32
-    pipelinestatistics*: ptr Pipelinestatisticname_436208151
+    pipelinestatistics*: ptr PipelineStatisticName_436208151
     pipelinestatisticscount*: uint32
 
-  Pipelinelayout_436208414* = ptr structwgpupipelinelayoutimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:75:40
-  Procbufferunmap_436208416* = proc (a0: Buffer_436208339): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1220:16
-  Proccommandencodercopytexturetotexture_436208418 * = proc (
-      a0: Commandencoder_436208259;a1: ptr Imagecopytexture_436208507;
-          a2: ptr Imagecopytexture_436208507;
-      a3: ptr Extent3d_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1232:16
-  Structcomputepipelinedescriptor_436208420 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1123:16
+  PipelineLayout_436208414* = ptr structwgpupipelinelayoutimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:75:40
+  ProcBufferUnmap_436208416* = proc (a0: Buffer_436208339): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1220:16
+  ProcCommandEncoderCopyTextureToTexture_436208418 * = proc (
+      a0: CommandEncoder_436208259;a1: ptr ImageCopyTexture_436208507;
+          a2: ptr ImageCopyTexture_436208507;
+      a3: ptr Extent3D_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1232:16
+  StructComputePipelineDescriptor_436208420 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1123:16
     label*: ptr cuchar
-    layout*: Pipelinelayout_436208415
-    compute*: Programmablestagedescriptor_436208703
+    layout*: PipelineLayout_436208415
+    compute*: ProgrammableStageDescriptor_436208703
 
-  Procrenderbundleencoderinsertdebugmarker_436208422 * = proc (
-      a0: Renderbundleencoder_436208351;
+  ProcRenderBundleEncoderInsertDebugMarker_436208422 * = proc (
+      a0: RenderBundleencoder_436208351;
           a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1310:16
-  Samplerbindinglayout_436208424* = Structsamplerbindinglayout_436208081 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:858:3
-  Procrenderpassencoderbeginocclusionquery_436208426 * = proc (
-      a0: Renderpassencoder_436208585; a1: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1320:16
-  Structrequiredlimits_436208428* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1072:16
+  SamplerBindingLayout_436208424* = StructSamplerBindingLayout_436208081 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:858:3
+  ProcRenderPassEncoderBeginOcclusionQuery_436208426 * = proc (
+      a0: RenderPassEncoder_436208585; a1: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1320:16
+  StructRequiredLimits_436208428* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1072:16
     limits*: Limits_436208281
 
-  Procrenderpassencoderdraw_436208430* = proc (a0: Renderpassencoder_436208585;
+  ProcRenderPassEncoderDraw_436208430* = proc (a0: RenderPassEncoder_436208585;
       a1: uint32; a2: uint32; a3: uint32;
           a4: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1322:16
-  Computepassdescriptor_436208432* = Structcomputepassdescriptor_436208183 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1026:3
+  ComputePassDescriptor_436208432* = StructComputePassDescriptor_436208183 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1026:3
   Proc_436208434* = proc (): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1191:16
-  Compilationinfocallback_436208436* = proc (
-      a0: Compilationinforequeststatus_436208533;
+  CompilationInfocallback_436208436* = proc (
+      a0: CompilationInfoRequestStatus_436208533;
 
-a1: ptr Compilationinfo_436208561;
+a1: ptr CompilationInfo_436208561;
           a2: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1186:16
-  Pipelinelayoutextras_436208438* = Structpipelinelayoutextras_436208047 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:79:3
-  Textureview_436208440* = ptr structwgputextureviewimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:87:37
-  Procrenderpassencodersetscissorrect_436208442 * = proc (
-      a0: Renderpassencoder_436208585;a1: uint32; a2: uint32; a3: uint32;
+  PipelineLayoutextras_436208438* = StructPipelineLayoutExtras_436208047 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:79:3
+  TextureView_436208440* = ptr structwgputextureviewimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:87:37
+  ProcRenderPassEncoderSetScissorRect_436208442 * = proc (
+      a0: RenderPassEncoder_436208585;a1: uint32; a2: uint32; a3: uint32;
           a4: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1338:16
-  Requestadapteroptions_436208444* = Structrequestadapteroptions_436208571 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:853:3
-  Requestadapterstatus_436208446* = Enumrequestadapterstatus_436208171 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:342:3
-  Requestdevicestatus_436208448* = Enumrequestdevicestatus_436208697 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:349:3
-  Procsamplersetlabel_436208452* = proc (a0: Sampler_436208537;
+  RequestAdapterOptions_436208444* = StructRequestAdapterOptions_436208571 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:853:3
+  RequestAdapterStatus_436208446* = EnumRequestAdapterStatus_436208171 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:342:3
+  RequestDeviceStatus_436208448* = EnumRequestDeviceStatus_436208697 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:349:3
+  ProcSamplerSetLabel_436208452* = proc (a0: Sampler_436208537;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1348:16
-  Procsurfacegetpreferredformat_436208454 * = proc (a0: Surface_436208205;
-      a1: Adapter_436208057): Textureformat_436208002 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1355:29
-  Structmultisamplestate_436208458* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:767:16
+  ProcSurfaceGetPreferredFormat_436208454 * = proc (a0: Surface_436208205;
+      a1: Adapter_436208057): TextureFormat_436208002 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1355:29
+  StructMultisampleState_436208458* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:767:16
     count*: uint32
     mask*: uint32
     alphatocoverageenabled*: bool
 
-  Shadermodulecompilationhint_436208462 *
-    = Structshadermodulecompilationhint_436208797 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:879:3
-  Procswapchaingetcurrenttextureview_436208464 * = proc (
-      a0: Swapchain_436208593): Textureview_436208441 {.
+  ShaderModulecompilationhint_436208462 *
+    = StructShaderModuleCompilationHint_436208797 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:879:3
+  ProcSwapChainGetCurrentTextureView_436208464 * = proc (
+      a0: SwapChain_436208593): TextureView_436208441 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1358:27
-  Procrenderpassencoderpopdebuggroup_436208466 * = proc (
-      a0: Renderpassencoder_436208585): void {.
+  ProcRenderPassEncoderPopDebugGroup_436208466 * = proc (
+      a0: RenderPassEncoder_436208585): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1331:16
-  Surfacedescriptorfromcanvashtmlselector_436208468 *
-    = Structsurfacedescriptorfromcanvashtmlselector_436208209 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:919:3
-  Structrenderpasscolorattachment_436208470 * = object
-    view*: Textureview_436208441 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1064:16
-    resolvetarget*: Textureview_436208441
-    loadop*: Loadop_436208755
-    storeop*: Storeop_436208317
+  SurfaceDescriptorfromcanvashtmlselector_436208468 *
+    = StructSurfaceDescriptorfromcanvashtmlselector_436208209 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:919:3
+  StructRenderPassColorAttachment_436208470 * = object
+    view*: TextureView_436208441 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1064:16
+    resolvetarget*: TextureView_436208441
+    loadop*: LoadOp_436208755
+    storeop*: StoreOp_436208317
     clearvalue*: Color_436208085
 
-  Renderpipelinedescriptor_436208474* = Structrenderpipelinedescriptor_436208355 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1179:3
-  Structprimitivedepthclipcontrol_436208478 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:787:16
+  RenderPipelinedescriptor_436208474* = StructRenderPipelineDescriptor_436208355 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1179:3
+  StructPrimitiveDepthClipControl_436208478 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:787:16
     unclippeddepth*: bool
 
-  Globalreport_436208482* = Structglobalreport_436207949 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:134:3
-  Structcomputepasstimestampwrite_436208484 * = object
-    queryset*: Queryset_436208505 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:716:16
+  GlobalReport_436208482* = StructGlobalReport_436207949 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:134:3
+  StructComputePassTimestampWrite_436208484 * = object
+    queryset*: QuerySet_436208505 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:716:16
     queryindex*: uint32
-    location*: Computepasstimestamplocation_436208193
+    location*: ComputePassTimestampLocation_436208193
 
-  Constantentry_436208486* = Structconstantentry_436208247 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:726:3
-  Queueworkdonecallback_436208490* = proc (a0: Queueworkdonestatus_436208267;
+  ConstantEntry_436208486* = StructConstantEntry_436208247 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:726:3
+  QueueWorkDoneCallback_436208490* = proc (a0: QueueWorkDoneStatus_436208267;
       a1: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1192:16
-  Colortargetstate_436208494* = Structcolortargetstate_436208529 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1121:3
-  Querytype_436208496* = Enumquerytype_436208599 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:320:3
-  Proccommandencodersetlabel_436208498 * = proc (a0: Commandencoder_436208259;
+  ColorTargetState_436208494* = StructColorTargetState_436208529 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1121:3
+  QueryType_436208496* = EnumQueryType_436208599 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:320:3
+  ProcCommandEncoderSetLabel_436208498 * = proc (a0: CommandEncoder_436208259;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1238:16
-  Samplerbindingtype_436208500* = Enumsamplerbindingtype_436208543 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:372:3
-  Structrequiredlimitsextras_436208502 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:57:16
+  SamplerBindingType_436208500* = EnumSamplerBindingType_436208543 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:372:3
+  StructRequiredLimitsextras_436208502 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:57:16
     maxpushconstantsize*: uint32
     maxbuffersize*: uint64
 
-  Queryset_436208504* = ptr structwgpuquerysetimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:76:34
-  Imagecopytexture_436208506* = Structimagecopytexture_436208295 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1054:3
-  Structorigin3d_436208508* = object
+  QuerySet_436208504* = ptr structwgpuquerysetimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:76:34
+  ImageCopyTexture_436208506* = StructImageCopyTexture_436208295 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1054:3
+  StructOrigin3D_436208508* = object
     x*: uint32 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:774:16
     y*: uint32
     z*: uint32
 
-  Proccomputepassencoderdispatchworkgroups_436208510 * = proc (
-      a0: Computepassencoder_436208535; a1: uint32; a2: uint32;
+  ProcComputePassEncoderDispatchWorkgroups_436208510 * = proc (
+      a0: ComputePassEncoder_436208535; a1: uint32; a2: uint32;
           a3: uint32): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1243:16
-  Procrenderbundleencoderpopdebuggroup_436208512 * = proc (
-      a0: Renderbundleencoder_436208351): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1311:16
-  Structtextureviewdescriptor_436208516 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:974:16
+  ProcRenderBundleEncoderPopDebugGroup_436208512 * = proc (
+      a0: RenderBundleencoder_436208351): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1311:16
+  StructTextureViewDescriptor_436208516 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:974:16
     label*: ptr cuchar
-    format*: Textureformat_436208002
-    dimension*: Textureviewdimension_436208555
+    format*: TextureFormat_436208002
+    dimension*: TextureViewdimension_436208555
     basemiplevel*: uint32
     miplevelcount*: uint32
     basearraylayer*: uint32
     arraylayercount*: uint32
-    aspect*: Textureaspect_436208765
+    aspect*: TextureAspect_436208765
 
-  Renderpasstimestamplocation_436208518 *
-    = Enumrenderpasstimestamplocation_436208659 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:334:3
-  Structsurfacedescriptorfromwindowshwnd_436208520 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:932:16
+  RenderPassTimestampLocation_436208518 *
+    = EnumRenderPassTimestampLocation_436208659 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:334:3
+  StructSurfaceDescriptorfromwindowshwnd_436208520 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:932:16
     hinstance*: pointer
     hwnd*: pointer
 
-  Surfacedescriptorfromxcbwindow_436208522 *
-    = Structsurfacedescriptorfromxcbwindow_436208367 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:942:3
-  Procgetprocaddress_436208524* = proc (a0: Device_436207979;
+  SurfaceDescriptorfromxcbwindow_436208522 *
+    = StructSurfaceDescriptorfromxcbwindow_436208367 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:942:3
+  ProcGetProcAddress_436208524* = proc (a0: Device_436207979;
       a1: ptr cuchar): Proc_436208435 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1199:20
-  Procquerysetdestroy_436208526* = proc (
-      a0: Queryset_436208505): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1294:16
-  Structcolortargetstate_436208528* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1116:16
-    format*: Textureformat_436208002
-    blend*: ptr Blendstate_436208791
-    writemask*: Colorwritemaskflags_436208223
+  ProcQuerySetDestroy_436208526* = proc (
+      a0: QuerySet_436208505): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1294:16
+  StructColorTargetState_436208528* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1116:16
+    format*: TextureFormat_436208002
+    blend*: ptr BlendState_436208791
+    writemask*: ColorWriteMaskflags_436208223
 
-  Compilationinforequeststatus_436208532 *
-    = Enumcompilationinforequeststatus_436208531 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:179:3
-  Computepassencoder_436208534* = ptr structwgpucomputepassencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:71:44
+  CompilationInfoRequestStatus_436208532 *
+    = EnumCompilationInfoRequestStatus_436208531 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:179:3
+  ComputePassEncoder_436208534* = ptr structwgpucomputepassencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:71:44
   Sampler_436208536* = ptr structwgpusamplerimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:82:33
-  Blendoperation_436208538* = Enumblendoperation_436207957 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:140:3
-  Presentmode_436208540* = Enumpresentmode_436208787 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:304:3
-  Proctextureviewsetlabel_436208544* = proc (a0: Textureview_436208441;
+  BlendOperation_436208538* = EnumBlendOperation_436207957 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:140:3
+  PresentMode_436208540* = EnumPresentMode_436208787 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:304:3
+  ProcTextureViewSetLabel_436208544* = proc (a0: TextureView_436208441;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1367:16
-  Procinstanceprocessevents_436208546* = proc (a0: Instance_436208049): void {.
+  ProcInstanceProcessEvents_436208546* = proc (a0: Instance_436208049): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1287:16
-  Bindgroupentry_436208548* = Structbindgroupentry_436208229 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:666:3
-  Proccommandencoderfinish_436208550* = proc (a0: Commandencoder_436208259;
-      a1: ptr Commandbufferdescriptor_436208349): Commandbuffer_436208629 {.
+  BindGroupentry_436208548* = StructBindGroupEntry_436208229 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:666:3
+  ProcCommandEncoderFinish_436208550* = proc (a0: CommandEncoder_436208259;
+      a1: ptr CommandBufferDescriptor_436208349): CommandBuffer_436208629 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1233:29
-  Procdevicecreaterenderbundleencoder_436208552 * = proc (a0: Device_436207979;
-      a1: ptr Renderbundleencoderdescriptor_436208113): Renderbundleencoder_436208351 {.
+  ProcDeviceCreateRenderBundleEncoder_436208552 * = proc (a0: Device_436207979;
+      a1: ptr RenderBundleencoderdescriptor_436208113): RenderBundleencoder_436208351 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1267:35
-  Textureviewdimension_436208554* = Enumtextureviewdimension_436208321 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:540:3
-  Structcommandbufferdescriptor_436208556 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:696:16
+  TextureViewdimension_436208554* = EnumTextureViewDimension_436208321 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:540:3
+  StructCommandBufferDescriptor_436208556 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:696:16
     label*: ptr cuchar
 
-  Bufferusage_436208558* = Enumbufferusage_436208451 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:596:3
-  Compilationinfo_436208560* = Structcompilationinfo_436208705 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1019:3
-  Errortype_436208562* = Enumerrortype_436208763 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:229:3
-  Surfacedescriptorfromandroidnativewindow_436208564 *
-    = Structsurfacedescriptorfromandroidnativewindow_436208271 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:914:3
-  Structsurfacedescriptorfromwaylandsurface_436208566 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:926:16
+  BufferUsage_436208558* = EnumBufferUsage_436208451 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:596:3
+  CompilationInfo_436208560* = StructCompilationInfo_436208705 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1019:3
+  ErrorType_436208562* = EnumErrorType_436208763 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:229:3
+  SurfaceDescriptorfromandroidnativewindow_436208564 *
+    = StructSurfaceDescriptorfromandroidnativewindow_436208271 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:914:3
+  StructSurfaceDescriptorfromwaylandsurface_436208566 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:926:16
     display*: pointer
     surface*: pointer
 
-  Structrequestadapteroptions_436208570 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:848:16
+  StructRequestAdapterOptions_436208570 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:848:16
     compatiblesurface*: Surface_436208205
-    powerpreference*: Powerpreference_436208285
+    powerpreference*: PowerPreference_436208285
     forcefallbackadapter*: bool
 
-  Procadapterhasfeature_436208572* = proc (a0: Adapter_436208057;
-      a1: Featurename_436208785): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1205:16
-  Procqueuesetlabel_436208574* = proc (a0: Queue_436208067;
+  ProcAdapterHasFeature_436208572* = proc (a0: Adapter_436208057;
+      a1: FeatureName_436208785): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1205:16
+  ProcQueueSetLabel_436208574* = proc (a0: Queue_436208067;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1299:16
-  Procqueuesubmit_436208576* = proc (a0: Queue_436208067; a1: uint32;
-                                     a2: ptr Commandbuffer_436208629): void {.
+  ProcQueueSubmit_436208576* = proc (a0: Queue_436208067; a1: uint32;
+                                     a2: ptr CommandBuffer_436208629): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1300:16
-  Procqueuewritebuffer_436208578* = proc (a0: Queue_436208067;
+  ProcQueueWriteBuffer_436208578* = proc (a0: Queue_436208067;
       a1: Buffer_436208339;
 
 a2: uint64; a3: pointer; a4: csize_t): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1301:16
-  Procrenderbundleencoderdrawindexedindirect_436208580 * = proc (
-      a0: Renderbundleencoder_436208351; a1: Buffer_436208339;
+  ProcRenderBundleEncoderDrawindexedindirect_436208580 * = proc (
+      a0: RenderBundleencoder_436208351; a1: Buffer_436208339;
           a2: uint64): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1307:16
-  Renderpassencoder_436208584* = ptr structwgpurenderpassencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:80:43
-  Comparefunction_436208586* = Enumcomparefunction_436208155 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:171:3
-  Structsurfacedescriptorfrommetallayer_436208588 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:921:16
+  RenderPassEncoder_436208584* = ptr structwgpurenderpassencoderimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:80:43
+  CompareFunction_436208586* = EnumCompareFunction_436208155 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:171:3
+  StructSurfaceDescriptorfrommetallayer_436208588 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:921:16
     layer*: pointer
 
-  Createpipelineasyncstatus_436208590* = Enumcreatepipelineasyncstatus_436208055 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:201:3
-  Swapchain_436208592* = ptr structwgpuswapchainimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:85:35
-  Structsupportedlimits_436208594* = object
-    nextinchain*: ptr Chainedstructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1084:16
+  CreatePipelineAsyncStatus_436208590* = EnumCreatePipelineAsyncStatus_436208055 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:201:3
+  SwapChain_436208592* = ptr structwgpuswapchainimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:85:35
+  StructSupportedLimits_436208594* = object
+    nextinchain*: ptr ChainedStructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1084:16
     limits*: Limits_436208281
 
-  Structstoragereport_436208596* = object
+  StructStorageReport_436208596* = object
     numoccupied*: csize_t ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:101:16
     numvacant*: csize_t
     numerror*: csize_t
     elementsize*: csize_t
 
-  Proccomputepassencodersetpipeline_436208600 * = proc (
-      a0: Computepassencoder_436208535;
+  ProcComputePassEncoderSetPipeline_436208600 * = proc (
+      a0: ComputePassEncoder_436208535;
 
-a1: Computepipeline_436208357): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1252:16
-  Primitivedepthclipcontrol_436208602* = Structprimitivedepthclipcontrol_436208479 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:790:3
-  Procadapterrequestdevice_436208604* = proc (a0: Adapter_436208057;
-      a1: ptr Devicedescriptor_436208669; a2: Requestdevicecallback_436208273;
+a1: ComputePipeline_436208357): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1252:16
+  PrimitiveDepthClipControl_436208602* = StructPrimitiveDepthClipControl_436208479 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:790:3
+  ProcAdapterRequestDevice_436208604* = proc (a0: Adapter_436208057;
+      a1: ptr DeviceDescriptor_436208669; a2: RequestDeviceCallback_436208273;
       a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1206:16
-  Procadaptergetproperties_436208606* = proc (a0: Adapter_436208057;
-      a1: ptr Adapterproperties_436208201): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1204:16
-  Multisamplestate_436208608* = Structmultisamplestate_436208459 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:772:3
-  Proctexturedestroy_436208610* = proc (
+  ProcAdapterGetProperties_436208606* = proc (a0: Adapter_436208057;
+      a1: ptr AdapterProperties_436208201): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1204:16
+  MultisampleState_436208608* = StructMultisampleState_436208459 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:772:3
+  ProcTextureDestroy_436208610* = proc (
       a0: Texture_436208006): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1363:16
-  Structwrappedsubmissionindex_436208612 * = object
+  StructWrappedSubmissionIndex_436208612 * = object
     queue*: Queue_436208067 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:83:16
-    submissionindex*: Submissionindex_436208115
+    submissionindex*: SubmissionIndex_436208115
 
-  Cullmode_436208614* = Enumcullmode_436208253 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:208:3
-  Structfragmentstate_436208616* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1160:16
-    module*: Shadermodule_436208735
+  CullMode_436208614* = EnumCullMode_436208253 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:208:3
+  StructFragmentState_436208616* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1160:16
+    module*: ShaderModule_436208735
     entrypoint*: ptr cuchar
     constantcount*: uint32
-    constants*: ptr Constantentry_436208487
+    constants*: ptr ConstantEntry_436208487
     targetcount*: uint32
-    targets*: ptr Colortargetstate_436208495
+    targets*: ptr ColorTargetState_436208495
 
-  Surfacedescriptorfromwaylandsurface_436208618 *
-    = Structsurfacedescriptorfromwaylandsurface_436208567 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:930:3
-  Proccommandencoderpopdebuggroup_436208620 * = proc (
-      a0: Commandencoder_436208259): void {.
+  SurfaceDescriptorfromwaylandsurface_436208618 *
+    = StructSurfaceDescriptorfromwaylandsurface_436208567 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:930:3
+  ProcCommandEncoderPopDebugGroup_436208620 * = proc (
+      a0: CommandEncoder_436208259): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1235:16
-  Devicelostcallback_436208622* = proc (a0: Devicelostreason_436208131;
+  DeviceLostCallback_436208622* = proc (a0: DeviceLostReason_436208131;
                                         a1: ptr cuchar; a2: pointer): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1189:16
-  Procinstancecreatesurface_436208624* = proc (a0: Instance_436208049;
-      a1: ptr Surfacedescriptor_436208041): Surface_436208205 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1286:23
-  Commandbuffer_436208628* = ptr structwgpucommandbufferimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:69:39
-  Procrenderpassencoderendocclusionquery_436208630 * = proc (
-      a0: Renderpassencoder_436208585): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1327:16
-  Proccomputepipelinesetlabel_436208632 * = proc (a0: Computepipeline_436208357;
+  ProcInstanceCreateSurface_436208624* = proc (a0: Instance_436208049;
+      a1: ptr SurfaceDescriptor_436208041): Surface_436208205 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1286:23
+  CommandBuffer_436208628* = ptr structwgpucommandbufferimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:69:39
+  ProcRenderPassEncoderEndocclusionquery_436208630 * = proc (
+      a0: RenderPassEncoder_436208585): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1327:16
+  ProcComputePipelineSetLabel_436208632 * = proc (a0: ComputePipeline_436208357;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1256:16
-  Bufferdescriptor_436208636* = Structbufferdescriptor_436208141 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:687:3
-  Shadermodulewgsldescriptor_436208640 *
-    = Structshadermodulewgsldescriptor_436208769 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:890:3
-  Procbuffergetconstmappedrange_436208642 * = proc (a0: Buffer_436208339;
+  BufferDescriptor_436208636* = StructBufferDescriptor_436208141 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:687:3
+  ShaderModulewgsldescriptor_436208640 *
+    = StructShaderModuleWgslDescriptor_436208769 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:890:3
+  ProcBufferGetConstMappedRange_436208642 * = proc (a0: Buffer_436208339;
       a1: csize_t; a2: csize_t): pointer {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1216:24
-  Proccomputepassencoderpushdebuggroup_436208644 * = proc (
-      a0: Computepassencoder_436208535; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1249:16
-  Structbindgroupdescriptor_436208646* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:992:16
+  ProcComputePassEncoderPushDebugGroup_436208644 * = proc (
+      a0: ComputePassEncoder_436208535; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1249:16
+  StructBindGroupDescriptor_436208646* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:992:16
     label*: ptr cuchar
-    layout*: Bindgrouplayout_436208743
+    layout*: BindGrouplayout_436208743
     entrycount*: uint32
-    entries*: ptr Bindgroupentry_436208549
+    entries*: ptr BindGroupentry_436208549
 
-  Swapchaindescriptor_436208648* = Structswapchaindescriptor_436208387 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:958:3
-  Backendtype_436208650* = Enumbackendtype_436208803 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:114:3
-  Procdevicegetlimits_436208652* = proc (a0: Device_436207979;
-      a1: ptr Supportedlimits_436208135): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1276:16
-  Deviceextras_436208654* = Structdeviceextras_436208245 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:55:3
-  Procdevicecreatesampler_436208656* = proc (a0: Device_436207979;
-      a1: ptr Samplerdescriptor_436208293): Sampler_436208537 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1270:23
-  Structadapterextras_436208660* = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:47:16
-    backend*: Backendtype_436208651
+  SwapChaindescriptor_436208648* = StructSwapChainDescriptor_436208387 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:958:3
+  BackendType_436208650* = EnumBackendType_436208803 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:114:3
+  ProcDeviceGetLimits_436208652* = proc (a0: Device_436207979;
+      a1: ptr SupportedLimits_436208135): bool {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1276:16
+  DeviceExtras_436208654* = StructDeviceExtras_436208245 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:55:3
+  ProcDeviceCreateSampler_436208656* = proc (a0: Device_436207979;
+      a1: ptr SamplerDescriptor_436208293): Sampler_436208537 {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1270:23
+  StructAdapterExtras_436208660* = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:47:16
+    backend*: BackendType_436208651
 
-  Blendfactor_436208662* = Enumblendfactor_436208345 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:131:3
-  Structadapterproperties_436208664* = object
-    nextinchain*: ptr Chainedstructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:648:16
+  BlendFactor_436208662* = EnumBlendFactor_436208345 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:131:3
+  StructAdapterProperties_436208664* = object
+    nextinchain*: ptr ChainedStructout_436208083 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:648:16
     vendorid*: uint32
     deviceid*: uint32
     name*: ptr cuchar
     driverdescription*: ptr cuchar
-    adaptertype*: Adaptertype_436208237
-    backendtype*: Backendtype_436208651
+    adaptertype*: AdapterType_436208237
+    backendtype*: BackendType_436208651
 
-  Commandencoderdescriptor_436208666* = Structcommandencoderdescriptor_436208315 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:704:3
-  Devicedescriptor_436208668* = Structdevicedescriptor_436208063 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1137:3
-  Hubreport_436208670* = Structhubreport_436208695 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:124:3
-  Bufferusageflags_436208672* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:597:19
-  Requiredlimitsextras_436208674* = Structrequiredlimitsextras_436208503 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:61:3
-  Proccommandencoderbeginrenderpass_436208676 * = proc (
-      a0: Commandencoder_436208259;
+  CommandEncoderdescriptor_436208666* = StructCommandEncoderDescriptor_436208315 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:704:3
+  DeviceDescriptor_436208668* = StructDeviceDescriptor_436208063 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1137:3
+  HubReport_436208670* = StructHubReport_436208695 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:124:3
+  BufferUsageflags_436208672* = Flags_436208004 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:597:19
+  RequiredLimitsextras_436208674* = StructRequiredLimitsextras_436208503 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:61:3
+  ProcCommandEncoderBeginRenderPass_436208676 * = proc (
+      a0: CommandEncoder_436208259;
 
-a1: ptr Renderpassdescriptor_436208249): Renderpassencoder_436208585 {.
+a1: ptr RenderPassDescriptor_436208249): RenderPassEncoder_436208585 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1227:33
-  Procbindgroupsetlabel_436208678* = proc (a0: Bindgroup_436208377;
+  ProcBindGroupSetLabel_436208678* = proc (a0: BindGroup_436208377;
       a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1209:16
-  Shaderstage_436208682* = Enumshaderstage_436208779 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:624:3
-  Primitivestate_436208684* = Structprimitivestate_436208801 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:798:3
-  Renderpassdepthstencilattachment_436208686 *
-    = Structrenderpassdepthstencilattachment_436208699 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:840:3
-  Structrenderbundleencoderdescriptor_436208688 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:819:16
+  ShaderStage_436208682* = EnumShaderStage_436208779 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:624:3
+  PrimitiveState_436208684* = StructPrimitiveState_436208801 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:798:3
+  RenderPassDepthStencilAttachment_436208686 *
+    = StructRenderPassDepthStencilAttachment_436208699 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:840:3
+  StructRenderBundleEncoderDescriptor_436208688 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:819:16
     label*: ptr cuchar
     colorformatscount*: uint32
-    colorformats*: ptr Textureformat_436208002
-    depthstencilformat*: Textureformat_436208002
+    colorformats*: ptr TextureFormat_436208002
+    depthstencilformat*: TextureFormat_436208002
     samplecount*: uint32
     depthreadonly*: bool
     stencilreadonly*: bool
 
-  Storagetexturebindinglayout_436208690 *
-    = Structstoragetexturebindinglayout_436208027 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:904:3
-  Addressmode_436208692* = Enumaddressmode_436208221 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:102:3
-  Structhubreport_436208694* = object
-    adapters*: Storagereport_436208275 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:108:16
-    devices*: Storagereport_436208275
-    pipelinelayouts*: Storagereport_436208275
-    shadermodules*: Storagereport_436208275
-    bindgrouplayouts*: Storagereport_436208275
-    bindgroups*: Storagereport_436208275
-    commandbuffers*: Storagereport_436208275
-    renderbundles*: Storagereport_436208275
-    renderpipelines*: Storagereport_436208275
-    computepipelines*: Storagereport_436208275
-    querysets*: Storagereport_436208275
-    buffers*: Storagereport_436208275
-    textures*: Storagereport_436208275
-    textureviews*: Storagereport_436208275
-    samplers*: Storagereport_436208275
+  StorageTextureBindingLayout_436208690 *
+    = StructStorageTextureBindingLayout_436208027 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:904:3
+  AddressMode_436208692* = EnumAddressMode_436208221 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:102:3
+  StructHubReport_436208694* = object
+    adapters*: StorageReport_436208275 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:108:16
+    devices*: StorageReport_436208275
+    pipelinelayouts*: StorageReport_436208275
+    shadermodules*: StorageReport_436208275
+    bindgrouplayouts*: StorageReport_436208275
+    bindgroups*: StorageReport_436208275
+    commandbuffers*: StorageReport_436208275
+    renderbundles*: StorageReport_436208275
+    renderpipelines*: StorageReport_436208275
+    computepipelines*: StorageReport_436208275
+    querysets*: StorageReport_436208275
+    buffers*: StorageReport_436208275
+    textures*: StorageReport_436208275
+    textureviews*: StorageReport_436208275
+    samplers*: StorageReport_436208275
 
-  Structrenderpassdepthstencilattachment_436208698 * = object
-    view*: Textureview_436208441 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:830:16
-    depthloadop*: Loadop_436208755
-    depthstoreop*: Storeop_436208317
+  StructRenderPassDepthStencilAttachment_436208698 * = object
+    view*: TextureView_436208441 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:830:16
+    depthloadop*: LoadOp_436208755
+    depthstoreop*: StoreOp_436208317
     depthclearvalue*: cfloat
     depthreadonly*: bool
-    stencilloadop*: Loadop_436208755
-    stencilstoreop*: Storeop_436208317
+    stencilloadop*: LoadOp_436208755
+    stencilstoreop*: StoreOp_436208317
     stencilclearvalue*: uint32
     stencilreadonly*: bool
 
-  Proccommandencoderresolvequeryset_436208700 * = proc (
-      a0: Commandencoder_436208259;a1: Queryset_436208505; a2: uint32;
+  ProcCommandEncoderResolveQuerySet_436208700 * = proc (
+      a0: CommandEncoder_436208259;a1: QuerySet_436208505; a2: uint32;
           a3: uint32; a4: Buffer_436208339;
       a5: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1237:16
-  Programmablestagedescriptor_436208702 *
-    = Structprogrammablestagedescriptor_436208789 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1062:3
-  Structcompilationinfo_436208704* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1015:16
+  ProgrammableStageDescriptor_436208702 *
+    = StructProgrammableStageDescriptor_436208789 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1062:3
+  StructCompilationInfo_436208704* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1015:16
     messagecount*: uint32
-    messages*: ptr Compilationmessage_436208059
+    messages*: ptr CompilationMessage_436208059
 
-  Texturedescriptor_436208706* = Structtexturedescriptor_436208107 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1100:3
-  Proccommandencodercopybuffertobuffer_436208710 * = proc (
-      a0: Commandencoder_436208259;a1: Buffer_436208339; a2: uint64; a3: Buffer_436208339;
+  TextureDescriptor_436208706* = StructTextureDescriptor_436208107 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1100:3
+  ProcCommandEncoderCopyBufferToBuffer_436208710 * = proc (
+      a0: CommandEncoder_436208259;a1: Buffer_436208339; a2: uint64; a3: Buffer_436208339;
           a4: uint64;
       a5: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1229:16
-  Structlimits_436208712* = object
+  StructLimits_436208712* = object
     maxtexturedimension1d*: uint32 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:738:16
     maxtexturedimension2d*: uint32
     maxtexturedimension3d*: uint32
@@ -1833,2187 +1833,2187 @@ a1: ptr Renderpassdescriptor_436208249): Renderpassencoder_436208585 {.
     maxcomputeworkgroupsizez*: uint32
     maxcomputeworkgroupsperdimension*: uint32
 
-  Primitivetopology_436208714* = Enumprimitivetopology_436208329 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:313:3
-  Procdevicepusherrorscope_436208716* = proc (a0: Device_436207979;
-      a1: Errorfilter_436208149): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1280:16
-  Structcolor_436208718* = object
+  PrimitiveTopology_436208714* = EnumPrimitiveTopology_436208329 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:313:3
+  ProcDevicePushErrorScope_436208716* = proc (a0: Device_436207979;
+      a1: ErrorFilter_436208149): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1280:16
+  StructColor_436208718* = object
     r*: cdouble ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:689:16
     g*: cdouble
     b*: cdouble
     a*: cdouble
 
-  Colorwritemask_436208720* = Enumcolorwritemask_436208039 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:607:3
-  Procrenderbundleencoderdrawindexed_436208722 * = proc (
-      a0: Renderbundleencoder_436208351;a1: uint32; a2: uint32; a3: uint32;
+  ColorWriteMask_436208720* = EnumColorWriteMask_436208039 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:607:3
+  ProcRenderBundleEncoderDrawindexed_436208722 * = proc (
+      a0: RenderBundleencoder_436208351;a1: uint32; a2: uint32; a3: uint32;
           a4: int32;
           a5: uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1306:16
-  Proccomputepassencoderinsertdebugmarker_436208724 * = proc (
-      a0: Computepassencoder_436208535; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1247:16
-  Wrappedsubmissionindex_436208726* = Structwrappedsubmissionindex_436208613 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:86:3
-  Shaderdefine_436208728* = Structshaderdefine_436208335 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:91:3
-  Proccommandencoderclearbuffer_436208730 * = proc (
-      a0: Commandencoder_436208259;
+  ProcComputePassEncoderInsertDebugMarker_436208724 * = proc (
+      a0: ComputePassEncoder_436208535; a1: ptr cuchar): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1247:16
+  WrappedSubmissionIndex_436208726* = StructWrappedSubmissionIndex_436208613 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:86:3
+  ShaderDefine_436208728* = StructShaderDefine_436208335 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:91:3
+  ProcCommandEncoderClearBuffer_436208730 * = proc (
+      a0: CommandEncoder_436208259;
 
 a1: Buffer_436208339; a2: uint64; a3: uint64): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1228:16
-  Surfacedescriptorfromwindowshwnd_436208732 *
-    = Structsurfacedescriptorfromwindowshwnd_436208521 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:936:3
-  Shadermodule_436208734* = ptr structwgpushadermoduleimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:83:38
-  Supportedlimitsextras_436208736* = Structsupportedlimitsextras_436208159 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:67:3
-  Procdevicecreatecommandencoder_436208738 * = proc (a0: Device_436207979;
-      a1: ptr Commandencoderdescriptor_436208667): Commandencoder_436208259 {.
+  SurfaceDescriptorfromwindowshwnd_436208732 *
+    = StructSurfaceDescriptorfromwindowshwnd_436208521 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:936:3
+  ShaderModule_436208734* = ptr structwgpushadermoduleimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:83:38
+  SupportedLimitsextras_436208736* = StructSupportedLimitsextras_436208159 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/wgpu.h:67:3
+  ProcDeviceCreateCommandEncoder_436208738 * = proc (a0: Device_436207979;
+      a1: ptr CommandEncoderdescriptor_436208667): CommandEncoder_436208259 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1262:30
-  Procdeviceenumeratefeatures_436208740 * = proc (a0: Device_436207979;
-      a1: ptr Featurename_436208785): csize_t {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1275:18
-  Bindgrouplayout_436208742* = ptr structwgpubindgrouplayoutimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:67:41
-  Instancedescriptor_436208744* = Structinstancedescriptor_436207937 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:736:3
-  Depthstencilstate_436208746* = Structdepthstencilstate_436208211 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1040:3
-  Textureusage_436208748* = Enumtextureusage_436208627 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:635:3
-  Procrenderpassencoderexecutebundles_436208750 * = proc (
-      a0: Renderpassencoder_436208585;
+  ProcDeviceEnumerateFeatures_436208740 * = proc (a0: Device_436207979;
+      a1: ptr FeatureName_436208785): csize_t {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1275:18
+  BindGrouplayout_436208742* = ptr structwgpubindgrouplayoutimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:67:41
+  InstanceDescriptor_436208744* = StructInstanceDescriptor_436207937 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:736:3
+  DepthStencilState_436208746* = StructDepthStencilState_436208211 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1040:3
+  TextureUsage_436208748* = EnumTextureUsage_436208627 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:635:3
+  ProcRenderPassEncoderExecuteBundles_436208750 * = proc (
+      a0: RenderPassEncoder_436208585;
 
-a1: uint32; a2: ptr Renderbundle_436208783): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1329:16
-  Proccommandencodercopytexturetobuffer_436208752 * = proc (
-      a0: Commandencoder_436208259;a1: ptr Imagecopytexture_436208507;
-          a2: ptr Imagecopybuffer_436208757;
-      a3: ptr Extent3d_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1231:16
-  Loadop_436208754* = Enumloadop_436208481 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:269:3
-  Imagecopybuffer_436208756* = Structimagecopybuffer_436208109 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1046:3
-  Procdevicecreaterenderpipeline_436208758 * = proc (a0: Device_436207979;
-      a1: ptr Renderpipelinedescriptor_436208475): Renderpipeline_436208391 {.
+a1: uint32; a2: ptr RenderBundle_436208783): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1329:16
+  ProcCommandEncoderCopyTextureToBuffer_436208752 * = proc (
+      a0: CommandEncoder_436208259;a1: ptr ImageCopyTexture_436208507;
+          a2: ptr ImageCopyBuffer_436208757;
+      a3: ptr Extent3D_436208239): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1231:16
+  LoadOp_436208754* = EnumLoadOp_436208481 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:269:3
+  ImageCopyBuffer_436208756* = StructImageCopyBuffer_436208109 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1046:3
+  ProcDeviceCreateRenderPipeline_436208758 * = proc (a0: Device_436207979;
+      a1: ptr RenderPipelinedescriptor_436208475): RenderPipeline_436208391 {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1268:30
-  Procrenderbundleencodersetbindgroup_436208760 * = proc (
-      a0: Renderbundleencoder_436208351; a1: uint32; a2: Bindgroup_436208377;
+  ProcRenderBundleEncoderSetBindGroup_436208760 * = proc (
+      a0: RenderBundleencoder_436208351; a1: uint32; a2: BindGroup_436208377;
       a3: uint32; a4: ptr uint32): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1313:16
-  Textureaspect_436208764* = Enumtextureaspect_436208185 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:404:3
-  Procrenderpassencodersetpipeline_436208766 * = proc (
-      a0: Renderpassencoder_436208585;
+  TextureAspect_436208764* = EnumTextureAspect_436208185 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:404:3
+  ProcRenderPassEncoderSetPipeline_436208766 * = proc (
+      a0: RenderPassEncoder_436208585;
 
-a1: Renderpipeline_436208391): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1337:16
-  Structshadermodulewgsldescriptor_436208768 * = object
-    chain*: Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:887:16
+a1: RenderPipeline_436208391): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1337:16
+  StructShaderModuleWgslDescriptor_436208768 * = object
+    chain*: ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:887:16
     code*: ptr cuchar
 
-  Structvertexstate_436208770* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1150:16
-    module*: Shadermodule_436208735
+  StructVertexState_436208770* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1150:16
+    module*: ShaderModule_436208735
     entrypoint*: ptr cuchar
     constantcount*: uint32
-    constants*: ptr Constantentry_436208487
+    constants*: ptr ConstantEntry_436208487
     buffercount*: uint32
-    buffers*: ptr Vertexbufferlayout_436207975
+    buffers*: ptr VertexBufferLayout_436207975
 
-  Procdevicesetlabel_436208774* = proc (a0: Device_436207979;
+  ProcDeviceSetLabel_436208774* = proc (a0: Device_436207979;
       a1: ptr cuchar): void {.
       cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1282:16
-  Structchainedstructout_436208776* = object
-    next*: ptr Structchainedstructout_436208777 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:643:16
-    stype*: Wgpustype_436208079
+  StructChainedStructout_436208776* = object
+    next*: ptr StructChainedStructout_436208777 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:643:16
+    stype*: WgpusType_436208079
 
-  Renderbundle_436208782* = ptr structwgpurenderbundleimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:78:38
-  Featurename_436208784* = Enumfeaturename_436207991 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:243:3
-  Structprogrammablestagedescriptor_436208788 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1056:16
-    module*: Shadermodule_436208735
+  RenderBundle_436208782* = ptr structwgpurenderbundleimpl ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:78:38
+  FeatureName_436208784* = EnumFeatureName_436207991 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:243:3
+  StructProgrammableStageDescriptor_436208788 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1056:16
+    module*: ShaderModule_436208735
     entrypoint*: ptr cuchar
     constantcount*: uint32
-    constants*: ptr Constantentry_436208487
+    constants*: ptr ConstantEntry_436208487
 
-  Blendstate_436208790* = Structblendstate_436207983 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1013:3
-  Bindgrouplayoutentry_436208792* = Structbindgrouplayoutentry_436208813 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1008:3
-  Procinstancerequestadapter_436208794 * = proc (a0: Instance_436208049;
-      a1: ptr Requestadapteroptions_436208445;
-          a2: Requestadaptercallback_436208375;
+  BlendState_436208790* = StructBlendState_436207983 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1013:3
+  BindGrouplayoutentry_436208792* = StructBindGroupLayoutEntry_436208813 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1008:3
+  ProcInstanceRequestAdapter_436208794 * = proc (a0: Instance_436208049;
+      a1: ptr RequestAdapterOptions_436208445;
+          a2: RequestAdapterCallback_436208375;
       a3: pointer): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1288:16
-  Structshadermodulecompilationhint_436208796 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:875:16
+  StructShaderModuleCompilationHint_436208796 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:875:16
     entrypoint*: ptr cuchar
-    layout*: Pipelinelayout_436208415
+    layout*: PipelineLayout_436208415
 
-  Vertexstate_436208798* = Structvertexstate_436208771 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1158:3
-  Structprimitivestate_436208800* = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:792:16
-    topology*: Primitivetopology_436208715
-    stripindexformat*: Indexformat_436208301
-    frontface*: Frontface_436208111
-    cullmode*: Cullmode_436208615
+  VertexState_436208798* = StructVertexState_436208771 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1158:3
+  StructPrimitiveState_436208800* = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:792:16
+    topology*: PrimitiveTopology_436208715
+    stripindexformat*: IndexFormat_436208301
+    frontface*: FrontFace_436208111
+    cullmode*: CullMode_436208615
 
-  Bindgroupdescriptor_436208804* = Structbindgroupdescriptor_436208647 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:998:3
-  Bufferbindingtype_436208806* = Enumbufferbindingtype_436208035 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:148:3
-  Procrenderpassencoderendpipelinestatisticsquery_436208808 * = proc (
-      a0: Renderpassencoder_436208585): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1328:16
-  Texturedimension_436208810* = Enumtexturedimension_436208457 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:419:3
-  Structbindgrouplayoutentry_436208812 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1000:16
+  BindGroupdescriptor_436208804* = StructBindGroupDescriptor_436208647 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:998:3
+  BufferBindingType_436208806* = EnumBufferBindingType_436208035 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:148:3
+  ProcRenderPassEncoderEndpipelinestatisticsquery_436208808 * = proc (
+      a0: RenderPassEncoder_436208585): void {.cdecl.} ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1328:16
+  TextureDimension_436208810* = EnumTextureDimension_436208457 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:419:3
+  StructBindGroupLayoutEntry_436208812 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1000:16
     binding*: uint32
-    visibility*: Shaderstageflags_436208397
-    buffer*: Bufferbindinglayout_436207989
-    sampler*: Samplerbindinglayout_436208425
-    texture*: Texturebindinglayout_436208187
-    storagetexture*: Storagetexturebindinglayout_436208691
+    visibility*: ShaderStageflags_436208397
+    buffer*: BufferBindingLayout_436207989
+    sampler*: SamplerBindingLayout_436208425
+    texture*: TextureBindingLayout_436208187
+    storagetexture*: StorageTextureBindingLayout_436208691
 
-  Structshadermoduledescriptor_436208814 * = object
-    nextinchain*: ptr Chainedstruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1077:16
+  StructShaderModuleDescriptor_436208814 * = object
+    nextinchain*: ptr ChainedStruct_436208311 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:1077:16
     label*: ptr cuchar
     hintcount*: uint32
-    hints*: ptr Shadermodulecompilationhint_436208463
+    hints*: ptr ShaderModulecompilationhint_436208463
 
-  Pipelinelayoutdescriptor_436208816* = Structpipelinelayoutdescriptor_436207996 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:785:3
-  Procdevicecreatecomputepipelineasync_436207933 * = (when declared(
-      Procdevicecreatecomputepipelineasync):
-    Procdevicecreatecomputepipelineasync
+  PipelineLayoutdescriptor_436208816* = StructPipelineLayoutDescriptor_436207996 ## Generated based on /data/data/com.termux/files/home/wgpu-bindings/wgpu-native/ffi/webgpu-headers/webgpu.h:785:3
+  ProcDeviceCreateComputePipelineasync_436207933 * = (when declared(
+      ProcDeviceCreateComputePipelineasync):
+    ProcDeviceCreateComputePipelineasync
    else:
-    Procdevicecreatecomputepipelineasync_436207931)
-  Procdevicecreatebuffer_436207935* = (when declared(Procdevicecreatebuffer):
-    Procdevicecreatebuffer
+    ProcDeviceCreateComputePipelineasync_436207931)
+  ProcDeviceCreateBuffer_436207935* = (when declared(ProcDeviceCreateBuffer):
+    ProcDeviceCreateBuffer
    else:
-    Procdevicecreatebuffer_436207934)
-  Structinstancedescriptor_436207937* = (when declared(Structinstancedescriptor):
-    Structinstancedescriptor
+    ProcDeviceCreateBuffer_436207934)
+  StructInstanceDescriptor_436207937* = (when declared(StructInstanceDescriptor):
+    StructInstanceDescriptor
    else:
-    Structinstancedescriptor_436207936)
-  Structsurfacedescriptorfromxlibwindow_436207939 * = (when declared(
-      Structsurfacedescriptorfromxlibwindow):
-    Structsurfacedescriptorfromxlibwindow
+    StructInstanceDescriptor_436207936)
+  StructSurfaceDescriptorfromxlibwindow_436207939 * = (when declared(
+      StructSurfaceDescriptorfromxlibwindow):
+    StructSurfaceDescriptorfromxlibwindow
    else:
-    Structsurfacedescriptorfromxlibwindow_436207938)
-  Enumtexturesampletype_436207941* = (when declared(Enumtexturesampletype):
-    Enumtexturesampletype
+    StructSurfaceDescriptorfromxlibwindow_436207938)
+  EnumTextureSampleType_436207941* = (when declared(EnumTextureSampleType):
+    EnumTextureSampleType
    else:
-    Enumtexturesampletype_436207940)
-  Vertexstepmode_436207943* = (when declared(Vertexstepmode):
-    Vertexstepmode
+    EnumTextureSampleType_436207940)
+  VertexStepMode_436207943* = (when declared(VertexStepMode):
+    VertexStepMode
    else:
-    Vertexstepmode_436207942)
-  Procdevicecreateswapchain_436207945* = (when declared(
-      Procdevicecreateswapchain):
-    Procdevicecreateswapchain
+    VertexStepMode_436207942)
+  ProcDeviceCreateSwapChain_436207945* = (when declared(
+      ProcDeviceCreateSwapChain):
+    ProcDeviceCreateSwapChain
    else:
-    Procdevicecreateswapchain_436207944)
-  Structglobalreport_436207949* = (when declared(Structglobalreport):
-    Structglobalreport
+    ProcDeviceCreateSwapChain_436207944)
+  StructGlobalReport_436207949* = (when declared(StructGlobalReport):
+    StructGlobalReport
    else:
-    Structglobalreport_436207948)
-  Requiredlimits_436207947* = (when declared(Requiredlimits):
-    Requiredlimits
+    StructGlobalReport_436207948)
+  RequiredLimits_436207947* = (when declared(RequiredLimits):
+    RequiredLimits
    else:
-    Requiredlimits_436207946)
-  Structrenderpasstimestampwrite_436207951 * = (when declared(
-      Structrenderpasstimestampwrite):
-    Structrenderpasstimestampwrite
+    RequiredLimits_436207946)
+  StructRenderPassTimestampWrite_436207951 * = (when declared(
+      StructRenderPassTimestampWrite):
+    StructRenderPassTimestampWrite
    else:
-    Structrenderpasstimestampwrite_436207950)
-  Enummapmode_436207953* = (when declared(Enummapmode):
-    Enummapmode
+    StructRenderPassTimestampWrite_436207950)
+  EnumMapMode_436207953* = (when declared(EnumMapMode):
+    EnumMapMode
    else:
-    Enummapmode_436207952)
-  Procdevicecreatequeryset_436207955* = (when declared(Procdevicecreatequeryset):
-    Procdevicecreatequeryset
+    EnumMapMode_436207952)
+  ProcDeviceCreateQuerySet_436207955* = (when declared(ProcDeviceCreateQuerySet):
+    ProcDeviceCreateQuerySet
    else:
-    Procdevicecreatequeryset_436207954)
-  Enumblendoperation_436207957* = (when declared(Enumblendoperation):
-    Enumblendoperation
+    ProcDeviceCreateQuerySet_436207954)
+  EnumBlendOperation_436207957* = (when declared(EnumBlendOperation):
+    EnumBlendOperation
    else:
-    Enumblendoperation_436207956)
-  Pushconstantrange_436207959* = (when declared(Pushconstantrange):
-    Pushconstantrange
+    EnumBlendOperation_436207956)
+  PushConstantRange_436207959* = (when declared(PushConstantRange):
+    PushConstantRange
    else:
-    Pushconstantrange_436207958)
-  Shadermoduleglsldescriptor_436207961 * = (when declared(
-      Shadermoduleglsldescriptor):
-    Shadermoduleglsldescriptor
+    PushConstantRange_436207958)
+  ShaderModuleglsldescriptor_436207961 * = (when declared(
+      ShaderModuleglsldescriptor):
+    ShaderModuleglsldescriptor
    else:
-    Shadermoduleglsldescriptor_436207960)
-  Procdevicecreatetexture_436207963* = (when declared(Procdevicecreatetexture):
-    Procdevicecreatetexture
+    ShaderModuleglsldescriptor_436207960)
+  ProcDeviceCreateTexture_436207963* = (when declared(ProcDeviceCreateTexture):
+    ProcDeviceCreateTexture
    else:
-    Procdevicecreatetexture_436207962)
-  Procrenderpassencoderdrawindexedindirect_436207965 * = (when declared(
-      Procrenderpassencoderdrawindexedindirect):
-    Procrenderpassencoderdrawindexedindirect
+    ProcDeviceCreateTexture_436207962)
+  ProcRenderPassEncoderDrawindexedindirect_436207965 * = (when declared(
+      ProcRenderPassEncoderDrawindexedindirect):
+    ProcRenderPassEncoderDrawindexedindirect
    else:
-    Procrenderpassencoderdrawindexedindirect_436207964)
-  Mapmode_436207967* = (when declared(Mapmode):
-    Mapmode
+    ProcRenderPassEncoderDrawindexedindirect_436207964)
+  MapMode_436207967* = (when declared(MapMode):
+    MapMode
    else:
-    Mapmode_436207966)
-  Storagetextureaccess_436207969* = (when declared(Storagetextureaccess):
-    Storagetextureaccess
+    MapMode_436207966)
+  StorageTextureAccess_436207969* = (when declared(StorageTextureAccess):
+    StorageTextureAccess
    else:
-    Storagetextureaccess_436207968)
-  Structsamplerdescriptor_436207971* = (when declared(Structsamplerdescriptor):
-    Structsamplerdescriptor
+    StorageTextureAccess_436207968)
+  StructSamplerDescriptor_436207971* = (when declared(StructSamplerDescriptor):
+    StructSamplerDescriptor
    else:
-    Structsamplerdescriptor_436207970)
-  Procrenderbundleencoderpushdebuggroup_436207973 * = (when declared(
-      Procrenderbundleencoderpushdebuggroup):
-    Procrenderbundleencoderpushdebuggroup
+    StructSamplerDescriptor_436207970)
+  ProcRenderBundleEncoderPushDebugGroup_436207973 * = (when declared(
+      ProcRenderBundleEncoderPushDebugGroup):
+    ProcRenderBundleEncoderPushDebugGroup
    else:
-    Procrenderbundleencoderpushdebuggroup_436207972)
-  Vertexbufferlayout_436207975* = (when declared(Vertexbufferlayout):
-    Vertexbufferlayout
+    ProcRenderBundleEncoderPushDebugGroup_436207972)
+  VertexBufferLayout_436207975* = (when declared(VertexBufferLayout):
+    VertexBufferLayout
    else:
-    Vertexbufferlayout_436207974)
-  Predefinedcolorspace_436207977* = (when declared(Predefinedcolorspace):
-    Predefinedcolorspace
+    VertexBufferLayout_436207974)
+  PredefinedColorSpace_436207977* = (when declared(PredefinedColorSpace):
+    PredefinedColorSpace
    else:
-    Predefinedcolorspace_436207976)
+    PredefinedColorSpace_436207976)
   Device_436207979* = (when declared(Device):
     Device
    else:
     Device_436207978)
-  Structsurfacedescriptor_436207981* = (when declared(Structsurfacedescriptor):
-    Structsurfacedescriptor
+  StructSurfaceDescriptor_436207981* = (when declared(StructSurfaceDescriptor):
+    StructSurfaceDescriptor
    else:
-    Structsurfacedescriptor_436207980)
-  Structblendstate_436207983* = (when declared(Structblendstate):
-    Structblendstate
+    StructSurfaceDescriptor_436207980)
+  StructBlendState_436207983* = (when declared(StructBlendState):
+    StructBlendState
    else:
-    Structblendstate_436207982)
-  Procrenderpipelinegetbindgrouplayout_436207985 * = (when declared(
-      Procrenderpipelinegetbindgrouplayout):
-    Procrenderpipelinegetbindgrouplayout
+    StructBlendState_436207982)
+  ProcRenderPipelineGetBindGroupLayout_436207985 * = (when declared(
+      ProcRenderPipelineGetBindGroupLayout):
+    ProcRenderPipelineGetBindGroupLayout
    else:
-    Procrenderpipelinegetbindgrouplayout_436207984)
-  Procrenderpassencoderbeginpipelinestatisticsquery_436207987 * = (when declared(
-      Procrenderpassencoderbeginpipelinestatisticsquery):
-    Procrenderpassencoderbeginpipelinestatisticsquery
+    ProcRenderPipelineGetBindGroupLayout_436207984)
+  ProcRenderPassEncoderBeginPipelineStatisticsQuery_436207987 * = (when declared(
+      ProcRenderPassEncoderBeginPipelineStatisticsQuery):
+    ProcRenderPassEncoderBeginPipelineStatisticsQuery
    else:
-    Procrenderpassencoderbeginpipelinestatisticsquery_436207986)
-  Bufferbindinglayout_436207989* = (when declared(Bufferbindinglayout):
-    Bufferbindinglayout
+    ProcRenderPassEncoderBeginPipelineStatisticsQuery_436207986)
+  BufferBindingLayout_436207989* = (when declared(BufferBindingLayout):
+    BufferBindingLayout
    else:
-    Bufferbindinglayout_436207988)
-  Enumfeaturename_436207991* = (when declared(Enumfeaturename):
-    Enumfeaturename
+    BufferBindingLayout_436207988)
+  EnumFeatureName_436207991* = (when declared(EnumFeatureName):
+    EnumFeatureName
    else:
-    Enumfeaturename_436207990)
-  Proccomputepassencoderendpipelinestatisticsquery_436207998 * = (when declared(
-      Proccomputepassencoderendpipelinestatisticsquery):
-    Proccomputepassencoderendpipelinestatisticsquery
+    EnumFeatureName_436207990)
+  ProcComputePassEncoderEndpipelinestatisticsquery_436207998 * = (when declared(
+      ProcComputePassEncoderEndpipelinestatisticsquery):
+    ProcComputePassEncoderEndpipelinestatisticsquery
    else:
-    Proccomputepassencoderendpipelinestatisticsquery_436207997)
-  Proccommandbuffersetlabel_436207994* = (when declared(
-      Proccommandbuffersetlabel):
-    Proccommandbuffersetlabel
+    ProcComputePassEncoderEndpipelinestatisticsquery_436207997)
+  ProcCommandBufferSetLabel_436207994* = (when declared(
+      ProcCommandBufferSetLabel):
+    ProcCommandBufferSetLabel
    else:
-    Proccommandbuffersetlabel_436207993)
-  Structpipelinelayoutdescriptor_436207996 * = (when declared(
-      Structpipelinelayoutdescriptor):
-    Structpipelinelayoutdescriptor
+    ProcCommandBufferSetLabel_436207993)
+  StructPipelineLayoutDescriptor_436207996 * = (when declared(
+      StructPipelineLayoutDescriptor):
+    StructPipelineLayoutDescriptor
    else:
-    Structpipelinelayoutdescriptor_436207995)
-  Procrenderpassencodersetblendconstant_436208000 * = (when declared(
-      Procrenderpassencodersetblendconstant):
-    Procrenderpassencodersetblendconstant
+    StructPipelineLayoutDescriptor_436207995)
+  ProcRenderPassEncoderSetBlendConstant_436208000 * = (when declared(
+      ProcRenderPassEncoderSetBlendConstant):
+    ProcRenderPassEncoderSetBlendConstant
    else:
-    Procrenderpassencodersetblendconstant_436207999)
-  Textureformat_436208002* = (when declared(Textureformat):
-    Textureformat
+    ProcRenderPassEncoderSetBlendConstant_436207999)
+  TextureFormat_436208002* = (when declared(TextureFormat):
+    TextureFormat
    else:
-    Textureformat_436208001)
+    TextureFormat_436208001)
   Flags_436208004* = (when declared(Flags):
     Flags
    else:
     Flags_436208003)
-  Texturesampletype_436208008* = (when declared(Texturesampletype):
-    Texturesampletype
+  TextureSampleType_436208008* = (when declared(TextureSampleType):
+    TextureSampleType
    else:
-    Texturesampletype_436208007)
+    TextureSampleType_436208007)
   Texture_436208006* = (when declared(Texture):
     Texture
    else:
     Texture_436208005)
-  Enumvertexformat_436208010* = (when declared(Enumvertexformat):
-    Enumvertexformat
+  EnumVertexFormat_436208010* = (when declared(EnumVertexFormat):
+    EnumVertexFormat
    else:
-    Enumvertexformat_436208009)
-  Structbindgrouplayoutdescriptor_436208012 * = (when declared(
-      Structbindgrouplayoutdescriptor):
-    Structbindgrouplayoutdescriptor
+    EnumVertexFormat_436208009)
+  StructBindGroupLayoutDescriptor_436208012 * = (when declared(
+      StructBindGroupLayoutDescriptor):
+    StructBindGroupLayoutDescriptor
    else:
-    Structbindgrouplayoutdescriptor_436208011)
-  Procdevicedestroy_436208014* = (when declared(Procdevicedestroy):
-    Procdevicedestroy
+    StructBindGroupLayoutDescriptor_436208011)
+  ProcDeviceDestroy_436208014* = (when declared(ProcDeviceDestroy):
+    ProcDeviceDestroy
    else:
-    Procdevicedestroy_436208013)
-  Procrenderbundleencoderfinish_436208016 * = (when declared(
-      Procrenderbundleencoderfinish):
-    Procrenderbundleencoderfinish
+    ProcDeviceDestroy_436208013)
+  ProcRenderBundleEncoderFinish_436208016 * = (when declared(
+      ProcRenderBundleEncoderFinish):
+    ProcRenderBundleEncoderFinish
    else:
-    Procrenderbundleencoderfinish_436208015)
-  Procrenderbundleencodersetvertexbuffer_436208025 * = (when declared(
-      Procrenderbundleencodersetvertexbuffer):
-    Procrenderbundleencodersetvertexbuffer
+    ProcRenderBundleEncoderFinish_436208015)
+  ProcRenderBundleEncoderSetVertexBuffer_436208025 * = (when declared(
+      ProcRenderBundleEncoderSetVertexBuffer):
+    ProcRenderBundleEncoderSetVertexBuffer
    else:
-    Procrenderbundleencodersetvertexbuffer_436208024)
-  Structstoragetexturebindinglayout_436208027 * = (when declared(
-      Structstoragetexturebindinglayout):
-    Structstoragetexturebindinglayout
+    ProcRenderBundleEncoderSetVertexBuffer_436208024)
+  StructStorageTextureBindingLayout_436208027 * = (when declared(
+      StructStorageTextureBindingLayout):
+    StructStorageTextureBindingLayout
    else:
-    Structstoragetexturebindinglayout_436208026)
-  Vertexformat_436208029* = (when declared(Vertexformat):
-    Vertexformat
+    StructStorageTextureBindingLayout_436208026)
+  VertexFormat_436208029* = (when declared(VertexFormat):
+    VertexFormat
    else:
-    Vertexformat_436208028)
-  Procrenderpassencoderend_436208031* = (when declared(Procrenderpassencoderend):
-    Procrenderpassencoderend
+    VertexFormat_436208028)
+  ProcRenderPassEncoderEnd_436208031* = (when declared(ProcRenderPassEncoderEnd):
+    ProcRenderPassEncoderEnd
    else:
-    Procrenderpassencoderend_436208030)
-  Loglevel_436208033* = (when declared(Loglevel):
-    Loglevel
+    ProcRenderPassEncoderEnd_436208030)
+  LogLevel_436208033* = (when declared(LogLevel):
+    LogLevel
    else:
-    Loglevel_436208032)
-  Enumbufferbindingtype_436208035* = (when declared(Enumbufferbindingtype):
-    Enumbufferbindingtype
+    LogLevel_436208032)
+  EnumBufferBindingType_436208035* = (when declared(EnumBufferBindingType):
+    EnumBufferBindingType
    else:
-    Enumbufferbindingtype_436208034)
-  Surfacedescriptorfrommetallayer_436208037 * = (when declared(
-      Surfacedescriptorfrommetallayer):
-    Surfacedescriptorfrommetallayer
+    EnumBufferBindingType_436208034)
+  SurfaceDescriptorfrommetallayer_436208037 * = (when declared(
+      SurfaceDescriptorfrommetallayer):
+    SurfaceDescriptorfrommetallayer
    else:
-    Surfacedescriptorfrommetallayer_436208036)
-  Enumcolorwritemask_436208039* = (when declared(Enumcolorwritemask):
-    Enumcolorwritemask
+    SurfaceDescriptorfrommetallayer_436208036)
+  EnumColorWriteMask_436208039* = (when declared(EnumColorWriteMask):
+    EnumColorWriteMask
    else:
-    Enumcolorwritemask_436208038)
-  Surfacedescriptor_436208041* = (when declared(Surfacedescriptor):
-    Surfacedescriptor
+    EnumColorWriteMask_436208038)
+  SurfaceDescriptor_436208041* = (when declared(SurfaceDescriptor):
+    SurfaceDescriptor
    else:
-    Surfacedescriptor_436208040)
-  Procrenderpassencodersetviewport_436208043 * = (when declared(
-      Procrenderpassencodersetviewport):
-    Procrenderpassencodersetviewport
+    SurfaceDescriptor_436208040)
+  ProcRenderPassEncoderSetViewport_436208043 * = (when declared(
+      ProcRenderPassEncoderSetViewport):
+    ProcRenderPassEncoderSetViewport
    else:
-    Procrenderpassencodersetviewport_436208042)
-  Procqueueonsubmittedworkdone_436208045 * = (when declared(
-      Procqueueonsubmittedworkdone):
-    Procqueueonsubmittedworkdone
+    ProcRenderPassEncoderSetViewport_436208042)
+  ProcQueueOnSubmittedWorkDone_436208045 * = (when declared(
+      ProcQueueOnSubmittedWorkDone):
+    ProcQueueOnSubmittedWorkDone
    else:
-    Procqueueonsubmittedworkdone_436208044)
-  Structpipelinelayoutextras_436208047 * = (when declared(
-      Structpipelinelayoutextras):
-    Structpipelinelayoutextras
+    ProcQueueOnSubmittedWorkDone_436208044)
+  StructPipelineLayoutExtras_436208047 * = (when declared(
+      StructPipelineLayoutExtras):
+    StructPipelineLayoutExtras
    else:
-    Structpipelinelayoutextras_436208046)
+    StructPipelineLayoutExtras_436208046)
   Instance_436208049* = (when declared(Instance):
     Instance
    else:
     Instance_436208048)
-  Computepasstimestampwrite_436208051* = (when declared(
-      Computepasstimestampwrite):
-    Computepasstimestampwrite
+  ComputePassTimestampWrite_436208051* = (when declared(
+      ComputePassTimestampWrite):
+    ComputePassTimestampWrite
    else:
-    Computepasstimestampwrite_436208050)
-  Structrenderbundledescriptor_436208053 * = (when declared(
-      Structrenderbundledescriptor):
-    Structrenderbundledescriptor
+    ComputePassTimestampWrite_436208050)
+  StructRenderBundleDescriptor_436208053 * = (when declared(
+      StructRenderBundleDescriptor):
+    StructRenderBundleDescriptor
    else:
-    Structrenderbundledescriptor_436208052)
-  Enumcreatepipelineasyncstatus_436208055 * = (when declared(
-      Enumcreatepipelineasyncstatus):
-    Enumcreatepipelineasyncstatus
+    StructRenderBundleDescriptor_436208052)
+  EnumCreatePipelineAsyncStatus_436208055 * = (when declared(
+      EnumCreatePipelineAsyncStatus):
+    EnumCreatePipelineAsyncStatus
    else:
-    Enumcreatepipelineasyncstatus_436208054)
+    EnumCreatePipelineAsyncStatus_436208054)
   Adapter_436208057* = (when declared(Adapter):
     Adapter
    else:
     Adapter_436208056)
-  Compilationmessage_436208059* = (when declared(Compilationmessage):
-    Compilationmessage
+  CompilationMessage_436208059* = (when declared(CompilationMessage):
+    CompilationMessage
    else:
-    Compilationmessage_436208058)
-  Proccomputepassencoderend_436208061* = (when declared(
-      Proccomputepassencoderend):
-    Proccomputepassencoderend
+    CompilationMessage_436208058)
+  ProcComputePassEncoderEnd_436208061* = (when declared(
+      ProcComputePassEncoderEnd):
+    ProcComputePassEncoderEnd
    else:
-    Proccomputepassencoderend_436208060)
-  Structdevicedescriptor_436208063* = (when declared(Structdevicedescriptor):
-    Structdevicedescriptor
+    ProcComputePassEncoderEnd_436208060)
+  StructDeviceDescriptor_436208063* = (when declared(StructDeviceDescriptor):
+    StructDeviceDescriptor
    else:
-    Structdevicedescriptor_436208062)
-  Procdevicecreatebindgrouplayout_436208065 * = (when declared(
-      Procdevicecreatebindgrouplayout):
-    Procdevicecreatebindgrouplayout
+    StructDeviceDescriptor_436208062)
+  ProcDeviceCreateBindGrouplayout_436208065 * = (when declared(
+      ProcDeviceCreateBindGrouplayout):
+    ProcDeviceCreateBindGrouplayout
    else:
-    Procdevicecreatebindgrouplayout_436208064)
+    ProcDeviceCreateBindGrouplayout_436208064)
   Queue_436208067* = (when declared(Queue):
     Queue
    else:
     Queue_436208066)
-  Structvertexattribute_436208069* = (when declared(Structvertexattribute):
-    Structvertexattribute
+  StructVertexAttribute_436208069* = (when declared(StructVertexAttribute):
+    StructVertexAttribute
    else:
-    Structvertexattribute_436208068)
-  Enumwgpustype_436208071* = (when declared(Enumwgpustype):
-    Enumwgpustype
+    StructVertexAttribute_436208068)
+  EnumWgpusType_436208071* = (when declared(EnumWgpusType):
+    EnumWgpusType
    else:
-    Enumwgpustype_436208070)
-  Structchainedstruct_436208073* = (when declared(Structchainedstruct):
-    Structchainedstruct
+    EnumWgpusType_436208070)
+  StructChainedStruct_436208073* = (when declared(StructChainedStruct):
+    StructChainedStruct
    else:
-    Structchainedstruct_436208072)
-  Createcomputepipelineasynccallback_436208075 * = (when declared(
-      Createcomputepipelineasynccallback):
-    Createcomputepipelineasynccallback
+    StructChainedStruct_436208072)
+  CreateComputePipelineAsyncCallback_436208075 * = (when declared(
+      CreateComputePipelineAsyncCallback):
+    CreateComputePipelineAsyncCallback
    else:
-    Createcomputepipelineasynccallback_436208074)
-  Procbuffergetmappedrange_436208077* = (when declared(Procbuffergetmappedrange):
-    Procbuffergetmappedrange
+    CreateComputePipelineAsyncCallback_436208074)
+  ProcBufferGetMappedRange_436208077* = (when declared(ProcBufferGetMappedRange):
+    ProcBufferGetMappedRange
    else:
-    Procbuffergetmappedrange_436208076)
-  Wgpustype_436208079* = (when declared(Wgpustype):
-    Wgpustype
+    ProcBufferGetMappedRange_436208076)
+  WgpusType_436208079* = (when declared(WgpusType):
+    WgpusType
    else:
-    Wgpustype_436208078)
-  Structsamplerbindinglayout_436208081 * = (when declared(
-      Structsamplerbindinglayout):
-    Structsamplerbindinglayout
+    WgpusType_436208078)
+  StructSamplerBindingLayout_436208081 * = (when declared(
+      StructSamplerBindingLayout):
+    StructSamplerBindingLayout
    else:
-    Structsamplerbindinglayout_436208080)
-  Chainedstructout_436208083* = (when declared(Chainedstructout):
-    Chainedstructout
+    StructSamplerBindingLayout_436208080)
+  ChainedStructout_436208083* = (when declared(ChainedStructout):
+    ChainedStructout
    else:
-    Chainedstructout_436208082)
+    ChainedStructout_436208082)
   Color_436208085* = (when declared(Color):
     Color
    else:
     Color_436208084)
-  Structstencilfacestate_436208087* = (when declared(Structstencilfacestate):
-    Structstencilfacestate
+  StructStencilFaceState_436208087* = (when declared(StructStencilFaceState):
+    StructStencilFaceState
    else:
-    Structstencilfacestate_436208086)
-  Structtexturebindinglayout_436208089 * = (when declared(
-      Structtexturebindinglayout):
-    Structtexturebindinglayout
+    StructStencilFaceState_436208086)
+  StructTextureBindingLayout_436208089 * = (when declared(
+      StructTextureBindingLayout):
+    StructTextureBindingLayout
    else:
-    Structtexturebindinglayout_436208088)
-  Proccomputepassencodersetlabel_436208091 * = (when declared(
-      Proccomputepassencodersetlabel):
-    Proccomputepassencodersetlabel
+    StructTextureBindingLayout_436208088)
+  ProcComputePassEncoderSetLabel_436208091 * = (when declared(
+      ProcComputePassEncoderSetLabel):
+    ProcComputePassEncoderSetLabel
    else:
-    Proccomputepassencodersetlabel_436208090)
-  Procdevicecreatepipelinelayout_436208093 * = (when declared(
-      Procdevicecreatepipelinelayout):
-    Procdevicecreatepipelinelayout
+    ProcComputePassEncoderSetLabel_436208090)
+  ProcDeviceCreatePipelineLayout_436208093 * = (when declared(
+      ProcDeviceCreatePipelineLayout):
+    ProcDeviceCreatePipelineLayout
    else:
-    Procdevicecreatepipelinelayout_436208092)
-  Procdevicesetuncapturederrorcallback_436208095 * = (when declared(
-      Procdevicesetuncapturederrorcallback):
-    Procdevicesetuncapturederrorcallback
+    ProcDeviceCreatePipelineLayout_436208092)
+  ProcDeviceSetUncapturedErrorCallback_436208095 * = (when declared(
+      ProcDeviceSetUncapturedErrorCallback):
+    ProcDeviceSetUncapturedErrorCallback
    else:
-    Procdevicesetuncapturederrorcallback_436208094)
-  Vertexattribute_436208097* = (when declared(Vertexattribute):
-    Vertexattribute
+    ProcDeviceSetUncapturedErrorCallback_436208094)
+  VertexAttribute_436208097* = (when declared(VertexAttribute):
+    VertexAttribute
    else:
-    Vertexattribute_436208096)
-  Procrenderbundleencodersetpipeline_436208099 * = (when declared(
-      Procrenderbundleencodersetpipeline):
-    Procrenderbundleencodersetpipeline
+    VertexAttribute_436208096)
+  ProcRenderBundleEncoderSetPipeline_436208099 * = (when declared(
+      ProcRenderBundleEncoderSetPipeline):
+    ProcRenderBundleEncoderSetPipeline
    else:
-    Procrenderbundleencodersetpipeline_436208098)
-  Procrenderpassencodersetindexbuffer_436208101 * = (when declared(
-      Procrenderpassencodersetindexbuffer):
-    Procrenderpassencodersetindexbuffer
+    ProcRenderBundleEncoderSetPipeline_436208098)
+  ProcRenderPassEncoderSetIndexBuffer_436208101 * = (when declared(
+      ProcRenderPassEncoderSetIndexBuffer):
+    ProcRenderPassEncoderSetIndexBuffer
    else:
-    Procrenderpassencodersetindexbuffer_436208100)
-  Enumloglevel_436208103* = (when declared(Enumloglevel):
-    Enumloglevel
+    ProcRenderPassEncoderSetIndexBuffer_436208100)
+  EnumLogLevel_436208103* = (when declared(EnumLogLevel):
+    EnumLogLevel
    else:
-    Enumloglevel_436208102)
-  Proccomputepipelinegetbindgrouplayout_436208105 * = (when declared(
-      Proccomputepipelinegetbindgrouplayout):
-    Proccomputepipelinegetbindgrouplayout
+    EnumLogLevel_436208102)
+  ProcComputePipelineGetBindGroupLayout_436208105 * = (when declared(
+      ProcComputePipelineGetBindGroupLayout):
+    ProcComputePipelineGetBindGroupLayout
    else:
-    Proccomputepipelinegetbindgrouplayout_436208104)
-  Structtexturedescriptor_436208107* = (when declared(Structtexturedescriptor):
-    Structtexturedescriptor
+    ProcComputePipelineGetBindGroupLayout_436208104)
+  StructTextureDescriptor_436208107* = (when declared(StructTextureDescriptor):
+    StructTextureDescriptor
    else:
-    Structtexturedescriptor_436208106)
-  Structimagecopybuffer_436208109* = (when declared(Structimagecopybuffer):
-    Structimagecopybuffer
+    StructTextureDescriptor_436208106)
+  StructImageCopyBuffer_436208109* = (when declared(StructImageCopyBuffer):
+    StructImageCopyBuffer
    else:
-    Structimagecopybuffer_436208108)
-  Frontface_436208111* = (when declared(Frontface):
-    Frontface
+    StructImageCopyBuffer_436208108)
+  FrontFace_436208111* = (when declared(FrontFace):
+    FrontFace
    else:
-    Frontface_436208110)
-  Renderbundleencoderdescriptor_436208113 * = (when declared(
-      Renderbundleencoderdescriptor):
-    Renderbundleencoderdescriptor
+    FrontFace_436208110)
+  RenderBundleencoderdescriptor_436208113 * = (when declared(
+      RenderBundleencoderdescriptor):
+    RenderBundleencoderdescriptor
    else:
-    Renderbundleencoderdescriptor_436208112)
-  Submissionindex_436208115* = (when declared(Submissionindex):
-    Submissionindex
+    RenderBundleencoderdescriptor_436208112)
+  SubmissionIndex_436208115* = (when declared(SubmissionIndex):
+    SubmissionIndex
    else:
-    Submissionindex_436208114)
-  Procrenderbundleencodersetindexbuffer_436208117 * = (when declared(
-      Procrenderbundleencodersetindexbuffer):
-    Procrenderbundleencodersetindexbuffer
+    SubmissionIndex_436208114)
+  ProcRenderBundleEncoderSetIndexBuffer_436208117 * = (when declared(
+      ProcRenderBundleEncoderSetIndexBuffer):
+    ProcRenderBundleEncoderSetIndexBuffer
    else:
-    Procrenderbundleencodersetindexbuffer_436208116)
-  Shadermoduledescriptor_436208119* = (when declared(Shadermoduledescriptor):
-    Shadermoduledescriptor
+    ProcRenderBundleEncoderSetIndexBuffer_436208116)
+  ShaderModuledescriptor_436208119* = (when declared(ShaderModuledescriptor):
+    ShaderModuledescriptor
    else:
-    Shadermoduledescriptor_436208118)
-  Proccreateinstance_436208121* = (when declared(Proccreateinstance):
-    Proccreateinstance
+    ShaderModuledescriptor_436208118)
+  ProcCreateInstance_436208121* = (when declared(ProcCreateInstance):
+    ProcCreateInstance
    else:
-    Proccreateinstance_436208120)
-  Structqueuedescriptor_436208123* = (when declared(Structqueuedescriptor):
-    Structqueuedescriptor
+    ProcCreateInstance_436208120)
+  StructQueueDescriptor_436208123* = (when declared(StructQueueDescriptor):
+    StructQueueDescriptor
    else:
-    Structqueuedescriptor_436208122)
-  Procrenderpassencodersetvertexbuffer_436208125 * = (when declared(
-      Procrenderpassencodersetvertexbuffer):
-    Procrenderpassencodersetvertexbuffer
+    StructQueueDescriptor_436208122)
+  ProcRenderPassEncoderSetVertexBuffer_436208125 * = (when declared(
+      ProcRenderPassEncoderSetVertexBuffer):
+    ProcRenderPassEncoderSetVertexBuffer
    else:
-    Procrenderpassencodersetvertexbuffer_436208124)
-  Enumadaptertype_436208127* = (when declared(Enumadaptertype):
-    Enumadaptertype
+    ProcRenderPassEncoderSetVertexBuffer_436208124)
+  EnumAdapterType_436208127* = (when declared(EnumAdapterType):
+    EnumAdapterType
    else:
-    Enumadaptertype_436208126)
-  Procbuffermapasync_436208129* = (when declared(Procbuffermapasync):
-    Procbuffermapasync
+    EnumAdapterType_436208126)
+  ProcBufferMapAsync_436208129* = (when declared(ProcBufferMapAsync):
+    ProcBufferMapAsync
    else:
-    Procbuffermapasync_436208128)
-  Devicelostreason_436208131* = (when declared(Devicelostreason):
-    Devicelostreason
+    ProcBufferMapAsync_436208128)
+  DeviceLostReason_436208131* = (when declared(DeviceLostReason):
+    DeviceLostReason
    else:
-    Devicelostreason_436208130)
-  Procrenderpassencodersetstencilreference_436208133 * = (when declared(
-      Procrenderpassencodersetstencilreference):
-    Procrenderpassencodersetstencilreference
+    DeviceLostReason_436208130)
+  ProcRenderPassEncoderSetStencilReference_436208133 * = (when declared(
+      ProcRenderPassEncoderSetStencilReference):
+    ProcRenderPassEncoderSetStencilReference
    else:
-    Procrenderpassencodersetstencilreference_436208132)
-  Supportedlimits_436208135* = (when declared(Supportedlimits):
-    Supportedlimits
+    ProcRenderPassEncoderSetStencilReference_436208132)
+  SupportedLimits_436208135* = (when declared(SupportedLimits):
+    SupportedLimits
    else:
-    Supportedlimits_436208134)
-  Compilationmessagetype_436208137* = (when declared(Compilationmessagetype):
-    Compilationmessagetype
+    SupportedLimits_436208134)
+  CompilationMessageType_436208137* = (when declared(CompilationMessageType):
+    CompilationMessageType
    else:
-    Compilationmessagetype_436208136)
-  Structtexturedatalayout_436208139* = (when declared(Structtexturedatalayout):
-    Structtexturedatalayout
+    CompilationMessageType_436208136)
+  StructTextureDataLayout_436208139* = (when declared(StructTextureDataLayout):
+    StructTextureDataLayout
    else:
-    Structtexturedatalayout_436208138)
-  Structbufferdescriptor_436208141* = (when declared(Structbufferdescriptor):
-    Structbufferdescriptor
+    StructTextureDataLayout_436208138)
+  StructBufferDescriptor_436208141* = (when declared(StructBufferDescriptor):
+    StructBufferDescriptor
    else:
-    Structbufferdescriptor_436208140)
-  Createrenderpipelineasynccallback_436208143 * = (when declared(
-      Createrenderpipelineasynccallback):
-    Createrenderpipelineasynccallback
+    StructBufferDescriptor_436208140)
+  CreateRenderPipelineAsyncCallback_436208143 * = (when declared(
+      CreateRenderPipelineAsyncCallback):
+    CreateRenderPipelineAsyncCallback
    else:
-    Createrenderpipelineasynccallback_436208142)
-  Procshadermodulegetcompilationinfo_436208145 * = (when declared(
-      Procshadermodulegetcompilationinfo):
-    Procshadermodulegetcompilationinfo
+    CreateRenderPipelineAsyncCallback_436208142)
+  ProcShaderModuleGetCompilationInfo_436208145 * = (when declared(
+      ProcShaderModuleGetCompilationInfo):
+    ProcShaderModuleGetCompilationInfo
    else:
-    Procshadermodulegetcompilationinfo_436208144)
-  Renderpasstimestampwrite_436208147* = (when declared(Renderpasstimestampwrite):
-    Renderpasstimestampwrite
+    ProcShaderModuleGetCompilationInfo_436208144)
+  RenderPassTimestampWrite_436208147* = (when declared(RenderPassTimestampWrite):
+    RenderPassTimestampWrite
    else:
-    Renderpasstimestampwrite_436208146)
-  Errorfilter_436208149* = (when declared(Errorfilter):
-    Errorfilter
+    RenderPassTimestampWrite_436208146)
+  ErrorFilter_436208149* = (when declared(ErrorFilter):
+    ErrorFilter
    else:
-    Errorfilter_436208148)
-  Pipelinestatisticname_436208151* = (when declared(Pipelinestatisticname):
-    Pipelinestatisticname
+    ErrorFilter_436208148)
+  PipelineStatisticName_436208151* = (when declared(PipelineStatisticName):
+    PipelineStatisticName
    else:
-    Pipelinestatisticname_436208150)
-  Structextent3d_436208153* = (when declared(Structextent3d):
-    Structextent3d
+    PipelineStatisticName_436208150)
+  StructExtent3D_436208153* = (when declared(StructExtent3D):
+    StructExtent3D
    else:
-    Structextent3d_436208152)
-  Enumcomparefunction_436208155* = (when declared(Enumcomparefunction):
-    Enumcomparefunction
+    StructExtent3D_436208152)
+  EnumCompareFunction_436208155* = (when declared(EnumCompareFunction):
+    EnumCompareFunction
    else:
-    Enumcomparefunction_436208154)
-  Procdevicecreateshadermodule_436208157 * = (when declared(
-      Procdevicecreateshadermodule):
-    Procdevicecreateshadermodule
+    EnumCompareFunction_436208154)
+  ProcDeviceCreateShaderModule_436208157 * = (when declared(
+      ProcDeviceCreateShaderModule):
+    ProcDeviceCreateShaderModule
    else:
-    Procdevicecreateshadermodule_436208156)
-  Structsupportedlimitsextras_436208159 * = (when declared(
-      Structsupportedlimitsextras):
-    Structsupportedlimitsextras
+    ProcDeviceCreateShaderModule_436208156)
+  StructSupportedLimitsextras_436208159 * = (when declared(
+      StructSupportedLimitsextras):
+    StructSupportedLimitsextras
    else:
-    Structsupportedlimitsextras_436208158)
-  Proccommandencoderwritetimestamp_436208161 * = (when declared(
-      Proccommandencoderwritetimestamp):
-    Proccommandencoderwritetimestamp
+    StructSupportedLimitsextras_436208158)
+  ProcCommandEncoderWriteTimestamp_436208161 * = (when declared(
+      ProcCommandEncoderWriteTimestamp):
+    ProcCommandEncoderWriteTimestamp
    else:
-    Proccommandencoderwritetimestamp_436208160)
-  Procbindgrouplayoutsetlabel_436208163 * = (when declared(
-      Procbindgrouplayoutsetlabel):
-    Procbindgrouplayoutsetlabel
+    ProcCommandEncoderWriteTimestamp_436208160)
+  ProcBindGroupLayoutSetLabel_436208163 * = (when declared(
+      ProcBindGroupLayoutSetLabel):
+    ProcBindGroupLayoutSetLabel
    else:
-    Procbindgrouplayoutsetlabel_436208162)
-  Procrenderbundleencoderdraw_436208165 * = (when declared(
-      Procrenderbundleencoderdraw):
-    Procrenderbundleencoderdraw
+    ProcBindGroupLayoutSetLabel_436208162)
+  ProcRenderBundleEncoderDraw_436208165 * = (when declared(
+      ProcRenderBundleEncoderDraw):
+    ProcRenderBundleEncoderDraw
    else:
-    Procrenderbundleencoderdraw_436208164)
-  Procadaptergetlimits_436208167* = (when declared(Procadaptergetlimits):
-    Procadaptergetlimits
+    ProcRenderBundleEncoderDraw_436208164)
+  ProcAdapterGetLimits_436208167* = (when declared(ProcAdapterGetLimits):
+    ProcAdapterGetLimits
    else:
-    Procadaptergetlimits_436208166)
-  Renderbundledescriptor_436208169* = (when declared(Renderbundledescriptor):
-    Renderbundledescriptor
+    ProcAdapterGetLimits_436208166)
+  RenderBundledescriptor_436208169* = (when declared(RenderBundledescriptor):
+    RenderBundledescriptor
    else:
-    Renderbundledescriptor_436208168)
-  Enumrequestadapterstatus_436208171* = (when declared(Enumrequestadapterstatus):
-    Enumrequestadapterstatus
+    RenderBundledescriptor_436208168)
+  EnumRequestAdapterStatus_436208171* = (when declared(EnumRequestAdapterStatus):
+    EnumRequestAdapterStatus
    else:
-    Enumrequestadapterstatus_436208170)
-  Procrenderpipelinesetlabel_436208173 * = (when declared(
-      Procrenderpipelinesetlabel):
-    Procrenderpipelinesetlabel
+    EnumRequestAdapterStatus_436208170)
+  ProcRenderPipelineSetLabel_436208173 * = (when declared(
+      ProcRenderPipelineSetLabel):
+    ProcRenderPipelineSetLabel
    else:
-    Procrenderpipelinesetlabel_436208172)
-  Enumdevicelostreason_436208175* = (when declared(Enumdevicelostreason):
-    Enumdevicelostreason
+    ProcRenderPipelineSetLabel_436208172)
+  EnumDeviceLostReason_436208175* = (when declared(EnumDeviceLostReason):
+    EnumDeviceLostReason
    else:
-    Enumdevicelostreason_436208174)
-  Structbufferbindinglayout_436208177* = (when declared(
-      Structbufferbindinglayout):
-    Structbufferbindinglayout
+    EnumDeviceLostReason_436208174)
+  StructBufferBindingLayout_436208177* = (when declared(
+      StructBufferBindingLayout):
+    StructBufferBindingLayout
    else:
-    Structbufferbindinglayout_436208176)
-  Nativefeature_436208179* = (when declared(Nativefeature):
-    Nativefeature
+    StructBufferBindingLayout_436208176)
+  NativeFeature_436208179* = (when declared(NativeFeature):
+    NativeFeature
    else:
-    Nativefeature_436208178)
-  Procrenderbundleencodersetlabel_436208181 * = (when declared(
-      Procrenderbundleencodersetlabel):
-    Procrenderbundleencodersetlabel
+    NativeFeature_436208178)
+  ProcRenderBundleEncoderSetLabel_436208181 * = (when declared(
+      ProcRenderBundleEncoderSetLabel):
+    ProcRenderBundleEncoderSetLabel
    else:
-    Procrenderbundleencodersetlabel_436208180)
-  Structcomputepassdescriptor_436208183 * = (when declared(
-      Structcomputepassdescriptor):
-    Structcomputepassdescriptor
+    ProcRenderBundleEncoderSetLabel_436208180)
+  StructComputePassDescriptor_436208183 * = (when declared(
+      StructComputePassDescriptor):
+    StructComputePassDescriptor
    else:
-    Structcomputepassdescriptor_436208182)
-  Enumtextureaspect_436208185* = (when declared(Enumtextureaspect):
-    Enumtextureaspect
+    StructComputePassDescriptor_436208182)
+  EnumTextureAspect_436208185* = (when declared(EnumTextureAspect):
+    EnumTextureAspect
    else:
-    Enumtextureaspect_436208184)
-  Texturebindinglayout_436208187* = (when declared(Texturebindinglayout):
-    Texturebindinglayout
+    EnumTextureAspect_436208184)
+  TextureBindingLayout_436208187* = (when declared(TextureBindingLayout):
+    TextureBindingLayout
    else:
-    Texturebindinglayout_436208186)
-  Textureusageflags_436208189* = (when declared(Textureusageflags):
-    Textureusageflags
+    TextureBindingLayout_436208186)
+  TextureUsageflags_436208189* = (when declared(TextureUsageflags):
+    TextureUsageflags
    else:
-    Textureusageflags_436208188)
-  Enumfrontface_436208191* = (when declared(Enumfrontface):
-    Enumfrontface
+    TextureUsageflags_436208188)
+  EnumFrontFace_436208191* = (when declared(EnumFrontFace):
+    EnumFrontFace
    else:
-    Enumfrontface_436208190)
-  Computepasstimestamplocation_436208193 * = (when declared(
-      Computepasstimestamplocation):
-    Computepasstimestamplocation
+    EnumFrontFace_436208190)
+  ComputePassTimestampLocation_436208193 * = (when declared(
+      ComputePassTimestampLocation):
+    ComputePassTimestampLocation
    else:
-    Computepasstimestamplocation_436208192)
-  Surfacedescriptorfromxlibwindow_436208195 * = (when declared(
-      Surfacedescriptorfromxlibwindow):
-    Surfacedescriptorfromxlibwindow
+    ComputePassTimestampLocation_436208192)
+  SurfaceDescriptorfromxlibwindow_436208195 * = (when declared(
+      SurfaceDescriptorfromxlibwindow):
+    SurfaceDescriptorfromxlibwindow
    else:
-    Surfacedescriptorfromxlibwindow_436208194)
-  Buffermapasyncstatus_436208197* = (when declared(Buffermapasyncstatus):
-    Buffermapasyncstatus
+    SurfaceDescriptorfromxlibwindow_436208194)
+  BufferMapAsyncStatus_436208197* = (when declared(BufferMapAsyncStatus):
+    BufferMapAsyncStatus
    else:
-    Buffermapasyncstatus_436208196)
-  Structrenderpassdescriptor_436208199 * = (when declared(
-      Structrenderpassdescriptor):
-    Structrenderpassdescriptor
+    BufferMapAsyncStatus_436208196)
+  StructRenderPassDescriptor_436208199 * = (when declared(
+      StructRenderPassDescriptor):
+    StructRenderPassDescriptor
    else:
-    Structrenderpassdescriptor_436208198)
-  Adapterproperties_436208201* = (when declared(Adapterproperties):
-    Adapterproperties
+    StructRenderPassDescriptor_436208198)
+  AdapterProperties_436208201* = (when declared(AdapterProperties):
+    AdapterProperties
    else:
-    Adapterproperties_436208200)
-  Queuedescriptor_436208203* = (when declared(Queuedescriptor):
-    Queuedescriptor
+    AdapterProperties_436208200)
+  QueueDescriptor_436208203* = (when declared(QueueDescriptor):
+    QueueDescriptor
    else:
-    Queuedescriptor_436208202)
+    QueueDescriptor_436208202)
   Surface_436208205* = (when declared(Surface):
     Surface
    else:
     Surface_436208204)
-  Procdevicecreaterenderpipelineasync_436208207 * = (when declared(
-      Procdevicecreaterenderpipelineasync):
-    Procdevicecreaterenderpipelineasync
+  ProcDeviceCreateRenderPipelineasync_436208207 * = (when declared(
+      ProcDeviceCreateRenderPipelineasync):
+    ProcDeviceCreateRenderPipelineasync
    else:
-    Procdevicecreaterenderpipelineasync_436208206)
-  Structsurfacedescriptorfromcanvashtmlselector_436208209 * = (when declared(
-      Structsurfacedescriptorfromcanvashtmlselector):
-    Structsurfacedescriptorfromcanvashtmlselector
+    ProcDeviceCreateRenderPipelineasync_436208206)
+  StructSurfaceDescriptorfromcanvashtmlselector_436208209 * = (when declared(
+      StructSurfaceDescriptorfromcanvashtmlselector):
+    StructSurfaceDescriptorfromcanvashtmlselector
    else:
-    Structsurfacedescriptorfromcanvashtmlselector_436208208)
-  Structdepthstencilstate_436208211* = (when declared(Structdepthstencilstate):
-    Structdepthstencilstate
+    StructSurfaceDescriptorfromcanvashtmlselector_436208208)
+  StructDepthStencilState_436208211* = (when declared(StructDepthStencilState):
+    StructDepthStencilState
    else:
-    Structdepthstencilstate_436208210)
-  Procadapterenumeratefeatures_436208213 * = (when declared(
-      Procadapterenumeratefeatures):
-    Procadapterenumeratefeatures
+    StructDepthStencilState_436208210)
+  ProcAdapterEnumerateFeatures_436208213 * = (when declared(
+      ProcAdapterEnumerateFeatures):
+    ProcAdapterEnumerateFeatures
    else:
-    Procadapterenumeratefeatures_436208212)
-  Mapmodeflags_436208215* = (when declared(Mapmodeflags):
-    Mapmodeflags
+    ProcAdapterEnumerateFeatures_436208212)
+  MapModeflags_436208215* = (when declared(MapModeflags):
+    MapModeflags
    else:
-    Mapmodeflags_436208214)
-  Structshadermodulespirvdescriptor_436208217 * = (when declared(
-      Structshadermodulespirvdescriptor):
-    Structshadermodulespirvdescriptor
+    MapModeflags_436208214)
+  StructShaderModuleSpirvDescriptor_436208217 * = (when declared(
+      StructShaderModuleSpirvDescriptor):
+    StructShaderModuleSpirvDescriptor
    else:
-    Structshadermodulespirvdescriptor_436208216)
-  Procrenderpassencoderpushdebuggroup_436208219 * = (when declared(
-      Procrenderpassencoderpushdebuggroup):
-    Procrenderpassencoderpushdebuggroup
+    StructShaderModuleSpirvDescriptor_436208216)
+  ProcRenderPassEncoderPushDebugGroup_436208219 * = (when declared(
+      ProcRenderPassEncoderPushDebugGroup):
+    ProcRenderPassEncoderPushDebugGroup
    else:
-    Procrenderpassencoderpushdebuggroup_436208218)
-  Enumaddressmode_436208221* = (when declared(Enumaddressmode):
-    Enumaddressmode
+    ProcRenderPassEncoderPushDebugGroup_436208218)
+  EnumAddressMode_436208221* = (when declared(EnumAddressMode):
+    EnumAddressMode
    else:
-    Enumaddressmode_436208220)
-  Colorwritemaskflags_436208223* = (when declared(Colorwritemaskflags):
-    Colorwritemaskflags
+    EnumAddressMode_436208220)
+  ColorWriteMaskflags_436208223* = (when declared(ColorWriteMaskflags):
+    ColorWriteMaskflags
    else:
-    Colorwritemaskflags_436208222)
-  Structshadermoduleglsldescriptor_436208225 * = (when declared(
-      Structshadermoduleglsldescriptor):
-    Structshadermoduleglsldescriptor
+    ColorWriteMaskflags_436208222)
+  StructShaderModuleGlslDescriptor_436208225 * = (when declared(
+      StructShaderModuleGlslDescriptor):
+    StructShaderModuleGlslDescriptor
    else:
-    Structshadermoduleglsldescriptor_436208224)
-  Nativestype_436208227* = (when declared(Nativestype):
-    Nativestype
+    StructShaderModuleGlslDescriptor_436208224)
+  NativeSType_436208227* = (when declared(NativeSType):
+    NativeSType
    else:
-    Nativestype_436208226)
-  Structbindgroupentry_436208229* = (when declared(Structbindgroupentry):
-    Structbindgroupentry
+    NativeSType_436208226)
+  StructBindGroupEntry_436208229* = (when declared(StructBindGroupEntry):
+    StructBindGroupEntry
    else:
-    Structbindgroupentry_436208228)
-  Enumtextureformat_436208231* = (when declared(Enumtextureformat):
-    Enumtextureformat
+    StructBindGroupEntry_436208228)
+  EnumTextureFormat_436208231* = (when declared(EnumTextureFormat):
+    EnumTextureFormat
    else:
-    Enumtextureformat_436208230)
-  Procdevicecreatecomputepipeline_436208233 * = (when declared(
-      Procdevicecreatecomputepipeline):
-    Procdevicecreatecomputepipeline
+    EnumTextureFormat_436208230)
+  ProcDeviceCreateComputePipeline_436208233 * = (when declared(
+      ProcDeviceCreateComputePipeline):
+    ProcDeviceCreateComputePipeline
    else:
-    Procdevicecreatecomputepipeline_436208232)
-  Fragmentstate_436208235* = (when declared(Fragmentstate):
-    Fragmentstate
+    ProcDeviceCreateComputePipeline_436208232)
+  FragmentState_436208235* = (when declared(FragmentState):
+    FragmentState
    else:
-    Fragmentstate_436208234)
-  Adaptertype_436208237* = (when declared(Adaptertype):
-    Adaptertype
+    FragmentState_436208234)
+  AdapterType_436208237* = (when declared(AdapterType):
+    AdapterType
    else:
-    Adaptertype_436208236)
-  Extent3d_436208239* = (when declared(Extent3d):
-    Extent3d
+    AdapterType_436208236)
+  Extent3D_436208239* = (when declared(Extent3D):
+    Extent3D
    else:
-    Extent3d_436208238)
-  Logcallback_436208241* = (when declared(Logcallback):
-    Logcallback
+    Extent3D_436208238)
+  LogCallback_436208241* = (when declared(LogCallback):
+    LogCallback
    else:
-    Logcallback_436208240)
-  Mipmapfiltermode_436208243* = (when declared(Mipmapfiltermode):
-    Mipmapfiltermode
+    LogCallback_436208240)
+  MipmapFilterMode_436208243* = (when declared(MipmapFilterMode):
+    MipmapFilterMode
    else:
-    Mipmapfiltermode_436208242)
-  Structdeviceextras_436208245* = (when declared(Structdeviceextras):
-    Structdeviceextras
+    MipmapFilterMode_436208242)
+  StructDeviceExtras_436208245* = (when declared(StructDeviceExtras):
+    StructDeviceExtras
    else:
-    Structdeviceextras_436208244)
-  Structconstantentry_436208247* = (when declared(Structconstantentry):
-    Structconstantentry
+    StructDeviceExtras_436208244)
+  StructConstantEntry_436208247* = (when declared(StructConstantEntry):
+    StructConstantEntry
    else:
-    Structconstantentry_436208246)
-  Renderpassdescriptor_436208249* = (when declared(Renderpassdescriptor):
-    Renderpassdescriptor
+    StructConstantEntry_436208246)
+  RenderPassDescriptor_436208249* = (when declared(RenderPassDescriptor):
+    RenderPassDescriptor
    else:
-    Renderpassdescriptor_436208248)
-  Buffermapcallback_436208251* = (when declared(Buffermapcallback):
-    Buffermapcallback
+    RenderPassDescriptor_436208248)
+  BufferMapCallback_436208251* = (when declared(BufferMapCallback):
+    BufferMapCallback
    else:
-    Buffermapcallback_436208250)
-  Enumcullmode_436208253* = (when declared(Enumcullmode):
-    Enumcullmode
+    BufferMapCallback_436208250)
+  EnumCullMode_436208253* = (when declared(EnumCullMode):
+    EnumCullMode
    else:
-    Enumcullmode_436208252)
-  Stencilfacestate_436208255* = (when declared(Stencilfacestate):
-    Stencilfacestate
+    EnumCullMode_436208252)
+  StencilFaceState_436208255* = (when declared(StencilFaceState):
+    StencilFaceState
    else:
-    Stencilfacestate_436208254)
-  Procshadermodulesetlabel_436208257* = (when declared(Procshadermodulesetlabel):
-    Procshadermodulesetlabel
+    StencilFaceState_436208254)
+  ProcShaderModuleSetLabel_436208257* = (when declared(ProcShaderModuleSetLabel):
+    ProcShaderModuleSetLabel
    else:
-    Procshadermodulesetlabel_436208256)
-  Commandencoder_436208259* = (when declared(Commandencoder):
-    Commandencoder
+    ProcShaderModuleSetLabel_436208256)
+  CommandEncoder_436208259* = (when declared(CommandEncoder):
+    CommandEncoder
    else:
-    Commandencoder_436208258)
-  Procbufferdestroy_436208261* = (when declared(Procbufferdestroy):
-    Procbufferdestroy
+    CommandEncoder_436208258)
+  ProcBufferDestroy_436208261* = (when declared(ProcBufferDestroy):
+    ProcBufferDestroy
    else:
-    Procbufferdestroy_436208260)
-  Procdevicecreatebindgroup_436208263* = (when declared(
-      Procdevicecreatebindgroup):
-    Procdevicecreatebindgroup
+    ProcBufferDestroy_436208260)
+  ProcDeviceCreateBindGroup_436208263* = (when declared(
+      ProcDeviceCreateBindGroup):
+    ProcDeviceCreateBindGroup
    else:
-    Procdevicecreatebindgroup_436208262)
-  Procqueuewritetexture_436208265* = (when declared(Procqueuewritetexture):
-    Procqueuewritetexture
+    ProcDeviceCreateBindGroup_436208262)
+  ProcQueueWriteTexture_436208265* = (when declared(ProcQueueWriteTexture):
+    ProcQueueWriteTexture
    else:
-    Procqueuewritetexture_436208264)
-  Queueworkdonestatus_436208267* = (when declared(Queueworkdonestatus):
-    Queueworkdonestatus
+    ProcQueueWriteTexture_436208264)
+  QueueWorkDoneStatus_436208267* = (when declared(QueueWorkDoneStatus):
+    QueueWorkDoneStatus
    else:
-    Queueworkdonestatus_436208266)
-  Procrenderpassencodersetbindgroup_436208269 * = (when declared(
-      Procrenderpassencodersetbindgroup):
-    Procrenderpassencodersetbindgroup
+    QueueWorkDoneStatus_436208266)
+  ProcRenderPassEncoderSetBindGroup_436208269 * = (when declared(
+      ProcRenderPassEncoderSetBindGroup):
+    ProcRenderPassEncoderSetBindGroup
    else:
-    Procrenderpassencodersetbindgroup_436208268)
-  Structsurfacedescriptorfromandroidnativewindow_436208271 * = (when declared(
-      Structsurfacedescriptorfromandroidnativewindow):
-    Structsurfacedescriptorfromandroidnativewindow
+    ProcRenderPassEncoderSetBindGroup_436208268)
+  StructSurfaceDescriptorfromandroidnativewindow_436208271 * = (when declared(
+      StructSurfaceDescriptorfromandroidnativewindow):
+    StructSurfaceDescriptorfromandroidnativewindow
    else:
-    Structsurfacedescriptorfromandroidnativewindow_436208270)
-  Requestdevicecallback_436208273* = (when declared(Requestdevicecallback):
-    Requestdevicecallback
+    StructSurfaceDescriptorfromandroidnativewindow_436208270)
+  RequestDeviceCallback_436208273* = (when declared(RequestDeviceCallback):
+    RequestDeviceCallback
    else:
-    Requestdevicecallback_436208272)
-  Storagereport_436208275* = (when declared(Storagereport):
-    Storagereport
+    RequestDeviceCallback_436208272)
+  StorageReport_436208275* = (when declared(StorageReport):
+    StorageReport
    else:
-    Storagereport_436208274)
-  Structcompilationmessage_436208277* = (when declared(Structcompilationmessage):
-    Structcompilationmessage
+    StorageReport_436208274)
+  StructCompilationMessage_436208277* = (when declared(StructCompilationMessage):
+    StructCompilationMessage
    else:
-    Structcompilationmessage_436208276)
-  Shadermodulespirvdescriptor_436208279 * = (when declared(
-      Shadermodulespirvdescriptor):
-    Shadermodulespirvdescriptor
+    StructCompilationMessage_436208276)
+  ShaderModulespirvdescriptor_436208279 * = (when declared(
+      ShaderModulespirvdescriptor):
+    ShaderModulespirvdescriptor
    else:
-    Shadermodulespirvdescriptor_436208278)
+    ShaderModulespirvdescriptor_436208278)
   Limits_436208281* = (when declared(Limits):
     Limits
    else:
     Limits_436208280)
-  Enumstoreop_436208283* = (when declared(Enumstoreop):
-    Enumstoreop
+  EnumStoreOp_436208283* = (when declared(EnumStoreOp):
+    EnumStoreOp
    else:
-    Enumstoreop_436208282)
-  Powerpreference_436208285* = (when declared(Powerpreference):
-    Powerpreference
+    EnumStoreOp_436208282)
+  PowerPreference_436208285* = (when declared(PowerPreference):
+    PowerPreference
    else:
-    Powerpreference_436208284)
-  Textureviewdescriptor_436208287* = (when declared(Textureviewdescriptor):
-    Textureviewdescriptor
+    PowerPreference_436208284)
+  TextureViewdescriptor_436208287* = (when declared(TextureViewdescriptor):
+    TextureViewdescriptor
    else:
-    Textureviewdescriptor_436208286)
-  Procdevicesetdevicelostcallback_436208289 * = (when declared(
-      Procdevicesetdevicelostcallback):
-    Procdevicesetdevicelostcallback
+    TextureViewdescriptor_436208286)
+  ProcDeviceSetDeviceLostCallback_436208289 * = (when declared(
+      ProcDeviceSetDeviceLostCallback):
+    ProcDeviceSetDeviceLostCallback
    else:
-    Procdevicesetdevicelostcallback_436208288)
-  Errorcallback_436208291* = (when declared(Errorcallback):
-    Errorcallback
+    ProcDeviceSetDeviceLostCallback_436208288)
+  ErrorCallback_436208291* = (when declared(ErrorCallback):
+    ErrorCallback
    else:
-    Errorcallback_436208290)
-  Samplerdescriptor_436208293* = (when declared(Samplerdescriptor):
-    Samplerdescriptor
+    ErrorCallback_436208290)
+  SamplerDescriptor_436208293* = (when declared(SamplerDescriptor):
+    SamplerDescriptor
    else:
-    Samplerdescriptor_436208292)
-  Structimagecopytexture_436208295* = (when declared(Structimagecopytexture):
-    Structimagecopytexture
+    SamplerDescriptor_436208292)
+  StructImageCopyTexture_436208295* = (when declared(StructImageCopyTexture):
+    StructImageCopyTexture
    else:
-    Structimagecopytexture_436208294)
-  Stenciloperation_436208297* = (when declared(Stenciloperation):
-    Stenciloperation
+    StructImageCopyTexture_436208294)
+  StencilOperation_436208297* = (when declared(StencilOperation):
+    StencilOperation
    else:
-    Stenciloperation_436208296)
-  Filtermode_436208299* = (when declared(Filtermode):
-    Filtermode
+    StencilOperation_436208296)
+  FilterMode_436208299* = (when declared(FilterMode):
+    FilterMode
    else:
-    Filtermode_436208298)
-  Indexformat_436208301* = (when declared(Indexformat):
-    Indexformat
+    FilterMode_436208298)
+  IndexFormat_436208301* = (when declared(IndexFormat):
+    IndexFormat
    else:
-    Indexformat_436208300)
-  Proccomputepassencodersetbindgroup_436208303 * = (when declared(
-      Proccomputepassencodersetbindgroup):
-    Proccomputepassencodersetbindgroup
+    IndexFormat_436208300)
+  ProcComputePassEncoderSetBindGroup_436208303 * = (when declared(
+      ProcComputePassEncoderSetBindGroup):
+    ProcComputePassEncoderSetBindGroup
    else:
-    Proccomputepassencodersetbindgroup_436208302)
-  Proccommandencodercopybuffertotexture_436208305 * = (when declared(
-      Proccommandencodercopybuffertotexture):
-    Proccommandencodercopybuffertotexture
+    ProcComputePassEncoderSetBindGroup_436208302)
+  ProcCommandEncoderCopyBufferToTexture_436208305 * = (when declared(
+      ProcCommandEncoderCopyBufferToTexture):
+    ProcCommandEncoderCopyBufferToTexture
    else:
-    Proccommandencodercopybuffertotexture_436208304)
-  Proctexturesetlabel_436208307* = (when declared(Proctexturesetlabel):
-    Proctexturesetlabel
+    ProcCommandEncoderCopyBufferToTexture_436208304)
+  ProcTextureSetLabel_436208307* = (when declared(ProcTextureSetLabel):
+    ProcTextureSetLabel
    else:
-    Proctexturesetlabel_436208306)
-  Proccommandencoderinsertdebugmarker_436208309 * = (when declared(
-      Proccommandencoderinsertdebugmarker):
-    Proccommandencoderinsertdebugmarker
+    ProcTextureSetLabel_436208306)
+  ProcCommandEncoderInsertDebugMarker_436208309 * = (when declared(
+      ProcCommandEncoderInsertDebugMarker):
+    ProcCommandEncoderInsertDebugMarker
    else:
-    Proccommandencoderinsertdebugmarker_436208308)
-  Chainedstruct_436208311* = (when declared(Chainedstruct):
-    Chainedstruct
+    ProcCommandEncoderInsertDebugMarker_436208308)
+  ChainedStruct_436208311* = (when declared(ChainedStruct):
+    ChainedStruct
    else:
-    Chainedstruct_436208310)
-  Structpushconstantrange_436208313* = (when declared(Structpushconstantrange):
-    Structpushconstantrange
+    ChainedStruct_436208310)
+  StructPushConstantRange_436208313* = (when declared(StructPushConstantRange):
+    StructPushConstantRange
    else:
-    Structpushconstantrange_436208312)
-  Structcommandencoderdescriptor_436208315 * = (when declared(
-      Structcommandencoderdescriptor):
-    Structcommandencoderdescriptor
+    StructPushConstantRange_436208312)
+  StructCommandEncoderDescriptor_436208315 * = (when declared(
+      StructCommandEncoderDescriptor):
+    StructCommandEncoderDescriptor
    else:
-    Structcommandencoderdescriptor_436208314)
-  Storeop_436208317* = (when declared(Storeop):
-    Storeop
+    StructCommandEncoderDescriptor_436208314)
+  StoreOp_436208317* = (when declared(StoreOp):
+    StoreOp
    else:
-    Storeop_436208316)
-  Proccommandencoderpushdebuggroup_436208319 * = (when declared(
-      Proccommandencoderpushdebuggroup):
-    Proccommandencoderpushdebuggroup
+    StoreOp_436208316)
+  ProcCommandEncoderPushDebugGroup_436208319 * = (when declared(
+      ProcCommandEncoderPushDebugGroup):
+    ProcCommandEncoderPushDebugGroup
    else:
-    Proccommandencoderpushdebuggroup_436208318)
-  Enumtextureviewdimension_436208321* = (when declared(Enumtextureviewdimension):
-    Enumtextureviewdimension
+    ProcCommandEncoderPushDebugGroup_436208318)
+  EnumTextureViewDimension_436208321* = (when declared(EnumTextureViewDimension):
+    EnumTextureViewDimension
    else:
-    Enumtextureviewdimension_436208320)
-  Blendcomponent_436208323* = (when declared(Blendcomponent):
-    Blendcomponent
+    EnumTextureViewDimension_436208320)
+  BlendComponent_436208323* = (when declared(BlendComponent):
+    BlendComponent
    else:
-    Blendcomponent_436208322)
-  Renderpasscolorattachment_436208325* = (when declared(
-      Renderpasscolorattachment):
-    Renderpasscolorattachment
+    BlendComponent_436208322)
+  RenderPassColorAttachment_436208325* = (when declared(
+      RenderPassColorAttachment):
+    RenderPassColorAttachment
    else:
-    Renderpasscolorattachment_436208324)
-  Bindgrouplayoutdescriptor_436208327* = (when declared(
-      Bindgrouplayoutdescriptor):
-    Bindgrouplayoutdescriptor
+    RenderPassColorAttachment_436208324)
+  BindGrouplayoutdescriptor_436208327* = (when declared(
+      BindGrouplayoutdescriptor):
+    BindGrouplayoutdescriptor
    else:
-    Bindgrouplayoutdescriptor_436208326)
-  Enumprimitivetopology_436208329* = (when declared(Enumprimitivetopology):
-    Enumprimitivetopology
+    BindGrouplayoutdescriptor_436208326)
+  EnumPrimitiveTopology_436208329* = (when declared(EnumPrimitiveTopology):
+    EnumPrimitiveTopology
    else:
-    Enumprimitivetopology_436208328)
-  Proccomputepassencoderpopdebuggroup_436208331 * = (when declared(
-      Proccomputepassencoderpopdebuggroup):
-    Proccomputepassencoderpopdebuggroup
+    EnumPrimitiveTopology_436208328)
+  ProcComputePassEncoderPopDebugGroup_436208331 * = (when declared(
+      ProcComputePassEncoderPopDebugGroup):
+    ProcComputePassEncoderPopDebugGroup
    else:
-    Proccomputepassencoderpopdebuggroup_436208330)
-  Procrenderpassencoderdrawindexed_436208333 * = (when declared(
-      Procrenderpassencoderdrawindexed):
-    Procrenderpassencoderdrawindexed
+    ProcComputePassEncoderPopDebugGroup_436208330)
+  ProcRenderPassEncoderDrawindexed_436208333 * = (when declared(
+      ProcRenderPassEncoderDrawindexed):
+    ProcRenderPassEncoderDrawindexed
    else:
-    Procrenderpassencoderdrawindexed_436208332)
-  Structshaderdefine_436208335* = (when declared(Structshaderdefine):
-    Structshaderdefine
+    ProcRenderPassEncoderDrawindexed_436208332)
+  StructShaderDefine_436208335* = (when declared(StructShaderDefine):
+    StructShaderDefine
    else:
-    Structshaderdefine_436208334)
-  Enumcompilationmessagetype_436208337 * = (when declared(
-      Enumcompilationmessagetype):
-    Enumcompilationmessagetype
+    StructShaderDefine_436208334)
+  EnumCompilationMessageType_436208337 * = (when declared(
+      EnumCompilationMessageType):
+    EnumCompilationMessageType
    else:
-    Enumcompilationmessagetype_436208336)
+    EnumCompilationMessageType_436208336)
   Buffer_436208339* = (when declared(Buffer):
     Buffer
    else:
     Buffer_436208338)
-  Querysetdescriptor_436208341* = (when declared(Querysetdescriptor):
-    Querysetdescriptor
+  QuerySetdescriptor_436208341* = (when declared(QuerySetdescriptor):
+    QuerySetdescriptor
    else:
-    Querysetdescriptor_436208340)
-  Procrenderpassencodersetlabel_436208343 * = (when declared(
-      Procrenderpassencodersetlabel):
-    Procrenderpassencodersetlabel
+    QuerySetdescriptor_436208340)
+  ProcRenderPassEncoderSetLabel_436208343 * = (when declared(
+      ProcRenderPassEncoderSetLabel):
+    ProcRenderPassEncoderSetLabel
    else:
-    Procrenderpassencodersetlabel_436208342)
-  Enumblendfactor_436208345* = (when declared(Enumblendfactor):
-    Enumblendfactor
+    ProcRenderPassEncoderSetLabel_436208342)
+  EnumBlendFactor_436208345* = (when declared(EnumBlendFactor):
+    EnumBlendFactor
    else:
-    Enumblendfactor_436208344)
-  Texturecomponenttype_436208347* = (when declared(Texturecomponenttype):
-    Texturecomponenttype
+    EnumBlendFactor_436208344)
+  TextureComponentType_436208347* = (when declared(TextureComponentType):
+    TextureComponentType
    else:
-    Texturecomponenttype_436208346)
-  Commandbufferdescriptor_436208349* = (when declared(Commandbufferdescriptor):
-    Commandbufferdescriptor
+    TextureComponentType_436208346)
+  CommandBufferDescriptor_436208349* = (when declared(CommandBufferDescriptor):
+    CommandBufferDescriptor
    else:
-    Commandbufferdescriptor_436208348)
-  Renderbundleencoder_436208351* = (when declared(Renderbundleencoder):
-    Renderbundleencoder
+    CommandBufferDescriptor_436208348)
+  RenderBundleencoder_436208351* = (when declared(RenderBundleencoder):
+    RenderBundleencoder
    else:
-    Renderbundleencoder_436208350)
-  Structblendcomponent_436208353* = (when declared(Structblendcomponent):
-    Structblendcomponent
+    RenderBundleencoder_436208350)
+  StructBlendComponent_436208353* = (when declared(StructBlendComponent):
+    StructBlendComponent
    else:
-    Structblendcomponent_436208352)
-  Structrenderpipelinedescriptor_436208355 * = (when declared(
-      Structrenderpipelinedescriptor):
-    Structrenderpipelinedescriptor
+    StructBlendComponent_436208352)
+  StructRenderPipelineDescriptor_436208355 * = (when declared(
+      StructRenderPipelineDescriptor):
+    StructRenderPipelineDescriptor
    else:
-    Structrenderpipelinedescriptor_436208354)
-  Computepipeline_436208357* = (when declared(Computepipeline):
-    Computepipeline
+    StructRenderPipelineDescriptor_436208354)
+  ComputePipeline_436208357* = (when declared(ComputePipeline):
+    ComputePipeline
    else:
-    Computepipeline_436208356)
-  Enumpredefinedcolorspace_436208359* = (when declared(Enumpredefinedcolorspace):
-    Enumpredefinedcolorspace
+    ComputePipeline_436208356)
+  EnumPredefinedColorSpace_436208359* = (when declared(EnumPredefinedColorSpace):
+    EnumPredefinedColorSpace
    else:
-    Enumpredefinedcolorspace_436208358)
-  Procdevicepoperrorscope_436208361* = (when declared(Procdevicepoperrorscope):
-    Procdevicepoperrorscope
+    EnumPredefinedColorSpace_436208358)
+  ProcDevicePopErrorScope_436208361* = (when declared(ProcDevicePopErrorScope):
+    ProcDevicePopErrorScope
    else:
-    Procdevicepoperrorscope_436208360)
-  Computepipelinedescriptor_436208363* = (when declared(
-      Computepipelinedescriptor):
-    Computepipelinedescriptor
+    ProcDevicePopErrorScope_436208360)
+  ComputePipelinedescriptor_436208363* = (when declared(
+      ComputePipelinedescriptor):
+    ComputePipelinedescriptor
    else:
-    Computepipelinedescriptor_436208362)
-  Procrenderbundleencoderdrawindirect_436208365 * = (when declared(
-      Procrenderbundleencoderdrawindirect):
-    Procrenderbundleencoderdrawindirect
+    ComputePipelinedescriptor_436208362)
+  ProcRenderBundleEncoderDrawindirect_436208365 * = (when declared(
+      ProcRenderBundleEncoderDrawindirect):
+    ProcRenderBundleEncoderDrawindirect
    else:
-    Procrenderbundleencoderdrawindirect_436208364)
-  Structsurfacedescriptorfromxcbwindow_436208367 * = (when declared(
-      Structsurfacedescriptorfromxcbwindow):
-    Structsurfacedescriptorfromxcbwindow
+    ProcRenderBundleEncoderDrawindirect_436208364)
+  StructSurfaceDescriptorfromxcbwindow_436208367 * = (when declared(
+      StructSurfaceDescriptorfromxcbwindow):
+    StructSurfaceDescriptorfromxcbwindow
    else:
-    Structsurfacedescriptorfromxcbwindow_436208366)
-  Enumnativestype_436208369* = (when declared(Enumnativestype):
-    Enumnativestype
+    StructSurfaceDescriptorfromxcbwindow_436208366)
+  EnumNativeSType_436208369* = (when declared(EnumNativeSType):
+    EnumNativeSType
    else:
-    Enumnativestype_436208368)
-  Proccomputepassencoderbeginpipelinestatisticsquery_436208371 * = (when declared(
-      Proccomputepassencoderbeginpipelinestatisticsquery):
-    Proccomputepassencoderbeginpipelinestatisticsquery
+    EnumNativeSType_436208368)
+  ProcComputePassEncoderBeginPipelineStatisticsQuery_436208371 * = (when declared(
+      ProcComputePassEncoderBeginPipelineStatisticsQuery):
+    ProcComputePassEncoderBeginPipelineStatisticsQuery
    else:
-    Proccomputepassencoderbeginpipelinestatisticsquery_436208370)
-  Origin3d_436208373* = (when declared(Origin3d):
-    Origin3d
+    ProcComputePassEncoderBeginPipelineStatisticsQuery_436208370)
+  Origin3D_436208373* = (when declared(Origin3D):
+    Origin3D
    else:
-    Origin3d_436208372)
-  Requestadaptercallback_436208375* = (when declared(Requestadaptercallback):
-    Requestadaptercallback
+    Origin3D_436208372)
+  RequestAdapterCallback_436208375* = (when declared(RequestAdapterCallback):
+    RequestAdapterCallback
    else:
-    Requestadaptercallback_436208374)
-  Bindgroup_436208377* = (when declared(Bindgroup):
-    Bindgroup
+    RequestAdapterCallback_436208374)
+  BindGroup_436208377* = (when declared(BindGroup):
+    BindGroup
    else:
-    Bindgroup_436208376)
-  Procdevicehasfeature_436208379* = (when declared(Procdevicehasfeature):
-    Procdevicehasfeature
+    BindGroup_436208376)
+  ProcDeviceHasFeature_436208379* = (when declared(ProcDeviceHasFeature):
+    ProcDeviceHasFeature
    else:
-    Procdevicehasfeature_436208378)
-  Procdevicegetqueue_436208381* = (when declared(Procdevicegetqueue):
-    Procdevicegetqueue
+    ProcDeviceHasFeature_436208378)
+  ProcDeviceGetQueue_436208381* = (when declared(ProcDeviceGetQueue):
+    ProcDeviceGetQueue
    else:
-    Procdevicegetqueue_436208380)
-  Procbuffersetlabel_436208383* = (when declared(Procbuffersetlabel):
-    Procbuffersetlabel
+    ProcDeviceGetQueue_436208380)
+  ProcBufferSetLabel_436208383* = (when declared(ProcBufferSetLabel):
+    ProcBufferSetLabel
    else:
-    Procbuffersetlabel_436208382)
-  Procrenderpassencoderdrawindirect_436208389 * = (when declared(
-      Procrenderpassencoderdrawindirect):
-    Procrenderpassencoderdrawindirect
+    ProcBufferSetLabel_436208382)
+  ProcRenderPassEncoderDrawindirect_436208389 * = (when declared(
+      ProcRenderPassEncoderDrawindirect):
+    ProcRenderPassEncoderDrawindirect
    else:
-    Procrenderpassencoderdrawindirect_436208388)
-  Adapterextras_436208399* = (when declared(Adapterextras):
-    Adapterextras
+    ProcRenderPassEncoderDrawindirect_436208388)
+  AdapterExtras_436208399* = (when declared(AdapterExtras):
+    AdapterExtras
    else:
-    Adapterextras_436208398)
-  Procquerysetsetlabel_436208385* = (when declared(Procquerysetsetlabel):
-    Procquerysetsetlabel
+    AdapterExtras_436208398)
+  ProcQuerySetSetLabel_436208385* = (when declared(ProcQuerySetSetLabel):
+    ProcQuerySetSetLabel
    else:
-    Procquerysetsetlabel_436208384)
-  Structswapchaindescriptor_436208387* = (when declared(
-      Structswapchaindescriptor):
-    Structswapchaindescriptor
+    ProcQuerySetSetLabel_436208384)
+  StructSwapChainDescriptor_436208387* = (when declared(
+      StructSwapChainDescriptor):
+    StructSwapChainDescriptor
    else:
-    Structswapchaindescriptor_436208386)
-  Renderpipeline_436208391* = (when declared(Renderpipeline):
-    Renderpipeline
+    StructSwapChainDescriptor_436208386)
+  RenderPipeline_436208391* = (when declared(RenderPipeline):
+    RenderPipeline
    else:
-    Renderpipeline_436208390)
-  Proccomputepassencoderdispatchworkgroupsindirect_436208393 * = (when declared(
-      Proccomputepassencoderdispatchworkgroupsindirect):
-    Proccomputepassencoderdispatchworkgroupsindirect
+    RenderPipeline_436208390)
+  ProcComputePassEncoderDispatchWorkgroupsindirect_436208393 * = (when declared(
+      ProcComputePassEncoderDispatchWorkgroupsindirect):
+    ProcComputePassEncoderDispatchWorkgroupsindirect
    else:
-    Proccomputepassencoderdispatchworkgroupsindirect_436208392)
-  Proccommandencoderbegincomputepass_436208395 * = (when declared(
-      Proccommandencoderbegincomputepass):
-    Proccommandencoderbegincomputepass
+    ProcComputePassEncoderDispatchWorkgroupsindirect_436208392)
+  ProcCommandEncoderBeginComputePass_436208395 * = (when declared(
+      ProcCommandEncoderBeginComputePass):
+    ProcCommandEncoderBeginComputePass
    else:
-    Proccommandencoderbegincomputepass_436208394)
-  Shaderstageflags_436208397* = (when declared(Shaderstageflags):
-    Shaderstageflags
+    ProcCommandEncoderBeginComputePass_436208394)
+  ShaderStageflags_436208397* = (when declared(ShaderStageflags):
+    ShaderStageflags
    else:
-    Shaderstageflags_436208396)
-  Texturedatalayout_436208401* = (when declared(Texturedatalayout):
-    Texturedatalayout
+    ShaderStageflags_436208396)
+  TextureDataLayout_436208401* = (when declared(TextureDataLayout):
+    TextureDataLayout
    else:
-    Texturedatalayout_436208400)
-  Proctexturecreateview_436208403* = (when declared(Proctexturecreateview):
-    Proctexturecreateview
+    TextureDataLayout_436208400)
+  ProcTextureCreateView_436208403* = (when declared(ProcTextureCreateView):
+    ProcTextureCreateView
    else:
-    Proctexturecreateview_436208402)
-  Structvertexbufferlayout_436208405* = (when declared(Structvertexbufferlayout):
-    Structvertexbufferlayout
+    ProcTextureCreateView_436208402)
+  StructVertexBufferLayout_436208405* = (when declared(StructVertexBufferLayout):
+    StructVertexBufferLayout
    else:
-    Structvertexbufferlayout_436208404)
-  Procrenderpassencoderinsertdebugmarker_436208407 * = (when declared(
-      Procrenderpassencoderinsertdebugmarker):
-    Procrenderpassencoderinsertdebugmarker
+    StructVertexBufferLayout_436208404)
+  ProcRenderPassEncoderInsertDebugMarker_436208407 * = (when declared(
+      ProcRenderPassEncoderInsertDebugMarker):
+    ProcRenderPassEncoderInsertDebugMarker
    else:
-    Procrenderpassencoderinsertdebugmarker_436208406)
-  Procswapchainpresent_436208409* = (when declared(Procswapchainpresent):
-    Procswapchainpresent
+    ProcRenderPassEncoderInsertDebugMarker_436208406)
+  ProcSwapChainPresent_436208409* = (when declared(ProcSwapChainPresent):
+    ProcSwapChainPresent
    else:
-    Procswapchainpresent_436208408)
-  Procpipelinelayoutsetlabel_436208411 * = (when declared(
-      Procpipelinelayoutsetlabel):
-    Procpipelinelayoutsetlabel
+    ProcSwapChainPresent_436208408)
+  ProcPipelineLayoutSetLabel_436208411 * = (when declared(
+      ProcPipelineLayoutSetLabel):
+    ProcPipelineLayoutSetLabel
    else:
-    Procpipelinelayoutsetlabel_436208410)
-  Structquerysetdescriptor_436208413* = (when declared(Structquerysetdescriptor):
-    Structquerysetdescriptor
+    ProcPipelineLayoutSetLabel_436208410)
+  StructQuerySetDescriptor_436208413* = (when declared(StructQuerySetDescriptor):
+    StructQuerySetDescriptor
    else:
-    Structquerysetdescriptor_436208412)
-  Pipelinelayout_436208415* = (when declared(Pipelinelayout):
-    Pipelinelayout
+    StructQuerySetDescriptor_436208412)
+  PipelineLayout_436208415* = (when declared(PipelineLayout):
+    PipelineLayout
    else:
-    Pipelinelayout_436208414)
-  Procbufferunmap_436208417* = (when declared(Procbufferunmap):
-    Procbufferunmap
+    PipelineLayout_436208414)
+  ProcBufferUnmap_436208417* = (when declared(ProcBufferUnmap):
+    ProcBufferUnmap
    else:
-    Procbufferunmap_436208416)
-  Proccommandencodercopytexturetotexture_436208419 * = (when declared(
-      Proccommandencodercopytexturetotexture):
-    Proccommandencodercopytexturetotexture
+    ProcBufferUnmap_436208416)
+  ProcCommandEncoderCopyTextureToTexture_436208419 * = (when declared(
+      ProcCommandEncoderCopyTextureToTexture):
+    ProcCommandEncoderCopyTextureToTexture
    else:
-    Proccommandencodercopytexturetotexture_436208418)
-  Structcomputepipelinedescriptor_436208421 * = (when declared(
-      Structcomputepipelinedescriptor):
-    Structcomputepipelinedescriptor
+    ProcCommandEncoderCopyTextureToTexture_436208418)
+  StructComputePipelineDescriptor_436208421 * = (when declared(
+      StructComputePipelineDescriptor):
+    StructComputePipelineDescriptor
    else:
-    Structcomputepipelinedescriptor_436208420)
-  Procrenderbundleencoderinsertdebugmarker_436208423 * = (when declared(
-      Procrenderbundleencoderinsertdebugmarker):
-    Procrenderbundleencoderinsertdebugmarker
+    StructComputePipelineDescriptor_436208420)
+  ProcRenderBundleEncoderInsertDebugMarker_436208423 * = (when declared(
+      ProcRenderBundleEncoderInsertDebugMarker):
+    ProcRenderBundleEncoderInsertDebugMarker
    else:
-    Procrenderbundleencoderinsertdebugmarker_436208422)
-  Samplerbindinglayout_436208425* = (when declared(Samplerbindinglayout):
-    Samplerbindinglayout
+    ProcRenderBundleEncoderInsertDebugMarker_436208422)
+  SamplerBindingLayout_436208425* = (when declared(SamplerBindingLayout):
+    SamplerBindingLayout
    else:
-    Samplerbindinglayout_436208424)
-  Procrenderpassencoderbeginocclusionquery_436208427 * = (when declared(
-      Procrenderpassencoderbeginocclusionquery):
-    Procrenderpassencoderbeginocclusionquery
+    SamplerBindingLayout_436208424)
+  ProcRenderPassEncoderBeginOcclusionQuery_436208427 * = (when declared(
+      ProcRenderPassEncoderBeginOcclusionQuery):
+    ProcRenderPassEncoderBeginOcclusionQuery
    else:
-    Procrenderpassencoderbeginocclusionquery_436208426)
-  Structrequiredlimits_436208429* = (when declared(Structrequiredlimits):
-    Structrequiredlimits
+    ProcRenderPassEncoderBeginOcclusionQuery_436208426)
+  StructRequiredLimits_436208429* = (when declared(StructRequiredLimits):
+    StructRequiredLimits
    else:
-    Structrequiredlimits_436208428)
-  Procrenderpassencoderdraw_436208431* = (when declared(
-      Procrenderpassencoderdraw):
-    Procrenderpassencoderdraw
+    StructRequiredLimits_436208428)
+  ProcRenderPassEncoderDraw_436208431* = (when declared(
+      ProcRenderPassEncoderDraw):
+    ProcRenderPassEncoderDraw
    else:
-    Procrenderpassencoderdraw_436208430)
-  Computepassdescriptor_436208433* = (when declared(Computepassdescriptor):
-    Computepassdescriptor
+    ProcRenderPassEncoderDraw_436208430)
+  ComputePassDescriptor_436208433* = (when declared(ComputePassDescriptor):
+    ComputePassDescriptor
    else:
-    Computepassdescriptor_436208432)
+    ComputePassDescriptor_436208432)
   Proc_436208435* = (when declared(Proc):
     Proc
    else:
     Proc_436208434)
-  Compilationinfocallback_436208437* = (when declared(Compilationinfocallback):
-    Compilationinfocallback
+  CompilationInfocallback_436208437* = (when declared(CompilationInfocallback):
+    CompilationInfocallback
    else:
-    Compilationinfocallback_436208436)
-  Pipelinelayoutextras_436208439* = (when declared(Pipelinelayoutextras):
-    Pipelinelayoutextras
+    CompilationInfocallback_436208436)
+  PipelineLayoutextras_436208439* = (when declared(PipelineLayoutextras):
+    PipelineLayoutextras
    else:
-    Pipelinelayoutextras_436208438)
-  Textureview_436208441* = (when declared(Textureview):
-    Textureview
+    PipelineLayoutextras_436208438)
+  TextureView_436208441* = (when declared(TextureView):
+    TextureView
    else:
-    Textureview_436208440)
-  Procrenderpassencodersetscissorrect_436208443 * = (when declared(
-      Procrenderpassencodersetscissorrect):
-    Procrenderpassencodersetscissorrect
+    TextureView_436208440)
+  ProcRenderPassEncoderSetScissorRect_436208443 * = (when declared(
+      ProcRenderPassEncoderSetScissorRect):
+    ProcRenderPassEncoderSetScissorRect
    else:
-    Procrenderpassencodersetscissorrect_436208442)
-  Requestadapteroptions_436208445* = (when declared(Requestadapteroptions):
-    Requestadapteroptions
+    ProcRenderPassEncoderSetScissorRect_436208442)
+  RequestAdapterOptions_436208445* = (when declared(RequestAdapterOptions):
+    RequestAdapterOptions
    else:
-    Requestadapteroptions_436208444)
-  Requestadapterstatus_436208447* = (when declared(Requestadapterstatus):
-    Requestadapterstatus
+    RequestAdapterOptions_436208444)
+  RequestAdapterStatus_436208447* = (when declared(RequestAdapterStatus):
+    RequestAdapterStatus
    else:
-    Requestadapterstatus_436208446)
-  Requestdevicestatus_436208449* = (when declared(Requestdevicestatus):
-    Requestdevicestatus
+    RequestAdapterStatus_436208446)
+  RequestDeviceStatus_436208449* = (when declared(RequestDeviceStatus):
+    RequestDeviceStatus
    else:
-    Requestdevicestatus_436208448)
-  Enumbufferusage_436208451* = (when declared(Enumbufferusage):
-    Enumbufferusage
+    RequestDeviceStatus_436208448)
+  EnumBufferUsage_436208451* = (when declared(EnumBufferUsage):
+    EnumBufferUsage
    else:
-    Enumbufferusage_436208450)
-  Procsamplersetlabel_436208453* = (when declared(Procsamplersetlabel):
-    Procsamplersetlabel
+    EnumBufferUsage_436208450)
+  ProcSamplerSetLabel_436208453* = (when declared(ProcSamplerSetLabel):
+    ProcSamplerSetLabel
    else:
-    Procsamplersetlabel_436208452)
-  Procsurfacegetpreferredformat_436208455 * = (when declared(
-      Procsurfacegetpreferredformat):
-    Procsurfacegetpreferredformat
+    ProcSamplerSetLabel_436208452)
+  ProcSurfaceGetPreferredFormat_436208455 * = (when declared(
+      ProcSurfaceGetPreferredFormat):
+    ProcSurfaceGetPreferredFormat
    else:
-    Procsurfacegetpreferredformat_436208454)
-  Enumtexturedimension_436208457* = (when declared(Enumtexturedimension):
-    Enumtexturedimension
+    ProcSurfaceGetPreferredFormat_436208454)
+  EnumTextureDimension_436208457* = (when declared(EnumTextureDimension):
+    EnumTextureDimension
    else:
-    Enumtexturedimension_436208456)
-  Structmultisamplestate_436208459* = (when declared(Structmultisamplestate):
-    Structmultisamplestate
+    EnumTextureDimension_436208456)
+  StructMultisampleState_436208459* = (when declared(StructMultisampleState):
+    StructMultisampleState
    else:
-    Structmultisamplestate_436208458)
-  Enumnativefeature_436208461* = (when declared(Enumnativefeature):
-    Enumnativefeature
+    StructMultisampleState_436208458)
+  EnumNativeFeature_436208461* = (when declared(EnumNativeFeature):
+    EnumNativeFeature
    else:
-    Enumnativefeature_436208460)
-  Procswapchaingetcurrenttextureview_436208465 * = (when declared(
-      Procswapchaingetcurrenttextureview):
-    Procswapchaingetcurrenttextureview
+    EnumNativeFeature_436208460)
+  ProcSwapChainGetCurrentTextureView_436208465 * = (when declared(
+      ProcSwapChainGetCurrentTextureView):
+    ProcSwapChainGetCurrentTextureView
    else:
-    Procswapchaingetcurrenttextureview_436208464)
-  Shadermodulecompilationhint_436208463 * = (when declared(
-      Shadermodulecompilationhint):
-    Shadermodulecompilationhint
+    ProcSwapChainGetCurrentTextureView_436208464)
+  ShaderModulecompilationhint_436208463 * = (when declared(
+      ShaderModulecompilationhint):
+    ShaderModulecompilationhint
    else:
-    Shadermodulecompilationhint_436208462)
-  Procrenderpassencoderpopdebuggroup_436208467 * = (when declared(
-      Procrenderpassencoderpopdebuggroup):
-    Procrenderpassencoderpopdebuggroup
+    ShaderModulecompilationhint_436208462)
+  ProcRenderPassEncoderPopDebugGroup_436208467 * = (when declared(
+      ProcRenderPassEncoderPopDebugGroup):
+    ProcRenderPassEncoderPopDebugGroup
    else:
-    Procrenderpassencoderpopdebuggroup_436208466)
-  Surfacedescriptorfromcanvashtmlselector_436208469 * = (when declared(
-      Surfacedescriptorfromcanvashtmlselector):
-    Surfacedescriptorfromcanvashtmlselector
+    ProcRenderPassEncoderPopDebugGroup_436208466)
+  SurfaceDescriptorfromcanvashtmlselector_436208469 * = (when declared(
+      SurfaceDescriptorfromcanvashtmlselector):
+    SurfaceDescriptorfromcanvashtmlselector
    else:
-    Surfacedescriptorfromcanvashtmlselector_436208468)
-  Structrenderpasscolorattachment_436208471 * = (when declared(
-      Structrenderpasscolorattachment):
-    Structrenderpasscolorattachment
+    SurfaceDescriptorfromcanvashtmlselector_436208468)
+  StructRenderPassColorAttachment_436208471 * = (when declared(
+      StructRenderPassColorAttachment):
+    StructRenderPassColorAttachment
    else:
-    Structrenderpasscolorattachment_436208470)
-  Enumpipelinestatisticname_436208473* = (when declared(
-      Enumpipelinestatisticname):
-    Enumpipelinestatisticname
+    StructRenderPassColorAttachment_436208470)
+  EnumPipelineStatisticName_436208473* = (when declared(
+      EnumPipelineStatisticName):
+    EnumPipelineStatisticName
    else:
-    Enumpipelinestatisticname_436208472)
-  Renderpipelinedescriptor_436208475* = (when declared(Renderpipelinedescriptor):
-    Renderpipelinedescriptor
+    EnumPipelineStatisticName_436208472)
+  RenderPipelinedescriptor_436208475* = (when declared(RenderPipelinedescriptor):
+    RenderPipelinedescriptor
    else:
-    Renderpipelinedescriptor_436208474)
-  Enumstenciloperation_436208477* = (when declared(Enumstenciloperation):
-    Enumstenciloperation
+    RenderPipelinedescriptor_436208474)
+  EnumStencilOperation_436208477* = (when declared(EnumStencilOperation):
+    EnumStencilOperation
    else:
-    Enumstenciloperation_436208476)
-  Structprimitivedepthclipcontrol_436208479 * = (when declared(
-      Structprimitivedepthclipcontrol):
-    Structprimitivedepthclipcontrol
+    EnumStencilOperation_436208476)
+  StructPrimitiveDepthClipControl_436208479 * = (when declared(
+      StructPrimitiveDepthClipControl):
+    StructPrimitiveDepthClipControl
    else:
-    Structprimitivedepthclipcontrol_436208478)
-  Enumloadop_436208481* = (when declared(Enumloadop):
-    Enumloadop
+    StructPrimitiveDepthClipControl_436208478)
+  EnumLoadOp_436208481* = (when declared(EnumLoadOp):
+    EnumLoadOp
    else:
-    Enumloadop_436208480)
-  Globalreport_436208483* = (when declared(Globalreport):
-    Globalreport
+    EnumLoadOp_436208480)
+  GlobalReport_436208483* = (when declared(GlobalReport):
+    GlobalReport
    else:
-    Globalreport_436208482)
-  Structcomputepasstimestampwrite_436208485 * = (when declared(
-      Structcomputepasstimestampwrite):
-    Structcomputepasstimestampwrite
+    GlobalReport_436208482)
+  StructComputePassTimestampWrite_436208485 * = (when declared(
+      StructComputePassTimestampWrite):
+    StructComputePassTimestampWrite
    else:
-    Structcomputepasstimestampwrite_436208484)
-  Constantentry_436208487* = (when declared(Constantentry):
-    Constantentry
+    StructComputePassTimestampWrite_436208484)
+  ConstantEntry_436208487* = (when declared(ConstantEntry):
+    ConstantEntry
    else:
-    Constantentry_436208486)
-  Enumtexturecomponenttype_436208489* = (when declared(Enumtexturecomponenttype):
-    Enumtexturecomponenttype
+    ConstantEntry_436208486)
+  EnumTextureComponentType_436208489* = (when declared(EnumTextureComponentType):
+    EnumTextureComponentType
    else:
-    Enumtexturecomponenttype_436208488)
-  Queueworkdonecallback_436208491* = (when declared(Queueworkdonecallback):
-    Queueworkdonecallback
+    EnumTextureComponentType_436208488)
+  QueueWorkDoneCallback_436208491* = (when declared(QueueWorkDoneCallback):
+    QueueWorkDoneCallback
    else:
-    Queueworkdonecallback_436208490)
-  Enumerrorfilter_436208493* = (when declared(Enumerrorfilter):
-    Enumerrorfilter
+    QueueWorkDoneCallback_436208490)
+  EnumErrorFilter_436208493* = (when declared(EnumErrorFilter):
+    EnumErrorFilter
    else:
-    Enumerrorfilter_436208492)
-  Colortargetstate_436208495* = (when declared(Colortargetstate):
-    Colortargetstate
+    EnumErrorFilter_436208492)
+  ColorTargetState_436208495* = (when declared(ColorTargetState):
+    ColorTargetState
    else:
-    Colortargetstate_436208494)
-  Querytype_436208497* = (when declared(Querytype):
-    Querytype
+    ColorTargetState_436208494)
+  QueryType_436208497* = (when declared(QueryType):
+    QueryType
    else:
-    Querytype_436208496)
-  Proccommandencodersetlabel_436208499 * = (when declared(
-      Proccommandencodersetlabel):
-    Proccommandencodersetlabel
+    QueryType_436208496)
+  ProcCommandEncoderSetLabel_436208499 * = (when declared(
+      ProcCommandEncoderSetLabel):
+    ProcCommandEncoderSetLabel
    else:
-    Proccommandencodersetlabel_436208498)
-  Samplerbindingtype_436208501* = (when declared(Samplerbindingtype):
-    Samplerbindingtype
+    ProcCommandEncoderSetLabel_436208498)
+  SamplerBindingType_436208501* = (when declared(SamplerBindingType):
+    SamplerBindingType
    else:
-    Samplerbindingtype_436208500)
-  Structrequiredlimitsextras_436208503 * = (when declared(
-      Structrequiredlimitsextras):
-    Structrequiredlimitsextras
+    SamplerBindingType_436208500)
+  StructRequiredLimitsextras_436208503 * = (when declared(
+      StructRequiredLimitsextras):
+    StructRequiredLimitsextras
    else:
-    Structrequiredlimitsextras_436208502)
-  Queryset_436208505* = (when declared(Queryset):
-    Queryset
+    StructRequiredLimitsextras_436208502)
+  QuerySet_436208505* = (when declared(QuerySet):
+    QuerySet
    else:
-    Queryset_436208504)
-  Imagecopytexture_436208507* = (when declared(Imagecopytexture):
-    Imagecopytexture
+    QuerySet_436208504)
+  ImageCopyTexture_436208507* = (when declared(ImageCopyTexture):
+    ImageCopyTexture
    else:
-    Imagecopytexture_436208506)
-  Structorigin3d_436208509* = (when declared(Structorigin3d):
-    Structorigin3d
+    ImageCopyTexture_436208506)
+  StructOrigin3D_436208509* = (when declared(StructOrigin3D):
+    StructOrigin3D
    else:
-    Structorigin3d_436208508)
-  Proccomputepassencoderdispatchworkgroups_436208511 * = (when declared(
-      Proccomputepassencoderdispatchworkgroups):
-    Proccomputepassencoderdispatchworkgroups
+    StructOrigin3D_436208508)
+  ProcComputePassEncoderDispatchWorkgroups_436208511 * = (when declared(
+      ProcComputePassEncoderDispatchWorkgroups):
+    ProcComputePassEncoderDispatchWorkgroups
    else:
-    Proccomputepassencoderdispatchworkgroups_436208510)
-  Procrenderbundleencoderpopdebuggroup_436208513 * = (when declared(
-      Procrenderbundleencoderpopdebuggroup):
-    Procrenderbundleencoderpopdebuggroup
+    ProcComputePassEncoderDispatchWorkgroups_436208510)
+  ProcRenderBundleEncoderPopDebugGroup_436208513 * = (when declared(
+      ProcRenderBundleEncoderPopDebugGroup):
+    ProcRenderBundleEncoderPopDebugGroup
    else:
-    Procrenderbundleencoderpopdebuggroup_436208512)
-  Enumfiltermode_436208515* = (when declared(Enumfiltermode):
-    Enumfiltermode
+    ProcRenderBundleEncoderPopDebugGroup_436208512)
+  EnumFilterMode_436208515* = (when declared(EnumFilterMode):
+    EnumFilterMode
    else:
-    Enumfiltermode_436208514)
-  Structtextureviewdescriptor_436208517 * = (when declared(
-      Structtextureviewdescriptor):
-    Structtextureviewdescriptor
+    EnumFilterMode_436208514)
+  StructTextureViewDescriptor_436208517 * = (when declared(
+      StructTextureViewDescriptor):
+    StructTextureViewDescriptor
    else:
-    Structtextureviewdescriptor_436208516)
-  Renderpasstimestamplocation_436208519 * = (when declared(
-      Renderpasstimestamplocation):
-    Renderpasstimestamplocation
+    StructTextureViewDescriptor_436208516)
+  RenderPassTimestampLocation_436208519 * = (when declared(
+      RenderPassTimestampLocation):
+    RenderPassTimestampLocation
    else:
-    Renderpasstimestamplocation_436208518)
-  Structsurfacedescriptorfromwindowshwnd_436208521 * = (when declared(
-      Structsurfacedescriptorfromwindowshwnd):
-    Structsurfacedescriptorfromwindowshwnd
+    RenderPassTimestampLocation_436208518)
+  StructSurfaceDescriptorfromwindowshwnd_436208521 * = (when declared(
+      StructSurfaceDescriptorfromwindowshwnd):
+    StructSurfaceDescriptorfromwindowshwnd
    else:
-    Structsurfacedescriptorfromwindowshwnd_436208520)
-  Surfacedescriptorfromxcbwindow_436208523 * = (when declared(
-      Surfacedescriptorfromxcbwindow):
-    Surfacedescriptorfromxcbwindow
+    StructSurfaceDescriptorfromwindowshwnd_436208520)
+  SurfaceDescriptorfromxcbwindow_436208523 * = (when declared(
+      SurfaceDescriptorfromxcbwindow):
+    SurfaceDescriptorfromxcbwindow
    else:
-    Surfacedescriptorfromxcbwindow_436208522)
-  Procgetprocaddress_436208525* = (when declared(Procgetprocaddress):
-    Procgetprocaddress
+    SurfaceDescriptorfromxcbwindow_436208522)
+  ProcGetProcAddress_436208525* = (when declared(ProcGetProcAddress):
+    ProcGetProcAddress
    else:
-    Procgetprocaddress_436208524)
-  Procquerysetdestroy_436208527* = (when declared(Procquerysetdestroy):
-    Procquerysetdestroy
+    ProcGetProcAddress_436208524)
+  ProcQuerySetDestroy_436208527* = (when declared(ProcQuerySetDestroy):
+    ProcQuerySetDestroy
    else:
-    Procquerysetdestroy_436208526)
-  Structcolortargetstate_436208529* = (when declared(Structcolortargetstate):
-    Structcolortargetstate
+    ProcQuerySetDestroy_436208526)
+  StructColorTargetState_436208529* = (when declared(StructColorTargetState):
+    StructColorTargetState
    else:
-    Structcolortargetstate_436208528)
-  Enumcompilationinforequeststatus_436208531 * = (when declared(
-      Enumcompilationinforequeststatus):
-    Enumcompilationinforequeststatus
+    StructColorTargetState_436208528)
+  EnumCompilationInfoRequestStatus_436208531 * = (when declared(
+      EnumCompilationInfoRequestStatus):
+    EnumCompilationInfoRequestStatus
    else:
-    Enumcompilationinforequeststatus_436208530)
-  Compilationinforequeststatus_436208533 * = (when declared(
-      Compilationinforequeststatus):
-    Compilationinforequeststatus
+    EnumCompilationInfoRequestStatus_436208530)
+  CompilationInfoRequestStatus_436208533 * = (when declared(
+      CompilationInfoRequestStatus):
+    CompilationInfoRequestStatus
    else:
-    Compilationinforequeststatus_436208532)
-  Computepassencoder_436208535* = (when declared(Computepassencoder):
-    Computepassencoder
+    CompilationInfoRequestStatus_436208532)
+  ComputePassEncoder_436208535* = (when declared(ComputePassEncoder):
+    ComputePassEncoder
    else:
-    Computepassencoder_436208534)
+    ComputePassEncoder_436208534)
   Sampler_436208537* = (when declared(Sampler):
     Sampler
    else:
     Sampler_436208536)
-  Blendoperation_436208539* = (when declared(Blendoperation):
-    Blendoperation
-   else:
-    Blendoperation_436208538)
-  Presentmode_436208541* = (when declared(Presentmode):
-    Presentmode
-   else:
-    Presentmode_436208540)
-  Enumsamplerbindingtype_436208543* = (when declared(Enumsamplerbindingtype):
-    Enumsamplerbindingtype
-   else:
-    Enumsamplerbindingtype_436208542)
-  Proctextureviewsetlabel_436208545* = (when declared(Proctextureviewsetlabel):
-    Proctextureviewsetlabel
-   else:
-    Proctextureviewsetlabel_436208544)
-  Procinstanceprocessevents_436208547* = (when declared(
-      Procinstanceprocessevents):
-    Procinstanceprocessevents
-   else:
-    Procinstanceprocessevents_436208546)
-  Bindgroupentry_436208549* = (when declared(Bindgroupentry):
-    Bindgroupentry
-   else:
-    Bindgroupentry_436208548)
-  Proccommandencoderfinish_436208551* = (when declared(Proccommandencoderfinish):
-    Proccommandencoderfinish
-   else:
-    Proccommandencoderfinish_436208550)
-  Procdevicecreaterenderbundleencoder_436208553 * = (when declared(
-      Procdevicecreaterenderbundleencoder):
-    Procdevicecreaterenderbundleencoder
-   else:
-    Procdevicecreaterenderbundleencoder_436208552)
-  Textureviewdimension_436208555* = (when declared(Textureviewdimension):
-    Textureviewdimension
-   else:
-    Textureviewdimension_436208554)
-  Structcommandbufferdescriptor_436208557 * = (when declared(
-      Structcommandbufferdescriptor):
-    Structcommandbufferdescriptor
-   else:
-    Structcommandbufferdescriptor_436208556)
-  Bufferusage_436208559* = (when declared(Bufferusage):
-    Bufferusage
-   else:
-    Bufferusage_436208558)
-  Compilationinfo_436208561* = (when declared(Compilationinfo):
-    Compilationinfo
-   else:
-    Compilationinfo_436208560)
-  Errortype_436208563* = (when declared(Errortype):
-    Errortype
-   else:
-    Errortype_436208562)
-  Surfacedescriptorfromandroidnativewindow_436208565 * = (when declared(
-      Surfacedescriptorfromandroidnativewindow):
-    Surfacedescriptorfromandroidnativewindow
-   else:
-    Surfacedescriptorfromandroidnativewindow_436208564)
-  Structsurfacedescriptorfromwaylandsurface_436208567 * = (when declared(
-      Structsurfacedescriptorfromwaylandsurface):
-    Structsurfacedescriptorfromwaylandsurface
-   else:
-    Structsurfacedescriptorfromwaylandsurface_436208566)
-  Enumstoragetextureaccess_436208569* = (when declared(Enumstoragetextureaccess):
-    Enumstoragetextureaccess
-   else:
-    Enumstoragetextureaccess_436208568)
-  Structrequestadapteroptions_436208571 * = (when declared(
-      Structrequestadapteroptions):
-    Structrequestadapteroptions
-   else:
-    Structrequestadapteroptions_436208570)
-  Procqueuesubmit_436208577* = (when declared(Procqueuesubmit):
-    Procqueuesubmit
-   else:
-    Procqueuesubmit_436208576)
-  Procadapterhasfeature_436208573* = (when declared(Procadapterhasfeature):
-    Procadapterhasfeature
-   else:
-    Procadapterhasfeature_436208572)
-  Procqueuesetlabel_436208575* = (when declared(Procqueuesetlabel):
-    Procqueuesetlabel
-   else:
-    Procqueuesetlabel_436208574)
-  Procqueuewritebuffer_436208579* = (when declared(Procqueuewritebuffer):
-    Procqueuewritebuffer
-   else:
-    Procqueuewritebuffer_436208578)
-  Procrenderbundleencoderdrawindexedindirect_436208581 * = (when declared(
-      Procrenderbundleencoderdrawindexedindirect):
-    Procrenderbundleencoderdrawindexedindirect
-   else:
-    Procrenderbundleencoderdrawindexedindirect_436208580)
-  Enumqueueworkdonestatus_436208583* = (when declared(Enumqueueworkdonestatus):
-    Enumqueueworkdonestatus
-   else:
-    Enumqueueworkdonestatus_436208582)
-  Renderpassencoder_436208585* = (when declared(Renderpassencoder):
-    Renderpassencoder
-   else:
-    Renderpassencoder_436208584)
-  Comparefunction_436208587* = (when declared(Comparefunction):
-    Comparefunction
-   else:
-    Comparefunction_436208586)
-  Structsurfacedescriptorfrommetallayer_436208589 * = (when declared(
-      Structsurfacedescriptorfrommetallayer):
-    Structsurfacedescriptorfrommetallayer
-   else:
-    Structsurfacedescriptorfrommetallayer_436208588)
-  Createpipelineasyncstatus_436208591* = (when declared(
-      Createpipelineasyncstatus):
-    Createpipelineasyncstatus
-   else:
-    Createpipelineasyncstatus_436208590)
-  Swapchain_436208593* = (when declared(Swapchain):
-    Swapchain
-   else:
-    Swapchain_436208592)
-  Structsupportedlimits_436208595* = (when declared(Structsupportedlimits):
-    Structsupportedlimits
-   else:
-    Structsupportedlimits_436208594)
-  Structstoragereport_436208597* = (when declared(Structstoragereport):
-    Structstoragereport
-   else:
-    Structstoragereport_436208596)
-  Enumquerytype_436208599* = (when declared(Enumquerytype):
-    Enumquerytype
-   else:
-    Enumquerytype_436208598)
-  Proccomputepassencodersetpipeline_436208601 * = (when declared(
-      Proccomputepassencodersetpipeline):
-    Proccomputepassencodersetpipeline
-   else:
-    Proccomputepassencodersetpipeline_436208600)
-  Primitivedepthclipcontrol_436208603* = (when declared(
-      Primitivedepthclipcontrol):
-    Primitivedepthclipcontrol
-   else:
-    Primitivedepthclipcontrol_436208602)
-  Procadapterrequestdevice_436208605* = (when declared(Procadapterrequestdevice):
-    Procadapterrequestdevice
-   else:
-    Procadapterrequestdevice_436208604)
-  Procadaptergetproperties_436208607* = (when declared(Procadaptergetproperties):
-    Procadaptergetproperties
-   else:
-    Procadaptergetproperties_436208606)
-  Multisamplestate_436208609* = (when declared(Multisamplestate):
-    Multisamplestate
-   else:
-    Multisamplestate_436208608)
-  Proctexturedestroy_436208611* = (when declared(Proctexturedestroy):
-    Proctexturedestroy
-   else:
-    Proctexturedestroy_436208610)
-  Structwrappedsubmissionindex_436208613 * = (when declared(
-      Structwrappedsubmissionindex):
-    Structwrappedsubmissionindex
-   else:
-    Structwrappedsubmissionindex_436208612)
-  Cullmode_436208615* = (when declared(Cullmode):
-    Cullmode
-   else:
-    Cullmode_436208614)
-  Structfragmentstate_436208617* = (when declared(Structfragmentstate):
-    Structfragmentstate
-   else:
-    Structfragmentstate_436208616)
-  Surfacedescriptorfromwaylandsurface_436208619 * = (when declared(
-      Surfacedescriptorfromwaylandsurface):
-    Surfacedescriptorfromwaylandsurface
-   else:
-    Surfacedescriptorfromwaylandsurface_436208618)
-  Proccommandencoderpopdebuggroup_436208621 * = (when declared(
-      Proccommandencoderpopdebuggroup):
-    Proccommandencoderpopdebuggroup
-   else:
-    Proccommandencoderpopdebuggroup_436208620)
-  Devicelostcallback_436208623* = (when declared(Devicelostcallback):
-    Devicelostcallback
-   else:
-    Devicelostcallback_436208622)
-  Procinstancecreatesurface_436208625* = (when declared(
-      Procinstancecreatesurface):
-    Procinstancecreatesurface
-   else:
-    Procinstancecreatesurface_436208624)
-  Enumtextureusage_436208627* = (when declared(Enumtextureusage):
-    Enumtextureusage
-   else:
-    Enumtextureusage_436208626)
-  Commandbuffer_436208629* = (when declared(Commandbuffer):
-    Commandbuffer
-   else:
-    Commandbuffer_436208628)
-  Procrenderpassencoderendocclusionquery_436208631 * = (when declared(
-      Procrenderpassencoderendocclusionquery):
-    Procrenderpassencoderendocclusionquery
-   else:
-    Procrenderpassencoderendocclusionquery_436208630)
-  Proccomputepipelinesetlabel_436208633 * = (when declared(
-      Proccomputepipelinesetlabel):
-    Proccomputepipelinesetlabel
-   else:
-    Proccomputepipelinesetlabel_436208632)
-  Enumcomputepasstimestamplocation_436208635 * = (when declared(
-      Enumcomputepasstimestamplocation):
-    Enumcomputepasstimestamplocation
-   else:
-    Enumcomputepasstimestamplocation_436208634)
-  Bufferdescriptor_436208637* = (when declared(Bufferdescriptor):
-    Bufferdescriptor
-   else:
-    Bufferdescriptor_436208636)
-  Enummipmapfiltermode_436208639* = (when declared(Enummipmapfiltermode):
-    Enummipmapfiltermode
-   else:
-    Enummipmapfiltermode_436208638)
-  Shadermodulewgsldescriptor_436208641 * = (when declared(
-      Shadermodulewgsldescriptor):
-    Shadermodulewgsldescriptor
-   else:
-    Shadermodulewgsldescriptor_436208640)
-  Procbuffergetconstmappedrange_436208643 * = (when declared(
-      Procbuffergetconstmappedrange):
-    Procbuffergetconstmappedrange
-   else:
-    Procbuffergetconstmappedrange_436208642)
-  Proccomputepassencoderpushdebuggroup_436208645 * = (when declared(
-      Proccomputepassencoderpushdebuggroup):
-    Proccomputepassencoderpushdebuggroup
-   else:
-    Proccomputepassencoderpushdebuggroup_436208644)
-  Structbindgroupdescriptor_436208647* = (when declared(
-      Structbindgroupdescriptor):
-    Structbindgroupdescriptor
-   else:
-    Structbindgroupdescriptor_436208646)
-  Swapchaindescriptor_436208649* = (when declared(Swapchaindescriptor):
-    Swapchaindescriptor
-   else:
-    Swapchaindescriptor_436208648)
-  Backendtype_436208651* = (when declared(Backendtype):
-    Backendtype
-   else:
-    Backendtype_436208650)
-  Procdevicegetlimits_436208653* = (when declared(Procdevicegetlimits):
-    Procdevicegetlimits
-   else:
-    Procdevicegetlimits_436208652)
-  Deviceextras_436208655* = (when declared(Deviceextras):
-    Deviceextras
-   else:
-    Deviceextras_436208654)
-  Procdevicecreatesampler_436208657* = (when declared(Procdevicecreatesampler):
-    Procdevicecreatesampler
-   else:
-    Procdevicecreatesampler_436208656)
-  Enumrenderpasstimestamplocation_436208659 * = (when declared(
-      Enumrenderpasstimestamplocation):
-    Enumrenderpasstimestamplocation
-   else:
-    Enumrenderpasstimestamplocation_436208658)
-  Structadapterextras_436208661* = (when declared(Structadapterextras):
-    Structadapterextras
-   else:
-    Structadapterextras_436208660)
-  Blendfactor_436208663* = (when declared(Blendfactor):
-    Blendfactor
-   else:
-    Blendfactor_436208662)
-  Structadapterproperties_436208665* = (when declared(Structadapterproperties):
-    Structadapterproperties
-   else:
-    Structadapterproperties_436208664)
-  Commandencoderdescriptor_436208667* = (when declared(Commandencoderdescriptor):
-    Commandencoderdescriptor
-   else:
-    Commandencoderdescriptor_436208666)
-  Devicedescriptor_436208669* = (when declared(Devicedescriptor):
-    Devicedescriptor
-   else:
-    Devicedescriptor_436208668)
-  Hubreport_436208671* = (when declared(Hubreport):
-    Hubreport
-   else:
-    Hubreport_436208670)
-  Bufferusageflags_436208673* = (when declared(Bufferusageflags):
-    Bufferusageflags
-   else:
-    Bufferusageflags_436208672)
-  Requiredlimitsextras_436208675* = (when declared(Requiredlimitsextras):
-    Requiredlimitsextras
-   else:
-    Requiredlimitsextras_436208674)
-  Proccommandencoderbeginrenderpass_436208677 * = (when declared(
-      Proccommandencoderbeginrenderpass):
-    Proccommandencoderbeginrenderpass
-   else:
-    Proccommandencoderbeginrenderpass_436208676)
-  Procbindgroupsetlabel_436208679* = (when declared(Procbindgroupsetlabel):
-    Procbindgroupsetlabel
-   else:
-    Procbindgroupsetlabel_436208678)
-  Enumindexformat_436208681* = (when declared(Enumindexformat):
-    Enumindexformat
-   else:
-    Enumindexformat_436208680)
-  Shaderstage_436208683* = (when declared(Shaderstage):
-    Shaderstage
-   else:
-    Shaderstage_436208682)
-  Primitivestate_436208685* = (when declared(Primitivestate):
-    Primitivestate
-   else:
-    Primitivestate_436208684)
-  Renderpassdepthstencilattachment_436208687 * = (when declared(
-      Renderpassdepthstencilattachment):
-    Renderpassdepthstencilattachment
-   else:
-    Renderpassdepthstencilattachment_436208686)
-  Structrenderbundleencoderdescriptor_436208689 * = (when declared(
-      Structrenderbundleencoderdescriptor):
-    Structrenderbundleencoderdescriptor
-   else:
-    Structrenderbundleencoderdescriptor_436208688)
-  Storagetexturebindinglayout_436208691 * = (when declared(
-      Storagetexturebindinglayout):
-    Storagetexturebindinglayout
-   else:
-    Storagetexturebindinglayout_436208690)
-  Addressmode_436208693* = (when declared(Addressmode):
-    Addressmode
-   else:
-    Addressmode_436208692)
-  Structhubreport_436208695* = (when declared(Structhubreport):
-    Structhubreport
-   else:
-    Structhubreport_436208694)
-  Enumrequestdevicestatus_436208697* = (when declared(Enumrequestdevicestatus):
-    Enumrequestdevicestatus
-   else:
-    Enumrequestdevicestatus_436208696)
-  Structrenderpassdepthstencilattachment_436208699 * = (when declared(
-      Structrenderpassdepthstencilattachment):
-    Structrenderpassdepthstencilattachment
-   else:
-    Structrenderpassdepthstencilattachment_436208698)
-  Proccommandencoderresolvequeryset_436208701 * = (when declared(
-      Proccommandencoderresolvequeryset):
-    Proccommandencoderresolvequeryset
-   else:
-    Proccommandencoderresolvequeryset_436208700)
-  Programmablestagedescriptor_436208703 * = (when declared(
-      Programmablestagedescriptor):
-    Programmablestagedescriptor
-   else:
-    Programmablestagedescriptor_436208702)
-  Structcompilationinfo_436208705* = (when declared(Structcompilationinfo):
-    Structcompilationinfo
-   else:
-    Structcompilationinfo_436208704)
-  Texturedescriptor_436208707* = (when declared(Texturedescriptor):
-    Texturedescriptor
-   else:
-    Texturedescriptor_436208706)
-  Enumvertexstepmode_436208709* = (when declared(Enumvertexstepmode):
-    Enumvertexstepmode
-   else:
-    Enumvertexstepmode_436208708)
-  Proccommandencodercopybuffertobuffer_436208711 * = (when declared(
-      Proccommandencodercopybuffertobuffer):
-    Proccommandencodercopybuffertobuffer
-   else:
-    Proccommandencodercopybuffertobuffer_436208710)
-  Structlimits_436208713* = (when declared(Structlimits):
-    Structlimits
-   else:
-    Structlimits_436208712)
-  Primitivetopology_436208715* = (when declared(Primitivetopology):
-    Primitivetopology
-   else:
-    Primitivetopology_436208714)
-  Procdevicepusherrorscope_436208717* = (when declared(Procdevicepusherrorscope):
-    Procdevicepusherrorscope
-   else:
-    Procdevicepusherrorscope_436208716)
-  Structcolor_436208719* = (when declared(Structcolor):
-    Structcolor
-   else:
-    Structcolor_436208718)
-  Colorwritemask_436208721* = (when declared(Colorwritemask):
-    Colorwritemask
-   else:
-    Colorwritemask_436208720)
-  Procrenderbundleencoderdrawindexed_436208723 * = (when declared(
-      Procrenderbundleencoderdrawindexed):
-    Procrenderbundleencoderdrawindexed
-   else:
-    Procrenderbundleencoderdrawindexed_436208722)
-  Proccomputepassencoderinsertdebugmarker_436208725 * = (when declared(
-      Proccomputepassencoderinsertdebugmarker):
-    Proccomputepassencoderinsertdebugmarker
-   else:
-    Proccomputepassencoderinsertdebugmarker_436208724)
-  Wrappedsubmissionindex_436208727* = (when declared(Wrappedsubmissionindex):
-    Wrappedsubmissionindex
-   else:
-    Wrappedsubmissionindex_436208726)
-  Shaderdefine_436208729* = (when declared(Shaderdefine):
-    Shaderdefine
-   else:
-    Shaderdefine_436208728)
-  Proccommandencoderclearbuffer_436208731 * = (when declared(
-      Proccommandencoderclearbuffer):
-    Proccommandencoderclearbuffer
-   else:
-    Proccommandencoderclearbuffer_436208730)
-  Surfacedescriptorfromwindowshwnd_436208733 * = (when declared(
-      Surfacedescriptorfromwindowshwnd):
-    Surfacedescriptorfromwindowshwnd
-   else:
-    Surfacedescriptorfromwindowshwnd_436208732)
-  Shadermodule_436208735* = (when declared(Shadermodule):
-    Shadermodule
-   else:
-    Shadermodule_436208734)
-  Supportedlimitsextras_436208737* = (when declared(Supportedlimitsextras):
-    Supportedlimitsextras
-   else:
-    Supportedlimitsextras_436208736)
-  Procdevicecreatecommandencoder_436208739 * = (when declared(
-      Procdevicecreatecommandencoder):
-    Procdevicecreatecommandencoder
-   else:
-    Procdevicecreatecommandencoder_436208738)
-  Procdeviceenumeratefeatures_436208741 * = (when declared(
-      Procdeviceenumeratefeatures):
-    Procdeviceenumeratefeatures
-   else:
-    Procdeviceenumeratefeatures_436208740)
-  Bindgrouplayout_436208743* = (when declared(Bindgrouplayout):
-    Bindgrouplayout
-   else:
-    Bindgrouplayout_436208742)
-  Instancedescriptor_436208745* = (when declared(Instancedescriptor):
-    Instancedescriptor
-   else:
-    Instancedescriptor_436208744)
-  Depthstencilstate_436208747* = (when declared(Depthstencilstate):
-    Depthstencilstate
-   else:
-    Depthstencilstate_436208746)
-  Textureusage_436208749* = (when declared(Textureusage):
-    Textureusage
-   else:
-    Textureusage_436208748)
-  Procrenderpassencoderexecutebundles_436208751 * = (when declared(
-      Procrenderpassencoderexecutebundles):
-    Procrenderpassencoderexecutebundles
-   else:
-    Procrenderpassencoderexecutebundles_436208750)
-  Proccommandencodercopytexturetobuffer_436208753 * = (when declared(
-      Proccommandencodercopytexturetobuffer):
-    Proccommandencodercopytexturetobuffer
-   else:
-    Proccommandencodercopytexturetobuffer_436208752)
-  Loadop_436208755* = (when declared(Loadop):
-    Loadop
-   else:
-    Loadop_436208754)
-  Imagecopybuffer_436208757* = (when declared(Imagecopybuffer):
-    Imagecopybuffer
-   else:
-    Imagecopybuffer_436208756)
-  Procdevicecreaterenderpipeline_436208759 * = (when declared(
-      Procdevicecreaterenderpipeline):
-    Procdevicecreaterenderpipeline
-   else:
-    Procdevicecreaterenderpipeline_436208758)
-  Procrenderbundleencodersetbindgroup_436208761 * = (when declared(
-      Procrenderbundleencodersetbindgroup):
-    Procrenderbundleencodersetbindgroup
-   else:
-    Procrenderbundleencodersetbindgroup_436208760)
-  Enumerrortype_436208763* = (when declared(Enumerrortype):
-    Enumerrortype
-   else:
-    Enumerrortype_436208762)
-  Textureaspect_436208765* = (when declared(Textureaspect):
-    Textureaspect
-   else:
-    Textureaspect_436208764)
-  Procrenderpassencodersetpipeline_436208767 * = (when declared(
-      Procrenderpassencodersetpipeline):
-    Procrenderpassencodersetpipeline
-   else:
-    Procrenderpassencodersetpipeline_436208766)
-  Structshadermodulewgsldescriptor_436208769 * = (when declared(
-      Structshadermodulewgsldescriptor):
-    Structshadermodulewgsldescriptor
-   else:
-    Structshadermodulewgsldescriptor_436208768)
-  Structvertexstate_436208771* = (when declared(Structvertexstate):
-    Structvertexstate
-   else:
-    Structvertexstate_436208770)
-  Enumpowerpreference_436208773* = (when declared(Enumpowerpreference):
-    Enumpowerpreference
-   else:
-    Enumpowerpreference_436208772)
-  Procdevicesetlabel_436208775* = (when declared(Procdevicesetlabel):
-    Procdevicesetlabel
-   else:
-    Procdevicesetlabel_436208774)
-  Structchainedstructout_436208777* = (when declared(Structchainedstructout):
-    Structchainedstructout
-   else:
-    Structchainedstructout_436208776)
-  Enumshaderstage_436208779* = (when declared(Enumshaderstage):
-    Enumshaderstage
-   else:
-    Enumshaderstage_436208778)
-  Enumbuffermapasyncstatus_436208781* = (when declared(Enumbuffermapasyncstatus):
-    Enumbuffermapasyncstatus
-   else:
-    Enumbuffermapasyncstatus_436208780)
-  Renderbundle_436208783* = (when declared(Renderbundle):
-    Renderbundle
-   else:
-    Renderbundle_436208782)
-  Featurename_436208785* = (when declared(Featurename):
-    Featurename
-   else:
-    Featurename_436208784)
-  Enumpresentmode_436208787* = (when declared(Enumpresentmode):
-    Enumpresentmode
-   else:
-    Enumpresentmode_436208786)
-  Structprogrammablestagedescriptor_436208789 * = (when declared(
-      Structprogrammablestagedescriptor):
-    Structprogrammablestagedescriptor
-   else:
-    Structprogrammablestagedescriptor_436208788)
-  Blendstate_436208791* = (when declared(Blendstate):
-    Blendstate
-   else:
-    Blendstate_436208790)
-  Bindgrouplayoutentry_436208793* = (when declared(Bindgrouplayoutentry):
-    Bindgrouplayoutentry
-   else:
-    Bindgrouplayoutentry_436208792)
-  Procinstancerequestadapter_436208795 * = (when declared(
-      Procinstancerequestadapter):
-    Procinstancerequestadapter
-   else:
-    Procinstancerequestadapter_436208794)
-  Structshadermodulecompilationhint_436208797 * = (when declared(
-      Structshadermodulecompilationhint):
-    Structshadermodulecompilationhint
-   else:
-    Structshadermodulecompilationhint_436208796)
-  Vertexstate_436208799* = (when declared(Vertexstate):
-    Vertexstate
-   else:
-    Vertexstate_436208798)
-  Structprimitivestate_436208801* = (when declared(Structprimitivestate):
-    Structprimitivestate
-   else:
-    Structprimitivestate_436208800)
-  Enumbackendtype_436208803* = (when declared(Enumbackendtype):
-    Enumbackendtype
-   else:
-    Enumbackendtype_436208802)
-  Bindgroupdescriptor_436208805* = (when declared(Bindgroupdescriptor):
-    Bindgroupdescriptor
-   else:
-    Bindgroupdescriptor_436208804)
-  Bufferbindingtype_436208807* = (when declared(Bufferbindingtype):
-    Bufferbindingtype
-   else:
-    Bufferbindingtype_436208806)
-  Procrenderpassencoderendpipelinestatisticsquery_436208809 * = (when declared(
-      Procrenderpassencoderendpipelinestatisticsquery):
-    Procrenderpassencoderendpipelinestatisticsquery
-   else:
-    Procrenderpassencoderendpipelinestatisticsquery_436208808)
-  Texturedimension_436208811* = (when declared(Texturedimension):
-    Texturedimension
-   else:
-    Texturedimension_436208810)
-  Structbindgrouplayoutentry_436208813 * = (when declared(
-      Structbindgrouplayoutentry):
-    Structbindgrouplayoutentry
-   else:
-    Structbindgrouplayoutentry_436208812)
-  Structshadermoduledescriptor_436208815 * = (when declared(
-      Structshadermoduledescriptor):
-    Structshadermoduledescriptor
-   else:
-    Structshadermoduledescriptor_436208814)
-  Pipelinelayoutdescriptor_436208817* = (when declared(Pipelinelayoutdescriptor):
-    Pipelinelayoutdescriptor
-   else:
-    Pipelinelayoutdescriptor_436208816)
-when not declared(Procdevicecreatecomputepipelineasync):
+  BlendOperation_436208539* = (when declared(BlendOperation):
+    BlendOperation
+   else:
+    BlendOperation_436208538)
+  PresentMode_436208541* = (when declared(PresentMode):
+    PresentMode
+   else:
+    PresentMode_436208540)
+  EnumSamplerBindingType_436208543* = (when declared(EnumSamplerBindingType):
+    EnumSamplerBindingType
+   else:
+    EnumSamplerBindingType_436208542)
+  ProcTextureViewSetLabel_436208545* = (when declared(ProcTextureViewSetLabel):
+    ProcTextureViewSetLabel
+   else:
+    ProcTextureViewSetLabel_436208544)
+  ProcInstanceProcessEvents_436208547* = (when declared(
+      ProcInstanceProcessEvents):
+    ProcInstanceProcessEvents
+   else:
+    ProcInstanceProcessEvents_436208546)
+  BindGroupentry_436208549* = (when declared(BindGroupentry):
+    BindGroupentry
+   else:
+    BindGroupentry_436208548)
+  ProcCommandEncoderFinish_436208551* = (when declared(ProcCommandEncoderFinish):
+    ProcCommandEncoderFinish
+   else:
+    ProcCommandEncoderFinish_436208550)
+  ProcDeviceCreateRenderBundleEncoder_436208553 * = (when declared(
+      ProcDeviceCreateRenderBundleEncoder):
+    ProcDeviceCreateRenderBundleEncoder
+   else:
+    ProcDeviceCreateRenderBundleEncoder_436208552)
+  TextureViewdimension_436208555* = (when declared(TextureViewdimension):
+    TextureViewdimension
+   else:
+    TextureViewdimension_436208554)
+  StructCommandBufferDescriptor_436208557 * = (when declared(
+      StructCommandBufferDescriptor):
+    StructCommandBufferDescriptor
+   else:
+    StructCommandBufferDescriptor_436208556)
+  BufferUsage_436208559* = (when declared(BufferUsage):
+    BufferUsage
+   else:
+    BufferUsage_436208558)
+  CompilationInfo_436208561* = (when declared(CompilationInfo):
+    CompilationInfo
+   else:
+    CompilationInfo_436208560)
+  ErrorType_436208563* = (when declared(ErrorType):
+    ErrorType
+   else:
+    ErrorType_436208562)
+  SurfaceDescriptorfromandroidnativewindow_436208565 * = (when declared(
+      SurfaceDescriptorfromandroidnativewindow):
+    SurfaceDescriptorfromandroidnativewindow
+   else:
+    SurfaceDescriptorfromandroidnativewindow_436208564)
+  StructSurfaceDescriptorfromwaylandsurface_436208567 * = (when declared(
+      StructSurfaceDescriptorfromwaylandsurface):
+    StructSurfaceDescriptorfromwaylandsurface
+   else:
+    StructSurfaceDescriptorfromwaylandsurface_436208566)
+  EnumStorageTextureAccess_436208569* = (when declared(EnumStorageTextureAccess):
+    EnumStorageTextureAccess
+   else:
+    EnumStorageTextureAccess_436208568)
+  StructRequestAdapterOptions_436208571 * = (when declared(
+      StructRequestAdapterOptions):
+    StructRequestAdapterOptions
+   else:
+    StructRequestAdapterOptions_436208570)
+  ProcQueueSubmit_436208577* = (when declared(ProcQueueSubmit):
+    ProcQueueSubmit
+   else:
+    ProcQueueSubmit_436208576)
+  ProcAdapterHasFeature_436208573* = (when declared(ProcAdapterHasFeature):
+    ProcAdapterHasFeature
+   else:
+    ProcAdapterHasFeature_436208572)
+  ProcQueueSetLabel_436208575* = (when declared(ProcQueueSetLabel):
+    ProcQueueSetLabel
+   else:
+    ProcQueueSetLabel_436208574)
+  ProcQueueWriteBuffer_436208579* = (when declared(ProcQueueWriteBuffer):
+    ProcQueueWriteBuffer
+   else:
+    ProcQueueWriteBuffer_436208578)
+  ProcRenderBundleEncoderDrawindexedindirect_436208581 * = (when declared(
+      ProcRenderBundleEncoderDrawindexedindirect):
+    ProcRenderBundleEncoderDrawindexedindirect
+   else:
+    ProcRenderBundleEncoderDrawindexedindirect_436208580)
+  EnumQueueWorkDoneStatus_436208583* = (when declared(EnumQueueWorkDoneStatus):
+    EnumQueueWorkDoneStatus
+   else:
+    EnumQueueWorkDoneStatus_436208582)
+  RenderPassEncoder_436208585* = (when declared(RenderPassEncoder):
+    RenderPassEncoder
+   else:
+    RenderPassEncoder_436208584)
+  CompareFunction_436208587* = (when declared(CompareFunction):
+    CompareFunction
+   else:
+    CompareFunction_436208586)
+  StructSurfaceDescriptorfrommetallayer_436208589 * = (when declared(
+      StructSurfaceDescriptorfrommetallayer):
+    StructSurfaceDescriptorfrommetallayer
+   else:
+    StructSurfaceDescriptorfrommetallayer_436208588)
+  CreatePipelineAsyncStatus_436208591* = (when declared(
+      CreatePipelineAsyncStatus):
+    CreatePipelineAsyncStatus
+   else:
+    CreatePipelineAsyncStatus_436208590)
+  SwapChain_436208593* = (when declared(SwapChain):
+    SwapChain
+   else:
+    SwapChain_436208592)
+  StructSupportedLimits_436208595* = (when declared(StructSupportedLimits):
+    StructSupportedLimits
+   else:
+    StructSupportedLimits_436208594)
+  StructStorageReport_436208597* = (when declared(StructStorageReport):
+    StructStorageReport
+   else:
+    StructStorageReport_436208596)
+  EnumQueryType_436208599* = (when declared(EnumQueryType):
+    EnumQueryType
+   else:
+    EnumQueryType_436208598)
+  ProcComputePassEncoderSetPipeline_436208601 * = (when declared(
+      ProcComputePassEncoderSetPipeline):
+    ProcComputePassEncoderSetPipeline
+   else:
+    ProcComputePassEncoderSetPipeline_436208600)
+  PrimitiveDepthClipControl_436208603* = (when declared(
+      PrimitiveDepthClipControl):
+    PrimitiveDepthClipControl
+   else:
+    PrimitiveDepthClipControl_436208602)
+  ProcAdapterRequestDevice_436208605* = (when declared(ProcAdapterRequestDevice):
+    ProcAdapterRequestDevice
+   else:
+    ProcAdapterRequestDevice_436208604)
+  ProcAdapterGetProperties_436208607* = (when declared(ProcAdapterGetProperties):
+    ProcAdapterGetProperties
+   else:
+    ProcAdapterGetProperties_436208606)
+  MultisampleState_436208609* = (when declared(MultisampleState):
+    MultisampleState
+   else:
+    MultisampleState_436208608)
+  ProcTextureDestroy_436208611* = (when declared(ProcTextureDestroy):
+    ProcTextureDestroy
+   else:
+    ProcTextureDestroy_436208610)
+  StructWrappedSubmissionIndex_436208613 * = (when declared(
+      StructWrappedSubmissionIndex):
+    StructWrappedSubmissionIndex
+   else:
+    StructWrappedSubmissionIndex_436208612)
+  CullMode_436208615* = (when declared(CullMode):
+    CullMode
+   else:
+    CullMode_436208614)
+  StructFragmentState_436208617* = (when declared(StructFragmentState):
+    StructFragmentState
+   else:
+    StructFragmentState_436208616)
+  SurfaceDescriptorfromwaylandsurface_436208619 * = (when declared(
+      SurfaceDescriptorfromwaylandsurface):
+    SurfaceDescriptorfromwaylandsurface
+   else:
+    SurfaceDescriptorfromwaylandsurface_436208618)
+  ProcCommandEncoderPopDebugGroup_436208621 * = (when declared(
+      ProcCommandEncoderPopDebugGroup):
+    ProcCommandEncoderPopDebugGroup
+   else:
+    ProcCommandEncoderPopDebugGroup_436208620)
+  DeviceLostCallback_436208623* = (when declared(DeviceLostCallback):
+    DeviceLostCallback
+   else:
+    DeviceLostCallback_436208622)
+  ProcInstanceCreateSurface_436208625* = (when declared(
+      ProcInstanceCreateSurface):
+    ProcInstanceCreateSurface
+   else:
+    ProcInstanceCreateSurface_436208624)
+  EnumTextureUsage_436208627* = (when declared(EnumTextureUsage):
+    EnumTextureUsage
+   else:
+    EnumTextureUsage_436208626)
+  CommandBuffer_436208629* = (when declared(CommandBuffer):
+    CommandBuffer
+   else:
+    CommandBuffer_436208628)
+  ProcRenderPassEncoderEndocclusionquery_436208631 * = (when declared(
+      ProcRenderPassEncoderEndocclusionquery):
+    ProcRenderPassEncoderEndocclusionquery
+   else:
+    ProcRenderPassEncoderEndocclusionquery_436208630)
+  ProcComputePipelineSetLabel_436208633 * = (when declared(
+      ProcComputePipelineSetLabel):
+    ProcComputePipelineSetLabel
+   else:
+    ProcComputePipelineSetLabel_436208632)
+  EnumComputePassTimestampLocation_436208635 * = (when declared(
+      EnumComputePassTimestampLocation):
+    EnumComputePassTimestampLocation
+   else:
+    EnumComputePassTimestampLocation_436208634)
+  BufferDescriptor_436208637* = (when declared(BufferDescriptor):
+    BufferDescriptor
+   else:
+    BufferDescriptor_436208636)
+  EnumMipmapFilterMode_436208639* = (when declared(EnumMipmapFilterMode):
+    EnumMipmapFilterMode
+   else:
+    EnumMipmapFilterMode_436208638)
+  ShaderModulewgsldescriptor_436208641 * = (when declared(
+      ShaderModulewgsldescriptor):
+    ShaderModulewgsldescriptor
+   else:
+    ShaderModulewgsldescriptor_436208640)
+  ProcBufferGetConstMappedRange_436208643 * = (when declared(
+      ProcBufferGetConstMappedRange):
+    ProcBufferGetConstMappedRange
+   else:
+    ProcBufferGetConstMappedRange_436208642)
+  ProcComputePassEncoderPushDebugGroup_436208645 * = (when declared(
+      ProcComputePassEncoderPushDebugGroup):
+    ProcComputePassEncoderPushDebugGroup
+   else:
+    ProcComputePassEncoderPushDebugGroup_436208644)
+  StructBindGroupDescriptor_436208647* = (when declared(
+      StructBindGroupDescriptor):
+    StructBindGroupDescriptor
+   else:
+    StructBindGroupDescriptor_436208646)
+  SwapChaindescriptor_436208649* = (when declared(SwapChaindescriptor):
+    SwapChaindescriptor
+   else:
+    SwapChaindescriptor_436208648)
+  BackendType_436208651* = (when declared(BackendType):
+    BackendType
+   else:
+    BackendType_436208650)
+  ProcDeviceGetLimits_436208653* = (when declared(ProcDeviceGetLimits):
+    ProcDeviceGetLimits
+   else:
+    ProcDeviceGetLimits_436208652)
+  DeviceExtras_436208655* = (when declared(DeviceExtras):
+    DeviceExtras
+   else:
+    DeviceExtras_436208654)
+  ProcDeviceCreateSampler_436208657* = (when declared(ProcDeviceCreateSampler):
+    ProcDeviceCreateSampler
+   else:
+    ProcDeviceCreateSampler_436208656)
+  EnumRenderPassTimestampLocation_436208659 * = (when declared(
+      EnumRenderPassTimestampLocation):
+    EnumRenderPassTimestampLocation
+   else:
+    EnumRenderPassTimestampLocation_436208658)
+  StructAdapterExtras_436208661* = (when declared(StructAdapterExtras):
+    StructAdapterExtras
+   else:
+    StructAdapterExtras_436208660)
+  BlendFactor_436208663* = (when declared(BlendFactor):
+    BlendFactor
+   else:
+    BlendFactor_436208662)
+  StructAdapterProperties_436208665* = (when declared(StructAdapterProperties):
+    StructAdapterProperties
+   else:
+    StructAdapterProperties_436208664)
+  CommandEncoderdescriptor_436208667* = (when declared(CommandEncoderdescriptor):
+    CommandEncoderdescriptor
+   else:
+    CommandEncoderdescriptor_436208666)
+  DeviceDescriptor_436208669* = (when declared(DeviceDescriptor):
+    DeviceDescriptor
+   else:
+    DeviceDescriptor_436208668)
+  HubReport_436208671* = (when declared(HubReport):
+    HubReport
+   else:
+    HubReport_436208670)
+  BufferUsageflags_436208673* = (when declared(BufferUsageflags):
+    BufferUsageflags
+   else:
+    BufferUsageflags_436208672)
+  RequiredLimitsextras_436208675* = (when declared(RequiredLimitsextras):
+    RequiredLimitsextras
+   else:
+    RequiredLimitsextras_436208674)
+  ProcCommandEncoderBeginRenderPass_436208677 * = (when declared(
+      ProcCommandEncoderBeginRenderPass):
+    ProcCommandEncoderBeginRenderPass
+   else:
+    ProcCommandEncoderBeginRenderPass_436208676)
+  ProcBindGroupSetLabel_436208679* = (when declared(ProcBindGroupSetLabel):
+    ProcBindGroupSetLabel
+   else:
+    ProcBindGroupSetLabel_436208678)
+  EnumIndexFormat_436208681* = (when declared(EnumIndexFormat):
+    EnumIndexFormat
+   else:
+    EnumIndexFormat_436208680)
+  ShaderStage_436208683* = (when declared(ShaderStage):
+    ShaderStage
+   else:
+    ShaderStage_436208682)
+  PrimitiveState_436208685* = (when declared(PrimitiveState):
+    PrimitiveState
+   else:
+    PrimitiveState_436208684)
+  RenderPassDepthStencilAttachment_436208687 * = (when declared(
+      RenderPassDepthStencilAttachment):
+    RenderPassDepthStencilAttachment
+   else:
+    RenderPassDepthStencilAttachment_436208686)
+  StructRenderBundleEncoderDescriptor_436208689 * = (when declared(
+      StructRenderBundleEncoderDescriptor):
+    StructRenderBundleEncoderDescriptor
+   else:
+    StructRenderBundleEncoderDescriptor_436208688)
+  StorageTextureBindingLayout_436208691 * = (when declared(
+      StorageTextureBindingLayout):
+    StorageTextureBindingLayout
+   else:
+    StorageTextureBindingLayout_436208690)
+  AddressMode_436208693* = (when declared(AddressMode):
+    AddressMode
+   else:
+    AddressMode_436208692)
+  StructHubReport_436208695* = (when declared(StructHubReport):
+    StructHubReport
+   else:
+    StructHubReport_436208694)
+  EnumRequestDeviceStatus_436208697* = (when declared(EnumRequestDeviceStatus):
+    EnumRequestDeviceStatus
+   else:
+    EnumRequestDeviceStatus_436208696)
+  StructRenderPassDepthStencilAttachment_436208699 * = (when declared(
+      StructRenderPassDepthStencilAttachment):
+    StructRenderPassDepthStencilAttachment
+   else:
+    StructRenderPassDepthStencilAttachment_436208698)
+  ProcCommandEncoderResolveQuerySet_436208701 * = (when declared(
+      ProcCommandEncoderResolveQuerySet):
+    ProcCommandEncoderResolveQuerySet
+   else:
+    ProcCommandEncoderResolveQuerySet_436208700)
+  ProgrammableStageDescriptor_436208703 * = (when declared(
+      ProgrammableStageDescriptor):
+    ProgrammableStageDescriptor
+   else:
+    ProgrammableStageDescriptor_436208702)
+  StructCompilationInfo_436208705* = (when declared(StructCompilationInfo):
+    StructCompilationInfo
+   else:
+    StructCompilationInfo_436208704)
+  TextureDescriptor_436208707* = (when declared(TextureDescriptor):
+    TextureDescriptor
+   else:
+    TextureDescriptor_436208706)
+  EnumVertexStepMode_436208709* = (when declared(EnumVertexStepMode):
+    EnumVertexStepMode
+   else:
+    EnumVertexStepMode_436208708)
+  ProcCommandEncoderCopyBufferToBuffer_436208711 * = (when declared(
+      ProcCommandEncoderCopyBufferToBuffer):
+    ProcCommandEncoderCopyBufferToBuffer
+   else:
+    ProcCommandEncoderCopyBufferToBuffer_436208710)
+  StructLimits_436208713* = (when declared(StructLimits):
+    StructLimits
+   else:
+    StructLimits_436208712)
+  PrimitiveTopology_436208715* = (when declared(PrimitiveTopology):
+    PrimitiveTopology
+   else:
+    PrimitiveTopology_436208714)
+  ProcDevicePushErrorScope_436208717* = (when declared(ProcDevicePushErrorScope):
+    ProcDevicePushErrorScope
+   else:
+    ProcDevicePushErrorScope_436208716)
+  StructColor_436208719* = (when declared(StructColor):
+    StructColor
+   else:
+    StructColor_436208718)
+  ColorWriteMask_436208721* = (when declared(ColorWriteMask):
+    ColorWriteMask
+   else:
+    ColorWriteMask_436208720)
+  ProcRenderBundleEncoderDrawindexed_436208723 * = (when declared(
+      ProcRenderBundleEncoderDrawindexed):
+    ProcRenderBundleEncoderDrawindexed
+   else:
+    ProcRenderBundleEncoderDrawindexed_436208722)
+  ProcComputePassEncoderInsertDebugMarker_436208725 * = (when declared(
+      ProcComputePassEncoderInsertDebugMarker):
+    ProcComputePassEncoderInsertDebugMarker
+   else:
+    ProcComputePassEncoderInsertDebugMarker_436208724)
+  WrappedSubmissionIndex_436208727* = (when declared(WrappedSubmissionIndex):
+    WrappedSubmissionIndex
+   else:
+    WrappedSubmissionIndex_436208726)
+  ShaderDefine_436208729* = (when declared(ShaderDefine):
+    ShaderDefine
+   else:
+    ShaderDefine_436208728)
+  ProcCommandEncoderClearBuffer_436208731 * = (when declared(
+      ProcCommandEncoderClearBuffer):
+    ProcCommandEncoderClearBuffer
+   else:
+    ProcCommandEncoderClearBuffer_436208730)
+  SurfaceDescriptorfromwindowshwnd_436208733 * = (when declared(
+      SurfaceDescriptorfromwindowshwnd):
+    SurfaceDescriptorfromwindowshwnd
+   else:
+    SurfaceDescriptorfromwindowshwnd_436208732)
+  ShaderModule_436208735* = (when declared(ShaderModule):
+    ShaderModule
+   else:
+    ShaderModule_436208734)
+  SupportedLimitsextras_436208737* = (when declared(SupportedLimitsextras):
+    SupportedLimitsextras
+   else:
+    SupportedLimitsextras_436208736)
+  ProcDeviceCreateCommandEncoder_436208739 * = (when declared(
+      ProcDeviceCreateCommandEncoder):
+    ProcDeviceCreateCommandEncoder
+   else:
+    ProcDeviceCreateCommandEncoder_436208738)
+  ProcDeviceEnumerateFeatures_436208741 * = (when declared(
+      ProcDeviceEnumerateFeatures):
+    ProcDeviceEnumerateFeatures
+   else:
+    ProcDeviceEnumerateFeatures_436208740)
+  BindGrouplayout_436208743* = (when declared(BindGrouplayout):
+    BindGrouplayout
+   else:
+    BindGrouplayout_436208742)
+  InstanceDescriptor_436208745* = (when declared(InstanceDescriptor):
+    InstanceDescriptor
+   else:
+    InstanceDescriptor_436208744)
+  DepthStencilState_436208747* = (when declared(DepthStencilState):
+    DepthStencilState
+   else:
+    DepthStencilState_436208746)
+  TextureUsage_436208749* = (when declared(TextureUsage):
+    TextureUsage
+   else:
+    TextureUsage_436208748)
+  ProcRenderPassEncoderExecuteBundles_436208751 * = (when declared(
+      ProcRenderPassEncoderExecuteBundles):
+    ProcRenderPassEncoderExecuteBundles
+   else:
+    ProcRenderPassEncoderExecuteBundles_436208750)
+  ProcCommandEncoderCopyTextureToBuffer_436208753 * = (when declared(
+      ProcCommandEncoderCopyTextureToBuffer):
+    ProcCommandEncoderCopyTextureToBuffer
+   else:
+    ProcCommandEncoderCopyTextureToBuffer_436208752)
+  LoadOp_436208755* = (when declared(LoadOp):
+    LoadOp
+   else:
+    LoadOp_436208754)
+  ImageCopyBuffer_436208757* = (when declared(ImageCopyBuffer):
+    ImageCopyBuffer
+   else:
+    ImageCopyBuffer_436208756)
+  ProcDeviceCreateRenderPipeline_436208759 * = (when declared(
+      ProcDeviceCreateRenderPipeline):
+    ProcDeviceCreateRenderPipeline
+   else:
+    ProcDeviceCreateRenderPipeline_436208758)
+  ProcRenderBundleEncoderSetBindGroup_436208761 * = (when declared(
+      ProcRenderBundleEncoderSetBindGroup):
+    ProcRenderBundleEncoderSetBindGroup
+   else:
+    ProcRenderBundleEncoderSetBindGroup_436208760)
+  EnumErrorType_436208763* = (when declared(EnumErrorType):
+    EnumErrorType
+   else:
+    EnumErrorType_436208762)
+  TextureAspect_436208765* = (when declared(TextureAspect):
+    TextureAspect
+   else:
+    TextureAspect_436208764)
+  ProcRenderPassEncoderSetPipeline_436208767 * = (when declared(
+      ProcRenderPassEncoderSetPipeline):
+    ProcRenderPassEncoderSetPipeline
+   else:
+    ProcRenderPassEncoderSetPipeline_436208766)
+  StructShaderModuleWgslDescriptor_436208769 * = (when declared(
+      StructShaderModuleWgslDescriptor):
+    StructShaderModuleWgslDescriptor
+   else:
+    StructShaderModuleWgslDescriptor_436208768)
+  StructVertexState_436208771* = (when declared(StructVertexState):
+    StructVertexState
+   else:
+    StructVertexState_436208770)
+  EnumPowerPreference_436208773* = (when declared(EnumPowerPreference):
+    EnumPowerPreference
+   else:
+    EnumPowerPreference_436208772)
+  ProcDeviceSetLabel_436208775* = (when declared(ProcDeviceSetLabel):
+    ProcDeviceSetLabel
+   else:
+    ProcDeviceSetLabel_436208774)
+  StructChainedStructout_436208777* = (when declared(StructChainedStructout):
+    StructChainedStructout
+   else:
+    StructChainedStructout_436208776)
+  EnumShaderStage_436208779* = (when declared(EnumShaderStage):
+    EnumShaderStage
+   else:
+    EnumShaderStage_436208778)
+  EnumBufferMapAsyncStatus_436208781* = (when declared(EnumBufferMapAsyncStatus):
+    EnumBufferMapAsyncStatus
+   else:
+    EnumBufferMapAsyncStatus_436208780)
+  RenderBundle_436208783* = (when declared(RenderBundle):
+    RenderBundle
+   else:
+    RenderBundle_436208782)
+  FeatureName_436208785* = (when declared(FeatureName):
+    FeatureName
+   else:
+    FeatureName_436208784)
+  EnumPresentMode_436208787* = (when declared(EnumPresentMode):
+    EnumPresentMode
+   else:
+    EnumPresentMode_436208786)
+  StructProgrammableStageDescriptor_436208789 * = (when declared(
+      StructProgrammableStageDescriptor):
+    StructProgrammableStageDescriptor
+   else:
+    StructProgrammableStageDescriptor_436208788)
+  BlendState_436208791* = (when declared(BlendState):
+    BlendState
+   else:
+    BlendState_436208790)
+  BindGrouplayoutentry_436208793* = (when declared(BindGrouplayoutentry):
+    BindGrouplayoutentry
+   else:
+    BindGrouplayoutentry_436208792)
+  ProcInstanceRequestAdapter_436208795 * = (when declared(
+      ProcInstanceRequestAdapter):
+    ProcInstanceRequestAdapter
+   else:
+    ProcInstanceRequestAdapter_436208794)
+  StructShaderModuleCompilationHint_436208797 * = (when declared(
+      StructShaderModuleCompilationHint):
+    StructShaderModuleCompilationHint
+   else:
+    StructShaderModuleCompilationHint_436208796)
+  VertexState_436208799* = (when declared(VertexState):
+    VertexState
+   else:
+    VertexState_436208798)
+  StructPrimitiveState_436208801* = (when declared(StructPrimitiveState):
+    StructPrimitiveState
+   else:
+    StructPrimitiveState_436208800)
+  EnumBackendType_436208803* = (when declared(EnumBackendType):
+    EnumBackendType
+   else:
+    EnumBackendType_436208802)
+  BindGroupdescriptor_436208805* = (when declared(BindGroupdescriptor):
+    BindGroupdescriptor
+   else:
+    BindGroupdescriptor_436208804)
+  BufferBindingType_436208807* = (when declared(BufferBindingType):
+    BufferBindingType
+   else:
+    BufferBindingType_436208806)
+  ProcRenderPassEncoderEndpipelinestatisticsquery_436208809 * = (when declared(
+      ProcRenderPassEncoderEndpipelinestatisticsquery):
+    ProcRenderPassEncoderEndpipelinestatisticsquery
+   else:
+    ProcRenderPassEncoderEndpipelinestatisticsquery_436208808)
+  TextureDimension_436208811* = (when declared(TextureDimension):
+    TextureDimension
+   else:
+    TextureDimension_436208810)
+  StructBindGroupLayoutEntry_436208813 * = (when declared(
+      StructBindGroupLayoutEntry):
+    StructBindGroupLayoutEntry
+   else:
+    StructBindGroupLayoutEntry_436208812)
+  StructShaderModuleDescriptor_436208815 * = (when declared(
+      StructShaderModuleDescriptor):
+    StructShaderModuleDescriptor
+   else:
+    StructShaderModuleDescriptor_436208814)
+  PipelineLayoutdescriptor_436208817* = (when declared(PipelineLayoutdescriptor):
+    PipelineLayoutdescriptor
+   else:
+    PipelineLayoutdescriptor_436208816)
+when not declared(ProcDeviceCreateComputePipelineasync):
   type
-    Procdevicecreatecomputepipelineasync *
-      = Procdevicecreatecomputepipelineasync_436207931
+    ProcDeviceCreateComputePipelineasync *
+      = ProcDeviceCreateComputePipelineasync_436207931
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateComputePipelineAsync" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatebuffer):
+when not declared(ProcDeviceCreateBuffer):
   type
-    Procdevicecreatebuffer* = Procdevicecreatebuffer_436207934
+    ProcDeviceCreateBuffer* = ProcDeviceCreateBuffer_436207934
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateBuffer" &
         " already exists, not redeclaring")
-when not declared(Structinstancedescriptor):
+when not declared(StructInstanceDescriptor):
   type
-    Structinstancedescriptor* = Structinstancedescriptor_436207936
+    StructInstanceDescriptor* = StructInstanceDescriptor_436207936
 else:
   static:
     hint("Declaration of " & "struct_WGPUInstanceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromxlibwindow):
+when not declared(StructSurfaceDescriptorfromxlibwindow):
   type
-    Structsurfacedescriptorfromxlibwindow *
-      = Structsurfacedescriptorfromxlibwindow_436207938
+    StructSurfaceDescriptorfromxlibwindow *
+      = StructSurfaceDescriptorfromxlibwindow_436207938
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptorFromXlibWindow" &
         " already exists, not redeclaring")
-when not declared(Vertexstepmode):
+when not declared(VertexStepMode):
   type
-    Vertexstepmode* = Vertexstepmode_436207942
+    VertexStepMode* = VertexStepMode_436207942
 else:
   static:
     hint("Declaration of " & "WGPUVertexStepMode" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreateswapchain):
+when not declared(ProcDeviceCreateSwapChain):
   type
-    Procdevicecreateswapchain* = Procdevicecreateswapchain_436207944
+    ProcDeviceCreateSwapChain* = ProcDeviceCreateSwapChain_436207944
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateSwapChain" &
         " already exists, not redeclaring")
-when not declared(Structglobalreport):
+when not declared(StructGlobalReport):
   type
-    Structglobalreport* = Structglobalreport_436207948
+    StructGlobalReport* = StructGlobalReport_436207948
 else:
   static:
     hint("Declaration of " & "struct_WGPUGlobalReport" &
         " already exists, not redeclaring")
-when not declared(Requiredlimits):
+when not declared(RequiredLimits):
   type
-    Requiredlimits* = Requiredlimits_436207946
+    RequiredLimits* = RequiredLimits_436207946
 else:
   static:
     hint("Declaration of " & "WGPURequiredLimits" &
         " already exists, not redeclaring")
-when not declared(Structrenderpasstimestampwrite):
+when not declared(StructRenderPassTimestampWrite):
   type
-    Structrenderpasstimestampwrite* = Structrenderpasstimestampwrite_436207950
+    StructRenderPassTimestampWrite* = StructRenderPassTimestampWrite_436207950
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderPassTimestampWrite" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatequeryset):
+when not declared(ProcDeviceCreateQuerySet):
   type
-    Procdevicecreatequeryset* = Procdevicecreatequeryset_436207954
+    ProcDeviceCreateQuerySet* = ProcDeviceCreateQuerySet_436207954
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateQuerySet" &
         " already exists, not redeclaring")
-when not declared(Pushconstantrange):
+when not declared(PushConstantRange):
   type
-    Pushconstantrange* = Pushconstantrange_436207958
+    PushConstantRange* = PushConstantRange_436207958
 else:
   static:
     hint("Declaration of " & "WGPUPushConstantRange" &
         " already exists, not redeclaring")
-when not declared(Shadermoduleglsldescriptor):
+when not declared(ShaderModuleglsldescriptor):
   type
-    Shadermoduleglsldescriptor* = Shadermoduleglsldescriptor_436207960
+    ShaderModuleglsldescriptor* = ShaderModuleglsldescriptor_436207960
 else:
   static:
     hint("Declaration of " & "WGPUShaderModuleGLSLDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatetexture):
+when not declared(ProcDeviceCreateTexture):
   type
-    Procdevicecreatetexture* = Procdevicecreatetexture_436207962
+    ProcDeviceCreateTexture* = ProcDeviceCreateTexture_436207962
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateTexture" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderdrawindexedindirect):
+when not declared(ProcRenderPassEncoderDrawindexedindirect):
   type
-    Procrenderpassencoderdrawindexedindirect *
-      = Procrenderpassencoderdrawindexedindirect_436207964
+    ProcRenderPassEncoderDrawindexedindirect *
+      = ProcRenderPassEncoderDrawindexedindirect_436207964
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(Mapmode):
+when not declared(MapMode):
   type
-    Mapmode* = Mapmode_436207966
+    MapMode* = MapMode_436207966
 else:
   static:
     hint("Declaration of " & "WGPUMapMode" & " already exists, not redeclaring")
-when not declared(Storagetextureaccess):
+when not declared(StorageTextureAccess):
   type
-    Storagetextureaccess* = Storagetextureaccess_436207968
+    StorageTextureAccess* = StorageTextureAccess_436207968
 else:
   static:
     hint("Declaration of " & "WGPUStorageTextureAccess" &
         " already exists, not redeclaring")
-when not declared(Structsamplerdescriptor):
+when not declared(StructSamplerDescriptor):
   type
-    Structsamplerdescriptor* = Structsamplerdescriptor_436207970
+    StructSamplerDescriptor* = StructSamplerDescriptor_436207970
 else:
   static:
     hint("Declaration of " & "struct_WGPUSamplerDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderpushdebuggroup):
+when not declared(ProcRenderBundleEncoderPushDebugGroup):
   type
-    Procrenderbundleencoderpushdebuggroup *
-      = Procrenderbundleencoderpushdebuggroup_436207972
+    ProcRenderBundleEncoderPushDebugGroup *
+      = ProcRenderBundleEncoderPushDebugGroup_436207972
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Vertexbufferlayout):
+when not declared(VertexBufferLayout):
   type
-    Vertexbufferlayout* = Vertexbufferlayout_436207974
+    VertexBufferLayout* = VertexBufferLayout_436207974
 else:
   static:
     hint("Declaration of " & "WGPUVertexBufferLayout" &
         " already exists, not redeclaring")
-when not declared(Predefinedcolorspace):
+when not declared(PredefinedColorSpace):
   type
-    Predefinedcolorspace* = Predefinedcolorspace_436207976
+    PredefinedColorSpace* = PredefinedColorSpace_436207976
 else:
   static:
     hint("Declaration of " & "WGPUPredefinedColorSpace" &
@@ -4024,78 +4024,78 @@ when not declared(Device):
 else:
   static:
     hint("Declaration of " & "WGPUDevice" & " already exists, not redeclaring")
-when not declared(Structsurfacedescriptor):
+when not declared(StructSurfaceDescriptor):
   type
-    Structsurfacedescriptor* = Structsurfacedescriptor_436207980
+    StructSurfaceDescriptor* = StructSurfaceDescriptor_436207980
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structblendstate):
+when not declared(StructBlendState):
   type
-    Structblendstate* = Structblendstate_436207982
+    StructBlendState* = StructBlendState_436207982
 else:
   static:
     hint("Declaration of " & "struct_WGPUBlendState" &
         " already exists, not redeclaring")
-when not declared(Procrenderpipelinegetbindgrouplayout):
+when not declared(ProcRenderPipelineGetBindGroupLayout):
   type
-    Procrenderpipelinegetbindgrouplayout *
-      = Procrenderpipelinegetbindgrouplayout_436207984
+    ProcRenderPipelineGetBindGroupLayout *
+      = ProcRenderPipelineGetBindGroupLayout_436207984
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderbeginpipelinestatisticsquery):
+when not declared(ProcRenderPassEncoderBeginPipelineStatisticsQuery):
   type
-    Procrenderpassencoderbeginpipelinestatisticsquery *
-      = Procrenderpassencoderbeginpipelinestatisticsquery_436207986
+    ProcRenderPassEncoderBeginPipelineStatisticsQuery *
+      = ProcRenderPassEncoderBeginPipelineStatisticsQuery_436207986
 else:
   static:
     hint("Declaration of " &
         "WGPUProcRenderPassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Bufferbindinglayout):
+when not declared(BufferBindingLayout):
   type
-    Bufferbindinglayout* = Bufferbindinglayout_436207988
+    BufferBindingLayout* = BufferBindingLayout_436207988
 else:
   static:
     hint("Declaration of " & "WGPUBufferBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderendpipelinestatisticsquery):
+when not declared(ProcComputePassEncoderEndpipelinestatisticsquery):
   type
-    Proccomputepassencoderendpipelinestatisticsquery *
-      = Proccomputepassencoderendpipelinestatisticsquery_436207997
+    ProcComputePassEncoderEndpipelinestatisticsquery *
+      = ProcComputePassEncoderEndpipelinestatisticsquery_436207997
 else:
   static:
     hint("Declaration of " &
         "WGPUProcComputePassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Proccommandbuffersetlabel):
+when not declared(ProcCommandBufferSetLabel):
   type
-    Proccommandbuffersetlabel* = Proccommandbuffersetlabel_436207993
+    ProcCommandBufferSetLabel* = ProcCommandBufferSetLabel_436207993
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structpipelinelayoutdescriptor):
+when not declared(StructPipelineLayoutDescriptor):
   type
-    Structpipelinelayoutdescriptor* = Structpipelinelayoutdescriptor_436207995
+    StructPipelineLayoutDescriptor* = StructPipelineLayoutDescriptor_436207995
 else:
   static:
     hint("Declaration of " & "struct_WGPUPipelineLayoutDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetblendconstant):
+when not declared(ProcRenderPassEncoderSetBlendConstant):
   type
-    Procrenderpassencodersetblendconstant *
-      = Procrenderpassencodersetblendconstant_436207999
+    ProcRenderPassEncoderSetBlendConstant *
+      = ProcRenderPassEncoderSetBlendConstant_436207999
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetBlendConstant" &
         " already exists, not redeclaring")
-when not declared(Textureformat):
+when not declared(TextureFormat):
   type
-    Textureformat* = Textureformat_436208001
+    TextureFormat* = TextureFormat_436208001
 else:
   static:
     hint("Declaration of " & "WGPUTextureFormat" &
@@ -4106,9 +4106,9 @@ when not declared(Flags):
 else:
   static:
     hint("Declaration of " & "WGPUFlags" & " already exists, not redeclaring")
-when not declared(Texturesampletype):
+when not declared(TextureSampleType):
   type
-    Texturesampletype* = Texturesampletype_436208007
+    TextureSampleType* = TextureSampleType_436208007
 else:
   static:
     hint("Declaration of " & "WGPUTextureSampleType" &
@@ -4119,93 +4119,93 @@ when not declared(Texture):
 else:
   static:
     hint("Declaration of " & "WGPUTexture" & " already exists, not redeclaring")
-when not declared(Structbindgrouplayoutdescriptor):
+when not declared(StructBindGroupLayoutDescriptor):
   type
-    Structbindgrouplayoutdescriptor* = Structbindgrouplayoutdescriptor_436208011
+    StructBindGroupLayoutDescriptor* = StructBindGroupLayoutDescriptor_436208011
 else:
   static:
     hint("Declaration of " & "struct_WGPUBindGroupLayoutDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procdevicedestroy):
+when not declared(ProcDeviceDestroy):
   type
-    Procdevicedestroy* = Procdevicedestroy_436208013
+    ProcDeviceDestroy* = ProcDeviceDestroy_436208013
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceDestroy" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderfinish):
+when not declared(ProcRenderBundleEncoderFinish):
   type
-    Procrenderbundleencoderfinish* = Procrenderbundleencoderfinish_436208015
+    ProcRenderBundleEncoderFinish* = ProcRenderBundleEncoderFinish_436208015
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencodersetvertexbuffer):
+when not declared(ProcRenderBundleEncoderSetVertexBuffer):
   type
-    Procrenderbundleencodersetvertexbuffer *
-      = Procrenderbundleencodersetvertexbuffer_436208024
+    ProcRenderBundleEncoderSetVertexBuffer *
+      = ProcRenderBundleEncoderSetVertexBuffer_436208024
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(Structstoragetexturebindinglayout):
+when not declared(StructStorageTextureBindingLayout):
   type
-    Structstoragetexturebindinglayout* = Structstoragetexturebindinglayout_436208026
+    StructStorageTextureBindingLayout* = StructStorageTextureBindingLayout_436208026
 else:
   static:
     hint("Declaration of " & "struct_WGPUStorageTextureBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Vertexformat):
+when not declared(VertexFormat):
   type
-    Vertexformat* = Vertexformat_436208028
+    VertexFormat* = VertexFormat_436208028
 else:
   static:
     hint("Declaration of " & "WGPUVertexFormat" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderend):
+when not declared(ProcRenderPassEncoderEnd):
   type
-    Procrenderpassencoderend* = Procrenderpassencoderend_436208030
+    ProcRenderPassEncoderEnd* = ProcRenderPassEncoderEnd_436208030
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(Loglevel):
+when not declared(LogLevel):
   type
-    Loglevel* = Loglevel_436208032
+    LogLevel* = LogLevel_436208032
 else:
   static:
     hint("Declaration of " & "WGPULogLevel" & " already exists, not redeclaring")
-when not declared(Surfacedescriptorfrommetallayer):
+when not declared(SurfaceDescriptorfrommetallayer):
   type
-    Surfacedescriptorfrommetallayer* = Surfacedescriptorfrommetallayer_436208036
+    SurfaceDescriptorfrommetallayer* = SurfaceDescriptorfrommetallayer_436208036
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromMetalLayer" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptor):
+when not declared(SurfaceDescriptor):
   type
-    Surfacedescriptor* = Surfacedescriptor_436208040
+    SurfaceDescriptor* = SurfaceDescriptor_436208040
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetviewport):
+when not declared(ProcRenderPassEncoderSetViewport):
   type
-    Procrenderpassencodersetviewport* = Procrenderpassencodersetviewport_436208042
+    ProcRenderPassEncoderSetViewport* = ProcRenderPassEncoderSetViewport_436208042
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetViewport" &
         " already exists, not redeclaring")
-when not declared(Procqueueonsubmittedworkdone):
+when not declared(ProcQueueOnSubmittedWorkDone):
   type
-    Procqueueonsubmittedworkdone* = Procqueueonsubmittedworkdone_436208044
+    ProcQueueOnSubmittedWorkDone* = ProcQueueOnSubmittedWorkDone_436208044
 else:
   static:
     hint("Declaration of " & "WGPUProcQueueOnSubmittedWorkDone" &
         " already exists, not redeclaring")
-when not declared(Structpipelinelayoutextras):
+when not declared(StructPipelineLayoutExtras):
   type
-    Structpipelinelayoutextras* = Structpipelinelayoutextras_436208046
+    StructPipelineLayoutExtras* = StructPipelineLayoutExtras_436208046
 else:
   static:
     hint("Declaration of " & "struct_WGPUPipelineLayoutExtras" &
@@ -4216,16 +4216,16 @@ when not declared(Instance):
 else:
   static:
     hint("Declaration of " & "WGPUInstance" & " already exists, not redeclaring")
-when not declared(Computepasstimestampwrite):
+when not declared(ComputePassTimestampWrite):
   type
-    Computepasstimestampwrite* = Computepasstimestampwrite_436208050
+    ComputePassTimestampWrite* = ComputePassTimestampWrite_436208050
 else:
   static:
     hint("Declaration of " & "WGPUComputePassTimestampWrite" &
         " already exists, not redeclaring")
-when not declared(Structrenderbundledescriptor):
+when not declared(StructRenderBundleDescriptor):
   type
-    Structrenderbundledescriptor* = Structrenderbundledescriptor_436208052
+    StructRenderBundleDescriptor* = StructRenderBundleDescriptor_436208052
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderBundleDescriptor" &
@@ -4236,30 +4236,30 @@ when not declared(Adapter):
 else:
   static:
     hint("Declaration of " & "WGPUAdapter" & " already exists, not redeclaring")
-when not declared(Compilationmessage):
+when not declared(CompilationMessage):
   type
-    Compilationmessage* = Compilationmessage_436208058
+    CompilationMessage* = CompilationMessage_436208058
 else:
   static:
     hint("Declaration of " & "WGPUCompilationMessage" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderend):
+when not declared(ProcComputePassEncoderEnd):
   type
-    Proccomputepassencoderend* = Proccomputepassencoderend_436208060
+    ProcComputePassEncoderEnd* = ProcComputePassEncoderEnd_436208060
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(Structdevicedescriptor):
+when not declared(StructDeviceDescriptor):
   type
-    Structdevicedescriptor* = Structdevicedescriptor_436208062
+    StructDeviceDescriptor* = StructDeviceDescriptor_436208062
 else:
   static:
     hint("Declaration of " & "struct_WGPUDeviceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatebindgrouplayout):
+when not declared(ProcDeviceCreateBindGrouplayout):
   type
-    Procdevicecreatebindgrouplayout* = Procdevicecreatebindgrouplayout_436208064
+    ProcDeviceCreateBindGrouplayout* = ProcDeviceCreateBindGrouplayout_436208064
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateBindGroupLayout" &
@@ -4270,51 +4270,51 @@ when not declared(Queue):
 else:
   static:
     hint("Declaration of " & "WGPUQueue" & " already exists, not redeclaring")
-when not declared(Structvertexattribute):
+when not declared(StructVertexAttribute):
   type
-    Structvertexattribute* = Structvertexattribute_436208068
+    StructVertexAttribute* = StructVertexAttribute_436208068
 else:
   static:
     hint("Declaration of " & "struct_WGPUVertexAttribute" &
         " already exists, not redeclaring")
-when not declared(Structchainedstruct):
+when not declared(StructChainedStruct):
   type
-    Structchainedstruct* = Structchainedstruct_436208072
+    StructChainedStruct* = StructChainedStruct_436208072
 else:
   static:
     hint("Declaration of " & "struct_WGPUChainedStruct" &
         " already exists, not redeclaring")
-when not declared(Createcomputepipelineasynccallback):
+when not declared(CreateComputePipelineAsyncCallback):
   type
-    Createcomputepipelineasynccallback *
-      = Createcomputepipelineasynccallback_436208074
+    CreateComputePipelineAsyncCallback *
+      = CreateComputePipelineAsyncCallback_436208074
 else:
   static:
     hint("Declaration of " & "WGPUCreateComputePipelineAsyncCallback" &
         " already exists, not redeclaring")
-when not declared(Procbuffergetmappedrange):
+when not declared(ProcBufferGetMappedRange):
   type
-    Procbuffergetmappedrange* = Procbuffergetmappedrange_436208076
+    ProcBufferGetMappedRange* = ProcBufferGetMappedRange_436208076
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferGetMappedRange" &
         " already exists, not redeclaring")
-when not declared(Wgpustype):
+when not declared(WgpusType):
   type
-    Wgpustype* = Wgpustype_436208078
+    WgpusType* = WgpusType_436208078
 else:
   static:
     hint("Declaration of " & "WGPUSType" & " already exists, not redeclaring")
-when not declared(Structsamplerbindinglayout):
+when not declared(StructSamplerBindingLayout):
   type
-    Structsamplerbindinglayout* = Structsamplerbindinglayout_436208080
+    StructSamplerBindingLayout* = StructSamplerBindingLayout_436208080
 else:
   static:
     hint("Declaration of " & "struct_WGPUSamplerBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Chainedstructout):
+when not declared(ChainedStructout):
   type
-    Chainedstructout* = Chainedstructout_436208082
+    ChainedStructout* = ChainedStructout_436208082
 else:
   static:
     hint("Declaration of " & "WGPUChainedStructOut" &
@@ -4325,374 +4325,374 @@ when not declared(Color):
 else:
   static:
     hint("Declaration of " & "WGPUColor" & " already exists, not redeclaring")
-when not declared(Structstencilfacestate):
+when not declared(StructStencilFaceState):
   type
-    Structstencilfacestate* = Structstencilfacestate_436208086
+    StructStencilFaceState* = StructStencilFaceState_436208086
 else:
   static:
     hint("Declaration of " & "struct_WGPUStencilFaceState" &
         " already exists, not redeclaring")
-when not declared(Structtexturebindinglayout):
+when not declared(StructTextureBindingLayout):
   type
-    Structtexturebindinglayout* = Structtexturebindinglayout_436208088
+    StructTextureBindingLayout* = StructTextureBindingLayout_436208088
 else:
   static:
     hint("Declaration of " & "struct_WGPUTextureBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencodersetlabel):
+when not declared(ProcComputePassEncoderSetLabel):
   type
-    Proccomputepassencodersetlabel* = Proccomputepassencodersetlabel_436208090
+    ProcComputePassEncoderSetLabel* = ProcComputePassEncoderSetLabel_436208090
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatepipelinelayout):
+when not declared(ProcDeviceCreatePipelineLayout):
   type
-    Procdevicecreatepipelinelayout* = Procdevicecreatepipelinelayout_436208092
+    ProcDeviceCreatePipelineLayout* = ProcDeviceCreatePipelineLayout_436208092
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreatePipelineLayout" &
         " already exists, not redeclaring")
-when not declared(Procdevicesetuncapturederrorcallback):
+when not declared(ProcDeviceSetUncapturedErrorCallback):
   type
-    Procdevicesetuncapturederrorcallback *
-      = Procdevicesetuncapturederrorcallback_436208094
+    ProcDeviceSetUncapturedErrorCallback *
+      = ProcDeviceSetUncapturedErrorCallback_436208094
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceSetUncapturedErrorCallback" &
         " already exists, not redeclaring")
-when not declared(Vertexattribute):
+when not declared(VertexAttribute):
   type
-    Vertexattribute* = Vertexattribute_436208096
+    VertexAttribute* = VertexAttribute_436208096
 else:
   static:
     hint("Declaration of " & "WGPUVertexAttribute" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencodersetpipeline):
+when not declared(ProcRenderBundleEncoderSetPipeline):
   type
-    Procrenderbundleencodersetpipeline *
-      = Procrenderbundleencodersetpipeline_436208098
+    ProcRenderBundleEncoderSetPipeline *
+      = ProcRenderBundleEncoderSetPipeline_436208098
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetindexbuffer):
+when not declared(ProcRenderPassEncoderSetIndexBuffer):
   type
-    Procrenderpassencodersetindexbuffer *
-      = Procrenderpassencodersetindexbuffer_436208100
+    ProcRenderPassEncoderSetIndexBuffer *
+      = ProcRenderPassEncoderSetIndexBuffer_436208100
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(Proccomputepipelinegetbindgrouplayout):
+when not declared(ProcComputePipelineGetBindGroupLayout):
   type
-    Proccomputepipelinegetbindgrouplayout *
-      = Proccomputepipelinegetbindgrouplayout_436208104
+    ProcComputePipelineGetBindGroupLayout *
+      = ProcComputePipelineGetBindGroupLayout_436208104
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Structtexturedescriptor):
+when not declared(StructTextureDescriptor):
   type
-    Structtexturedescriptor* = Structtexturedescriptor_436208106
+    StructTextureDescriptor* = StructTextureDescriptor_436208106
 else:
   static:
     hint("Declaration of " & "struct_WGPUTextureDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structimagecopybuffer):
+when not declared(StructImageCopyBuffer):
   type
-    Structimagecopybuffer* = Structimagecopybuffer_436208108
+    StructImageCopyBuffer* = StructImageCopyBuffer_436208108
 else:
   static:
     hint("Declaration of " & "struct_WGPUImageCopyBuffer" &
         " already exists, not redeclaring")
-when not declared(Frontface):
+when not declared(FrontFace):
   type
-    Frontface* = Frontface_436208110
+    FrontFace* = FrontFace_436208110
 else:
   static:
     hint("Declaration of " & "WGPUFrontFace" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoderdescriptor):
+when not declared(RenderBundleencoderdescriptor):
   type
-    Renderbundleencoderdescriptor* = Renderbundleencoderdescriptor_436208112
+    RenderBundleencoderdescriptor* = RenderBundleencoderdescriptor_436208112
 else:
   static:
     hint("Declaration of " & "WGPURenderBundleEncoderDescriptor" &
         " already exists, not redeclaring")
-when not declared(Submissionindex):
+when not declared(SubmissionIndex):
   type
-    Submissionindex* = Submissionindex_436208114
+    SubmissionIndex* = SubmissionIndex_436208114
 else:
   static:
     hint("Declaration of " & "WGPUSubmissionIndex" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencodersetindexbuffer):
+when not declared(ProcRenderBundleEncoderSetIndexBuffer):
   type
-    Procrenderbundleencodersetindexbuffer *
-      = Procrenderbundleencodersetindexbuffer_436208116
+    ProcRenderBundleEncoderSetIndexBuffer *
+      = ProcRenderBundleEncoderSetIndexBuffer_436208116
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(Shadermoduledescriptor):
+when not declared(ShaderModuledescriptor):
   type
-    Shadermoduledescriptor* = Shadermoduledescriptor_436208118
+    ShaderModuledescriptor* = ShaderModuledescriptor_436208118
 else:
   static:
     hint("Declaration of " & "WGPUShaderModuleDescriptor" &
         " already exists, not redeclaring")
-when not declared(Proccreateinstance):
+when not declared(ProcCreateInstance):
   type
-    Proccreateinstance* = Proccreateinstance_436208120
+    ProcCreateInstance* = ProcCreateInstance_436208120
 else:
   static:
     hint("Declaration of " & "WGPUProcCreateInstance" &
         " already exists, not redeclaring")
-when not declared(Structqueuedescriptor):
+when not declared(StructQueueDescriptor):
   type
-    Structqueuedescriptor* = Structqueuedescriptor_436208122
+    StructQueueDescriptor* = StructQueueDescriptor_436208122
 else:
   static:
     hint("Declaration of " & "struct_WGPUQueueDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetvertexbuffer):
+when not declared(ProcRenderPassEncoderSetVertexBuffer):
   type
-    Procrenderpassencodersetvertexbuffer *
-      = Procrenderpassencodersetvertexbuffer_436208124
+    ProcRenderPassEncoderSetVertexBuffer *
+      = ProcRenderPassEncoderSetVertexBuffer_436208124
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(Procbuffermapasync):
+when not declared(ProcBufferMapAsync):
   type
-    Procbuffermapasync* = Procbuffermapasync_436208128
+    ProcBufferMapAsync* = ProcBufferMapAsync_436208128
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferMapAsync" &
         " already exists, not redeclaring")
-when not declared(Devicelostreason):
+when not declared(DeviceLostReason):
   type
-    Devicelostreason* = Devicelostreason_436208130
+    DeviceLostReason* = DeviceLostReason_436208130
 else:
   static:
     hint("Declaration of " & "WGPUDeviceLostReason" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetstencilreference):
+when not declared(ProcRenderPassEncoderSetStencilReference):
   type
-    Procrenderpassencodersetstencilreference *
-      = Procrenderpassencodersetstencilreference_436208132
+    ProcRenderPassEncoderSetStencilReference *
+      = ProcRenderPassEncoderSetStencilReference_436208132
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetStencilReference" &
         " already exists, not redeclaring")
-when not declared(Supportedlimits):
+when not declared(SupportedLimits):
   type
-    Supportedlimits* = Supportedlimits_436208134
+    SupportedLimits* = SupportedLimits_436208134
 else:
   static:
     hint("Declaration of " & "WGPUSupportedLimits" &
         " already exists, not redeclaring")
-when not declared(Compilationmessagetype):
+when not declared(CompilationMessageType):
   type
-    Compilationmessagetype* = Compilationmessagetype_436208136
+    CompilationMessageType* = CompilationMessageType_436208136
 else:
   static:
     hint("Declaration of " & "WGPUCompilationMessageType" &
         " already exists, not redeclaring")
-when not declared(Structtexturedatalayout):
+when not declared(StructTextureDataLayout):
   type
-    Structtexturedatalayout* = Structtexturedatalayout_436208138
+    StructTextureDataLayout* = StructTextureDataLayout_436208138
 else:
   static:
     hint("Declaration of " & "struct_WGPUTextureDataLayout" &
         " already exists, not redeclaring")
-when not declared(Structbufferdescriptor):
+when not declared(StructBufferDescriptor):
   type
-    Structbufferdescriptor* = Structbufferdescriptor_436208140
+    StructBufferDescriptor* = StructBufferDescriptor_436208140
 else:
   static:
     hint("Declaration of " & "struct_WGPUBufferDescriptor" &
         " already exists, not redeclaring")
-when not declared(Createrenderpipelineasynccallback):
+when not declared(CreateRenderPipelineAsyncCallback):
   type
-    Createrenderpipelineasynccallback* = Createrenderpipelineasynccallback_436208142
+    CreateRenderPipelineAsyncCallback* = CreateRenderPipelineAsyncCallback_436208142
 else:
   static:
     hint("Declaration of " & "WGPUCreateRenderPipelineAsyncCallback" &
         " already exists, not redeclaring")
-when not declared(Procshadermodulegetcompilationinfo):
+when not declared(ProcShaderModuleGetCompilationInfo):
   type
-    Procshadermodulegetcompilationinfo *
-      = Procshadermodulegetcompilationinfo_436208144
+    ProcShaderModuleGetCompilationInfo *
+      = ProcShaderModuleGetCompilationInfo_436208144
 else:
   static:
     hint("Declaration of " & "WGPUProcShaderModuleGetCompilationInfo" &
         " already exists, not redeclaring")
-when not declared(Renderpasstimestampwrite):
+when not declared(RenderPassTimestampWrite):
   type
-    Renderpasstimestampwrite* = Renderpasstimestampwrite_436208146
+    RenderPassTimestampWrite* = RenderPassTimestampWrite_436208146
 else:
   static:
     hint("Declaration of " & "WGPURenderPassTimestampWrite" &
         " already exists, not redeclaring")
-when not declared(Errorfilter):
+when not declared(ErrorFilter):
   type
-    Errorfilter* = Errorfilter_436208148
+    ErrorFilter* = ErrorFilter_436208148
 else:
   static:
     hint("Declaration of " & "WGPUErrorFilter" &
         " already exists, not redeclaring")
-when not declared(Pipelinestatisticname):
+when not declared(PipelineStatisticName):
   type
-    Pipelinestatisticname* = Pipelinestatisticname_436208150
+    PipelineStatisticName* = PipelineStatisticName_436208150
 else:
   static:
     hint("Declaration of " & "WGPUPipelineStatisticName" &
         " already exists, not redeclaring")
-when not declared(Structextent3d):
+when not declared(StructExtent3D):
   type
-    Structextent3d* = Structextent3d_436208152
+    StructExtent3D* = StructExtent3D_436208152
 else:
   static:
     hint("Declaration of " & "struct_WGPUExtent3D" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreateshadermodule):
+when not declared(ProcDeviceCreateShaderModule):
   type
-    Procdevicecreateshadermodule* = Procdevicecreateshadermodule_436208156
+    ProcDeviceCreateShaderModule* = ProcDeviceCreateShaderModule_436208156
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateShaderModule" &
         " already exists, not redeclaring")
-when not declared(Structsupportedlimitsextras):
+when not declared(StructSupportedLimitsextras):
   type
-    Structsupportedlimitsextras* = Structsupportedlimitsextras_436208158
+    StructSupportedLimitsextras* = StructSupportedLimitsextras_436208158
 else:
   static:
     hint("Declaration of " & "struct_WGPUSupportedLimitsExtras" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderwritetimestamp):
+when not declared(ProcCommandEncoderWriteTimestamp):
   type
-    Proccommandencoderwritetimestamp* = Proccommandencoderwritetimestamp_436208160
+    ProcCommandEncoderWriteTimestamp* = ProcCommandEncoderWriteTimestamp_436208160
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderWriteTimestamp" &
         " already exists, not redeclaring")
-when not declared(Procbindgrouplayoutsetlabel):
+when not declared(ProcBindGroupLayoutSetLabel):
   type
-    Procbindgrouplayoutsetlabel* = Procbindgrouplayoutsetlabel_436208162
+    ProcBindGroupLayoutSetLabel* = ProcBindGroupLayoutSetLabel_436208162
 else:
   static:
     hint("Declaration of " & "WGPUProcBindGroupLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderdraw):
+when not declared(ProcRenderBundleEncoderDraw):
   type
-    Procrenderbundleencoderdraw* = Procrenderbundleencoderdraw_436208164
+    ProcRenderBundleEncoderDraw* = ProcRenderBundleEncoderDraw_436208164
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderDraw" &
         " already exists, not redeclaring")
-when not declared(Procadaptergetlimits):
+when not declared(ProcAdapterGetLimits):
   type
-    Procadaptergetlimits* = Procadaptergetlimits_436208166
+    ProcAdapterGetLimits* = ProcAdapterGetLimits_436208166
 else:
   static:
     hint("Declaration of " & "WGPUProcAdapterGetLimits" &
         " already exists, not redeclaring")
-when not declared(Renderbundledescriptor):
+when not declared(RenderBundledescriptor):
   type
-    Renderbundledescriptor* = Renderbundledescriptor_436208168
+    RenderBundledescriptor* = RenderBundledescriptor_436208168
 else:
   static:
     hint("Declaration of " & "WGPURenderBundleDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpipelinesetlabel):
+when not declared(ProcRenderPipelineSetLabel):
   type
-    Procrenderpipelinesetlabel* = Procrenderpipelinesetlabel_436208172
+    ProcRenderPipelineSetLabel* = ProcRenderPipelineSetLabel_436208172
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structbufferbindinglayout):
+when not declared(StructBufferBindingLayout):
   type
-    Structbufferbindinglayout* = Structbufferbindinglayout_436208176
+    StructBufferBindingLayout* = StructBufferBindingLayout_436208176
 else:
   static:
     hint("Declaration of " & "struct_WGPUBufferBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Nativefeature):
+when not declared(NativeFeature):
   type
-    Nativefeature* = Nativefeature_436208178
+    NativeFeature* = NativeFeature_436208178
 else:
   static:
     hint("Declaration of " & "WGPUNativeFeature" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencodersetlabel):
+when not declared(ProcRenderBundleEncoderSetLabel):
   type
-    Procrenderbundleencodersetlabel* = Procrenderbundleencodersetlabel_436208180
+    ProcRenderBundleEncoderSetLabel* = ProcRenderBundleEncoderSetLabel_436208180
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structcomputepassdescriptor):
+when not declared(StructComputePassDescriptor):
   type
-    Structcomputepassdescriptor* = Structcomputepassdescriptor_436208182
+    StructComputePassDescriptor* = StructComputePassDescriptor_436208182
 else:
   static:
     hint("Declaration of " & "struct_WGPUComputePassDescriptor" &
         " already exists, not redeclaring")
-when not declared(Texturebindinglayout):
+when not declared(TextureBindingLayout):
   type
-    Texturebindinglayout* = Texturebindinglayout_436208186
+    TextureBindingLayout* = TextureBindingLayout_436208186
 else:
   static:
     hint("Declaration of " & "WGPUTextureBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Textureusageflags):
+when not declared(TextureUsageflags):
   type
-    Textureusageflags* = Textureusageflags_436208188
+    TextureUsageflags* = TextureUsageflags_436208188
 else:
   static:
     hint("Declaration of " & "WGPUTextureUsageFlags" &
         " already exists, not redeclaring")
-when not declared(Computepasstimestamplocation):
+when not declared(ComputePassTimestampLocation):
   type
-    Computepasstimestamplocation* = Computepasstimestamplocation_436208192
+    ComputePassTimestampLocation* = ComputePassTimestampLocation_436208192
 else:
   static:
     hint("Declaration of " & "WGPUComputePassTimestampLocation" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromxlibwindow):
+when not declared(SurfaceDescriptorfromxlibwindow):
   type
-    Surfacedescriptorfromxlibwindow* = Surfacedescriptorfromxlibwindow_436208194
+    SurfaceDescriptorfromxlibwindow* = SurfaceDescriptorfromxlibwindow_436208194
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromXlibWindow" &
         " already exists, not redeclaring")
-when not declared(Buffermapasyncstatus):
+when not declared(BufferMapAsyncStatus):
   type
-    Buffermapasyncstatus* = Buffermapasyncstatus_436208196
+    BufferMapAsyncStatus* = BufferMapAsyncStatus_436208196
 else:
   static:
     hint("Declaration of " & "WGPUBufferMapAsyncStatus" &
         " already exists, not redeclaring")
-when not declared(Structrenderpassdescriptor):
+when not declared(StructRenderPassDescriptor):
   type
-    Structrenderpassdescriptor* = Structrenderpassdescriptor_436208198
+    StructRenderPassDescriptor* = StructRenderPassDescriptor_436208198
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderPassDescriptor" &
         " already exists, not redeclaring")
-when not declared(Adapterproperties):
+when not declared(AdapterProperties):
   type
-    Adapterproperties* = Adapterproperties_436208200
+    AdapterProperties* = AdapterProperties_436208200
 else:
   static:
     hint("Declaration of " & "WGPUAdapterProperties" &
         " already exists, not redeclaring")
-when not declared(Queuedescriptor):
+when not declared(QueueDescriptor):
   type
-    Queuedescriptor* = Queuedescriptor_436208202
+    QueueDescriptor* = QueueDescriptor_436208202
 else:
   static:
     hint("Declaration of " & "WGPUQueueDescriptor" &
@@ -4703,245 +4703,245 @@ when not declared(Surface):
 else:
   static:
     hint("Declaration of " & "WGPUSurface" & " already exists, not redeclaring")
-when not declared(Procdevicecreaterenderpipelineasync):
+when not declared(ProcDeviceCreateRenderPipelineasync):
   type
-    Procdevicecreaterenderpipelineasync *
-      = Procdevicecreaterenderpipelineasync_436208206
+    ProcDeviceCreateRenderPipelineasync *
+      = ProcDeviceCreateRenderPipelineasync_436208206
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateRenderPipelineAsync" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromcanvashtmlselector):
+when not declared(StructSurfaceDescriptorfromcanvashtmlselector):
   type
-    Structsurfacedescriptorfromcanvashtmlselector *
-      = Structsurfacedescriptorfromcanvashtmlselector_436208208
+    StructSurfaceDescriptorfromcanvashtmlselector *
+      = StructSurfaceDescriptorfromcanvashtmlselector_436208208
 else:
   static:
     hint("Declaration of " &
         "struct_WGPUSurfaceDescriptorFromCanvasHTMLSelector" &
         " already exists, not redeclaring")
-when not declared(Structdepthstencilstate):
+when not declared(StructDepthStencilState):
   type
-    Structdepthstencilstate* = Structdepthstencilstate_436208210
+    StructDepthStencilState* = StructDepthStencilState_436208210
 else:
   static:
     hint("Declaration of " & "struct_WGPUDepthStencilState" &
         " already exists, not redeclaring")
-when not declared(Procadapterenumeratefeatures):
+when not declared(ProcAdapterEnumerateFeatures):
   type
-    Procadapterenumeratefeatures* = Procadapterenumeratefeatures_436208212
+    ProcAdapterEnumerateFeatures* = ProcAdapterEnumerateFeatures_436208212
 else:
   static:
     hint("Declaration of " & "WGPUProcAdapterEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(Mapmodeflags):
+when not declared(MapModeflags):
   type
-    Mapmodeflags* = Mapmodeflags_436208214
+    MapModeflags* = MapModeflags_436208214
 else:
   static:
     hint("Declaration of " & "WGPUMapModeFlags" &
         " already exists, not redeclaring")
-when not declared(Structshadermodulespirvdescriptor):
+when not declared(StructShaderModuleSpirvDescriptor):
   type
-    Structshadermodulespirvdescriptor* = Structshadermodulespirvdescriptor_436208216
+    StructShaderModuleSpirvDescriptor* = StructShaderModuleSpirvDescriptor_436208216
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderModuleSPIRVDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderpushdebuggroup):
+when not declared(ProcRenderPassEncoderPushDebugGroup):
   type
-    Procrenderpassencoderpushdebuggroup *
-      = Procrenderpassencoderpushdebuggroup_436208218
+    ProcRenderPassEncoderPushDebugGroup *
+      = ProcRenderPassEncoderPushDebugGroup_436208218
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Colorwritemaskflags):
+when not declared(ColorWriteMaskflags):
   type
-    Colorwritemaskflags* = Colorwritemaskflags_436208222
+    ColorWriteMaskflags* = ColorWriteMaskflags_436208222
 else:
   static:
     hint("Declaration of " & "WGPUColorWriteMaskFlags" &
         " already exists, not redeclaring")
-when not declared(Structshadermoduleglsldescriptor):
+when not declared(StructShaderModuleGlslDescriptor):
   type
-    Structshadermoduleglsldescriptor* = Structshadermoduleglsldescriptor_436208224
+    StructShaderModuleGlslDescriptor* = StructShaderModuleGlslDescriptor_436208224
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderModuleGLSLDescriptor" &
         " already exists, not redeclaring")
-when not declared(Nativestype):
+when not declared(NativeSType):
   type
-    Nativestype* = Nativestype_436208226
+    NativeSType* = NativeSType_436208226
 else:
   static:
     hint("Declaration of " & "WGPUNativeSType" &
         " already exists, not redeclaring")
-when not declared(Structbindgroupentry):
+when not declared(StructBindGroupEntry):
   type
-    Structbindgroupentry* = Structbindgroupentry_436208228
+    StructBindGroupEntry* = StructBindGroupEntry_436208228
 else:
   static:
     hint("Declaration of " & "struct_WGPUBindGroupEntry" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatecomputepipeline):
+when not declared(ProcDeviceCreateComputePipeline):
   type
-    Procdevicecreatecomputepipeline* = Procdevicecreatecomputepipeline_436208232
+    ProcDeviceCreateComputePipeline* = ProcDeviceCreateComputePipeline_436208232
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateComputePipeline" &
         " already exists, not redeclaring")
-when not declared(Fragmentstate):
+when not declared(FragmentState):
   type
-    Fragmentstate* = Fragmentstate_436208234
+    FragmentState* = FragmentState_436208234
 else:
   static:
     hint("Declaration of " & "WGPUFragmentState" &
         " already exists, not redeclaring")
-when not declared(Adaptertype):
+when not declared(AdapterType):
   type
-    Adaptertype* = Adaptertype_436208236
+    AdapterType* = AdapterType_436208236
 else:
   static:
     hint("Declaration of " & "WGPUAdapterType" &
         " already exists, not redeclaring")
-when not declared(Extent3d):
+when not declared(Extent3D):
   type
-    Extent3d* = Extent3d_436208238
+    Extent3D* = Extent3D_436208238
 else:
   static:
     hint("Declaration of " & "WGPUExtent3D" & " already exists, not redeclaring")
-when not declared(Logcallback):
+when not declared(LogCallback):
   type
-    Logcallback* = Logcallback_436208240
+    LogCallback* = LogCallback_436208240
 else:
   static:
     hint("Declaration of " & "WGPULogCallback" &
         " already exists, not redeclaring")
-when not declared(Mipmapfiltermode):
+when not declared(MipmapFilterMode):
   type
-    Mipmapfiltermode* = Mipmapfiltermode_436208242
+    MipmapFilterMode* = MipmapFilterMode_436208242
 else:
   static:
     hint("Declaration of " & "WGPUMipmapFilterMode" &
         " already exists, not redeclaring")
-when not declared(Structdeviceextras):
+when not declared(StructDeviceExtras):
   type
-    Structdeviceextras* = Structdeviceextras_436208244
+    StructDeviceExtras* = StructDeviceExtras_436208244
 else:
   static:
     hint("Declaration of " & "struct_WGPUDeviceExtras" &
         " already exists, not redeclaring")
-when not declared(Structconstantentry):
+when not declared(StructConstantEntry):
   type
-    Structconstantentry* = Structconstantentry_436208246
+    StructConstantEntry* = StructConstantEntry_436208246
 else:
   static:
     hint("Declaration of " & "struct_WGPUConstantEntry" &
         " already exists, not redeclaring")
-when not declared(Renderpassdescriptor):
+when not declared(RenderPassDescriptor):
   type
-    Renderpassdescriptor* = Renderpassdescriptor_436208248
+    RenderPassDescriptor* = RenderPassDescriptor_436208248
 else:
   static:
     hint("Declaration of " & "WGPURenderPassDescriptor" &
         " already exists, not redeclaring")
-when not declared(Buffermapcallback):
+when not declared(BufferMapCallback):
   type
-    Buffermapcallback* = Buffermapcallback_436208250
+    BufferMapCallback* = BufferMapCallback_436208250
 else:
   static:
     hint("Declaration of " & "WGPUBufferMapCallback" &
         " already exists, not redeclaring")
-when not declared(Stencilfacestate):
+when not declared(StencilFaceState):
   type
-    Stencilfacestate* = Stencilfacestate_436208254
+    StencilFaceState* = StencilFaceState_436208254
 else:
   static:
     hint("Declaration of " & "WGPUStencilFaceState" &
         " already exists, not redeclaring")
-when not declared(Procshadermodulesetlabel):
+when not declared(ProcShaderModuleSetLabel):
   type
-    Procshadermodulesetlabel* = Procshadermodulesetlabel_436208256
+    ProcShaderModuleSetLabel* = ProcShaderModuleSetLabel_436208256
 else:
   static:
     hint("Declaration of " & "WGPUProcShaderModuleSetLabel" &
         " already exists, not redeclaring")
-when not declared(Commandencoder):
+when not declared(CommandEncoder):
   type
-    Commandencoder* = Commandencoder_436208258
+    CommandEncoder* = CommandEncoder_436208258
 else:
   static:
     hint("Declaration of " & "WGPUCommandEncoder" &
         " already exists, not redeclaring")
-when not declared(Procbufferdestroy):
+when not declared(ProcBufferDestroy):
   type
-    Procbufferdestroy* = Procbufferdestroy_436208260
+    ProcBufferDestroy* = ProcBufferDestroy_436208260
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferDestroy" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatebindgroup):
+when not declared(ProcDeviceCreateBindGroup):
   type
-    Procdevicecreatebindgroup* = Procdevicecreatebindgroup_436208262
+    ProcDeviceCreateBindGroup* = ProcDeviceCreateBindGroup_436208262
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateBindGroup" &
         " already exists, not redeclaring")
-when not declared(Procqueuewritetexture):
+when not declared(ProcQueueWriteTexture):
   type
-    Procqueuewritetexture* = Procqueuewritetexture_436208264
+    ProcQueueWriteTexture* = ProcQueueWriteTexture_436208264
 else:
   static:
     hint("Declaration of " & "WGPUProcQueueWriteTexture" &
         " already exists, not redeclaring")
-when not declared(Queueworkdonestatus):
+when not declared(QueueWorkDoneStatus):
   type
-    Queueworkdonestatus* = Queueworkdonestatus_436208266
+    QueueWorkDoneStatus* = QueueWorkDoneStatus_436208266
 else:
   static:
     hint("Declaration of " & "WGPUQueueWorkDoneStatus" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetbindgroup):
+when not declared(ProcRenderPassEncoderSetBindGroup):
   type
-    Procrenderpassencodersetbindgroup* = Procrenderpassencodersetbindgroup_436208268
+    ProcRenderPassEncoderSetBindGroup* = ProcRenderPassEncoderSetBindGroup_436208268
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromandroidnativewindow):
+when not declared(StructSurfaceDescriptorfromandroidnativewindow):
   type
-    Structsurfacedescriptorfromandroidnativewindow *
-      = Structsurfacedescriptorfromandroidnativewindow_436208270
+    StructSurfaceDescriptorfromandroidnativewindow *
+      = StructSurfaceDescriptorfromandroidnativewindow_436208270
 else:
   static:
     hint("Declaration of " &
         "struct_WGPUSurfaceDescriptorFromAndroidNativeWindow" &
         " already exists, not redeclaring")
-when not declared(Requestdevicecallback):
+when not declared(RequestDeviceCallback):
   type
-    Requestdevicecallback* = Requestdevicecallback_436208272
+    RequestDeviceCallback* = RequestDeviceCallback_436208272
 else:
   static:
     hint("Declaration of " & "WGPURequestDeviceCallback" &
         " already exists, not redeclaring")
-when not declared(Storagereport):
+when not declared(StorageReport):
   type
-    Storagereport* = Storagereport_436208274
+    StorageReport* = StorageReport_436208274
 else:
   static:
     hint("Declaration of " & "WGPUStorageReport" &
         " already exists, not redeclaring")
-when not declared(Structcompilationmessage):
+when not declared(StructCompilationMessage):
   type
-    Structcompilationmessage* = Structcompilationmessage_436208276
+    StructCompilationMessage* = StructCompilationMessage_436208276
 else:
   static:
     hint("Declaration of " & "struct_WGPUCompilationMessage" &
         " already exists, not redeclaring")
-when not declared(Shadermodulespirvdescriptor):
+when not declared(ShaderModulespirvdescriptor):
   type
-    Shadermodulespirvdescriptor* = Shadermodulespirvdescriptor_436208278
+    ShaderModulespirvdescriptor* = ShaderModulespirvdescriptor_436208278
 else:
   static:
     hint("Declaration of " & "WGPUShaderModuleSPIRVDescriptor" &
@@ -4952,173 +4952,173 @@ when not declared(Limits):
 else:
   static:
     hint("Declaration of " & "WGPULimits" & " already exists, not redeclaring")
-when not declared(Powerpreference):
+when not declared(PowerPreference):
   type
-    Powerpreference* = Powerpreference_436208284
+    PowerPreference* = PowerPreference_436208284
 else:
   static:
     hint("Declaration of " & "WGPUPowerPreference" &
         " already exists, not redeclaring")
-when not declared(Textureviewdescriptor):
+when not declared(TextureViewdescriptor):
   type
-    Textureviewdescriptor* = Textureviewdescriptor_436208286
+    TextureViewdescriptor* = TextureViewdescriptor_436208286
 else:
   static:
     hint("Declaration of " & "WGPUTextureViewDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procdevicesetdevicelostcallback):
+when not declared(ProcDeviceSetDeviceLostCallback):
   type
-    Procdevicesetdevicelostcallback* = Procdevicesetdevicelostcallback_436208288
+    ProcDeviceSetDeviceLostCallback* = ProcDeviceSetDeviceLostCallback_436208288
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceSetDeviceLostCallback" &
         " already exists, not redeclaring")
-when not declared(Errorcallback):
+when not declared(ErrorCallback):
   type
-    Errorcallback* = Errorcallback_436208290
+    ErrorCallback* = ErrorCallback_436208290
 else:
   static:
     hint("Declaration of " & "WGPUErrorCallback" &
         " already exists, not redeclaring")
-when not declared(Samplerdescriptor):
+when not declared(SamplerDescriptor):
   type
-    Samplerdescriptor* = Samplerdescriptor_436208292
+    SamplerDescriptor* = SamplerDescriptor_436208292
 else:
   static:
     hint("Declaration of " & "WGPUSamplerDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structimagecopytexture):
+when not declared(StructImageCopyTexture):
   type
-    Structimagecopytexture* = Structimagecopytexture_436208294
+    StructImageCopyTexture* = StructImageCopyTexture_436208294
 else:
   static:
     hint("Declaration of " & "struct_WGPUImageCopyTexture" &
         " already exists, not redeclaring")
-when not declared(Stenciloperation):
+when not declared(StencilOperation):
   type
-    Stenciloperation* = Stenciloperation_436208296
+    StencilOperation* = StencilOperation_436208296
 else:
   static:
     hint("Declaration of " & "WGPUStencilOperation" &
         " already exists, not redeclaring")
-when not declared(Filtermode):
+when not declared(FilterMode):
   type
-    Filtermode* = Filtermode_436208298
+    FilterMode* = FilterMode_436208298
 else:
   static:
     hint("Declaration of " & "WGPUFilterMode" &
         " already exists, not redeclaring")
-when not declared(Indexformat):
+when not declared(IndexFormat):
   type
-    Indexformat* = Indexformat_436208300
+    IndexFormat* = IndexFormat_436208300
 else:
   static:
     hint("Declaration of " & "WGPUIndexFormat" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencodersetbindgroup):
+when not declared(ProcComputePassEncoderSetBindGroup):
   type
-    Proccomputepassencodersetbindgroup *
-      = Proccomputepassencodersetbindgroup_436208302
+    ProcComputePassEncoderSetBindGroup *
+      = ProcComputePassEncoderSetBindGroup_436208302
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Proccommandencodercopybuffertotexture):
+when not declared(ProcCommandEncoderCopyBufferToTexture):
   type
-    Proccommandencodercopybuffertotexture *
-      = Proccommandencodercopybuffertotexture_436208304
+    ProcCommandEncoderCopyBufferToTexture *
+      = ProcCommandEncoderCopyBufferToTexture_436208304
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderCopyBufferToTexture" &
         " already exists, not redeclaring")
-when not declared(Proctexturesetlabel):
+when not declared(ProcTextureSetLabel):
   type
-    Proctexturesetlabel* = Proctexturesetlabel_436208306
+    ProcTextureSetLabel* = ProcTextureSetLabel_436208306
 else:
   static:
     hint("Declaration of " & "WGPUProcTextureSetLabel" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderinsertdebugmarker):
+when not declared(ProcCommandEncoderInsertDebugMarker):
   type
-    Proccommandencoderinsertdebugmarker *
-      = Proccommandencoderinsertdebugmarker_436208308
+    ProcCommandEncoderInsertDebugMarker *
+      = ProcCommandEncoderInsertDebugMarker_436208308
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Chainedstruct):
+when not declared(ChainedStruct):
   type
-    Chainedstruct* = Chainedstruct_436208310
+    ChainedStruct* = ChainedStruct_436208310
 else:
   static:
     hint("Declaration of " & "WGPUChainedStruct" &
         " already exists, not redeclaring")
-when not declared(Structpushconstantrange):
+when not declared(StructPushConstantRange):
   type
-    Structpushconstantrange* = Structpushconstantrange_436208312
+    StructPushConstantRange* = StructPushConstantRange_436208312
 else:
   static:
     hint("Declaration of " & "struct_WGPUPushConstantRange" &
         " already exists, not redeclaring")
-when not declared(Structcommandencoderdescriptor):
+when not declared(StructCommandEncoderDescriptor):
   type
-    Structcommandencoderdescriptor* = Structcommandencoderdescriptor_436208314
+    StructCommandEncoderDescriptor* = StructCommandEncoderDescriptor_436208314
 else:
   static:
     hint("Declaration of " & "struct_WGPUCommandEncoderDescriptor" &
         " already exists, not redeclaring")
-when not declared(Storeop):
+when not declared(StoreOp):
   type
-    Storeop* = Storeop_436208316
+    StoreOp* = StoreOp_436208316
 else:
   static:
     hint("Declaration of " & "WGPUStoreOp" & " already exists, not redeclaring")
-when not declared(Proccommandencoderpushdebuggroup):
+when not declared(ProcCommandEncoderPushDebugGroup):
   type
-    Proccommandencoderpushdebuggroup* = Proccommandencoderpushdebuggroup_436208318
+    ProcCommandEncoderPushDebugGroup* = ProcCommandEncoderPushDebugGroup_436208318
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Blendcomponent):
+when not declared(BlendComponent):
   type
-    Blendcomponent* = Blendcomponent_436208322
+    BlendComponent* = BlendComponent_436208322
 else:
   static:
     hint("Declaration of " & "WGPUBlendComponent" &
         " already exists, not redeclaring")
-when not declared(Renderpasscolorattachment):
+when not declared(RenderPassColorAttachment):
   type
-    Renderpasscolorattachment* = Renderpasscolorattachment_436208324
+    RenderPassColorAttachment* = RenderPassColorAttachment_436208324
 else:
   static:
     hint("Declaration of " & "WGPURenderPassColorAttachment" &
         " already exists, not redeclaring")
-when not declared(Bindgrouplayoutdescriptor):
+when not declared(BindGrouplayoutdescriptor):
   type
-    Bindgrouplayoutdescriptor* = Bindgrouplayoutdescriptor_436208326
+    BindGrouplayoutdescriptor* = BindGrouplayoutdescriptor_436208326
 else:
   static:
     hint("Declaration of " & "WGPUBindGroupLayoutDescriptor" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderpopdebuggroup):
+when not declared(ProcComputePassEncoderPopDebugGroup):
   type
-    Proccomputepassencoderpopdebuggroup *
-      = Proccomputepassencoderpopdebuggroup_436208330
+    ProcComputePassEncoderPopDebugGroup *
+      = ProcComputePassEncoderPopDebugGroup_436208330
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderdrawindexed):
+when not declared(ProcRenderPassEncoderDrawindexed):
   type
-    Procrenderpassencoderdrawindexed* = Procrenderpassencoderdrawindexed_436208332
+    ProcRenderPassEncoderDrawindexed* = ProcRenderPassEncoderDrawindexed_436208332
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(Structshaderdefine):
+when not declared(StructShaderDefine):
   type
-    Structshaderdefine* = Structshaderdefine_436208334
+    StructShaderDefine* = StructShaderDefine_436208334
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderDefine" &
@@ -5129,320 +5129,320 @@ when not declared(Buffer):
 else:
   static:
     hint("Declaration of " & "WGPUBuffer" & " already exists, not redeclaring")
-when not declared(Querysetdescriptor):
+when not declared(QuerySetdescriptor):
   type
-    Querysetdescriptor* = Querysetdescriptor_436208340
+    QuerySetdescriptor* = QuerySetdescriptor_436208340
 else:
   static:
     hint("Declaration of " & "WGPUQuerySetDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetlabel):
+when not declared(ProcRenderPassEncoderSetLabel):
   type
-    Procrenderpassencodersetlabel* = Procrenderpassencodersetlabel_436208342
+    ProcRenderPassEncoderSetLabel* = ProcRenderPassEncoderSetLabel_436208342
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Texturecomponenttype):
+when not declared(TextureComponentType):
   type
-    Texturecomponenttype* = Texturecomponenttype_436208346
+    TextureComponentType* = TextureComponentType_436208346
 else:
   static:
     hint("Declaration of " & "WGPUTextureComponentType" &
         " already exists, not redeclaring")
-when not declared(Commandbufferdescriptor):
+when not declared(CommandBufferDescriptor):
   type
-    Commandbufferdescriptor* = Commandbufferdescriptor_436208348
+    CommandBufferDescriptor* = CommandBufferDescriptor_436208348
 else:
   static:
     hint("Declaration of " & "WGPUCommandBufferDescriptor" &
         " already exists, not redeclaring")
-when not declared(Renderbundleencoder):
+when not declared(RenderBundleencoder):
   type
-    Renderbundleencoder* = Renderbundleencoder_436208350
+    RenderBundleencoder* = RenderBundleencoder_436208350
 else:
   static:
     hint("Declaration of " & "WGPURenderBundleEncoder" &
         " already exists, not redeclaring")
-when not declared(Structblendcomponent):
+when not declared(StructBlendComponent):
   type
-    Structblendcomponent* = Structblendcomponent_436208352
+    StructBlendComponent* = StructBlendComponent_436208352
 else:
   static:
     hint("Declaration of " & "struct_WGPUBlendComponent" &
         " already exists, not redeclaring")
-when not declared(Structrenderpipelinedescriptor):
+when not declared(StructRenderPipelineDescriptor):
   type
-    Structrenderpipelinedescriptor* = Structrenderpipelinedescriptor_436208354
+    StructRenderPipelineDescriptor* = StructRenderPipelineDescriptor_436208354
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderPipelineDescriptor" &
         " already exists, not redeclaring")
-when not declared(Computepipeline):
+when not declared(ComputePipeline):
   type
-    Computepipeline* = Computepipeline_436208356
+    ComputePipeline* = ComputePipeline_436208356
 else:
   static:
     hint("Declaration of " & "WGPUComputePipeline" &
         " already exists, not redeclaring")
-when not declared(Procdevicepoperrorscope):
+when not declared(ProcDevicePopErrorScope):
   type
-    Procdevicepoperrorscope* = Procdevicepoperrorscope_436208360
+    ProcDevicePopErrorScope* = ProcDevicePopErrorScope_436208360
 else:
   static:
     hint("Declaration of " & "WGPUProcDevicePopErrorScope" &
         " already exists, not redeclaring")
-when not declared(Computepipelinedescriptor):
+when not declared(ComputePipelinedescriptor):
   type
-    Computepipelinedescriptor* = Computepipelinedescriptor_436208362
+    ComputePipelinedescriptor* = ComputePipelinedescriptor_436208362
 else:
   static:
     hint("Declaration of " & "WGPUComputePipelineDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderdrawindirect):
+when not declared(ProcRenderBundleEncoderDrawindirect):
   type
-    Procrenderbundleencoderdrawindirect *
-      = Procrenderbundleencoderdrawindirect_436208364
+    ProcRenderBundleEncoderDrawindirect *
+      = ProcRenderBundleEncoderDrawindirect_436208364
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromxcbwindow):
+when not declared(StructSurfaceDescriptorfromxcbwindow):
   type
-    Structsurfacedescriptorfromxcbwindow *
-      = Structsurfacedescriptorfromxcbwindow_436208366
+    StructSurfaceDescriptorfromxcbwindow *
+      = StructSurfaceDescriptorfromxcbwindow_436208366
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptorFromXcbWindow" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderbeginpipelinestatisticsquery):
+when not declared(ProcComputePassEncoderBeginPipelineStatisticsQuery):
   type
-    Proccomputepassencoderbeginpipelinestatisticsquery *
-      = Proccomputepassencoderbeginpipelinestatisticsquery_436208370
+    ProcComputePassEncoderBeginPipelineStatisticsQuery *
+      = ProcComputePassEncoderBeginPipelineStatisticsQuery_436208370
 else:
   static:
     hint("Declaration of " &
         "WGPUProcComputePassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Origin3d):
+when not declared(Origin3D):
   type
-    Origin3d* = Origin3d_436208372
+    Origin3D* = Origin3D_436208372
 else:
   static:
     hint("Declaration of " & "WGPUOrigin3D" & " already exists, not redeclaring")
-when not declared(Requestadaptercallback):
+when not declared(RequestAdapterCallback):
   type
-    Requestadaptercallback* = Requestadaptercallback_436208374
+    RequestAdapterCallback* = RequestAdapterCallback_436208374
 else:
   static:
     hint("Declaration of " & "WGPURequestAdapterCallback" &
         " already exists, not redeclaring")
-when not declared(Bindgroup):
+when not declared(BindGroup):
   type
-    Bindgroup* = Bindgroup_436208376
+    BindGroup* = BindGroup_436208376
 else:
   static:
     hint("Declaration of " & "WGPUBindGroup" &
         " already exists, not redeclaring")
-when not declared(Procdevicehasfeature):
+when not declared(ProcDeviceHasFeature):
   type
-    Procdevicehasfeature* = Procdevicehasfeature_436208378
+    ProcDeviceHasFeature* = ProcDeviceHasFeature_436208378
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceHasFeature" &
         " already exists, not redeclaring")
-when not declared(Procdevicegetqueue):
+when not declared(ProcDeviceGetQueue):
   type
-    Procdevicegetqueue* = Procdevicegetqueue_436208380
+    ProcDeviceGetQueue* = ProcDeviceGetQueue_436208380
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceGetQueue" &
         " already exists, not redeclaring")
-when not declared(Procbuffersetlabel):
+when not declared(ProcBufferSetLabel):
   type
-    Procbuffersetlabel* = Procbuffersetlabel_436208382
+    ProcBufferSetLabel* = ProcBufferSetLabel_436208382
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderdrawindirect):
+when not declared(ProcRenderPassEncoderDrawindirect):
   type
-    Procrenderpassencoderdrawindirect* = Procrenderpassencoderdrawindirect_436208388
+    ProcRenderPassEncoderDrawindirect* = ProcRenderPassEncoderDrawindirect_436208388
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(Adapterextras):
+when not declared(AdapterExtras):
   type
-    Adapterextras* = Adapterextras_436208398
+    AdapterExtras* = AdapterExtras_436208398
 else:
   static:
     hint("Declaration of " & "WGPUAdapterExtras" &
         " already exists, not redeclaring")
-when not declared(Procquerysetsetlabel):
+when not declared(ProcQuerySetSetLabel):
   type
-    Procquerysetsetlabel* = Procquerysetsetlabel_436208384
+    ProcQuerySetSetLabel* = ProcQuerySetSetLabel_436208384
 else:
   static:
     hint("Declaration of " & "WGPUProcQuerySetSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structswapchaindescriptor):
+when not declared(StructSwapChainDescriptor):
   type
-    Structswapchaindescriptor* = Structswapchaindescriptor_436208386
+    StructSwapChainDescriptor* = StructSwapChainDescriptor_436208386
 else:
   static:
     hint("Declaration of " & "struct_WGPUSwapChainDescriptor" &
         " already exists, not redeclaring")
-when not declared(Renderpipeline):
+when not declared(RenderPipeline):
   type
-    Renderpipeline* = Renderpipeline_436208390
+    RenderPipeline* = RenderPipeline_436208390
 else:
   static:
     hint("Declaration of " & "WGPURenderPipeline" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderdispatchworkgroupsindirect):
+when not declared(ProcComputePassEncoderDispatchWorkgroupsindirect):
   type
-    Proccomputepassencoderdispatchworkgroupsindirect *
-      = Proccomputepassencoderdispatchworkgroupsindirect_436208392
+    ProcComputePassEncoderDispatchWorkgroupsindirect *
+      = ProcComputePassEncoderDispatchWorkgroupsindirect_436208392
 else:
   static:
     hint("Declaration of " &
         "WGPUProcComputePassEncoderDispatchWorkgroupsIndirect" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderbegincomputepass):
+when not declared(ProcCommandEncoderBeginComputePass):
   type
-    Proccommandencoderbegincomputepass *
-      = Proccommandencoderbegincomputepass_436208394
+    ProcCommandEncoderBeginComputePass *
+      = ProcCommandEncoderBeginComputePass_436208394
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderBeginComputePass" &
         " already exists, not redeclaring")
-when not declared(Shaderstageflags):
+when not declared(ShaderStageflags):
   type
-    Shaderstageflags* = Shaderstageflags_436208396
+    ShaderStageflags* = ShaderStageflags_436208396
 else:
   static:
     hint("Declaration of " & "WGPUShaderStageFlags" &
         " already exists, not redeclaring")
-when not declared(Texturedatalayout):
+when not declared(TextureDataLayout):
   type
-    Texturedatalayout* = Texturedatalayout_436208400
+    TextureDataLayout* = TextureDataLayout_436208400
 else:
   static:
     hint("Declaration of " & "WGPUTextureDataLayout" &
         " already exists, not redeclaring")
-when not declared(Proctexturecreateview):
+when not declared(ProcTextureCreateView):
   type
-    Proctexturecreateview* = Proctexturecreateview_436208402
+    ProcTextureCreateView* = ProcTextureCreateView_436208402
 else:
   static:
     hint("Declaration of " & "WGPUProcTextureCreateView" &
         " already exists, not redeclaring")
-when not declared(Structvertexbufferlayout):
+when not declared(StructVertexBufferLayout):
   type
-    Structvertexbufferlayout* = Structvertexbufferlayout_436208404
+    StructVertexBufferLayout* = StructVertexBufferLayout_436208404
 else:
   static:
     hint("Declaration of " & "struct_WGPUVertexBufferLayout" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderinsertdebugmarker):
+when not declared(ProcRenderPassEncoderInsertDebugMarker):
   type
-    Procrenderpassencoderinsertdebugmarker *
-      = Procrenderpassencoderinsertdebugmarker_436208406
+    ProcRenderPassEncoderInsertDebugMarker *
+      = ProcRenderPassEncoderInsertDebugMarker_436208406
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Procswapchainpresent):
+when not declared(ProcSwapChainPresent):
   type
-    Procswapchainpresent* = Procswapchainpresent_436208408
+    ProcSwapChainPresent* = ProcSwapChainPresent_436208408
 else:
   static:
     hint("Declaration of " & "WGPUProcSwapChainPresent" &
         " already exists, not redeclaring")
-when not declared(Procpipelinelayoutsetlabel):
+when not declared(ProcPipelineLayoutSetLabel):
   type
-    Procpipelinelayoutsetlabel* = Procpipelinelayoutsetlabel_436208410
+    ProcPipelineLayoutSetLabel* = ProcPipelineLayoutSetLabel_436208410
 else:
   static:
     hint("Declaration of " & "WGPUProcPipelineLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structquerysetdescriptor):
+when not declared(StructQuerySetDescriptor):
   type
-    Structquerysetdescriptor* = Structquerysetdescriptor_436208412
+    StructQuerySetDescriptor* = StructQuerySetDescriptor_436208412
 else:
   static:
     hint("Declaration of " & "struct_WGPUQuerySetDescriptor" &
         " already exists, not redeclaring")
-when not declared(Pipelinelayout):
+when not declared(PipelineLayout):
   type
-    Pipelinelayout* = Pipelinelayout_436208414
+    PipelineLayout* = PipelineLayout_436208414
 else:
   static:
     hint("Declaration of " & "WGPUPipelineLayout" &
         " already exists, not redeclaring")
-when not declared(Procbufferunmap):
+when not declared(ProcBufferUnmap):
   type
-    Procbufferunmap* = Procbufferunmap_436208416
+    ProcBufferUnmap* = ProcBufferUnmap_436208416
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferUnmap" &
         " already exists, not redeclaring")
-when not declared(Proccommandencodercopytexturetotexture):
+when not declared(ProcCommandEncoderCopyTextureToTexture):
   type
-    Proccommandencodercopytexturetotexture *
-      = Proccommandencodercopytexturetotexture_436208418
+    ProcCommandEncoderCopyTextureToTexture *
+      = ProcCommandEncoderCopyTextureToTexture_436208418
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderCopyTextureToTexture" &
         " already exists, not redeclaring")
-when not declared(Structcomputepipelinedescriptor):
+when not declared(StructComputePipelineDescriptor):
   type
-    Structcomputepipelinedescriptor* = Structcomputepipelinedescriptor_436208420
+    StructComputePipelineDescriptor* = StructComputePipelineDescriptor_436208420
 else:
   static:
     hint("Declaration of " & "struct_WGPUComputePipelineDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderinsertdebugmarker):
+when not declared(ProcRenderBundleEncoderInsertDebugMarker):
   type
-    Procrenderbundleencoderinsertdebugmarker *
-      = Procrenderbundleencoderinsertdebugmarker_436208422
+    ProcRenderBundleEncoderInsertDebugMarker *
+      = ProcRenderBundleEncoderInsertDebugMarker_436208422
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Samplerbindinglayout):
+when not declared(SamplerBindingLayout):
   type
-    Samplerbindinglayout* = Samplerbindinglayout_436208424
+    SamplerBindingLayout* = SamplerBindingLayout_436208424
 else:
   static:
     hint("Declaration of " & "WGPUSamplerBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderbeginocclusionquery):
+when not declared(ProcRenderPassEncoderBeginOcclusionQuery):
   type
-    Procrenderpassencoderbeginocclusionquery *
-      = Procrenderpassencoderbeginocclusionquery_436208426
+    ProcRenderPassEncoderBeginOcclusionQuery *
+      = ProcRenderPassEncoderBeginOcclusionQuery_436208426
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderBeginOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(Structrequiredlimits):
+when not declared(StructRequiredLimits):
   type
-    Structrequiredlimits* = Structrequiredlimits_436208428
+    StructRequiredLimits* = StructRequiredLimits_436208428
 else:
   static:
     hint("Declaration of " & "struct_WGPURequiredLimits" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderdraw):
+when not declared(ProcRenderPassEncoderDraw):
   type
-    Procrenderpassencoderdraw* = Procrenderpassencoderdraw_436208430
+    ProcRenderPassEncoderDraw* = ProcRenderPassEncoderDraw_436208430
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderDraw" &
         " already exists, not redeclaring")
-when not declared(Computepassdescriptor):
+when not declared(ComputePassDescriptor):
   type
-    Computepassdescriptor* = Computepassdescriptor_436208432
+    ComputePassDescriptor* = ComputePassDescriptor_436208432
 else:
   static:
     hint("Declaration of " & "WGPUComputePassDescriptor" &
@@ -5453,288 +5453,288 @@ when not declared(Proc):
 else:
   static:
     hint("Declaration of " & "WGPUProc" & " already exists, not redeclaring")
-when not declared(Compilationinfocallback):
+when not declared(CompilationInfocallback):
   type
-    Compilationinfocallback* = Compilationinfocallback_436208436
+    CompilationInfocallback* = CompilationInfocallback_436208436
 else:
   static:
     hint("Declaration of " & "WGPUCompilationInfoCallback" &
         " already exists, not redeclaring")
-when not declared(Pipelinelayoutextras):
+when not declared(PipelineLayoutextras):
   type
-    Pipelinelayoutextras* = Pipelinelayoutextras_436208438
+    PipelineLayoutextras* = PipelineLayoutextras_436208438
 else:
   static:
     hint("Declaration of " & "WGPUPipelineLayoutExtras" &
         " already exists, not redeclaring")
-when not declared(Textureview):
+when not declared(TextureView):
   type
-    Textureview* = Textureview_436208440
+    TextureView* = TextureView_436208440
 else:
   static:
     hint("Declaration of " & "WGPUTextureView" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetscissorrect):
+when not declared(ProcRenderPassEncoderSetScissorRect):
   type
-    Procrenderpassencodersetscissorrect *
-      = Procrenderpassencodersetscissorrect_436208442
+    ProcRenderPassEncoderSetScissorRect *
+      = ProcRenderPassEncoderSetScissorRect_436208442
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetScissorRect" &
         " already exists, not redeclaring")
-when not declared(Requestadapteroptions):
+when not declared(RequestAdapterOptions):
   type
-    Requestadapteroptions* = Requestadapteroptions_436208444
+    RequestAdapterOptions* = RequestAdapterOptions_436208444
 else:
   static:
     hint("Declaration of " & "WGPURequestAdapterOptions" &
         " already exists, not redeclaring")
-when not declared(Requestadapterstatus):
+when not declared(RequestAdapterStatus):
   type
-    Requestadapterstatus* = Requestadapterstatus_436208446
+    RequestAdapterStatus* = RequestAdapterStatus_436208446
 else:
   static:
     hint("Declaration of " & "WGPURequestAdapterStatus" &
         " already exists, not redeclaring")
-when not declared(Requestdevicestatus):
+when not declared(RequestDeviceStatus):
   type
-    Requestdevicestatus* = Requestdevicestatus_436208448
+    RequestDeviceStatus* = RequestDeviceStatus_436208448
 else:
   static:
     hint("Declaration of " & "WGPURequestDeviceStatus" &
         " already exists, not redeclaring")
-when not declared(Procsamplersetlabel):
+when not declared(ProcSamplerSetLabel):
   type
-    Procsamplersetlabel* = Procsamplersetlabel_436208452
+    ProcSamplerSetLabel* = ProcSamplerSetLabel_436208452
 else:
   static:
     hint("Declaration of " & "WGPUProcSamplerSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procsurfacegetpreferredformat):
+when not declared(ProcSurfaceGetPreferredFormat):
   type
-    Procsurfacegetpreferredformat* = Procsurfacegetpreferredformat_436208454
+    ProcSurfaceGetPreferredFormat* = ProcSurfaceGetPreferredFormat_436208454
 else:
   static:
     hint("Declaration of " & "WGPUProcSurfaceGetPreferredFormat" &
         " already exists, not redeclaring")
-when not declared(Structmultisamplestate):
+when not declared(StructMultisampleState):
   type
-    Structmultisamplestate* = Structmultisamplestate_436208458
+    StructMultisampleState* = StructMultisampleState_436208458
 else:
   static:
     hint("Declaration of " & "struct_WGPUMultisampleState" &
         " already exists, not redeclaring")
-when not declared(Procswapchaingetcurrenttextureview):
+when not declared(ProcSwapChainGetCurrentTextureView):
   type
-    Procswapchaingetcurrenttextureview *
-      = Procswapchaingetcurrenttextureview_436208464
+    ProcSwapChainGetCurrentTextureView *
+      = ProcSwapChainGetCurrentTextureView_436208464
 else:
   static:
     hint("Declaration of " & "WGPUProcSwapChainGetCurrentTextureView" &
         " already exists, not redeclaring")
-when not declared(Shadermodulecompilationhint):
+when not declared(ShaderModulecompilationhint):
   type
-    Shadermodulecompilationhint* = Shadermodulecompilationhint_436208462
+    ShaderModulecompilationhint* = ShaderModulecompilationhint_436208462
 else:
   static:
     hint("Declaration of " & "WGPUShaderModuleCompilationHint" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderpopdebuggroup):
+when not declared(ProcRenderPassEncoderPopDebugGroup):
   type
-    Procrenderpassencoderpopdebuggroup *
-      = Procrenderpassencoderpopdebuggroup_436208466
+    ProcRenderPassEncoderPopDebugGroup *
+      = ProcRenderPassEncoderPopDebugGroup_436208466
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromcanvashtmlselector):
+when not declared(SurfaceDescriptorfromcanvashtmlselector):
   type
-    Surfacedescriptorfromcanvashtmlselector *
-      = Surfacedescriptorfromcanvashtmlselector_436208468
+    SurfaceDescriptorfromcanvashtmlselector *
+      = SurfaceDescriptorfromcanvashtmlselector_436208468
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromCanvasHTMLSelector" &
         " already exists, not redeclaring")
-when not declared(Structrenderpasscolorattachment):
+when not declared(StructRenderPassColorAttachment):
   type
-    Structrenderpasscolorattachment* = Structrenderpasscolorattachment_436208470
+    StructRenderPassColorAttachment* = StructRenderPassColorAttachment_436208470
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderPassColorAttachment" &
         " already exists, not redeclaring")
-when not declared(Renderpipelinedescriptor):
+when not declared(RenderPipelinedescriptor):
   type
-    Renderpipelinedescriptor* = Renderpipelinedescriptor_436208474
+    RenderPipelinedescriptor* = RenderPipelinedescriptor_436208474
 else:
   static:
     hint("Declaration of " & "WGPURenderPipelineDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structprimitivedepthclipcontrol):
+when not declared(StructPrimitiveDepthClipControl):
   type
-    Structprimitivedepthclipcontrol* = Structprimitivedepthclipcontrol_436208478
+    StructPrimitiveDepthClipControl* = StructPrimitiveDepthClipControl_436208478
 else:
   static:
     hint("Declaration of " & "struct_WGPUPrimitiveDepthClipControl" &
         " already exists, not redeclaring")
-when not declared(Globalreport):
+when not declared(GlobalReport):
   type
-    Globalreport* = Globalreport_436208482
+    GlobalReport* = GlobalReport_436208482
 else:
   static:
     hint("Declaration of " & "WGPUGlobalReport" &
         " already exists, not redeclaring")
-when not declared(Structcomputepasstimestampwrite):
+when not declared(StructComputePassTimestampWrite):
   type
-    Structcomputepasstimestampwrite* = Structcomputepasstimestampwrite_436208484
+    StructComputePassTimestampWrite* = StructComputePassTimestampWrite_436208484
 else:
   static:
     hint("Declaration of " & "struct_WGPUComputePassTimestampWrite" &
         " already exists, not redeclaring")
-when not declared(Constantentry):
+when not declared(ConstantEntry):
   type
-    Constantentry* = Constantentry_436208486
+    ConstantEntry* = ConstantEntry_436208486
 else:
   static:
     hint("Declaration of " & "WGPUConstantEntry" &
         " already exists, not redeclaring")
-when not declared(Queueworkdonecallback):
+when not declared(QueueWorkDoneCallback):
   type
-    Queueworkdonecallback* = Queueworkdonecallback_436208490
+    QueueWorkDoneCallback* = QueueWorkDoneCallback_436208490
 else:
   static:
     hint("Declaration of " & "WGPUQueueWorkDoneCallback" &
         " already exists, not redeclaring")
-when not declared(Colortargetstate):
+when not declared(ColorTargetState):
   type
-    Colortargetstate* = Colortargetstate_436208494
+    ColorTargetState* = ColorTargetState_436208494
 else:
   static:
     hint("Declaration of " & "WGPUColorTargetState" &
         " already exists, not redeclaring")
-when not declared(Querytype):
+when not declared(QueryType):
   type
-    Querytype* = Querytype_436208496
+    QueryType* = QueryType_436208496
 else:
   static:
     hint("Declaration of " & "WGPUQueryType" &
         " already exists, not redeclaring")
-when not declared(Proccommandencodersetlabel):
+when not declared(ProcCommandEncoderSetLabel):
   type
-    Proccommandencodersetlabel* = Proccommandencodersetlabel_436208498
+    ProcCommandEncoderSetLabel* = ProcCommandEncoderSetLabel_436208498
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(Samplerbindingtype):
+when not declared(SamplerBindingType):
   type
-    Samplerbindingtype* = Samplerbindingtype_436208500
+    SamplerBindingType* = SamplerBindingType_436208500
 else:
   static:
     hint("Declaration of " & "WGPUSamplerBindingType" &
         " already exists, not redeclaring")
-when not declared(Structrequiredlimitsextras):
+when not declared(StructRequiredLimitsextras):
   type
-    Structrequiredlimitsextras* = Structrequiredlimitsextras_436208502
+    StructRequiredLimitsextras* = StructRequiredLimitsextras_436208502
 else:
   static:
     hint("Declaration of " & "struct_WGPURequiredLimitsExtras" &
         " already exists, not redeclaring")
-when not declared(Queryset):
+when not declared(QuerySet):
   type
-    Queryset* = Queryset_436208504
+    QuerySet* = QuerySet_436208504
 else:
   static:
     hint("Declaration of " & "WGPUQuerySet" & " already exists, not redeclaring")
-when not declared(Imagecopytexture):
+when not declared(ImageCopyTexture):
   type
-    Imagecopytexture* = Imagecopytexture_436208506
+    ImageCopyTexture* = ImageCopyTexture_436208506
 else:
   static:
     hint("Declaration of " & "WGPUImageCopyTexture" &
         " already exists, not redeclaring")
-when not declared(Structorigin3d):
+when not declared(StructOrigin3D):
   type
-    Structorigin3d* = Structorigin3d_436208508
+    StructOrigin3D* = StructOrigin3D_436208508
 else:
   static:
     hint("Declaration of " & "struct_WGPUOrigin3D" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderdispatchworkgroups):
+when not declared(ProcComputePassEncoderDispatchWorkgroups):
   type
-    Proccomputepassencoderdispatchworkgroups *
-      = Proccomputepassencoderdispatchworkgroups_436208510
+    ProcComputePassEncoderDispatchWorkgroups *
+      = ProcComputePassEncoderDispatchWorkgroups_436208510
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderDispatchWorkgroups" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderpopdebuggroup):
+when not declared(ProcRenderBundleEncoderPopDebugGroup):
   type
-    Procrenderbundleencoderpopdebuggroup *
-      = Procrenderbundleencoderpopdebuggroup_436208512
+    ProcRenderBundleEncoderPopDebugGroup *
+      = ProcRenderBundleEncoderPopDebugGroup_436208512
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Structtextureviewdescriptor):
+when not declared(StructTextureViewDescriptor):
   type
-    Structtextureviewdescriptor* = Structtextureviewdescriptor_436208516
+    StructTextureViewDescriptor* = StructTextureViewDescriptor_436208516
 else:
   static:
     hint("Declaration of " & "struct_WGPUTextureViewDescriptor" &
         " already exists, not redeclaring")
-when not declared(Renderpasstimestamplocation):
+when not declared(RenderPassTimestampLocation):
   type
-    Renderpasstimestamplocation* = Renderpasstimestamplocation_436208518
+    RenderPassTimestampLocation* = RenderPassTimestampLocation_436208518
 else:
   static:
     hint("Declaration of " & "WGPURenderPassTimestampLocation" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromwindowshwnd):
+when not declared(StructSurfaceDescriptorfromwindowshwnd):
   type
-    Structsurfacedescriptorfromwindowshwnd *
-      = Structsurfacedescriptorfromwindowshwnd_436208520
+    StructSurfaceDescriptorfromwindowshwnd *
+      = StructSurfaceDescriptorfromwindowshwnd_436208520
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptorFromWindowsHWND" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromxcbwindow):
+when not declared(SurfaceDescriptorfromxcbwindow):
   type
-    Surfacedescriptorfromxcbwindow* = Surfacedescriptorfromxcbwindow_436208522
+    SurfaceDescriptorfromxcbwindow* = SurfaceDescriptorfromxcbwindow_436208522
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromXcbWindow" &
         " already exists, not redeclaring")
-when not declared(Procgetprocaddress):
+when not declared(ProcGetProcAddress):
   type
-    Procgetprocaddress* = Procgetprocaddress_436208524
+    ProcGetProcAddress* = ProcGetProcAddress_436208524
 else:
   static:
     hint("Declaration of " & "WGPUProcGetProcAddress" &
         " already exists, not redeclaring")
-when not declared(Procquerysetdestroy):
+when not declared(ProcQuerySetDestroy):
   type
-    Procquerysetdestroy* = Procquerysetdestroy_436208526
+    ProcQuerySetDestroy* = ProcQuerySetDestroy_436208526
 else:
   static:
     hint("Declaration of " & "WGPUProcQuerySetDestroy" &
         " already exists, not redeclaring")
-when not declared(Structcolortargetstate):
+when not declared(StructColorTargetState):
   type
-    Structcolortargetstate* = Structcolortargetstate_436208528
+    StructColorTargetState* = StructColorTargetState_436208528
 else:
   static:
     hint("Declaration of " & "struct_WGPUColorTargetState" &
         " already exists, not redeclaring")
-when not declared(Compilationinforequeststatus):
+when not declared(CompilationInfoRequestStatus):
   type
-    Compilationinforequeststatus* = Compilationinforequeststatus_436208532
+    CompilationInfoRequestStatus* = CompilationInfoRequestStatus_436208532
 else:
   static:
     hint("Declaration of " & "WGPUCompilationInfoRequestStatus" &
         " already exists, not redeclaring")
-when not declared(Computepassencoder):
+when not declared(ComputePassEncoder):
   type
-    Computepassencoder* = Computepassencoder_436208534
+    ComputePassEncoder* = ComputePassEncoder_436208534
 else:
   static:
     hint("Declaration of " & "WGPUComputePassEncoder" &
@@ -5745,901 +5745,901 @@ when not declared(Sampler):
 else:
   static:
     hint("Declaration of " & "WGPUSampler" & " already exists, not redeclaring")
-when not declared(Blendoperation):
+when not declared(BlendOperation):
   type
-    Blendoperation* = Blendoperation_436208538
+    BlendOperation* = BlendOperation_436208538
 else:
   static:
     hint("Declaration of " & "WGPUBlendOperation" &
         " already exists, not redeclaring")
-when not declared(Presentmode):
+when not declared(PresentMode):
   type
-    Presentmode* = Presentmode_436208540
+    PresentMode* = PresentMode_436208540
 else:
   static:
     hint("Declaration of " & "WGPUPresentMode" &
         " already exists, not redeclaring")
-when not declared(Proctextureviewsetlabel):
+when not declared(ProcTextureViewSetLabel):
   type
-    Proctextureviewsetlabel* = Proctextureviewsetlabel_436208544
+    ProcTextureViewSetLabel* = ProcTextureViewSetLabel_436208544
 else:
   static:
     hint("Declaration of " & "WGPUProcTextureViewSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procinstanceprocessevents):
+when not declared(ProcInstanceProcessEvents):
   type
-    Procinstanceprocessevents* = Procinstanceprocessevents_436208546
+    ProcInstanceProcessEvents* = ProcInstanceProcessEvents_436208546
 else:
   static:
     hint("Declaration of " & "WGPUProcInstanceProcessEvents" &
         " already exists, not redeclaring")
-when not declared(Bindgroupentry):
+when not declared(BindGroupentry):
   type
-    Bindgroupentry* = Bindgroupentry_436208548
+    BindGroupentry* = BindGroupentry_436208548
 else:
   static:
     hint("Declaration of " & "WGPUBindGroupEntry" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderfinish):
+when not declared(ProcCommandEncoderFinish):
   type
-    Proccommandencoderfinish* = Proccommandencoderfinish_436208550
+    ProcCommandEncoderFinish* = ProcCommandEncoderFinish_436208550
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreaterenderbundleencoder):
+when not declared(ProcDeviceCreateRenderBundleEncoder):
   type
-    Procdevicecreaterenderbundleencoder *
-      = Procdevicecreaterenderbundleencoder_436208552
+    ProcDeviceCreateRenderBundleEncoder *
+      = ProcDeviceCreateRenderBundleEncoder_436208552
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateRenderBundleEncoder" &
         " already exists, not redeclaring")
-when not declared(Textureviewdimension):
+when not declared(TextureViewdimension):
   type
-    Textureviewdimension* = Textureviewdimension_436208554
+    TextureViewdimension* = TextureViewdimension_436208554
 else:
   static:
     hint("Declaration of " & "WGPUTextureViewDimension" &
         " already exists, not redeclaring")
-when not declared(Structcommandbufferdescriptor):
+when not declared(StructCommandBufferDescriptor):
   type
-    Structcommandbufferdescriptor* = Structcommandbufferdescriptor_436208556
+    StructCommandBufferDescriptor* = StructCommandBufferDescriptor_436208556
 else:
   static:
     hint("Declaration of " & "struct_WGPUCommandBufferDescriptor" &
         " already exists, not redeclaring")
-when not declared(Bufferusage):
+when not declared(BufferUsage):
   type
-    Bufferusage* = Bufferusage_436208558
+    BufferUsage* = BufferUsage_436208558
 else:
   static:
     hint("Declaration of " & "WGPUBufferUsage" &
         " already exists, not redeclaring")
-when not declared(Compilationinfo):
+when not declared(CompilationInfo):
   type
-    Compilationinfo* = Compilationinfo_436208560
+    CompilationInfo* = CompilationInfo_436208560
 else:
   static:
     hint("Declaration of " & "WGPUCompilationInfo" &
         " already exists, not redeclaring")
-when not declared(Errortype):
+when not declared(ErrorType):
   type
-    Errortype* = Errortype_436208562
+    ErrorType* = ErrorType_436208562
 else:
   static:
     hint("Declaration of " & "WGPUErrorType" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromandroidnativewindow):
+when not declared(SurfaceDescriptorfromandroidnativewindow):
   type
-    Surfacedescriptorfromandroidnativewindow *
-      = Surfacedescriptorfromandroidnativewindow_436208564
+    SurfaceDescriptorfromandroidnativewindow *
+      = SurfaceDescriptorfromandroidnativewindow_436208564
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromAndroidNativeWindow" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfromwaylandsurface):
+when not declared(StructSurfaceDescriptorfromwaylandsurface):
   type
-    Structsurfacedescriptorfromwaylandsurface *
-      = Structsurfacedescriptorfromwaylandsurface_436208566
+    StructSurfaceDescriptorfromwaylandsurface *
+      = StructSurfaceDescriptorfromwaylandsurface_436208566
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptorFromWaylandSurface" &
         " already exists, not redeclaring")
-when not declared(Structrequestadapteroptions):
+when not declared(StructRequestAdapterOptions):
   type
-    Structrequestadapteroptions* = Structrequestadapteroptions_436208570
+    StructRequestAdapterOptions* = StructRequestAdapterOptions_436208570
 else:
   static:
     hint("Declaration of " & "struct_WGPURequestAdapterOptions" &
         " already exists, not redeclaring")
-when not declared(Procqueuesubmit):
+when not declared(ProcQueueSubmit):
   type
-    Procqueuesubmit* = Procqueuesubmit_436208576
+    ProcQueueSubmit* = ProcQueueSubmit_436208576
 else:
   static:
     hint("Declaration of " & "WGPUProcQueueSubmit" &
         " already exists, not redeclaring")
-when not declared(Procadapterhasfeature):
+when not declared(ProcAdapterHasFeature):
   type
-    Procadapterhasfeature* = Procadapterhasfeature_436208572
+    ProcAdapterHasFeature* = ProcAdapterHasFeature_436208572
 else:
   static:
     hint("Declaration of " & "WGPUProcAdapterHasFeature" &
         " already exists, not redeclaring")
-when not declared(Procqueuesetlabel):
+when not declared(ProcQueueSetLabel):
   type
-    Procqueuesetlabel* = Procqueuesetlabel_436208574
+    ProcQueueSetLabel* = ProcQueueSetLabel_436208574
 else:
   static:
     hint("Declaration of " & "WGPUProcQueueSetLabel" &
         " already exists, not redeclaring")
-when not declared(Procqueuewritebuffer):
+when not declared(ProcQueueWriteBuffer):
   type
-    Procqueuewritebuffer* = Procqueuewritebuffer_436208578
+    ProcQueueWriteBuffer* = ProcQueueWriteBuffer_436208578
 else:
   static:
     hint("Declaration of " & "WGPUProcQueueWriteBuffer" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderdrawindexedindirect):
+when not declared(ProcRenderBundleEncoderDrawindexedindirect):
   type
-    Procrenderbundleencoderdrawindexedindirect *
-      = Procrenderbundleencoderdrawindexedindirect_436208580
+    ProcRenderBundleEncoderDrawindexedindirect *
+      = ProcRenderBundleEncoderDrawindexedindirect_436208580
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(Renderpassencoder):
+when not declared(RenderPassEncoder):
   type
-    Renderpassencoder* = Renderpassencoder_436208584
+    RenderPassEncoder* = RenderPassEncoder_436208584
 else:
   static:
     hint("Declaration of " & "WGPURenderPassEncoder" &
         " already exists, not redeclaring")
-when not declared(Comparefunction):
+when not declared(CompareFunction):
   type
-    Comparefunction* = Comparefunction_436208586
+    CompareFunction* = CompareFunction_436208586
 else:
   static:
     hint("Declaration of " & "WGPUCompareFunction" &
         " already exists, not redeclaring")
-when not declared(Structsurfacedescriptorfrommetallayer):
+when not declared(StructSurfaceDescriptorfrommetallayer):
   type
-    Structsurfacedescriptorfrommetallayer *
-      = Structsurfacedescriptorfrommetallayer_436208588
+    StructSurfaceDescriptorfrommetallayer *
+      = StructSurfaceDescriptorfrommetallayer_436208588
 else:
   static:
     hint("Declaration of " & "struct_WGPUSurfaceDescriptorFromMetalLayer" &
         " already exists, not redeclaring")
-when not declared(Createpipelineasyncstatus):
+when not declared(CreatePipelineAsyncStatus):
   type
-    Createpipelineasyncstatus* = Createpipelineasyncstatus_436208590
+    CreatePipelineAsyncStatus* = CreatePipelineAsyncStatus_436208590
 else:
   static:
     hint("Declaration of " & "WGPUCreatePipelineAsyncStatus" &
         " already exists, not redeclaring")
-when not declared(Swapchain):
+when not declared(SwapChain):
   type
-    Swapchain* = Swapchain_436208592
+    SwapChain* = SwapChain_436208592
 else:
   static:
     hint("Declaration of " & "WGPUSwapChain" &
         " already exists, not redeclaring")
-when not declared(Structsupportedlimits):
+when not declared(StructSupportedLimits):
   type
-    Structsupportedlimits* = Structsupportedlimits_436208594
+    StructSupportedLimits* = StructSupportedLimits_436208594
 else:
   static:
     hint("Declaration of " & "struct_WGPUSupportedLimits" &
         " already exists, not redeclaring")
-when not declared(Structstoragereport):
+when not declared(StructStorageReport):
   type
-    Structstoragereport* = Structstoragereport_436208596
+    StructStorageReport* = StructStorageReport_436208596
 else:
   static:
     hint("Declaration of " & "struct_WGPUStorageReport" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencodersetpipeline):
+when not declared(ProcComputePassEncoderSetPipeline):
   type
-    Proccomputepassencodersetpipeline* = Proccomputepassencodersetpipeline_436208600
+    ProcComputePassEncoderSetPipeline* = ProcComputePassEncoderSetPipeline_436208600
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Primitivedepthclipcontrol):
+when not declared(PrimitiveDepthClipControl):
   type
-    Primitivedepthclipcontrol* = Primitivedepthclipcontrol_436208602
+    PrimitiveDepthClipControl* = PrimitiveDepthClipControl_436208602
 else:
   static:
     hint("Declaration of " & "WGPUPrimitiveDepthClipControl" &
         " already exists, not redeclaring")
-when not declared(Procadapterrequestdevice):
+when not declared(ProcAdapterRequestDevice):
   type
-    Procadapterrequestdevice* = Procadapterrequestdevice_436208604
+    ProcAdapterRequestDevice* = ProcAdapterRequestDevice_436208604
 else:
   static:
     hint("Declaration of " & "WGPUProcAdapterRequestDevice" &
         " already exists, not redeclaring")
-when not declared(Procadaptergetproperties):
+when not declared(ProcAdapterGetProperties):
   type
-    Procadaptergetproperties* = Procadaptergetproperties_436208606
+    ProcAdapterGetProperties* = ProcAdapterGetProperties_436208606
 else:
   static:
     hint("Declaration of " & "WGPUProcAdapterGetProperties" &
         " already exists, not redeclaring")
-when not declared(Multisamplestate):
+when not declared(MultisampleState):
   type
-    Multisamplestate* = Multisamplestate_436208608
+    MultisampleState* = MultisampleState_436208608
 else:
   static:
     hint("Declaration of " & "WGPUMultisampleState" &
         " already exists, not redeclaring")
-when not declared(Proctexturedestroy):
+when not declared(ProcTextureDestroy):
   type
-    Proctexturedestroy* = Proctexturedestroy_436208610
+    ProcTextureDestroy* = ProcTextureDestroy_436208610
 else:
   static:
     hint("Declaration of " & "WGPUProcTextureDestroy" &
         " already exists, not redeclaring")
-when not declared(Structwrappedsubmissionindex):
+when not declared(StructWrappedSubmissionIndex):
   type
-    Structwrappedsubmissionindex* = Structwrappedsubmissionindex_436208612
+    StructWrappedSubmissionIndex* = StructWrappedSubmissionIndex_436208612
 else:
   static:
     hint("Declaration of " & "struct_WGPUWrappedSubmissionIndex" &
         " already exists, not redeclaring")
-when not declared(Cullmode):
+when not declared(CullMode):
   type
-    Cullmode* = Cullmode_436208614
+    CullMode* = CullMode_436208614
 else:
   static:
     hint("Declaration of " & "WGPUCullMode" & " already exists, not redeclaring")
-when not declared(Structfragmentstate):
+when not declared(StructFragmentState):
   type
-    Structfragmentstate* = Structfragmentstate_436208616
+    StructFragmentState* = StructFragmentState_436208616
 else:
   static:
     hint("Declaration of " & "struct_WGPUFragmentState" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromwaylandsurface):
+when not declared(SurfaceDescriptorfromwaylandsurface):
   type
-    Surfacedescriptorfromwaylandsurface *
-      = Surfacedescriptorfromwaylandsurface_436208618
+    SurfaceDescriptorfromwaylandsurface *
+      = SurfaceDescriptorfromwaylandsurface_436208618
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromWaylandSurface" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderpopdebuggroup):
+when not declared(ProcCommandEncoderPopDebugGroup):
   type
-    Proccommandencoderpopdebuggroup* = Proccommandencoderpopdebuggroup_436208620
+    ProcCommandEncoderPopDebugGroup* = ProcCommandEncoderPopDebugGroup_436208620
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Devicelostcallback):
+when not declared(DeviceLostCallback):
   type
-    Devicelostcallback* = Devicelostcallback_436208622
+    DeviceLostCallback* = DeviceLostCallback_436208622
 else:
   static:
     hint("Declaration of " & "WGPUDeviceLostCallback" &
         " already exists, not redeclaring")
-when not declared(Procinstancecreatesurface):
+when not declared(ProcInstanceCreateSurface):
   type
-    Procinstancecreatesurface* = Procinstancecreatesurface_436208624
+    ProcInstanceCreateSurface* = ProcInstanceCreateSurface_436208624
 else:
   static:
     hint("Declaration of " & "WGPUProcInstanceCreateSurface" &
         " already exists, not redeclaring")
-when not declared(Commandbuffer):
+when not declared(CommandBuffer):
   type
-    Commandbuffer* = Commandbuffer_436208628
+    CommandBuffer* = CommandBuffer_436208628
 else:
   static:
     hint("Declaration of " & "WGPUCommandBuffer" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderendocclusionquery):
+when not declared(ProcRenderPassEncoderEndocclusionquery):
   type
-    Procrenderpassencoderendocclusionquery *
-      = Procrenderpassencoderendocclusionquery_436208630
+    ProcRenderPassEncoderEndocclusionquery *
+      = ProcRenderPassEncoderEndocclusionquery_436208630
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderEndOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(Proccomputepipelinesetlabel):
+when not declared(ProcComputePipelineSetLabel):
   type
-    Proccomputepipelinesetlabel* = Proccomputepipelinesetlabel_436208632
+    ProcComputePipelineSetLabel* = ProcComputePipelineSetLabel_436208632
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(Bufferdescriptor):
+when not declared(BufferDescriptor):
   type
-    Bufferdescriptor* = Bufferdescriptor_436208636
+    BufferDescriptor* = BufferDescriptor_436208636
 else:
   static:
     hint("Declaration of " & "WGPUBufferDescriptor" &
         " already exists, not redeclaring")
-when not declared(Shadermodulewgsldescriptor):
+when not declared(ShaderModulewgsldescriptor):
   type
-    Shadermodulewgsldescriptor* = Shadermodulewgsldescriptor_436208640
+    ShaderModulewgsldescriptor* = ShaderModulewgsldescriptor_436208640
 else:
   static:
     hint("Declaration of " & "WGPUShaderModuleWGSLDescriptor" &
         " already exists, not redeclaring")
-when not declared(Procbuffergetconstmappedrange):
+when not declared(ProcBufferGetConstMappedRange):
   type
-    Procbuffergetconstmappedrange* = Procbuffergetconstmappedrange_436208642
+    ProcBufferGetConstMappedRange* = ProcBufferGetConstMappedRange_436208642
 else:
   static:
     hint("Declaration of " & "WGPUProcBufferGetConstMappedRange" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderpushdebuggroup):
+when not declared(ProcComputePassEncoderPushDebugGroup):
   type
-    Proccomputepassencoderpushdebuggroup *
-      = Proccomputepassencoderpushdebuggroup_436208644
+    ProcComputePassEncoderPushDebugGroup *
+      = ProcComputePassEncoderPushDebugGroup_436208644
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(Structbindgroupdescriptor):
+when not declared(StructBindGroupDescriptor):
   type
-    Structbindgroupdescriptor* = Structbindgroupdescriptor_436208646
+    StructBindGroupDescriptor* = StructBindGroupDescriptor_436208646
 else:
   static:
     hint("Declaration of " & "struct_WGPUBindGroupDescriptor" &
         " already exists, not redeclaring")
-when not declared(Swapchaindescriptor):
+when not declared(SwapChaindescriptor):
   type
-    Swapchaindescriptor* = Swapchaindescriptor_436208648
+    SwapChaindescriptor* = SwapChaindescriptor_436208648
 else:
   static:
     hint("Declaration of " & "WGPUSwapChainDescriptor" &
         " already exists, not redeclaring")
-when not declared(Backendtype):
+when not declared(BackendType):
   type
-    Backendtype* = Backendtype_436208650
+    BackendType* = BackendType_436208650
 else:
   static:
     hint("Declaration of " & "WGPUBackendType" &
         " already exists, not redeclaring")
-when not declared(Procdevicegetlimits):
+when not declared(ProcDeviceGetLimits):
   type
-    Procdevicegetlimits* = Procdevicegetlimits_436208652
+    ProcDeviceGetLimits* = ProcDeviceGetLimits_436208652
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceGetLimits" &
         " already exists, not redeclaring")
-when not declared(Deviceextras):
+when not declared(DeviceExtras):
   type
-    Deviceextras* = Deviceextras_436208654
+    DeviceExtras* = DeviceExtras_436208654
 else:
   static:
     hint("Declaration of " & "WGPUDeviceExtras" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatesampler):
+when not declared(ProcDeviceCreateSampler):
   type
-    Procdevicecreatesampler* = Procdevicecreatesampler_436208656
+    ProcDeviceCreateSampler* = ProcDeviceCreateSampler_436208656
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateSampler" &
         " already exists, not redeclaring")
-when not declared(Structadapterextras):
+when not declared(StructAdapterExtras):
   type
-    Structadapterextras* = Structadapterextras_436208660
+    StructAdapterExtras* = StructAdapterExtras_436208660
 else:
   static:
     hint("Declaration of " & "struct_WGPUAdapterExtras" &
         " already exists, not redeclaring")
-when not declared(Blendfactor):
+when not declared(BlendFactor):
   type
-    Blendfactor* = Blendfactor_436208662
+    BlendFactor* = BlendFactor_436208662
 else:
   static:
     hint("Declaration of " & "WGPUBlendFactor" &
         " already exists, not redeclaring")
-when not declared(Structadapterproperties):
+when not declared(StructAdapterProperties):
   type
-    Structadapterproperties* = Structadapterproperties_436208664
+    StructAdapterProperties* = StructAdapterProperties_436208664
 else:
   static:
     hint("Declaration of " & "struct_WGPUAdapterProperties" &
         " already exists, not redeclaring")
-when not declared(Commandencoderdescriptor):
+when not declared(CommandEncoderdescriptor):
   type
-    Commandencoderdescriptor* = Commandencoderdescriptor_436208666
+    CommandEncoderdescriptor* = CommandEncoderdescriptor_436208666
 else:
   static:
     hint("Declaration of " & "WGPUCommandEncoderDescriptor" &
         " already exists, not redeclaring")
-when not declared(Devicedescriptor):
+when not declared(DeviceDescriptor):
   type
-    Devicedescriptor* = Devicedescriptor_436208668
+    DeviceDescriptor* = DeviceDescriptor_436208668
 else:
   static:
     hint("Declaration of " & "WGPUDeviceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Hubreport):
+when not declared(HubReport):
   type
-    Hubreport* = Hubreport_436208670
+    HubReport* = HubReport_436208670
 else:
   static:
     hint("Declaration of " & "WGPUHubReport" &
         " already exists, not redeclaring")
-when not declared(Bufferusageflags):
+when not declared(BufferUsageflags):
   type
-    Bufferusageflags* = Bufferusageflags_436208672
+    BufferUsageflags* = BufferUsageflags_436208672
 else:
   static:
     hint("Declaration of " & "WGPUBufferUsageFlags" &
         " already exists, not redeclaring")
-when not declared(Requiredlimitsextras):
+when not declared(RequiredLimitsextras):
   type
-    Requiredlimitsextras* = Requiredlimitsextras_436208674
+    RequiredLimitsextras* = RequiredLimitsextras_436208674
 else:
   static:
     hint("Declaration of " & "WGPURequiredLimitsExtras" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderbeginrenderpass):
+when not declared(ProcCommandEncoderBeginRenderPass):
   type
-    Proccommandencoderbeginrenderpass* = Proccommandencoderbeginrenderpass_436208676
+    ProcCommandEncoderBeginRenderPass* = ProcCommandEncoderBeginRenderPass_436208676
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderBeginRenderPass" &
         " already exists, not redeclaring")
-when not declared(Procbindgroupsetlabel):
+when not declared(ProcBindGroupSetLabel):
   type
-    Procbindgroupsetlabel* = Procbindgroupsetlabel_436208678
+    ProcBindGroupSetLabel* = ProcBindGroupSetLabel_436208678
 else:
   static:
     hint("Declaration of " & "WGPUProcBindGroupSetLabel" &
         " already exists, not redeclaring")
-when not declared(Shaderstage):
+when not declared(ShaderStage):
   type
-    Shaderstage* = Shaderstage_436208682
+    ShaderStage* = ShaderStage_436208682
 else:
   static:
     hint("Declaration of " & "WGPUShaderStage" &
         " already exists, not redeclaring")
-when not declared(Primitivestate):
+when not declared(PrimitiveState):
   type
-    Primitivestate* = Primitivestate_436208684
+    PrimitiveState* = PrimitiveState_436208684
 else:
   static:
     hint("Declaration of " & "WGPUPrimitiveState" &
         " already exists, not redeclaring")
-when not declared(Renderpassdepthstencilattachment):
+when not declared(RenderPassDepthStencilAttachment):
   type
-    Renderpassdepthstencilattachment* = Renderpassdepthstencilattachment_436208686
+    RenderPassDepthStencilAttachment* = RenderPassDepthStencilAttachment_436208686
 else:
   static:
     hint("Declaration of " & "WGPURenderPassDepthStencilAttachment" &
         " already exists, not redeclaring")
-when not declared(Structrenderbundleencoderdescriptor):
+when not declared(StructRenderBundleEncoderDescriptor):
   type
-    Structrenderbundleencoderdescriptor *
-      = Structrenderbundleencoderdescriptor_436208688
+    StructRenderBundleEncoderDescriptor *
+      = StructRenderBundleEncoderDescriptor_436208688
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderBundleEncoderDescriptor" &
         " already exists, not redeclaring")
-when not declared(Storagetexturebindinglayout):
+when not declared(StorageTextureBindingLayout):
   type
-    Storagetexturebindinglayout* = Storagetexturebindinglayout_436208690
+    StorageTextureBindingLayout* = StorageTextureBindingLayout_436208690
 else:
   static:
     hint("Declaration of " & "WGPUStorageTextureBindingLayout" &
         " already exists, not redeclaring")
-when not declared(Addressmode):
+when not declared(AddressMode):
   type
-    Addressmode* = Addressmode_436208692
+    AddressMode* = AddressMode_436208692
 else:
   static:
     hint("Declaration of " & "WGPUAddressMode" &
         " already exists, not redeclaring")
-when not declared(Structhubreport):
+when not declared(StructHubReport):
   type
-    Structhubreport* = Structhubreport_436208694
+    StructHubReport* = StructHubReport_436208694
 else:
   static:
     hint("Declaration of " & "struct_WGPUHubReport" &
         " already exists, not redeclaring")
-when not declared(Structrenderpassdepthstencilattachment):
+when not declared(StructRenderPassDepthStencilAttachment):
   type
-    Structrenderpassdepthstencilattachment *
-      = Structrenderpassdepthstencilattachment_436208698
+    StructRenderPassDepthStencilAttachment *
+      = StructRenderPassDepthStencilAttachment_436208698
 else:
   static:
     hint("Declaration of " & "struct_WGPURenderPassDepthStencilAttachment" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderresolvequeryset):
+when not declared(ProcCommandEncoderResolveQuerySet):
   type
-    Proccommandencoderresolvequeryset* = Proccommandencoderresolvequeryset_436208700
+    ProcCommandEncoderResolveQuerySet* = ProcCommandEncoderResolveQuerySet_436208700
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderResolveQuerySet" &
         " already exists, not redeclaring")
-when not declared(Programmablestagedescriptor):
+when not declared(ProgrammableStageDescriptor):
   type
-    Programmablestagedescriptor* = Programmablestagedescriptor_436208702
+    ProgrammableStageDescriptor* = ProgrammableStageDescriptor_436208702
 else:
   static:
     hint("Declaration of " & "WGPUProgrammableStageDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structcompilationinfo):
+when not declared(StructCompilationInfo):
   type
-    Structcompilationinfo* = Structcompilationinfo_436208704
+    StructCompilationInfo* = StructCompilationInfo_436208704
 else:
   static:
     hint("Declaration of " & "struct_WGPUCompilationInfo" &
         " already exists, not redeclaring")
-when not declared(Texturedescriptor):
+when not declared(TextureDescriptor):
   type
-    Texturedescriptor* = Texturedescriptor_436208706
+    TextureDescriptor* = TextureDescriptor_436208706
 else:
   static:
     hint("Declaration of " & "WGPUTextureDescriptor" &
         " already exists, not redeclaring")
-when not declared(Proccommandencodercopybuffertobuffer):
+when not declared(ProcCommandEncoderCopyBufferToBuffer):
   type
-    Proccommandencodercopybuffertobuffer *
-      = Proccommandencodercopybuffertobuffer_436208710
+    ProcCommandEncoderCopyBufferToBuffer *
+      = ProcCommandEncoderCopyBufferToBuffer_436208710
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderCopyBufferToBuffer" &
         " already exists, not redeclaring")
-when not declared(Structlimits):
+when not declared(StructLimits):
   type
-    Structlimits* = Structlimits_436208712
+    StructLimits* = StructLimits_436208712
 else:
   static:
     hint("Declaration of " & "struct_WGPULimits" &
         " already exists, not redeclaring")
-when not declared(Primitivetopology):
+when not declared(PrimitiveTopology):
   type
-    Primitivetopology* = Primitivetopology_436208714
+    PrimitiveTopology* = PrimitiveTopology_436208714
 else:
   static:
     hint("Declaration of " & "WGPUPrimitiveTopology" &
         " already exists, not redeclaring")
-when not declared(Procdevicepusherrorscope):
+when not declared(ProcDevicePushErrorScope):
   type
-    Procdevicepusherrorscope* = Procdevicepusherrorscope_436208716
+    ProcDevicePushErrorScope* = ProcDevicePushErrorScope_436208716
 else:
   static:
     hint("Declaration of " & "WGPUProcDevicePushErrorScope" &
         " already exists, not redeclaring")
-when not declared(Structcolor):
+when not declared(StructColor):
   type
-    Structcolor* = Structcolor_436208718
+    StructColor* = StructColor_436208718
 else:
   static:
     hint("Declaration of " & "struct_WGPUColor" &
         " already exists, not redeclaring")
-when not declared(Colorwritemask):
+when not declared(ColorWriteMask):
   type
-    Colorwritemask* = Colorwritemask_436208720
+    ColorWriteMask* = ColorWriteMask_436208720
 else:
   static:
     hint("Declaration of " & "WGPUColorWriteMask" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencoderdrawindexed):
+when not declared(ProcRenderBundleEncoderDrawindexed):
   type
-    Procrenderbundleencoderdrawindexed *
-      = Procrenderbundleencoderdrawindexed_436208722
+    ProcRenderBundleEncoderDrawindexed *
+      = ProcRenderBundleEncoderDrawindexed_436208722
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(Proccomputepassencoderinsertdebugmarker):
+when not declared(ProcComputePassEncoderInsertDebugMarker):
   type
-    Proccomputepassencoderinsertdebugmarker *
-      = Proccomputepassencoderinsertdebugmarker_436208724
+    ProcComputePassEncoderInsertDebugMarker *
+      = ProcComputePassEncoderInsertDebugMarker_436208724
 else:
   static:
     hint("Declaration of " & "WGPUProcComputePassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(Wrappedsubmissionindex):
+when not declared(WrappedSubmissionIndex):
   type
-    Wrappedsubmissionindex* = Wrappedsubmissionindex_436208726
+    WrappedSubmissionIndex* = WrappedSubmissionIndex_436208726
 else:
   static:
     hint("Declaration of " & "WGPUWrappedSubmissionIndex" &
         " already exists, not redeclaring")
-when not declared(Shaderdefine):
+when not declared(ShaderDefine):
   type
-    Shaderdefine* = Shaderdefine_436208728
+    ShaderDefine* = ShaderDefine_436208728
 else:
   static:
     hint("Declaration of " & "WGPUShaderDefine" &
         " already exists, not redeclaring")
-when not declared(Proccommandencoderclearbuffer):
+when not declared(ProcCommandEncoderClearBuffer):
   type
-    Proccommandencoderclearbuffer* = Proccommandencoderclearbuffer_436208730
+    ProcCommandEncoderClearBuffer* = ProcCommandEncoderClearBuffer_436208730
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderClearBuffer" &
         " already exists, not redeclaring")
-when not declared(Surfacedescriptorfromwindowshwnd):
+when not declared(SurfaceDescriptorfromwindowshwnd):
   type
-    Surfacedescriptorfromwindowshwnd* = Surfacedescriptorfromwindowshwnd_436208732
+    SurfaceDescriptorfromwindowshwnd* = SurfaceDescriptorfromwindowshwnd_436208732
 else:
   static:
     hint("Declaration of " & "WGPUSurfaceDescriptorFromWindowsHWND" &
         " already exists, not redeclaring")
-when not declared(Shadermodule):
+when not declared(ShaderModule):
   type
-    Shadermodule* = Shadermodule_436208734
+    ShaderModule* = ShaderModule_436208734
 else:
   static:
     hint("Declaration of " & "WGPUShaderModule" &
         " already exists, not redeclaring")
-when not declared(Supportedlimitsextras):
+when not declared(SupportedLimitsextras):
   type
-    Supportedlimitsextras* = Supportedlimitsextras_436208736
+    SupportedLimitsextras* = SupportedLimitsextras_436208736
 else:
   static:
     hint("Declaration of " & "WGPUSupportedLimitsExtras" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreatecommandencoder):
+when not declared(ProcDeviceCreateCommandEncoder):
   type
-    Procdevicecreatecommandencoder* = Procdevicecreatecommandencoder_436208738
+    ProcDeviceCreateCommandEncoder* = ProcDeviceCreateCommandEncoder_436208738
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateCommandEncoder" &
         " already exists, not redeclaring")
-when not declared(Procdeviceenumeratefeatures):
+when not declared(ProcDeviceEnumerateFeatures):
   type
-    Procdeviceenumeratefeatures* = Procdeviceenumeratefeatures_436208740
+    ProcDeviceEnumerateFeatures* = ProcDeviceEnumerateFeatures_436208740
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(Bindgrouplayout):
+when not declared(BindGrouplayout):
   type
-    Bindgrouplayout* = Bindgrouplayout_436208742
+    BindGrouplayout* = BindGrouplayout_436208742
 else:
   static:
     hint("Declaration of " & "WGPUBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(Instancedescriptor):
+when not declared(InstanceDescriptor):
   type
-    Instancedescriptor* = Instancedescriptor_436208744
+    InstanceDescriptor* = InstanceDescriptor_436208744
 else:
   static:
     hint("Declaration of " & "WGPUInstanceDescriptor" &
         " already exists, not redeclaring")
-when not declared(Depthstencilstate):
+when not declared(DepthStencilState):
   type
-    Depthstencilstate* = Depthstencilstate_436208746
+    DepthStencilState* = DepthStencilState_436208746
 else:
   static:
     hint("Declaration of " & "WGPUDepthStencilState" &
         " already exists, not redeclaring")
-when not declared(Textureusage):
+when not declared(TextureUsage):
   type
-    Textureusage* = Textureusage_436208748
+    TextureUsage* = TextureUsage_436208748
 else:
   static:
     hint("Declaration of " & "WGPUTextureUsage" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderexecutebundles):
+when not declared(ProcRenderPassEncoderExecuteBundles):
   type
-    Procrenderpassencoderexecutebundles *
-      = Procrenderpassencoderexecutebundles_436208750
+    ProcRenderPassEncoderExecuteBundles *
+      = ProcRenderPassEncoderExecuteBundles_436208750
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderExecuteBundles" &
         " already exists, not redeclaring")
-when not declared(Proccommandencodercopytexturetobuffer):
+when not declared(ProcCommandEncoderCopyTextureToBuffer):
   type
-    Proccommandencodercopytexturetobuffer *
-      = Proccommandencodercopytexturetobuffer_436208752
+    ProcCommandEncoderCopyTextureToBuffer *
+      = ProcCommandEncoderCopyTextureToBuffer_436208752
 else:
   static:
     hint("Declaration of " & "WGPUProcCommandEncoderCopyTextureToBuffer" &
         " already exists, not redeclaring")
-when not declared(Loadop):
+when not declared(LoadOp):
   type
-    Loadop* = Loadop_436208754
+    LoadOp* = LoadOp_436208754
 else:
   static:
     hint("Declaration of " & "WGPULoadOp" & " already exists, not redeclaring")
-when not declared(Imagecopybuffer):
+when not declared(ImageCopyBuffer):
   type
-    Imagecopybuffer* = Imagecopybuffer_436208756
+    ImageCopyBuffer* = ImageCopyBuffer_436208756
 else:
   static:
     hint("Declaration of " & "WGPUImageCopyBuffer" &
         " already exists, not redeclaring")
-when not declared(Procdevicecreaterenderpipeline):
+when not declared(ProcDeviceCreateRenderPipeline):
   type
-    Procdevicecreaterenderpipeline* = Procdevicecreaterenderpipeline_436208758
+    ProcDeviceCreateRenderPipeline* = ProcDeviceCreateRenderPipeline_436208758
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceCreateRenderPipeline" &
         " already exists, not redeclaring")
-when not declared(Procrenderbundleencodersetbindgroup):
+when not declared(ProcRenderBundleEncoderSetBindGroup):
   type
-    Procrenderbundleencodersetbindgroup *
-      = Procrenderbundleencodersetbindgroup_436208760
+    ProcRenderBundleEncoderSetBindGroup *
+      = ProcRenderBundleEncoderSetBindGroup_436208760
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderBundleEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(Textureaspect):
+when not declared(TextureAspect):
   type
-    Textureaspect* = Textureaspect_436208764
+    TextureAspect* = TextureAspect_436208764
 else:
   static:
     hint("Declaration of " & "WGPUTextureAspect" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencodersetpipeline):
+when not declared(ProcRenderPassEncoderSetPipeline):
   type
-    Procrenderpassencodersetpipeline* = Procrenderpassencodersetpipeline_436208766
+    ProcRenderPassEncoderSetPipeline* = ProcRenderPassEncoderSetPipeline_436208766
 else:
   static:
     hint("Declaration of " & "WGPUProcRenderPassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(Structshadermodulewgsldescriptor):
+when not declared(StructShaderModuleWgslDescriptor):
   type
-    Structshadermodulewgsldescriptor* = Structshadermodulewgsldescriptor_436208768
+    StructShaderModuleWgslDescriptor* = StructShaderModuleWgslDescriptor_436208768
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderModuleWGSLDescriptor" &
         " already exists, not redeclaring")
-when not declared(Structvertexstate):
+when not declared(StructVertexState):
   type
-    Structvertexstate* = Structvertexstate_436208770
+    StructVertexState* = StructVertexState_436208770
 else:
   static:
     hint("Declaration of " & "struct_WGPUVertexState" &
         " already exists, not redeclaring")
-when not declared(Procdevicesetlabel):
+when not declared(ProcDeviceSetLabel):
   type
-    Procdevicesetlabel* = Procdevicesetlabel_436208774
+    ProcDeviceSetLabel* = ProcDeviceSetLabel_436208774
 else:
   static:
     hint("Declaration of " & "WGPUProcDeviceSetLabel" &
         " already exists, not redeclaring")
-when not declared(Structchainedstructout):
+when not declared(StructChainedStructout):
   type
-    Structchainedstructout* = Structchainedstructout_436208776
+    StructChainedStructout* = StructChainedStructout_436208776
 else:
   static:
     hint("Declaration of " & "struct_WGPUChainedStructOut" &
         " already exists, not redeclaring")
-when not declared(Renderbundle):
+when not declared(RenderBundle):
   type
-    Renderbundle* = Renderbundle_436208782
+    RenderBundle* = RenderBundle_436208782
 else:
   static:
     hint("Declaration of " & "WGPURenderBundle" &
         " already exists, not redeclaring")
-when not declared(Featurename):
+when not declared(FeatureName):
   type
-    Featurename* = Featurename_436208784
+    FeatureName* = FeatureName_436208784
 else:
   static:
     hint("Declaration of " & "WGPUFeatureName" &
         " already exists, not redeclaring")
-when not declared(Structprogrammablestagedescriptor):
+when not declared(StructProgrammableStageDescriptor):
   type
-    Structprogrammablestagedescriptor* = Structprogrammablestagedescriptor_436208788
+    StructProgrammableStageDescriptor* = StructProgrammableStageDescriptor_436208788
 else:
   static:
     hint("Declaration of " & "struct_WGPUProgrammableStageDescriptor" &
         " already exists, not redeclaring")
-when not declared(Blendstate):
+when not declared(BlendState):
   type
-    Blendstate* = Blendstate_436208790
+    BlendState* = BlendState_436208790
 else:
   static:
     hint("Declaration of " & "WGPUBlendState" &
         " already exists, not redeclaring")
-when not declared(Bindgrouplayoutentry):
+when not declared(BindGrouplayoutentry):
   type
-    Bindgrouplayoutentry* = Bindgrouplayoutentry_436208792
+    BindGrouplayoutentry* = BindGrouplayoutentry_436208792
 else:
   static:
     hint("Declaration of " & "WGPUBindGroupLayoutEntry" &
         " already exists, not redeclaring")
-when not declared(Procinstancerequestadapter):
+when not declared(ProcInstanceRequestAdapter):
   type
-    Procinstancerequestadapter* = Procinstancerequestadapter_436208794
+    ProcInstanceRequestAdapter* = ProcInstanceRequestAdapter_436208794
 else:
   static:
     hint("Declaration of " & "WGPUProcInstanceRequestAdapter" &
         " already exists, not redeclaring")
-when not declared(Structshadermodulecompilationhint):
+when not declared(StructShaderModuleCompilationHint):
   type
-    Structshadermodulecompilationhint* = Structshadermodulecompilationhint_436208796
+    StructShaderModuleCompilationHint* = StructShaderModuleCompilationHint_436208796
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderModuleCompilationHint" &
         " already exists, not redeclaring")
-when not declared(Vertexstate):
+when not declared(VertexState):
   type
-    Vertexstate* = Vertexstate_436208798
+    VertexState* = VertexState_436208798
 else:
   static:
     hint("Declaration of " & "WGPUVertexState" &
         " already exists, not redeclaring")
-when not declared(Structprimitivestate):
+when not declared(StructPrimitiveState):
   type
-    Structprimitivestate* = Structprimitivestate_436208800
+    StructPrimitiveState* = StructPrimitiveState_436208800
 else:
   static:
     hint("Declaration of " & "struct_WGPUPrimitiveState" &
         " already exists, not redeclaring")
-when not declared(Bindgroupdescriptor):
+when not declared(BindGroupdescriptor):
   type
-    Bindgroupdescriptor* = Bindgroupdescriptor_436208804
+    BindGroupdescriptor* = BindGroupdescriptor_436208804
 else:
   static:
     hint("Declaration of " & "WGPUBindGroupDescriptor" &
         " already exists, not redeclaring")
-when not declared(Bufferbindingtype):
+when not declared(BufferBindingType):
   type
-    Bufferbindingtype* = Bufferbindingtype_436208806
+    BufferBindingType* = BufferBindingType_436208806
 else:
   static:
     hint("Declaration of " & "WGPUBufferBindingType" &
         " already exists, not redeclaring")
-when not declared(Procrenderpassencoderendpipelinestatisticsquery):
+when not declared(ProcRenderPassEncoderEndpipelinestatisticsquery):
   type
-    Procrenderpassencoderendpipelinestatisticsquery *
-      = Procrenderpassencoderendpipelinestatisticsquery_436208808
+    ProcRenderPassEncoderEndpipelinestatisticsquery *
+      = ProcRenderPassEncoderEndpipelinestatisticsquery_436208808
 else:
   static:
     hint("Declaration of " &
         "WGPUProcRenderPassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(Texturedimension):
+when not declared(TextureDimension):
   type
-    Texturedimension* = Texturedimension_436208810
+    TextureDimension* = TextureDimension_436208810
 else:
   static:
     hint("Declaration of " & "WGPUTextureDimension" &
         " already exists, not redeclaring")
-when not declared(Structbindgrouplayoutentry):
+when not declared(StructBindGroupLayoutEntry):
   type
-    Structbindgrouplayoutentry* = Structbindgrouplayoutentry_436208812
+    StructBindGroupLayoutEntry* = StructBindGroupLayoutEntry_436208812
 else:
   static:
     hint("Declaration of " & "struct_WGPUBindGroupLayoutEntry" &
         " already exists, not redeclaring")
-when not declared(Structshadermoduledescriptor):
+when not declared(StructShaderModuleDescriptor):
   type
-    Structshadermoduledescriptor* = Structshadermoduledescriptor_436208814
+    StructShaderModuleDescriptor* = StructShaderModuleDescriptor_436208814
 else:
   static:
     hint("Declaration of " & "struct_WGPUShaderModuleDescriptor" &
         " already exists, not redeclaring")
-when not declared(Pipelinelayoutdescriptor):
+when not declared(PipelineLayoutdescriptor):
   type
-    Pipelinelayoutdescriptor* = Pipelinelayoutdescriptor_436208816
+    PipelineLayoutdescriptor* = PipelineLayoutdescriptor_436208816
 else:
   static:
     hint("Declaration of " & "WGPUPipelineLayoutDescriptor" &
         " already exists, not redeclaring")
-when not declared(buffergetconstmappedrange):
-  proc buffergetconstmappedrange*(buffer: Buffer_436208339; offset: csize_t;
+when not declared(bufferGetConstMappedRange):
+  proc bufferGetConstMappedRange*(buffer: Buffer_436208339; offset: csize_t;
                                   size: csize_t): pointer {.cdecl,
       importc: "wgpuBufferGetConstMappedRange".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferGetConstMappedRange" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderpushdebuggroup):
-  proc renderpassencoderpushdebuggroup*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderPushDebugGroup):
+  proc renderPassEncoderPushDebugGroup*(renderpassencoder: RenderPassEncoder_436208585;
                                         grouplabel: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPassEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(queuewritebuffer):
-  proc queuewritebuffer*(queue: Queue_436208067; buffer: Buffer_436208339;
+when not declared(queueWriteBuffer):
+  proc queueWriteBuffer*(queue: Queue_436208067; buffer: Buffer_436208339;
                          bufferoffset: uint64; data: pointer;
                              size: csize_t): void {.
       cdecl, importc: "wgpuQueueWriteBuffer".}
@@ -6647,72 +6647,72 @@ else:
   static:
     hint("Declaration of " & "wgpuQueueWriteBuffer" &
         " already exists, not redeclaring")
-when not declared(pipelinelayoutsetlabel):
-  proc pipelinelayoutsetlabel*(pipelinelayout: Pipelinelayout_436208415;
+when not declared(pipelineLayoutSetLabel):
+  proc pipelineLayoutSetLabel*(pipelinelayout: PipelineLayout_436208415;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuPipelineLayoutSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuPipelineLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(renderpipelinegetbindgrouplayout):
-  proc renderpipelinegetbindgrouplayout*(renderpipeline: Renderpipeline_436208391;
-      groupindex: uint32): Bindgrouplayout_436208743 {.cdecl,
+when not declared(renderPipelineGetBindGroupLayout):
+  proc renderPipelineGetBindGroupLayout*(renderpipeline: RenderPipeline_436208391;
+      groupindex: uint32): BindGrouplayout_436208743 {.cdecl,
       importc: "wgpuRenderPipelineGetBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(adaptergetlimits):
-  proc adaptergetlimits*(adapter: Adapter_436208057;
-      limits: ptr Supportedlimits_436208135): bool {.
+when not declared(adapterGetLimits):
+  proc adapterGetLimits*(adapter: Adapter_436208057;
+      limits: ptr SupportedLimits_436208135): bool {.
       cdecl, importc: "wgpuAdapterGetLimits".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterGetLimits" &
         " already exists, not redeclaring")
-when not declared(devicegetlimits):
-  proc devicegetlimits*(device: Device_436207979;
-      limits: ptr Supportedlimits_436208135): bool {.
+when not declared(deviceGetLimits):
+  proc deviceGetLimits*(device: Device_436207979;
+      limits: ptr SupportedLimits_436208135): bool {.
       cdecl, importc: "wgpuDeviceGetLimits".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceGetLimits" &
         " already exists, not redeclaring")
-when not declared(computepassencoderend):
-  proc computepassencoderend*(computepassencoder: Computepassencoder_436208535): void {.
+when not declared(computePassEncoderEnd):
+  proc computePassEncoderEnd*(computepassencoder: ComputePassEncoder_436208535): void {.
       cdecl, importc: "wgpuComputePassEncoderEnd".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(deviceenumeratefeatures):
-  proc deviceenumeratefeatures*(device: Device_436207979;
-                                features: ptr Featurename_436208785): csize_t {.
+when not declared(deviceEnumerateFeatures):
+  proc deviceEnumerateFeatures*(device: Device_436207979;
+                                features: ptr FeatureName_436208785): csize_t {.
       cdecl, importc: "wgpuDeviceEnumerateFeatures".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(devicecreaterenderpipeline):
-  proc devicecreaterenderpipeline*(device: Device_436207979;
-                                   descriptor: ptr Renderpipelinedescriptor_436208475): Renderpipeline_436208391 {.
+when not declared(deviceCreateRenderPipeline):
+  proc deviceCreateRenderPipeline*(device: Device_436207979;
+                                   descriptor: ptr RenderPipelinedescriptor_436208475): RenderPipeline_436208391 {.
       cdecl, importc: "wgpuDeviceCreateRenderPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderPipeline" &
         " already exists, not redeclaring")
-when not declared(queueonsubmittedworkdone):
-  proc queueonsubmittedworkdone*(queue: Queue_436208067;
-                                 callback: Queueworkdonecallback_436208491;
+when not declared(queueOnSubmittedWorkDone):
+  proc queueOnSubmittedWorkDone*(queue: Queue_436208067;
+                                 callback: QueueWorkDoneCallback_436208491;
                                  userdata: pointer): void {.cdecl,
       importc: "wgpuQueueOnSubmittedWorkDone".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueOnSubmittedWorkDone" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderdrawindexed):
-  proc renderpassencoderdrawindexed*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderDrawindexed):
+  proc renderPassEncoderDrawindexed*(renderpassencoder: RenderPassEncoder_436208585;
                                      indexcount: uint32; instancecount: uint32;
                                      firstindex: uint32; basevertex: int32;
                                      firstinstance: uint32): void {.cdecl,
@@ -6721,17 +6721,17 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderfinish):
-  proc renderbundleencoderfinish*(renderbundleencoder: Renderbundleencoder_436208351;
-                                  descriptor: ptr Renderbundledescriptor_436208169): Renderbundle_436208783 {.
+when not declared(renderBundleEncoderFinish):
+  proc renderBundleEncoderFinish*(renderbundleencoder: RenderBundleencoder_436208351;
+                                  descriptor: ptr RenderBundledescriptor_436208169): RenderBundle_436208783 {.
       cdecl, importc: "wgpuRenderBundleEncoderFinish".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(renderpassencodermultidrawindexedindirectcount):
-  proc renderpassencodermultidrawindexedindirectcount*(
-      encoder: Renderpassencoder_436208585; buffer: Buffer_436208339;
+when not declared(renderPassEncoderMultiDrawIndexedIndirectcount):
+  proc renderPassEncoderMultiDrawIndexedIndirectcount*(
+      encoder: RenderPassEncoder_436208585; buffer: Buffer_436208339;
       offset: uint64; countbuffer: Buffer_436208339; countbufferoffset: uint64;
       maxcount: uint32): void {.cdecl, importc: "wgpuRenderPassEncoderMultiDrawIndexedIndirectCount".}
 else:
@@ -6739,30 +6739,30 @@ else:
     hint("Declaration of " &
         "wgpuRenderPassEncoderMultiDrawIndexedIndirectCount" &
         " already exists, not redeclaring")
-when not declared(renderpassencodermultidrawindexedindirect):
-  proc renderpassencodermultidrawindexedindirect*(encoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderMultiDrawIndexedIndirect):
+  proc renderPassEncoderMultiDrawIndexedIndirect*(encoder: RenderPassEncoder_436208585;
       buffer: Buffer_436208339; offset: uint64; count: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndexedIndirect".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(getversion):
-  proc getversion*(): uint32 {.cdecl, importc: "wgpuGetVersion".}
+when not declared(getVersion):
+  proc getVersion*(): uint32 {.cdecl, importc: "wgpuGetVersion".}
 else:
   static:
     hint("Declaration of " & "wgpuGetVersion" &
         " already exists, not redeclaring")
-when not declared(devicecreatesampler):
-  proc devicecreatesampler*(device: Device_436207979;
-                            descriptor: ptr Samplerdescriptor_436208293): Sampler_436208537 {.
+when not declared(deviceCreateSampler):
+  proc deviceCreateSampler*(device: Device_436207979;
+                            descriptor: ptr SamplerDescriptor_436208293): Sampler_436208537 {.
       cdecl, importc: "wgpuDeviceCreateSampler".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateSampler" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderdrawindirect):
-  proc renderpassencoderdrawindirect*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderDrawindirect):
+  proc renderPassEncoderDrawindirect*(renderpassencoder: RenderPassEncoder_436208585;
                                       indirectbuffer: Buffer_436208339;
                                       indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderPassEncoderDrawIndirect".}
@@ -6770,26 +6770,26 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(computepipelinegetbindgrouplayout):
-  proc computepipelinegetbindgrouplayout*(computepipeline: Computepipeline_436208357;
-      groupindex: uint32): Bindgrouplayout_436208743 {.cdecl,
+when not declared(computePipelineGetBindGroupLayout):
+  proc computePipelineGetBindGroupLayout*(computepipeline: ComputePipeline_436208357;
+      groupindex: uint32): BindGrouplayout_436208743 {.cdecl,
       importc: "wgpuComputePipelineGetBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineGetBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(devicepoperrorscope):
-  proc devicepoperrorscope*(device: Device_436207979; callback: Errorcallback_436208291;
+when not declared(devicePopErrorScope):
+  proc devicePopErrorScope*(device: Device_436207979; callback: ErrorCallback_436208291;
                             userdata: pointer): bool {.cdecl,
       importc: "wgpuDevicePopErrorScope".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePopErrorScope" &
         " already exists, not redeclaring")
-when not declared(renderbundleencodersetbindgroup):
-  proc renderbundleencodersetbindgroup*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderSetBindGroup):
+  proc renderBundleEncoderSetBindGroup*(renderbundleencoder: RenderBundleencoder_436208351;
                                         groupindex: uint32;
-                                            group: Bindgroup_436208377;
+                                            group: BindGroup_436208377;
                                         dynamicoffsetcount: uint32;
                                         dynamicoffsets: ptr uint32): void {.
       cdecl, importc: "wgpuRenderBundleEncoderSetBindGroup".}
@@ -6797,74 +6797,74 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(devicecreateshadermodule):
-  proc devicecreateshadermodule*(device: Device_436207979;
-                                 descriptor: ptr Shadermoduledescriptor_436208119): Shadermodule_436208735 {.
+when not declared(deviceCreateShaderModule):
+  proc deviceCreateShaderModule*(device: Device_436207979;
+                                 descriptor: ptr ShaderModuledescriptor_436208119): ShaderModule_436208735 {.
       cdecl, importc: "wgpuDeviceCreateShaderModule".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateShaderModule" &
         " already exists, not redeclaring")
-when not declared(setloglevel):
-  proc setloglevel*(level: Loglevel_436208033): void {.cdecl,
+when not declared(setLogLevel):
+  proc setLogLevel*(level: LogLevel_436208033): void {.cdecl,
       importc: "wgpuSetLogLevel".}
 else:
   static:
     hint("Declaration of " & "wgpuSetLogLevel" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetstencilreference):
-  proc renderpassencodersetstencilreference*(
-      renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetStencilReference):
+  proc renderPassEncoderSetStencilReference*(
+      renderpassencoder: RenderPassEncoder_436208585;
           reference: uint32): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetStencilReference".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetStencilReference" &
         " already exists, not redeclaring")
-when not declared(devicecreateswapchain):
-  proc devicecreateswapchain*(device: Device_436207979; surface: Surface_436208205;
-                              descriptor: ptr Swapchaindescriptor_436208649): Swapchain_436208593 {.
+when not declared(deviceCreateSwapChain):
+  proc deviceCreateSwapChain*(device: Device_436207979; surface: Surface_436208205;
+                              descriptor: ptr SwapChaindescriptor_436208649): SwapChain_436208593 {.
       cdecl, importc: "wgpuDeviceCreateSwapChain".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateSwapChain" &
         " already exists, not redeclaring")
-when not declared(getprocaddress):
-  proc getprocaddress*(device: Device_436207979;
+when not declared(getProcAddress):
+  proc getProcAddress*(device: Device_436207979;
       procname: ptr cuchar): Proc_436208435 {.
       cdecl, importc: "wgpuGetProcAddress".}
 else:
   static:
     hint("Declaration of " & "wgpuGetProcAddress" &
         " already exists, not redeclaring")
-when not declared(surfacegetpreferredformat):
-  proc surfacegetpreferredformat*(surface: Surface_436208205;
-      adapter: Adapter_436208057): Textureformat_436208002 {.
+when not declared(surfaceGetPreferredFormat):
+  proc surfaceGetPreferredFormat*(surface: Surface_436208205;
+      adapter: Adapter_436208057): TextureFormat_436208002 {.
       cdecl, importc: "wgpuSurfaceGetPreferredFormat".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetPreferredFormat" &
         " already exists, not redeclaring")
-when not declared(renderbundleencodersetlabel):
-  proc renderbundleencodersetlabel*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderSetLabel):
+  proc renderBundleEncoderSetLabel*(renderbundleencoder: RenderBundleencoder_436208351;
                                     label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderBundleEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(adapterrequestdevice):
-  proc adapterrequestdevice*(adapter: Adapter_436208057;
-                             descriptor: ptr Devicedescriptor_436208669;
-                             callback: Requestdevicecallback_436208273;
+when not declared(adapterRequestDevice):
+  proc adapterRequestDevice*(adapter: Adapter_436208057;
+                             descriptor: ptr DeviceDescriptor_436208669;
+                             callback: RequestDeviceCallback_436208273;
                              userdata: pointer): void {.cdecl,
       importc: "wgpuAdapterRequestDevice".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterRequestDevice" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetscissorrect):
-  proc renderpassencodersetscissorrect*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetScissorRect):
+  proc renderPassEncoderSetScissorRect*(renderpassencoder: RenderPassEncoder_436208585;
                                         x: uint32; y: uint32; width: uint32;
                                         height: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetScissorRect".}
@@ -6872,15 +6872,15 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetScissorRect" &
         " already exists, not redeclaring")
-when not declared(commandencoderdrop):
-  proc commandencoderdrop*(commandencoder: Commandencoder_436208259): void {.
+when not declared(commandEncoderDrop):
+  proc commandEncoderDrop*(commandencoder: CommandEncoder_436208259): void {.
       cdecl, importc: "wgpuCommandEncoderDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderDrop" &
         " already exists, not redeclaring")
-when not declared(commandencoderclearbuffer):
-  proc commandencoderclearbuffer*(commandencoder: Commandencoder_436208259;
+when not declared(commandEncoderClearBuffer):
+  proc commandEncoderClearBuffer*(commandencoder: CommandEncoder_436208259;
                                   buffer: Buffer_436208339; offset: uint64;
                                   size: uint64): void {.cdecl,
       importc: "wgpuCommandEncoderClearBuffer".}
@@ -6888,24 +6888,24 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderClearBuffer" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderinsertdebugmarker):
-  proc renderpassencoderinsertdebugmarker*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderInsertDebugMarker):
+  proc renderPassEncoderInsertDebugMarker*(renderpassencoder: RenderPassEncoder_436208585;
       markerlabel: ptr cuchar): void {.cdecl,
           importc: "wgpuRenderPassEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(commandencoderbeginrenderpass):
-  proc commandencoderbeginrenderpass*(commandencoder: Commandencoder_436208259;
-                                      descriptor: ptr Renderpassdescriptor_436208249): Renderpassencoder_436208585 {.
+when not declared(commandEncoderBeginRenderPass):
+  proc commandEncoderBeginRenderPass*(commandencoder: CommandEncoder_436208259;
+                                      descriptor: ptr RenderPassDescriptor_436208249): RenderPassEncoder_436208585 {.
       cdecl, importc: "wgpuCommandEncoderBeginRenderPass".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderBeginRenderPass" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderdraw):
-  proc renderpassencoderdraw*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderDraw):
+  proc renderPassEncoderDraw*(renderpassencoder: RenderPassEncoder_436208585;
                               vertexcount: uint32; instancecount: uint32;
                               firstvertex: uint32;
                                   firstinstance: uint32): void {.
@@ -6914,65 +6914,65 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDraw" &
         " already exists, not redeclaring")
-when not declared(shadermodulesetlabel):
-  proc shadermodulesetlabel*(shadermodule: Shadermodule_436208735;
+when not declared(shaderModuleSetLabel):
+  proc shaderModuleSetLabel*(shadermodule: ShaderModule_436208735;
                              label: ptr cuchar): void {.cdecl,
       importc: "wgpuShaderModuleSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuShaderModuleSetLabel" &
         " already exists, not redeclaring")
-when not declared(generatereport):
-  proc generatereport*(report: ptr Globalreport_436208483): void {.cdecl,
+when not declared(generateReport):
+  proc generateReport*(report: ptr GlobalReport_436208483): void {.cdecl,
       importc: "wgpuGenerateReport".}
 else:
   static:
     hint("Declaration of " & "wgpuGenerateReport" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderbeginpipelinestatisticsquery):
-  proc renderpassencoderbeginpipelinestatisticsquery*(
-      renderpassencoder: Renderpassencoder_436208585;
-          queryset: Queryset_436208505;
+when not declared(renderPassEncoderBeginPipelineStatisticsQuery):
+  proc renderPassEncoderBeginPipelineStatisticsQuery*(
+      renderpassencoder: RenderPassEncoder_436208585;
+          queryset: QuerySet_436208505;
       queryindex: uint32): void {.cdecl,
           importc: "wgpuRenderPassEncoderBeginPipelineStatisticsQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(surfacegetsupportedformats):
-  proc surfacegetsupportedformats*(surface: Surface_436208205; adapter: Adapter_436208057;
-                                   count: ptr csize_t): ptr Textureformat_436208002 {.
+when not declared(surfaceGetSupportedFormats):
+  proc surfaceGetSupportedFormats*(surface: Surface_436208205; adapter: Adapter_436208057;
+                                   count: ptr csize_t): ptr TextureFormat_436208002 {.
       cdecl, importc: "wgpuSurfaceGetSupportedFormats".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetSupportedFormats" &
         " already exists, not redeclaring")
-when not declared(samplersetlabel):
-  proc samplersetlabel*(sampler: Sampler_436208537; label: ptr cuchar): void {.
+when not declared(samplerSetLabel):
+  proc samplerSetLabel*(sampler: Sampler_436208537; label: ptr cuchar): void {.
       cdecl, importc: "wgpuSamplerSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuSamplerSetLabel" &
         " already exists, not redeclaring")
-when not declared(instancerequestadapter):
-  proc instancerequestadapter*(instance: Instance_436208049;
-                               options: ptr Requestadapteroptions_436208445;
-                               callback: Requestadaptercallback_436208375;
+when not declared(instanceRequestAdapter):
+  proc instanceRequestAdapter*(instance: Instance_436208049;
+                               options: ptr RequestAdapterOptions_436208445;
+                               callback: RequestAdapterCallback_436208375;
                                userdata: pointer): void {.cdecl,
       importc: "wgpuInstanceRequestAdapter".}
 else:
   static:
     hint("Declaration of " & "wgpuInstanceRequestAdapter" &
         " already exists, not redeclaring")
-when not declared(bufferunmap):
-  proc bufferunmap*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferUnmap):
+  proc bufferUnmap*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferUnmap".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferUnmap" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderdrawindirect):
-  proc renderbundleencoderdrawindirect*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderDrawindirect):
+  proc renderBundleEncoderDrawindirect*(renderbundleencoder: RenderBundleencoder_436208351;
                                         indirectbuffer: Buffer_436208339;
                                         indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderDrawIndirect".}
@@ -6980,47 +6980,47 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(bindgroupsetlabel):
-  proc bindgroupsetlabel*(bindgroup: Bindgroup_436208377;
+when not declared(bindGroupSetLabel):
+  proc bindGroupSetLabel*(bindgroup: BindGroup_436208377;
       label: ptr cuchar): void {.
       cdecl, importc: "wgpuBindGroupSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupSetLabel" &
         " already exists, not redeclaring")
-when not declared(bufferdestroy):
-  proc bufferdestroy*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferDestroy):
+  proc bufferDestroy*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferDestroy" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderendocclusionquery):
-  proc renderpassencoderendocclusionquery*(
-    renderpassencoder: Renderpassencoder_436208585): void {.
+when not declared(renderPassEncoderEndocclusionquery):
+  proc renderPassEncoderEndocclusionquery*(
+    renderpassencoder: RenderPassEncoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderEndOcclusionQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEndOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(devicedestroy):
-  proc devicedestroy*(device: Device_436207979): void {.cdecl,
+when not declared(deviceDestroy):
+  proc deviceDestroy*(device: Device_436207979): void {.cdecl,
       importc: "wgpuDeviceDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceDestroy" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderexecutebundles):
-  proc renderpassencoderexecutebundles*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderExecuteBundles):
+  proc renderPassEncoderExecuteBundles*(renderpassencoder: RenderPassEncoder_436208585;
                                         bundlescount: uint32;
-                                        bundles: ptr Renderbundle_436208783): void {.
+                                        bundles: ptr RenderBundle_436208783): void {.
       cdecl, importc: "wgpuRenderPassEncoderExecuteBundles".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderExecuteBundles" &
         " already exists, not redeclaring")
-when not declared(commandencodercopybuffertobuffer):
-  proc commandencodercopybuffertobuffer*(commandencoder: Commandencoder_436208259;
+when not declared(commandEncoderCopyBufferToBuffer):
+  proc commandEncoderCopyBufferToBuffer*(commandencoder: CommandEncoder_436208259;
       source: Buffer_436208339; sourceoffset: uint64;
           destination: Buffer_436208339;
       destinationoffset: uint64; size: uint64): void {.cdecl,
@@ -7029,9 +7029,9 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyBufferToBuffer" &
         " already exists, not redeclaring")
-when not declared(computepassencoderdispatchworkgroupsindirect):
-  proc computepassencoderdispatchworkgroupsindirect*(
-      computepassencoder: Computepassencoder_436208535;
+when not declared(computePassEncoderDispatchWorkgroupsindirect):
+  proc computePassEncoderDispatchWorkgroupsindirect*(
+      computepassencoder: ComputePassEncoder_436208535;
           indirectbuffer: Buffer_436208339;
       indirectoffset: uint64): void {.cdecl,
           importc: "wgpuComputePassEncoderDispatchWorkgroupsIndirect".}
@@ -7039,26 +7039,26 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderDispatchWorkgroupsIndirect" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderpopdebuggroup):
-  proc renderpassencoderpopdebuggroup*(renderpassencoder: Renderpassencoder_436208585): void {.
+when not declared(renderPassEncoderPopDebugGroup):
+  proc renderPassEncoderPopDebugGroup*(renderpassencoder: RenderPassEncoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(commandencodercopytexturetotexture):
-  proc commandencodercopytexturetotexture*(commandencoder: Commandencoder_436208259;
-      source: ptr Imagecopytexture_436208507;
-          destination: ptr Imagecopytexture_436208507;
-      copysize: ptr Extent3d_436208239): void {.cdecl,
+when not declared(commandEncoderCopyTextureToTexture):
+  proc commandEncoderCopyTextureToTexture*(commandencoder: CommandEncoder_436208259;
+      source: ptr ImageCopyTexture_436208507;
+          destination: ptr ImageCopyTexture_436208507;
+      copysize: ptr Extent3D_436208239): void {.cdecl,
       importc: "wgpuCommandEncoderCopyTextureToTexture".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyTextureToTexture" &
         " already exists, not redeclaring")
-when not declared(commandencoderresolvequeryset):
-  proc commandencoderresolvequeryset*(commandencoder: Commandencoder_436208259;
-                                      queryset: Queryset_436208505;
+when not declared(commandEncoderResolveQuerySet):
+  proc commandEncoderResolveQuerySet*(commandencoder: CommandEncoder_436208259;
+                                      queryset: QuerySet_436208505;
                                       firstquery: uint32; querycount: uint32;
                                       destination: Buffer_436208339;
                                       destinationoffset: uint64): void {.cdecl,
@@ -7067,16 +7067,16 @@ else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderResolveQuerySet" &
         " already exists, not redeclaring")
-when not declared(devicepusherrorscope):
-  proc devicepusherrorscope*(device: Device_436207979;
-      filter: Errorfilter_436208149): void {.
+when not declared(devicePushErrorScope):
+  proc devicePushErrorScope*(device: Device_436207979;
+      filter: ErrorFilter_436208149): void {.
       cdecl, importc: "wgpuDevicePushErrorScope".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePushErrorScope" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderdrawindexed):
-  proc renderbundleencoderdrawindexed*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderDrawindexed):
+  proc renderBundleEncoderDrawindexed*(renderbundleencoder: RenderBundleencoder_436208351;
                                        indexcount: uint32;
                                        instancecount: uint32;
                                        firstindex: uint32; basevertex: int32;
@@ -7086,16 +7086,16 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndexed" &
         " already exists, not redeclaring")
-when not declared(devicecreatebindgrouplayout):
-  proc devicecreatebindgrouplayout*(device: Device_436207979;
-                                    descriptor: ptr Bindgrouplayoutdescriptor_436208327): Bindgrouplayout_436208743 {.
+when not declared(deviceCreateBindGrouplayout):
+  proc deviceCreateBindGrouplayout*(device: Device_436207979;
+                                    descriptor: ptr BindGrouplayoutdescriptor_436208327): BindGrouplayout_436208743 {.
       cdecl, importc: "wgpuDeviceCreateBindGroupLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBindGroupLayout" &
         " already exists, not redeclaring")
-when not declared(renderpassencodermultidrawindirectcount):
-  proc renderpassencodermultidrawindirectcount*(encoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderMultiDrawIndirectcount):
+  proc renderPassEncoderMultiDrawIndirectcount*(encoder: RenderPassEncoder_436208585;
       buffer: Buffer_436208339; offset: uint64; countbuffer: Buffer_436208339;
       countbufferoffset: uint64; maxcount: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndirectCount".}
@@ -7103,74 +7103,74 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndirectCount" &
         " already exists, not redeclaring")
-when not declared(computepassencoderpushdebuggroup):
-  proc computepassencoderpushdebuggroup*(computepassencoder: Computepassencoder_436208535;
+when not declared(computePassEncoderPushDebugGroup):
+  proc computePassEncoderPushDebugGroup*(computepassencoder: ComputePassEncoder_436208535;
       grouplabel: ptr cuchar): void {.cdecl,
           importc: "wgpuComputePassEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(devicecreatebindgroup):
-  proc devicecreatebindgroup*(device: Device_436207979;
-                              descriptor: ptr Bindgroupdescriptor_436208805): Bindgroup_436208377 {.
+when not declared(deviceCreateBindGroup):
+  proc deviceCreateBindGroup*(device: Device_436207979;
+                              descriptor: ptr BindGroupdescriptor_436208805): BindGroup_436208377 {.
       cdecl, importc: "wgpuDeviceCreateBindGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBindGroup" &
         " already exists, not redeclaring")
-when not declared(queuesubmitforindex):
-  proc queuesubmitforindex*(queue: Queue_436208067; commandcount: uint32;
-                            commands: ptr Commandbuffer_436208629): Submissionindex_436208115 {.
+when not declared(queueSubmitforindex):
+  proc queueSubmitforindex*(queue: Queue_436208067; commandcount: uint32;
+                            commands: ptr CommandBuffer_436208629): SubmissionIndex_436208115 {.
       cdecl, importc: "wgpuQueueSubmitForIndex".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSubmitForIndex" &
         " already exists, not redeclaring")
-when not declared(adapterdrop):
-  proc adapterdrop*(adapter: Adapter_436208057): void {.cdecl,
+when not declared(adapterDrop):
+  proc adapterDrop*(adapter: Adapter_436208057): void {.cdecl,
       importc: "wgpuAdapterDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterDrop" &
         " already exists, not redeclaring")
-when not declared(buffermapasync):
-  proc buffermapasync*(buffer: Buffer_436208339; mode: Mapmodeflags_436208215;
+when not declared(bufferMapAsync):
+  proc bufferMapAsync*(buffer: Buffer_436208339; mode: MapModeflags_436208215;
                        offset: csize_t; size: csize_t;
-                       callback: Buffermapcallback_436208251;
+                       callback: BufferMapCallback_436208251;
                            userdata: pointer): void {.
       cdecl, importc: "wgpuBufferMapAsync".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferMapAsync" &
         " already exists, not redeclaring")
-when not declared(devicesetlabel):
-  proc devicesetlabel*(device: Device_436207979; label: ptr cuchar): void {.
+when not declared(deviceSetLabel):
+  proc deviceSetLabel*(device: Device_436207979; label: ptr cuchar): void {.
       cdecl, importc: "wgpuDeviceSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceSetLabel" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetindexbuffer):
-  proc renderpassencodersetindexbuffer*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetIndexBuffer):
+  proc renderPassEncoderSetIndexBuffer*(renderpassencoder: RenderPassEncoder_436208585;
                                         buffer: Buffer_436208339;
-                                        format: Indexformat_436208301;
+                                        format: IndexFormat_436208301;
                                         offset: uint64; size: uint64): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetIndexBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(devicehasfeature):
-  proc devicehasfeature*(device: Device_436207979;
-      feature: Featurename_436208785): bool {.
+when not declared(deviceHasFeature):
+  proc deviceHasFeature*(device: Device_436207979;
+      feature: FeatureName_436208785): bool {.
       cdecl, importc: "wgpuDeviceHasFeature".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceHasFeature" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetviewport):
-  proc renderpassencodersetviewport*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetViewport):
+  proc renderPassEncoderSetViewport*(renderpassencoder: RenderPassEncoder_436208585;
                                      x: cfloat; y: cfloat; width: cfloat;
                                      height: cfloat; mindepth: cfloat;
                                      maxdepth: cfloat): void {.cdecl,
@@ -7179,108 +7179,108 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetViewport" &
         " already exists, not redeclaring")
-when not declared(texturesetlabel):
-  proc texturesetlabel*(texture: Texture_436208006; label: ptr cuchar): void {.
+when not declared(textureSetLabel):
+  proc textureSetLabel*(texture: Texture_436208006; label: ptr cuchar): void {.
       cdecl, importc: "wgpuTextureSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureSetLabel" &
         " already exists, not redeclaring")
-when not declared(devicecreatequeryset):
-  proc devicecreatequeryset*(device: Device_436207979;
-                             descriptor: ptr Querysetdescriptor_436208341): Queryset_436208505 {.
+when not declared(deviceCreateQuerySet):
+  proc deviceCreateQuerySet*(device: Device_436207979;
+                             descriptor: ptr QuerySetdescriptor_436208341): QuerySet_436208505 {.
       cdecl, importc: "wgpuDeviceCreateQuerySet".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateQuerySet" &
         " already exists, not redeclaring")
-when not declared(swapchaingetcurrenttextureview):
-  proc swapchaingetcurrenttextureview*(swapchain: Swapchain_436208593): Textureview_436208441 {.
+when not declared(swapChainGetCurrentTextureView):
+  proc swapChainGetCurrentTextureView*(swapchain: SwapChain_436208593): TextureView_436208441 {.
       cdecl, importc: "wgpuSwapChainGetCurrentTextureView".}
 else:
   static:
     hint("Declaration of " & "wgpuSwapChainGetCurrentTextureView" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetpushconstants):
-  proc renderpassencodersetpushconstants*(encoder: Renderpassencoder_436208585;
-      stages: Shaderstageflags_436208397; offset: uint32; sizebytes: uint32;
+when not declared(renderPassEncoderSetPushConstants):
+  proc renderPassEncoderSetPushConstants*(encoder: RenderPassEncoder_436208585;
+      stages: ShaderStageflags_436208397; offset: uint32; sizebytes: uint32;
       data: pointer): void {.cdecl,
                              importc: "wgpuRenderPassEncoderSetPushConstants".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetPushConstants" &
         " already exists, not redeclaring")
-when not declared(renderbundledrop):
-  proc renderbundledrop*(renderbundle: Renderbundle_436208783): void {.cdecl,
+when not declared(renderBundleDrop):
+  proc renderBundleDrop*(renderbundle: RenderBundle_436208783): void {.cdecl,
       importc: "wgpuRenderBundleDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleDrop" &
         " already exists, not redeclaring")
-when not declared(commandbufferdrop):
-  proc commandbufferdrop*(commandbuffer: Commandbuffer_436208629): void {.cdecl,
+when not declared(commandbufferDrop):
+  proc commandbufferDrop*(commandbuffer: CommandBuffer_436208629): void {.cdecl,
       importc: "wgpuCommandBufferDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandBufferDrop" &
         " already exists, not redeclaring")
-when not declared(bindgrouplayoutdrop):
-  proc bindgrouplayoutdrop*(bindgrouplayout: Bindgrouplayout_436208743): void {.
+when not declared(bindGroupLayoutDrop):
+  proc bindGroupLayoutDrop*(bindgrouplayout: BindGrouplayout_436208743): void {.
       cdecl, importc: "wgpuBindGroupLayoutDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupLayoutDrop" &
         " already exists, not redeclaring")
-when not declared(devicecreatecommandencoder):
-  proc devicecreatecommandencoder*(device: Device_436207979;
-                                   descriptor: ptr Commandencoderdescriptor_436208667): Commandencoder_436208259 {.
+when not declared(deviceCreateCommandEncoder):
+  proc deviceCreateCommandEncoder*(device: Device_436207979;
+                                   descriptor: ptr CommandEncoderdescriptor_436208667): CommandEncoder_436208259 {.
       cdecl, importc: "wgpuDeviceCreateCommandEncoder".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateCommandEncoder" &
         " already exists, not redeclaring")
-when not declared(queuesubmit):
-  proc queuesubmit*(queue: Queue_436208067; commandcount: uint32;
-                    commands: ptr Commandbuffer_436208629): void {.cdecl,
+when not declared(queueSubmit):
+  proc queueSubmit*(queue: Queue_436208067; commandcount: uint32;
+                    commands: ptr CommandBuffer_436208629): void {.cdecl,
       importc: "wgpuQueueSubmit".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSubmit" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderinsertdebugmarker):
-  proc renderbundleencoderinsertdebugmarker*(
-      renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderInsertDebugMarker):
+  proc renderBundleEncoderInsertDebugMarker*(
+      renderbundleencoder: RenderBundleencoder_436208351;
       markerlabel: ptr cuchar): void {.cdecl,
           importc: "wgpuRenderBundleEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(texturecreateview):
-  proc texturecreateview*(texture: Texture_436208006;
-                          descriptor: ptr Textureviewdescriptor_436208287): Textureview_436208441 {.
+when not declared(textureCreateView):
+  proc textureCreateView*(texture: Texture_436208006;
+                          descriptor: ptr TextureViewdescriptor_436208287): TextureView_436208441 {.
       cdecl, importc: "wgpuTextureCreateView".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureCreateView" &
         " already exists, not redeclaring")
-when not declared(buffersetlabel):
-  proc buffersetlabel*(buffer: Buffer_436208339; label: ptr cuchar): void {.
+when not declared(bufferSetLabel):
+  proc bufferSetLabel*(buffer: Buffer_436208339; label: ptr cuchar): void {.
       cdecl, importc: "wgpuBufferSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(adapterenumeratefeatures):
-  proc adapterenumeratefeatures*(adapter: Adapter_436208057;
-                                 features: ptr Featurename_436208785): csize_t {.
+when not declared(adapterEnumerateFeatures):
+  proc adapterEnumerateFeatures*(adapter: Adapter_436208057;
+                                 features: ptr FeatureName_436208785): csize_t {.
       cdecl, importc: "wgpuAdapterEnumerateFeatures".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterEnumerateFeatures" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderdraw):
-  proc renderbundleencoderdraw*(renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderDraw):
+  proc renderBundleEncoderDraw*(renderbundleencoder: RenderBundleencoder_436208351;
                                 vertexcount: uint32; instancecount: uint32;
                                 firstvertex: uint32;
                                     firstinstance: uint32): void {.
@@ -7302,9 +7302,9 @@ when not declared(Sizemax):
 else:
   static:
     hint("Declaration of " & "SIZE_MAX" & " already exists, not redeclaring")
-when not declared(computepassencoderdispatchworkgroups):
-  proc computepassencoderdispatchworkgroups*(
-      computepassencoder: Computepassencoder_436208535; workgroupcountx: uint32;
+when not declared(computePassEncoderDispatchWorkgroups):
+  proc computePassEncoderDispatchWorkgroups*(
+      computepassencoder: ComputePassEncoder_436208535; workgroupcountx: uint32;
       workgroupcounty: uint32; workgroupcountz: uint32): void {.cdecl,
       importc: "wgpuComputePassEncoderDispatchWorkgroups".}
 else:
@@ -7317,24 +7317,24 @@ when not declared(free):
 else:
   static:
     hint("Declaration of " & "wgpuFree" & " already exists, not redeclaring")
-when not declared(renderbundleencodersetpipeline):
-  proc renderbundleencodersetpipeline*(renderbundleencoder: Renderbundleencoder_436208351;
-                                       pipeline: Renderpipeline_436208391): void {.
+when not declared(renderBundleEncoderSetPipeline):
+  proc renderBundleEncoderSetPipeline*(renderbundleencoder: RenderBundleencoder_436208351;
+                                       pipeline: RenderPipeline_436208391): void {.
       cdecl, importc: "wgpuRenderBundleEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetblendconstant):
-  proc renderpassencodersetblendconstant*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetBlendConstant):
+  proc renderPassEncoderSetBlendConstant*(renderpassencoder: RenderPassEncoder_436208585;
       color: ptr Color_436208085): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetBlendConstant".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetBlendConstant" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetvertexbuffer):
-  proc renderpassencodersetvertexbuffer*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetVertexBuffer):
+  proc renderPassEncoderSetVertexBuffer*(renderpassencoder: RenderPassEncoder_436208585;
       slot: uint32; buffer: Buffer_436208339; offset: uint64;
           size: uint64): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetVertexBuffer".}
@@ -7342,27 +7342,27 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(textureviewsetlabel):
-  proc textureviewsetlabel*(textureview: Textureview_436208441;
+when not declared(textureViewSetLabel):
+  proc textureViewSetLabel*(textureview: TextureView_436208441;
                             label: ptr cuchar): void {.cdecl,
       importc: "wgpuTextureViewSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureViewSetLabel" &
         " already exists, not redeclaring")
-when not declared(devicesetdevicelostcallback):
-  proc devicesetdevicelostcallback*(device: Device_436207979;
-                                    callback: Devicelostcallback_436208623;
+when not declared(deviceSetDeviceLostCallback):
+  proc deviceSetDeviceLostCallback*(device: Device_436207979;
+                                    callback: DeviceLostCallback_436208623;
                                     userdata: pointer): void {.cdecl,
       importc: "wgpuDeviceSetDeviceLostCallback".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceSetDeviceLostCallback" &
         " already exists, not redeclaring")
-when not declared(computepassencodersetbindgroup):
-  proc computepassencodersetbindgroup*(computepassencoder: Computepassencoder_436208535;
+when not declared(computePassEncoderSetBindGroup):
+  proc computePassEncoderSetBindGroup*(computepassencoder: ComputePassEncoder_436208535;
                                        groupindex: uint32;
-                                           group: Bindgroup_436208377;
+                                           group: BindGroup_436208377;
                                        dynamicoffsetcount: uint32;
                                        dynamicoffsets: ptr uint32): void {.
       cdecl, importc: "wgpuComputePassEncoderSetBindGroup".}
@@ -7370,174 +7370,174 @@ else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderend):
-  proc renderpassencoderend*(renderpassencoder: Renderpassencoder_436208585): void {.
+when not declared(renderPassEncoderEnd):
+  proc renderPassEncoderEnd*(renderpassencoder: RenderPassEncoder_436208585): void {.
       cdecl, importc: "wgpuRenderPassEncoderEnd".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEnd" &
         " already exists, not redeclaring")
-when not declared(shadermodulegetcompilationinfo):
-  proc shadermodulegetcompilationinfo*(shadermodule: Shadermodule_436208735;
-                                       callback: Compilationinfocallback_436208437;
+when not declared(shaderModuleGetCompilationInfo):
+  proc shaderModuleGetCompilationInfo*(shadermodule: ShaderModule_436208735;
+                                       callback: CompilationInfocallback_436208437;
                                        userdata: pointer): void {.cdecl,
       importc: "wgpuShaderModuleGetCompilationInfo".}
 else:
   static:
     hint("Declaration of " & "wgpuShaderModuleGetCompilationInfo" &
         " already exists, not redeclaring")
-when not declared(renderpassencodermultidrawindirect):
-  proc renderpassencodermultidrawindirect*(encoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderMultiDrawIndirect):
+  proc renderPassEncoderMultiDrawIndirect*(encoder: RenderPassEncoder_436208585;
       buffer: Buffer_436208339; offset: uint64; count: uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderMultiDrawIndirect".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderMultiDrawIndirect" &
         " already exists, not redeclaring")
-when not declared(surfacedrop):
-  proc surfacedrop*(surface: Surface_436208205): void {.cdecl,
+when not declared(surfaceDrop):
+  proc surfaceDrop*(surface: Surface_436208205): void {.cdecl,
       importc: "wgpuSurfaceDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceDrop" &
         " already exists, not redeclaring")
-when not declared(devicecreaterenderbundleencoder):
-  proc devicecreaterenderbundleencoder*(device: Device_436207979;
-      descriptor: ptr Renderbundleencoderdescriptor_436208113): Renderbundleencoder_436208351 {.
+when not declared(deviceCreateRenderBundleEncoder):
+  proc deviceCreateRenderBundleEncoder*(device: Device_436207979;
+      descriptor: ptr RenderBundleencoderdescriptor_436208113): RenderBundleencoder_436208351 {.
       cdecl, importc: "wgpuDeviceCreateRenderBundleEncoder".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderBundleEncoder" &
         " already exists, not redeclaring")
-when not declared(buffergetmappedrange):
-  proc buffergetmappedrange*(buffer: Buffer_436208339; offset: csize_t;
+when not declared(bufferGetMappedRange):
+  proc bufferGetMappedRange*(buffer: Buffer_436208339; offset: csize_t;
                              size: csize_t): pointer {.cdecl,
       importc: "wgpuBufferGetMappedRange".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferGetMappedRange" &
         " already exists, not redeclaring")
-when not declared(querysetdrop):
-  proc querysetdrop*(queryset: Queryset_436208505): void {.cdecl,
+when not declared(querySetDrop):
+  proc querySetDrop*(queryset: QuerySet_436208505): void {.cdecl,
       importc: "wgpuQuerySetDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetDrop" &
         " already exists, not redeclaring")
-when not declared(commandencoderfinish):
-  proc commandencoderfinish*(commandencoder: Commandencoder_436208259;
-                             descriptor: ptr Commandbufferdescriptor_436208349): Commandbuffer_436208629 {.
+when not declared(commandEncoderFinish):
+  proc commandEncoderFinish*(commandencoder: CommandEncoder_436208259;
+                             descriptor: ptr CommandBufferDescriptor_436208349): CommandBuffer_436208629 {.
       cdecl, importc: "wgpuCommandEncoderFinish".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderFinish" &
         " already exists, not redeclaring")
-when not declared(bufferdrop):
-  proc bufferdrop*(buffer: Buffer_436208339): void {.cdecl,
+when not declared(bufferDrop):
+  proc bufferDrop*(buffer: Buffer_436208339): void {.cdecl,
       importc: "wgpuBufferDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBufferDrop" &
         " already exists, not redeclaring")
-when not declared(bindgroupdrop):
-  proc bindgroupdrop*(bindgroup: Bindgroup_436208377): void {.cdecl,
+when not declared(bindGroupDrop):
+  proc bindGroupDrop*(bindgroup: BindGroup_436208377): void {.cdecl,
       importc: "wgpuBindGroupDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupDrop" &
         " already exists, not redeclaring")
-when not declared(setlogcallback):
-  proc setlogcallback*(callback: Logcallback_436208241): void {.cdecl,
+when not declared(setLogCallback):
+  proc setLogCallback*(callback: LogCallback_436208241): void {.cdecl,
       importc: "wgpuSetLogCallback".}
 else:
   static:
     hint("Declaration of " & "wgpuSetLogCallback" &
         " already exists, not redeclaring")
-when not declared(adapterhasfeature):
-  proc adapterhasfeature*(adapter: Adapter_436208057;
-      feature: Featurename_436208785): bool {.
+when not declared(adapterHasFeature):
+  proc adapterHasFeature*(adapter: Adapter_436208057;
+      feature: FeatureName_436208785): bool {.
       cdecl, importc: "wgpuAdapterHasFeature".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterHasFeature" &
         " already exists, not redeclaring")
-when not declared(commandencodercopytexturetobuffer):
-  proc commandencodercopytexturetobuffer*(commandencoder: Commandencoder_436208259;
-      source: ptr Imagecopytexture_436208507;
-          destination: ptr Imagecopybuffer_436208757;
-      copysize: ptr Extent3d_436208239): void {.cdecl,
+when not declared(commandEncoderCopyTextureToBuffer):
+  proc commandEncoderCopyTextureToBuffer*(commandencoder: CommandEncoder_436208259;
+      source: ptr ImageCopyTexture_436208507;
+          destination: ptr ImageCopyBuffer_436208757;
+      copysize: ptr Extent3D_436208239): void {.cdecl,
       importc: "wgpuCommandEncoderCopyTextureToBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyTextureToBuffer" &
         " already exists, not redeclaring")
-when not declared(adaptergetproperties):
-  proc adaptergetproperties*(adapter: Adapter_436208057;
-                             properties: ptr Adapterproperties_436208201): void {.
+when not declared(adapterGetProperties):
+  proc adapterGetProperties*(adapter: Adapter_436208057;
+                             properties: ptr AdapterProperties_436208201): void {.
       cdecl, importc: "wgpuAdapterGetProperties".}
 else:
   static:
     hint("Declaration of " & "wgpuAdapterGetProperties" &
         " already exists, not redeclaring")
-when not declared(devicecreatetexture):
-  proc devicecreatetexture*(device: Device_436207979;
-                            descriptor: ptr Texturedescriptor_436208707): Texture_436208006 {.
+when not declared(deviceCreateTexture):
+  proc deviceCreateTexture*(device: Device_436207979;
+                            descriptor: ptr TextureDescriptor_436208707): Texture_436208006 {.
       cdecl, importc: "wgpuDeviceCreateTexture".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateTexture" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetpipeline):
-  proc renderpassencodersetpipeline*(renderpassencoder: Renderpassencoder_436208585;
-                                     pipeline: Renderpipeline_436208391): void {.
+when not declared(renderPassEncoderSetPipeline):
+  proc renderPassEncoderSetPipeline*(renderpassencoder: RenderPassEncoder_436208585;
+                                     pipeline: RenderPipeline_436208391): void {.
       cdecl, importc: "wgpuRenderPassEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(renderpipelinedrop):
-  proc renderpipelinedrop*(renderpipeline: Renderpipeline_436208391): void {.
+when not declared(renderPipelineDrop):
+  proc renderPipelineDrop*(renderpipeline: RenderPipeline_436208391): void {.
       cdecl, importc: "wgpuRenderPipelineDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineDrop" &
         " already exists, not redeclaring")
-when not declared(samplerdrop):
-  proc samplerdrop*(sampler: Sampler_436208537): void {.cdecl,
+when not declared(samplerDrop):
+  proc samplerDrop*(sampler: Sampler_436208537): void {.cdecl,
       importc: "wgpuSamplerDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuSamplerDrop" &
         " already exists, not redeclaring")
-when not declared(devicecreatecomputepipeline):
-  proc devicecreatecomputepipeline*(device: Device_436207979;
-                                    descriptor: ptr Computepipelinedescriptor_436208363): Computepipeline_436208357 {.
+when not declared(deviceCreateComputePipeline):
+  proc deviceCreateComputePipeline*(device: Device_436207979;
+                                    descriptor: ptr ComputePipelinedescriptor_436208363): ComputePipeline_436208357 {.
       cdecl, importc: "wgpuDeviceCreateComputePipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateComputePipeline" &
         " already exists, not redeclaring")
-when not declared(createinstance):
-  proc createinstance*(descriptor: ptr Instancedescriptor_436208745): Instance_436208049 {.
+when not declared(createInstance):
+  proc createInstance*(descriptor: ptr InstanceDescriptor_436208745): Instance_436208049 {.
       cdecl, importc: "wgpuCreateInstance".}
 else:
   static:
     hint("Declaration of " & "wgpuCreateInstance" &
         " already exists, not redeclaring")
-when not declared(queuewritetexture):
-  proc queuewritetexture*(queue: Queue_436208067;
-                          destination: ptr Imagecopytexture_436208507;
+when not declared(queueWriteTexture):
+  proc queueWriteTexture*(queue: Queue_436208067;
+                          destination: ptr ImageCopyTexture_436208507;
                           data: pointer; datasize: csize_t;
-                          datalayout: ptr Texturedatalayout_436208401;
-                          writesize: ptr Extent3d_436208239): void {.cdecl,
+                          datalayout: ptr TextureDataLayout_436208401;
+                          writesize: ptr Extent3D_436208239): void {.cdecl,
       importc: "wgpuQueueWriteTexture".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueWriteTexture" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderdrawindexedindirect):
-  proc renderpassencoderdrawindexedindirect*(
-      renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderDrawindexedindirect):
+  proc renderPassEncoderDrawindexedindirect*(
+      renderpassencoder: RenderPassEncoder_436208585;
           indirectbuffer: Buffer_436208339;
       indirectoffset: uint64): void {.cdecl,
           importc: "wgpuRenderPassEncoderDrawIndexedIndirect".}
@@ -7545,266 +7545,266 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(computepassencodersetlabel):
-  proc computepassencodersetlabel*(computepassencoder: Computepassencoder_436208535;
+when not declared(computePassEncoderSetLabel):
+  proc computePassEncoderSetLabel*(computepassencoder: ComputePassEncoder_436208535;
                                    label: ptr cuchar): void {.cdecl,
       importc: "wgpuComputePassEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(computepassencodersetpipeline):
-  proc computepassencodersetpipeline*(computepassencoder: Computepassencoder_436208535;
-                                      pipeline: Computepipeline_436208357): void {.
+when not declared(computePassEncoderSetPipeline):
+  proc computePassEncoderSetPipeline*(computepassencoder: ComputePassEncoder_436208535;
+                                      pipeline: ComputePipeline_436208357): void {.
       cdecl, importc: "wgpuComputePassEncoderSetPipeline".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderSetPipeline" &
         " already exists, not redeclaring")
-when not declared(devicecreatecomputepipelineasync):
-  proc devicecreatecomputepipelineasync*(device: Device_436207979;
-      descriptor: ptr Computepipelinedescriptor_436208363;
-      callback: Createcomputepipelineasynccallback_436208075;
+when not declared(deviceCreateComputePipelineasync):
+  proc deviceCreateComputePipelineasync*(device: Device_436207979;
+      descriptor: ptr ComputePipelinedescriptor_436208363;
+      callback: CreateComputePipelineAsyncCallback_436208075;
           userdata: pointer): void {.
       cdecl, importc: "wgpuDeviceCreateComputePipelineAsync".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateComputePipelineAsync" &
         " already exists, not redeclaring")
-when not declared(devicepoll):
-  proc devicepoll*(device: Device_436207979; wait: bool;
-                   wrappedsubmissionindex: ptr Wrappedsubmissionindex_436208727): bool {.
+when not declared(devicePoll):
+  proc devicePoll*(device: Device_436207979; wait: bool;
+                   wrappedsubmissionindex: ptr WrappedSubmissionIndex_436208727): bool {.
       cdecl, importc: "wgpuDevicePoll".}
 else:
   static:
     hint("Declaration of " & "wgpuDevicePoll" &
         " already exists, not redeclaring")
-when not declared(devicecreatebuffer):
-  proc devicecreatebuffer*(device: Device_436207979;
-                           descriptor: ptr Bufferdescriptor_436208637): Buffer_436208339 {.
+when not declared(deviceCreateBuffer):
+  proc deviceCreateBuffer*(device: Device_436207979;
+                           descriptor: ptr BufferDescriptor_436208637): Buffer_436208339 {.
       cdecl, importc: "wgpuDeviceCreateBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateBuffer" &
         " already exists, not redeclaring")
-when not declared(computepipelinesetlabel):
-  proc computepipelinesetlabel*(computepipeline: Computepipeline_436208357;
+when not declared(computePipelineSetLabel):
+  proc computePipelineSetLabel*(computepipeline: ComputePipeline_436208357;
                                 label: ptr cuchar): void {.cdecl,
       importc: "wgpuComputePipelineSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderpopdebuggroup):
-  proc renderbundleencoderpopdebuggroup*(
-      renderbundleencoder: Renderbundleencoder_436208351): void {.cdecl,
+when not declared(renderBundleEncoderPopDebugGroup):
+  proc renderBundleEncoderPopDebugGroup*(
+      renderbundleencoder: RenderBundleencoder_436208351): void {.cdecl,
       importc: "wgpuRenderBundleEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(textureviewdrop):
-  proc textureviewdrop*(textureview: Textureview_436208441): void {.cdecl,
+when not declared(textureViewDrop):
+  proc textureViewDrop*(textureview: TextureView_436208441): void {.cdecl,
       importc: "wgpuTextureViewDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureViewDrop" &
         " already exists, not redeclaring")
-when not declared(devicegetqueue):
-  proc devicegetqueue*(device: Device_436207979): Queue_436208067 {.cdecl,
+when not declared(deviceGetQueue):
+  proc deviceGetQueue*(device: Device_436207979): Queue_436208067 {.cdecl,
       importc: "wgpuDeviceGetQueue".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceGetQueue" &
         " already exists, not redeclaring")
-when not declared(commandencoderinsertdebugmarker):
-  proc commandencoderinsertdebugmarker*(commandencoder: Commandencoder_436208259;
+when not declared(commandEncoderInsertDebugMarker):
+  proc commandEncoderInsertDebugMarker*(commandencoder: CommandEncoder_436208259;
                                         markerlabel: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(computepassencoderendpipelinestatisticsquery):
-  proc computepassencoderendpipelinestatisticsquery*(
-      computepassencoder: Computepassencoder_436208535): void {.cdecl,
+when not declared(computePassEncoderEndpipelinestatisticsquery):
+  proc computePassEncoderEndpipelinestatisticsquery*(
+      computepassencoder: ComputePassEncoder_436208535): void {.cdecl,
       importc: "wgpuComputePassEncoderEndPipelineStatisticsQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderendpipelinestatisticsquery):
-  proc renderpassencoderendpipelinestatisticsquery*(
-      renderpassencoder: Renderpassencoder_436208585): void {.cdecl,
+when not declared(renderPassEncoderEndpipelinestatisticsquery):
+  proc renderPassEncoderEndpipelinestatisticsquery*(
+      renderpassencoder: RenderPassEncoder_436208585): void {.cdecl,
       importc: "wgpuRenderPassEncoderEndPipelineStatisticsQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderEndPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderdrawindexedindirect):
-  proc renderbundleencoderdrawindexedindirect*(
-      renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderDrawindexedindirect):
+  proc renderBundleEncoderDrawindexedindirect*(
+      renderbundleencoder: RenderBundleencoder_436208351;
       indirectbuffer: Buffer_436208339; indirectoffset: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderDrawIndexedIndirect".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderDrawIndexedIndirect" &
         " already exists, not redeclaring")
-when not declared(surfacegetsupportedpresentmodes):
-  proc surfacegetsupportedpresentmodes*(surface: Surface_436208205;
+when not declared(surfaceGetSupportedPresentModes):
+  proc surfaceGetSupportedPresentModes*(surface: Surface_436208205;
                                         adapter: Adapter_436208057;
-                                        count: ptr csize_t): ptr Presentmode_436208541 {.
+                                        count: ptr csize_t): ptr PresentMode_436208541 {.
       cdecl, importc: "wgpuSurfaceGetSupportedPresentModes".}
 else:
   static:
     hint("Declaration of " & "wgpuSurfaceGetSupportedPresentModes" &
         " already exists, not redeclaring")
-when not declared(querysetdestroy):
-  proc querysetdestroy*(queryset: Queryset_436208505): void {.cdecl,
+when not declared(querySetDestroy):
+  proc querySetDestroy*(queryset: QuerySet_436208505): void {.cdecl,
       importc: "wgpuQuerySetDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetDestroy" &
         " already exists, not redeclaring")
-when not declared(texturedrop):
-  proc texturedrop*(texture: Texture_436208006): void {.cdecl,
+when not declared(textureDrop):
+  proc textureDrop*(texture: Texture_436208006): void {.cdecl,
       importc: "wgpuTextureDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureDrop" &
         " already exists, not redeclaring")
-when not declared(renderpassencoderbeginocclusionquery):
-  proc renderpassencoderbeginocclusionquery*(
-      renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderBeginOcclusionQuery):
+  proc renderPassEncoderBeginOcclusionQuery*(
+      renderpassencoder: RenderPassEncoder_436208585;
           queryindex: uint32): void {.
       cdecl, importc: "wgpuRenderPassEncoderBeginOcclusionQuery".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderBeginOcclusionQuery" &
         " already exists, not redeclaring")
-when not declared(commandencoderwritetimestamp):
-  proc commandencoderwritetimestamp*(commandencoder: Commandencoder_436208259;
-                                     queryset: Queryset_436208505;
+when not declared(commandEncoderWriteTimestamp):
+  proc commandEncoderWriteTimestamp*(commandencoder: CommandEncoder_436208259;
+                                     queryset: QuerySet_436208505;
                                      queryindex: uint32): void {.cdecl,
       importc: "wgpuCommandEncoderWriteTimestamp".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderWriteTimestamp" &
         " already exists, not redeclaring")
-when not declared(renderpipelinesetlabel):
-  proc renderpipelinesetlabel*(renderpipeline: Renderpipeline_436208391;
+when not declared(renderPipelineSetLabel):
+  proc renderPipelineSetLabel*(renderpipeline: RenderPipeline_436208391;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPipelineSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPipelineSetLabel" &
         " already exists, not redeclaring")
-when not declared(bindgrouplayoutsetlabel):
-  proc bindgrouplayoutsetlabel*(bindgrouplayout: Bindgrouplayout_436208743;
+when not declared(bindGroupLayoutSetLabel):
+  proc bindGroupLayoutSetLabel*(bindgrouplayout: BindGrouplayout_436208743;
                                 label: ptr cuchar): void {.cdecl,
       importc: "wgpuBindGroupLayoutSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuBindGroupLayoutSetLabel" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetlabel):
-  proc renderpassencodersetlabel*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetLabel):
+  proc renderPassEncoderSetLabel*(renderpassencoder: RenderPassEncoder_436208585;
                                   label: ptr cuchar): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(computepassencoderpopdebuggroup):
-  proc computepassencoderpopdebuggroup*(
-    computepassencoder: Computepassencoder_436208535): void {.
+when not declared(computePassEncoderPopDebugGroup):
+  proc computePassEncoderPopDebugGroup*(
+    computepassencoder: ComputePassEncoder_436208535): void {.
       cdecl, importc: "wgpuComputePassEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(renderbundleencoderpushdebuggroup):
-  proc renderbundleencoderpushdebuggroup*(
-      renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderPushDebugGroup):
+  proc renderBundleEncoderPushDebugGroup*(
+      renderbundleencoder: RenderBundleencoder_436208351;
           grouplabel: ptr cuchar): void {.
       cdecl, importc: "wgpuRenderBundleEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(texturedestroy):
-  proc texturedestroy*(texture: Texture_436208006): void {.cdecl,
+when not declared(textureDestroy):
+  proc textureDestroy*(texture: Texture_436208006): void {.cdecl,
       importc: "wgpuTextureDestroy".}
 else:
   static:
     hint("Declaration of " & "wgpuTextureDestroy" &
         " already exists, not redeclaring")
-when not declared(shadermoduledrop):
-  proc shadermoduledrop*(shadermodule: Shadermodule_436208735): void {.cdecl,
+when not declared(shaderModuleDrop):
+  proc shaderModuleDrop*(shadermodule: ShaderModule_436208735): void {.cdecl,
       importc: "wgpuShaderModuleDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuShaderModuleDrop" &
         " already exists, not redeclaring")
-when not declared(devicecreatepipelinelayout):
-  proc devicecreatepipelinelayout*(device: Device_436207979;
-                                   descriptor: ptr Pipelinelayoutdescriptor_436208817): Pipelinelayout_436208415 {.
+when not declared(deviceCreatePipelineLayout):
+  proc deviceCreatePipelineLayout*(device: Device_436207979;
+                                   descriptor: ptr PipelineLayoutdescriptor_436208817): PipelineLayout_436208415 {.
       cdecl, importc: "wgpuDeviceCreatePipelineLayout".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreatePipelineLayout" &
         " already exists, not redeclaring")
-when not declared(commandbuffersetlabel):
-  proc commandbuffersetlabel*(commandbuffer: Commandbuffer_436208629;
+when not declared(commandbufferSetLabel):
+  proc commandbufferSetLabel*(commandbuffer: CommandBuffer_436208629;
                               label: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandBufferSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandBufferSetLabel" &
         " already exists, not redeclaring")
-when not declared(pipelinelayoutdrop):
-  proc pipelinelayoutdrop*(pipelinelayout: Pipelinelayout_436208415): void {.
+when not declared(pipelineLayoutDrop):
+  proc pipelineLayoutDrop*(pipelinelayout: PipelineLayout_436208415): void {.
       cdecl, importc: "wgpuPipelineLayoutDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuPipelineLayoutDrop" &
         " already exists, not redeclaring")
-when not declared(swapchainpresent):
-  proc swapchainpresent*(swapchain: Swapchain_436208593): void {.cdecl,
+when not declared(swapChainPresent):
+  proc swapChainPresent*(swapchain: SwapChain_436208593): void {.cdecl,
       importc: "wgpuSwapChainPresent".}
 else:
   static:
     hint("Declaration of " & "wgpuSwapChainPresent" &
         " already exists, not redeclaring")
-when not declared(commandencodersetlabel):
-  proc commandencodersetlabel*(commandencoder: Commandencoder_436208259;
+when not declared(commandEncoderSetLabel):
+  proc commandEncoderSetLabel*(commandencoder: CommandEncoder_436208259;
                                label: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderSetLabel" &
         " already exists, not redeclaring")
-when not declared(querysetsetlabel):
-  proc querysetsetlabel*(queryset: Queryset_436208505;
+when not declared(querySetSetLabel):
+  proc querySetSetLabel*(queryset: QuerySet_436208505;
       label: ptr cuchar): void {.
       cdecl, importc: "wgpuQuerySetSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuQuerySetSetLabel" &
         " already exists, not redeclaring")
-when not declared(renderbundleencodersetvertexbuffer):
-  proc renderbundleencodersetvertexbuffer*(
-      renderbundleencoder: Renderbundleencoder_436208351; slot: uint32;
+when not declared(renderBundleEncoderSetVertexBuffer):
+  proc renderBundleEncoderSetVertexBuffer*(
+      renderbundleencoder: RenderBundleencoder_436208351; slot: uint32;
       buffer: Buffer_436208339; offset: uint64; size: uint64): void {.cdecl,
       importc: "wgpuRenderBundleEncoderSetVertexBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetVertexBuffer" &
         " already exists, not redeclaring")
-when not declared(renderpassencodersetbindgroup):
-  proc renderpassencodersetbindgroup*(renderpassencoder: Renderpassencoder_436208585;
+when not declared(renderPassEncoderSetBindGroup):
+  proc renderPassEncoderSetBindGroup*(renderpassencoder: RenderPassEncoder_436208585;
                                       groupindex: uint32;
-                                          group: Bindgroup_436208377;
+                                          group: BindGroup_436208377;
                                       dynamicoffsetcount: uint32;
                                       dynamicoffsets: ptr uint32): void {.cdecl,
       importc: "wgpuRenderPassEncoderSetBindGroup".}
@@ -7812,19 +7812,19 @@ else:
   static:
     hint("Declaration of " & "wgpuRenderPassEncoderSetBindGroup" &
         " already exists, not redeclaring")
-when not declared(computepassencoderinsertdebugmarker):
-  proc computepassencoderinsertdebugmarker*(
-      computepassencoder: Computepassencoder_436208535;
+when not declared(computePassEncoderInsertDebugMarker):
+  proc computePassEncoderInsertDebugMarker*(
+      computepassencoder: ComputePassEncoder_436208535;
           markerlabel: ptr cuchar): void {.
       cdecl, importc: "wgpuComputePassEncoderInsertDebugMarker".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePassEncoderInsertDebugMarker" &
         " already exists, not redeclaring")
-when not declared(computepassencoderbeginpipelinestatisticsquery):
-  proc computepassencoderbeginpipelinestatisticsquery*(
-      computepassencoder: Computepassencoder_436208535;
-          queryset: Queryset_436208505;
+when not declared(computePassEncoderBeginPipelineStatisticsQuery):
+  proc computePassEncoderBeginPipelineStatisticsQuery*(
+      computepassencoder: ComputePassEncoder_436208535;
+          queryset: QuerySet_436208505;
       queryindex: uint32): void {.cdecl,
           importc: "wgpuComputePassEncoderBeginPipelineStatisticsQuery".}
 else:
@@ -7832,99 +7832,99 @@ else:
     hint("Declaration of " &
         "wgpuComputePassEncoderBeginPipelineStatisticsQuery" &
         " already exists, not redeclaring")
-when not declared(commandencoderpopdebuggroup):
-  proc commandencoderpopdebuggroup*(commandencoder: Commandencoder_436208259): void {.
+when not declared(commandEncoderPopDebugGroup):
+  proc commandEncoderPopDebugGroup*(commandencoder: CommandEncoder_436208259): void {.
       cdecl, importc: "wgpuCommandEncoderPopDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderPopDebugGroup" &
         " already exists, not redeclaring")
-when not declared(computepipelinedrop):
-  proc computepipelinedrop*(computepipeline: Computepipeline_436208357): void {.
+when not declared(computePipelineDrop):
+  proc computePipelineDrop*(computepipeline: ComputePipeline_436208357): void {.
       cdecl, importc: "wgpuComputePipelineDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuComputePipelineDrop" &
         " already exists, not redeclaring")
-when not declared(commandencoderpushdebuggroup):
-  proc commandencoderpushdebuggroup*(commandencoder: Commandencoder_436208259;
+when not declared(commandEncoderPushDebugGroup):
+  proc commandEncoderPushDebugGroup*(commandencoder: CommandEncoder_436208259;
                                      grouplabel: ptr cuchar): void {.cdecl,
       importc: "wgpuCommandEncoderPushDebugGroup".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderPushDebugGroup" &
         " already exists, not redeclaring")
-when not declared(devicecreaterenderpipelineasync):
-  proc devicecreaterenderpipelineasync*(device: Device_436207979;
-      descriptor: ptr Renderpipelinedescriptor_436208475;
+when not declared(deviceCreateRenderPipelineasync):
+  proc deviceCreateRenderPipelineasync*(device: Device_436207979;
+      descriptor: ptr RenderPipelinedescriptor_436208475;
 
-callback: Createrenderpipelineasynccallback_436208143;
+callback: CreateRenderPipelineAsyncCallback_436208143;
           userdata: pointer): void {.
       cdecl, importc: "wgpuDeviceCreateRenderPipelineAsync".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceCreateRenderPipelineAsync" &
         " already exists, not redeclaring")
-when not declared(instancecreatesurface):
-  proc instancecreatesurface*(instance: Instance_436208049;
-                              descriptor: ptr Surfacedescriptor_436208041): Surface_436208205 {.
+when not declared(instanceCreateSurface):
+  proc instanceCreateSurface*(instance: Instance_436208049;
+                              descriptor: ptr SurfaceDescriptor_436208041): Surface_436208205 {.
       cdecl, importc: "wgpuInstanceCreateSurface".}
 else:
   static:
     hint("Declaration of " & "wgpuInstanceCreateSurface" &
         " already exists, not redeclaring")
-when not declared(renderbundleencodersetindexbuffer):
-  proc renderbundleencodersetindexbuffer*(
-      renderbundleencoder: Renderbundleencoder_436208351;
+when not declared(renderBundleEncoderSetIndexBuffer):
+  proc renderBundleEncoderSetIndexBuffer*(
+      renderbundleencoder: RenderBundleencoder_436208351;
           buffer: Buffer_436208339;
-      format: Indexformat_436208301; offset: uint64; size: uint64): void {.
+      format: IndexFormat_436208301; offset: uint64; size: uint64): void {.
       cdecl, importc: "wgpuRenderBundleEncoderSetIndexBuffer".}
 else:
   static:
     hint("Declaration of " & "wgpuRenderBundleEncoderSetIndexBuffer" &
         " already exists, not redeclaring")
-when not declared(commandencodercopybuffertotexture):
-  proc commandencodercopybuffertotexture*(commandencoder: Commandencoder_436208259;
-      source: ptr Imagecopybuffer_436208757;
-          destination: ptr Imagecopytexture_436208507;
-      copysize: ptr Extent3d_436208239): void {.cdecl,
+when not declared(commandEncoderCopyBufferToTexture):
+  proc commandEncoderCopyBufferToTexture*(commandencoder: CommandEncoder_436208259;
+      source: ptr ImageCopyBuffer_436208757;
+          destination: ptr ImageCopyTexture_436208507;
+      copysize: ptr Extent3D_436208239): void {.cdecl,
       importc: "wgpuCommandEncoderCopyBufferToTexture".}
 else:
   static:
     hint("Declaration of " & "wgpuCommandEncoderCopyBufferToTexture" &
         " already exists, not redeclaring")
-when not declared(devicesetuncapturederrorcallback):
-  proc devicesetuncapturederrorcallback*(device: Device_436207979;
-      callback: Errorcallback_436208291; userdata: pointer): void {.cdecl,
+when not declared(deviceSetUncapturedErrorCallback):
+  proc deviceSetUncapturedErrorCallback*(device: Device_436207979;
+      callback: ErrorCallback_436208291; userdata: pointer): void {.cdecl,
       importc: "wgpuDeviceSetUncapturedErrorCallback".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceSetUncapturedErrorCallback" &
         " already exists, not redeclaring")
-when not declared(instanceprocessevents):
-  proc instanceprocessevents*(instance: Instance_436208049): void {.cdecl,
+when not declared(instanceProcessEvents):
+  proc instanceProcessEvents*(instance: Instance_436208049): void {.cdecl,
       importc: "wgpuInstanceProcessEvents".}
 else:
   static:
     hint("Declaration of " & "wgpuInstanceProcessEvents" &
         " already exists, not redeclaring")
-when not declared(queuesetlabel):
-  proc queuesetlabel*(queue: Queue_436208067; label: ptr cuchar): void {.cdecl,
+when not declared(queueSetLabel):
+  proc queueSetLabel*(queue: Queue_436208067; label: ptr cuchar): void {.cdecl,
       importc: "wgpuQueueSetLabel".}
 else:
   static:
     hint("Declaration of " & "wgpuQueueSetLabel" &
         " already exists, not redeclaring")
-when not declared(devicedrop):
-  proc devicedrop*(device: Device_436207979): void {.cdecl,
+when not declared(deviceDrop):
+  proc deviceDrop*(device: Device_436207979): void {.cdecl,
       importc: "wgpuDeviceDrop".}
 else:
   static:
     hint("Declaration of " & "wgpuDeviceDrop" &
         " already exists, not redeclaring")
-when not declared(commandencoderbegincomputepass):
-  proc commandencoderbegincomputepass*(commandencoder: Commandencoder_436208259;
-                                       descriptor: ptr Computepassdescriptor_436208433): Computepassencoder_436208535 {.
+when not declared(commandEncoderBeginComputePass):
+  proc commandEncoderBeginComputePass*(commandencoder: CommandEncoder_436208259;
+                                       descriptor: ptr ComputePassDescriptor_436208433): ComputePassEncoder_436208535 {.
       cdecl, importc: "wgpuCommandEncoderBeginComputePass".}
 else:
   static:
